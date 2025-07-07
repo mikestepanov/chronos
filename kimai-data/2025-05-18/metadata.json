@@ -1,0 +1,19 @@
+{
+  "versions": [
+    {
+      "version": 1,
+      "extractedAt": "2025-07-05T03:38:30.223Z",
+      "checksum": "9eabda837a78dacfd73e1d51bcd62b8f4f072c6aa5ea4f1e5df55aecd7b29930",
+      "metadata": {
+        "periodNumber": 37,
+        "startDate": "2025-05-18T05:00:00.000Z",
+        "endDate": "2025-06-01T04:59:59.999Z",
+        "extractedBy": "KimaiExtractionService",
+        "recordCount": 1,
+        "bytes": 403
+      }
+    }
+  ],
+  "latest": 1,
+  "updatedAt": "2025-07-05T03:38:30.223Z"
+}

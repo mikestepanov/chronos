@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+*.log
+.DS_Store
+coverage/
+dist/
+.cache/
+kimai-data/exports/
+.claude/

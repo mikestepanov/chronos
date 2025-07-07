@@ -1,0 +1,14 @@
+[Unit]
+Description=Kimai Timesheet Extraction Service
+After=network.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/mstepanov/Documents/GitHub/omega/scripts
+ExecStart=/usr/bin/node /home/mstepanov/Documents/GitHub/omega/scripts/kimai-extract-timesheets.js
+StandardOutput=append:/home/mstepanov/Documents/GitHub/omega/logs/kimai-extract.log
+StandardError=append:/home/mstepanov/Documents/GitHub/omega/logs/kimai-extract.log
+User=mstepanov
+
+[Install]
+WantedBy=multi-user.target

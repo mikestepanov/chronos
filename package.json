@@ -1,0 +1,46 @@
+{
+  "name": "chronos",
+  "version": "1.0.0",
+  "description": "Bot implementations for timesheet monitoring and messaging integrations",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikestepanov/chronos.git"
+  },
+  "main": "kimai-timesheet-bot.js",
+  "scripts": {
+    "check": "node kimai-timesheet-bot.js check",
+    "remind": "node kimai-timesheet-bot.js remind",
+    "monday": "node monday-reminder.js send",
+    "monday:test": "node monday-reminder.js test",
+    "monday:preview": "node monday-reminder.js preview",
+    "monday:schedule": "node monday-reminder.js schedule",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:unit": "jest --testPathPattern=tests/",
+    "test:integration": "jest --testPathPattern=integration",
+    "test:pay-period": "jest tests/pay-period-calculator.test.js",
+    "test:monday": "jest tests/monday-reminder.test.js",
+    "test:resilient": "jest tests/resilient-sender.test.js",
+    "test:security": "jest tests/pumble-client-security.test.js tests/storage-layer.test.js tests/webhook-handler.test.js",
+    "test:kimai": "jest tests/kimai-client.test.js",
+    "test:storage": "jest tests/storage-layer.test.js",
+    "test:webhook": "jest tests/webhook-handler.test.js",
+    "test:flow": "jest tests/integration-flow.test.js",
+    "test:critical": "jest tests/kimai-client.test.js tests/pumble-client-security.test.js tests/storage-layer.test.js tests/webhook-handler.test.js tests/integration-flow.test.js",
+    "kimai:extract": "node kimai/cli.js extract",
+    "kimai:status": "node kimai/cli.js status",
+    "kimai:scheduler": "node kimai/scheduler.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "csv-parse": "^5.5.0",
+    "date-fns": "^2.30.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "jest": "^29.7.0",
+    "@jest/globals": "^29.7.0"
+  }
+}
