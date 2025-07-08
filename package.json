@@ -6,8 +6,11 @@
     "type": "git",
     "url": "https://github.com/mikestepanov/chronos.git"
   },
-  "main": "kimai-timesheet-bot.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "deploy": "node koyeb/deploy.js",
     "check": "node kimai-timesheet-bot.js check",
     "remind": "node kimai-timesheet-bot.js remind",
     "monday": "node monday-reminder.js send",

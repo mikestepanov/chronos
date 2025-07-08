@@ -20,10 +20,6 @@ class ConfigLoader {
           botEmail: bot.email,
           botId: bot.id
         },
-        slack: {
-          token: process.env.SLACK_BOT_TOKEN,
-          botId: process.env.SLACK_BOT_ID
-        },
         channels: {
           dev: process.env.DEV_CHANNEL_ID,
           design: process.env.DESIGN_CHANNEL_ID,
