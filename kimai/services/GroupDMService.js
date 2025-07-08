@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 const PumbleClient = require('../../shared/pumble-client');
-const UserService = require('../../users/UserService');
+const UserService = require('../../config/users/UserService');
 
 /**
  * Service for sending group DMs (3+ person conversations)
@@ -11,7 +11,6 @@ class GroupDMService {
   constructor(config = {}) {
     this.pumbleClient = new PumbleClient({
       apiKey: process.env.PUMBLE_API_KEY || config.pumbleApiKey,
-      botEmail: process.env.PUMBLE_BOT_EMAIL || config.botEmail,
       botId: process.env.PUMBLE_BOT_ID || config.botId
     });
     

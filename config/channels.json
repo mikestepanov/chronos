@@ -1,0 +1,31 @@
+{
+  "pumble": {
+    "dev": {
+      "id": "C06MVPXQ8CB",
+      "name": "dev",
+      "description": "Development team channel"
+    },
+    "design": {
+      "id": "C06MW1Y59US", 
+      "name": "design",
+      "description": "Design team channel"
+    },
+    "general": {
+      "id": "C06MVQ6B8ED",
+      "name": "general",
+      "description": "General announcements channel"
+    },
+    "bot_testing": {
+      "id": "686ca38e83b6fa7714e50f3d",
+      "name": "bot-testing",
+      "description": "Bot private testing channel (public)"
+    }
+  },
+  "dm_channels": {
+    "agentsmith_and_mikhail": {
+      "id": "DM_CHANNEL_AGENTSMITH_MIKHAIL",
+      "description": "Direct message channel between Agent Smith bot and Mikhail",
+      "participants": ["agentsmith", "mikhail"]
+    }
+  }
+}

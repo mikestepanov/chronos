@@ -45,18 +45,6 @@ module.exports = {
     // Pumble
     'PUMBLE_API_KEY': process.env.PUMBLE_API_KEY,
     'PUMBLE_BOT_ID': process.env.PUMBLE_BOT_ID,
-    'PUMBLE_BOT_EMAIL': process.env.PUMBLE_BOT_EMAIL,
-    
-    // Channels
-    'DEV_CHANNEL_ID': process.env.DEV_CHANNEL_ID,
-    'DESIGN_CHANNEL_ID': process.env.DESIGN_CHANNEL_ID,
-    
-    // Features
-    'USE_GROUP_DMS': process.env.USE_GROUP_DMS || 'false',
-    
-    // Managers
-    'MANAGER_PUMBLE_IDS': process.env.MANAGER_PUMBLE_IDS,
-    'MANAGER_EMAILS': process.env.MANAGER_EMAILS,
     
     // App settings
     'NODE_ENV': 'production'

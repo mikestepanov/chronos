@@ -20,11 +20,7 @@ class ConfigLoader {
           botEmail: bot.email,
           botId: bot.id
         },
-        channels: {
-          dev: process.env.DEV_CHANNEL_ID,
-          design: process.env.DESIGN_CHANNEL_ID,
-          admin: process.env.ADMIN_CHANNEL_ID
-        }
+        channels: this.loadChannels()
       },
       kimai: {
         baseUrl: process.env.KIMAI_URL,
@@ -44,6 +40,18 @@ class ConfigLoader {
 
     this.validate(config);
     return config;
+  }
+
+  static loadChannels() {
+    const channelsPath = path.join(__dirname, '../config/channels.json');
+    const channelsData = fs.readFileSync(channelsPath, 'utf8');
+    const channels = JSON.parse(channelsData).pumble;
+    
+    return {
+      dev: channels.dev.id,
+      design: channels.design.id,
+      general: channels.general.id
+    };
   }
 
   static loadEmployeeMapping() {
