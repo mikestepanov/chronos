@@ -1,13 +1,15 @@
 const fs = require('fs').promises;
 const path = require('path');
+const UserService = require('../../users/UserService');
 
 /**
- * User Mapping Service
- * Maps between Kimai user IDs, names, emails, and Pumble IDs
+ * User Mapping Service - Adapter for legacy code
+ * Wraps the new UserService to maintain backward compatibility
  */
 class UserMapping {
   constructor(mappingFile = null) {
-    this.mappingFile = mappingFile || path.join(__dirname, '../config/user-mapping.csv');
+    // Ignore mappingFile parameter, use new UserService
+    this.userService = new UserService();
     this.users = new Map();
     this.kimaiToUser = new Map();
     this.emailToUser = new Map();
@@ -16,33 +18,36 @@ class UserMapping {
   }
 
   /**
-   * Load user mappings from CSV
+   * Load user mappings from JSON
    */
   async load() {
     try {
-      const content = await fs.readFile(this.mappingFile, 'utf-8');
-      const lines = content.split('\n').filter(line => line.trim());
+      // Build maps from UserService data
+      const activeUsers = this.userService.getActiveUsers();
       
-      // Skip header
-      for (let i = 1; i < lines.length; i++) {
-        const [kimaiId, name, email, pumbleId, active] = lines[i].split(',').map(s => s.trim());
+      for (const user of activeUsers) {
+        // Skip users without Kimai service
+        if (!user.services.kimai) continue;
         
-        if (!kimaiId || active !== 'true') continue;
+        const kimaiId = user.services.kimai.id.toString();
+        const pumbleId = user.services.pumble.id;
         
-        const user = {
+        const userData = {
           kimaiId: parseInt(kimaiId),
-          name,
-          email,
-          pumbleId,
-          active: active === 'true'
+          name: user.name,
+          email: user.email,
+          pumbleId: pumbleId,
+          active: user.active
         };
         
         // Store in multiple indexes for fast lookup
-        this.users.set(kimaiId, user);
-        this.kimaiToUser.set(parseInt(kimaiId), user);
-        this.emailToUser.set(email.toLowerCase(), user);
-        this.pumbleToUser.set(pumbleId, user);
-        this.nameToUser.set(name.toLowerCase(), user);
+        this.users.set(kimaiId, userData);
+        this.kimaiToUser.set(parseInt(kimaiId), userData);
+        this.emailToUser.set(user.email.toLowerCase(), userData);
+        if (pumbleId) {
+          this.pumbleToUser.set(pumbleId, userData);
+        }
+        this.nameToUser.set(user.name.toLowerCase(), userData);
       }
       
       console.log(`Loaded ${this.users.size} user mappings`);

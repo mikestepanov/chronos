@@ -1,0 +1,164 @@
+{
+  "users": [
+    {
+      "id": "mikhail-stepanov",
+      "name": "Mikhail Stepanov",
+      "email": "mikhail@starthub.academy",
+      "active": true,
+      "team": "dev",
+      "services": {
+        "kimai": {
+          "id": 4,
+          "username": "mikhail"
+        },
+        "pumble": {
+          "id": "66908542f1798a06218c1fc5",
+          "username": "mikhail",
+          "mention": "<@66908542f1798a06218c1fc5>"
+        }
+      }
+    },
+    {
+      "id": "dharam-pal-singh",
+      "name": "Dharam Pal Singh",
+      "email": "dharam@example.com",
+      "active": true,
+      "team": "dev",
+      "services": {
+        "kimai": {
+          "id": 2,
+          "username": "dharam"
+        },
+        "pumble": {
+          "id": "PUMBLE_ID_HERE",
+          "username": "dharam",
+          "mention": "<@PUMBLE_ID_HERE>"
+        }
+      }
+    },
+    {
+      "id": "yulia",
+      "name": "Yulia",
+      "email": "yulia@example.com",
+      "active": true,
+      "team": "design",
+      "services": {
+        "kimai": {
+          "id": 3,
+          "username": "yulia"
+        },
+        "pumble": {
+          "id": "PUMBLE_ID_HERE",
+          "username": "yulia",
+          "mention": "<@PUMBLE_ID_HERE>"
+        }
+      }
+    },
+    {
+      "id": "raheel-shahzad",
+      "name": "Raheel Shahzad",
+      "email": "raheel@example.com",
+      "active": true,
+      "team": "dev",
+      "services": {
+        "kimai": {
+          "id": 5,
+          "username": "raheel"
+        },
+        "pumble": {
+          "id": "PUMBLE_ID_HERE",
+          "username": "raheel",
+          "mention": "<@PUMBLE_ID_HERE>"
+        }
+      }
+    },
+    {
+      "id": "eddy",
+      "name": "Eddy",
+      "email": "eddy@example.com",
+      "active": true,
+      "team": "dev",
+      "services": {
+        "kimai": {
+          "id": 7,
+          "username": "eddy"
+        },
+        "pumble": {
+          "id": "PUMBLE_ID_HERE",
+          "username": "eddy",
+          "mention": "<@PUMBLE_ID_HERE>"
+        }
+      }
+    },
+    {
+      "id": "ariful",
+      "name": "Ariful",
+      "email": "ariful@example.com",
+      "active": true,
+      "team": "dev",
+      "services": {
+        "kimai": {
+          "id": 8,
+          "username": "ariful"
+        },
+        "pumble": {
+          "id": "PUMBLE_ID_HERE",
+          "username": "ariful",
+          "mention": "<@PUMBLE_ID_HERE>"
+        }
+      }
+    },
+    {
+      "id": "mori-isaac",
+      "name": "Mori Isaac",
+      "email": "mori@example.com",
+      "active": true,
+      "team": "dev",
+      "services": {
+        "kimai": {
+          "id": 9,
+          "username": "mori"
+        },
+        "pumble": {
+          "id": "PUMBLE_ID_HERE",
+          "username": "mori",
+          "mention": "<@PUMBLE_ID_HERE>"
+        }
+      }
+    },
+    {
+      "id": "pauline-nguyen",
+      "name": "Pauline Nguyen",
+      "email": "pauline@example.com",
+      "active": true,
+      "team": "design",
+      "services": {
+        "kimai": {
+          "id": 12,
+          "username": "pauline"
+        },
+        "pumble": {
+          "id": "PUMBLE_ID_HERE",
+          "username": "pauline",
+          "mention": "<@PUMBLE_ID_HERE>"
+        }
+      }
+    }
+  ],
+  "teams": {
+    "dev": {
+      "name": "Development Team",
+      "channel": "dev",
+      "webhook": "PUMBLE_DEV_WEBHOOK_URL"
+    },
+    "design": {
+      "name": "Design Team",
+      "channel": "design",
+      "webhook": "PUMBLE_DESIGN_WEBHOOK_URL"
+    }
+  },
+  "metadata": {
+    "updated": "2024-01-15",
+    "version": "1.0.0"
+  }
+}

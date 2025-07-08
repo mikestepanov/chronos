@@ -19,6 +19,10 @@ A robust, all-in-one Node.js client for managing cron jobs with [cron-job.org](h
 Since this is part of the chronos repository, just require it directly:
 
 ```javascript
+// Import individual components
+const { CronJobManager, CronValidator, CronBulkManager } = require('./cron-job-org');
+
+// Or import just the manager
 const CronJobManager = require('./cron-job-org/CronJobManager');
 ```
 
