@@ -147,8 +147,9 @@ function generateHoursReport(timesheets, users) {
     const userInfo = userMap[parseInt(kimaiId)] || { name: `User ${kimaiId}`, expectedHours: 80 };
     const expected = userInfo.expectedHours;
     const diff = hours - expected;
-    const percent = expected > 0 ? (hours / expected * 100) : 0;
-    const status = hours >= (expected - 3) ? '✅' : '❌'; // 3-hour grace period
+    const percentDeviation = expected > 0 ? ((diff / expected) * 100) : (hours > 0 ? 100 : 0);
+    // Status: ✅ only if within ±3 hours (not just -3)
+    const status = (hours >= (expected - 3) && hours <= (expected + 3)) ? '✅' : '❌';
     
     totalWorked += hours;
     totalExpected += expected;
@@ -158,7 +159,7 @@ function generateHoursReport(timesheets, users) {
       hoursWorked: hours,
       expectedHours: expected,
       difference: diff,
-      percentOfExpected: percent,
+      percentDeviation: percentDeviation,
       status: status
     });
   });
@@ -173,7 +174,7 @@ function generateHoursReport(timesheets, users) {
         hoursWorked: 0,
         expectedHours: userInfo.expectedHours,
         difference: -userInfo.expectedHours,
-        percentOfExpected: 0,
+        percentDeviation: -100,
         status: '❌'
       });
     }
@@ -186,7 +187,8 @@ function generateHoursReport(timesheets, users) {
     entries: reportData,
     totalWorked: totalWorked,
     totalExpected: totalExpected,
-    overallPercent: totalExpected > 0 ? (totalWorked / totalExpected * 100) : 0
+    overallPercent: totalExpected > 0 ? (totalWorked / totalExpected * 100) : 0,
+    overallDeviation: totalExpected > 0 ? (((totalWorked - totalExpected) / totalExpected) * 100) : 0
   };
 }
 
@@ -196,18 +198,20 @@ function generateHoursReport(timesheets, users) {
  * @returns {String} Formatted table
  */
 function formatReportAsTable(report) {
-  let table = '| User | Hours Worked | Expected | Difference | % of Expected | Status |\n';
-  table += '|------|--------------|----------|------------|---------------|--------|\n';
+  let table = '| User | Hours Worked | Expected | Difference | % Deviation | Status |\n';
+  table += '|------|--------------|----------|------------|-------------|--------|\n';
   
   report.entries.forEach(entry => {
     const diffStr = entry.difference >= 0 ? `+${entry.difference.toFixed(2)}` : entry.difference.toFixed(2);
-    table += `| ${entry.name.padEnd(20)} | ${entry.hoursWorked.toFixed(2).padStart(12)} | ${entry.expectedHours.toFixed(2).padStart(8)} | ${diffStr.padStart(10)} | ${entry.percentOfExpected.toFixed(1).padStart(13)}% | ${entry.status} |\n`;
+    const deviationStr = entry.percentDeviation >= 0 ? `+${entry.percentDeviation.toFixed(1)}%` : `${entry.percentDeviation.toFixed(1)}%`;
+    table += `| ${entry.name.padEnd(20)} | ${entry.hoursWorked.toFixed(2).padStart(12)} | ${entry.expectedHours.toFixed(2).padStart(8)} | ${diffStr.padStart(10)} | ${deviationStr.padStart(11)} | ${entry.status} |\n`;
   });
   
-  table += '|------|--------------|----------|------------|---------------|--------|\n';
+  table += '|------|--------------|----------|------------|-------------|--------|\n';
   const totalDiff = report.totalWorked - report.totalExpected;
   const totalDiffStr = totalDiff >= 0 ? `+${totalDiff.toFixed(2)}` : totalDiff.toFixed(2);
-  table += `| **TOTAL**            | **${report.totalWorked.toFixed(2).padStart(10)}** | **${report.totalExpected.toFixed(2).padStart(6)}** | **${totalDiffStr.padStart(8)}** | **${report.overallPercent.toFixed(1).padStart(11)}%** |    |\n`;
+  const totalDeviationStr = report.overallDeviation >= 0 ? `+${report.overallDeviation.toFixed(1)}%` : `${report.overallDeviation.toFixed(1)}%`;
+  table += `| **TOTAL**            | **${report.totalWorked.toFixed(2).padStart(10)}** | **${report.totalExpected.toFixed(2).padStart(6)}** | **${totalDiffStr.padStart(8)}** | **${totalDeviationStr.padStart(9)}** |    |\n`;
   
   return table;
 }
