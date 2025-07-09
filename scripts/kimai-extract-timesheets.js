@@ -3,7 +3,8 @@
 const fs = require('fs');
 const path = require('path');
 const { format, addDays, startOfDay, endOfDay } = require('date-fns');
-const KimaiClient = require('../shared/kimai-client');
+const KimaiAPI = require('../kimai/services/KimaiAPI');
+const PayPeriodCalculator = require('../shared/pay-period-calculator');
 require('dotenv').config();
 
 // Configuration
@@ -15,34 +16,29 @@ const config = {
     password: process.env.KIMAI_PASSWORD
   },
   outputDir: process.env.TIMESHEET_OUTPUT_DIR || './timesheets',
-  payPeriodDays: parseInt(process.env.PAY_PERIOD_DAYS || '14'),
   extractAfterDays: parseInt(process.env.EXTRACT_AFTER_DAYS || '7') // Extract after 7 days into pay period
 };
 
 // Calculate current pay period
 function getCurrentPayPeriod() {
+  const calculator = new PayPeriodCalculator();
+  const periodInfo = calculator.getCurrentPeriodInfo();
+  
+  // Calculate days elapsed in current period
   const now = new Date();
-  const payPeriodStart = new Date(process.env.PAY_PERIOD_START || '2024-01-01');
-  
-  // Calculate days since first pay period
-  const daysSinceStart = Math.floor((now - payPeriodStart) / (1000 * 60 * 60 * 24));
-  const currentPeriod = Math.floor(daysSinceStart / config.payPeriodDays);
-  
-  // Calculate current period dates
-  const periodStart = addDays(payPeriodStart, currentPeriod * config.payPeriodDays);
-  const periodEnd = addDays(periodStart, config.payPeriodDays - 1);
+  const daysElapsed = Math.floor((now - periodInfo.currentPeriod.startDate) / (1000 * 60 * 60 * 24)) + 1;
   
   return {
-    start: startOfDay(periodStart),
-    end: endOfDay(periodEnd),
-    daysElapsed: daysSinceStart % config.payPeriodDays + 1,
-    periodNumber: currentPeriod + 1
+    start: periodInfo.currentPeriod.startDate,
+    end: periodInfo.currentPeriod.endDate,
+    daysElapsed: daysElapsed,
+    periodNumber: periodInfo.currentPeriod.number
   };
 }
 
 // Extract timesheets for a date range
 async function extractTimesheets(startDate, endDate, outputPath) {
-  const client = new KimaiClient(config.kimai);
+  const client = new KimaiAPI(config.kimai);
   
   try {
     console.log(`Extracting timesheets from ${format(startDate, 'yyyy-MM-dd')} to ${format(endDate, 'yyyy-MM-dd')}...`);
@@ -169,8 +165,6 @@ Environment Variables:
   KIMAI_USERNAME       Username (if API key not available)
   KIMAI_PASSWORD       Password (if API key not available)
   TIMESHEET_OUTPUT_DIR Output directory (default: ./timesheets)
-  PAY_PERIOD_DAYS      Days per pay period (default: 14)
-  PAY_PERIOD_START     First pay period start date
   EXTRACT_AFTER_DAYS   Days to wait before extraction (default: 7)
 `);
   process.exit(0);

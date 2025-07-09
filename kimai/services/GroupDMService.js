@@ -16,29 +16,15 @@ class GroupDMService {
     
     this.userService = new UserService();
     this.botId = process.env.PUMBLE_BOT_ID || config.botId;
-    this.managerIds = config.managerIds || this.getManagerIds();
+    
+    // Get Mikhail's ID from users.json
+    const mikhail = this.userService.getActiveUsers().find(u => u.id === 'mikhail-stepanov');
+    this.mikhailId = mikhail.services.pumble.id;
+    
     this.cacheFile = path.join(__dirname, '../data/conversation-cache.json');
     this.conversationCache = null; // Will be loaded from file
   }
 
-  /**
-   * Get manager IDs from environment or config
-   */
-  getManagerIds() {
-    // Option 1: From environment variable
-    if (process.env.MANAGER_PUMBLE_IDS) {
-      return process.env.MANAGER_PUMBLE_IDS.split(',').map(id => id.trim());
-    }
-    
-    // Option 2: From user service by email
-    const managerEmails = process.env.MANAGER_EMAILS?.split(',') || [];
-    return managerEmails
-      .map(email => {
-        const user = this.userService.getActiveUsers().find(u => u.email === email.trim());
-        return user?.services?.pumble?.id;
-      })
-      .filter(Boolean);
-  }
 
   /**
    * Load conversation cache from file
@@ -67,16 +53,15 @@ class GroupDMService {
   }
 
   /**
-   * Get or create group DM between bot, user, and managers
+   * Get or create group DM between bot, user, and Mikhail
    */
-  async getOrCreateGroupDM(userId, managerIds = null) {
+  async getOrCreateGroupDM(userId) {
     try {
       // Load cache
       await this.loadCache();
       
-      // Always include bot in the conversation
-      const managers = managerIds || this.managerIds;
-      const participants = [this.botId, userId, ...managers];
+      // Group DM participants: bot, user, and Mikhail
+      const participants = [this.botId, userId, this.mikhailId];
       
       // Create cache key from sorted participant IDs
       const cacheKey = participants.sort().join('-');
@@ -157,22 +142,29 @@ class GroupDMService {
    * Send timesheet reminder group DM
    */
   async sendTimesheetReminder(user, timesheetData) {
-    const { hours, missing, period } = timesheetData;
+    const { hours, period } = timesheetData;
+    
+    // Get expected hours from user data (default to 80 if not specified)
+    const expectedHours = user.expectedHours || 80;
+    const acceptableMinimum = expectedHours - 3; // 3 hours tolerance is the maximum allowed
+    
+    // Format dates
+    const { format } = require('date-fns');
+    const periodStr = `${format(period.start, 'MMM d')} - ${format(period.end, 'MMM d')}`;
+    
+    // Period number is always defined
+    const periodNumber = period.number;
     
     // Format the message
-    const message = [
-      `⚠️ **Timesheet Reminder**`,
-      ``,
-      `${user.services?.pumble?.mention || user.name} has an incomplete timesheet:`,
-      ``,
-      `📊 Current hours: ${hours}h`,
-      `⏳ Missing hours: ${missing}h`,
-      `📅 Pay period: ${period.start} - ${period.end}`,
-      ``,
-      `Please complete your timesheet before the deadline.`,
-      ``,
-      `_Automated reminder sent to user + managers_`
-    ].join('\n');
+    const message = `Hi ${user.name},
+
+You logged **${hours} hours**, which is less than the acceptable range of **${acceptableMinimum} hours**. Expected hours are **${expectedHours}** for you for each pay period.
+
+**Pay Period #${periodNumber}:** ${periodStr}
+
+Please double check that you didn't miss the submission - ignore this message if you think your submission is right.
+
+cc: @mikhail`;
     
     return this.sendGroupDM(user.services.pumble.id, message);
   }

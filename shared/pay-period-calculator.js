@@ -148,6 +148,20 @@ Thank you.
     
     return Math.max(0, diffDays);
   }
+
+  // Get current pay period (simplified format for services)
+  getCurrentPayPeriod(date = new Date()) {
+    const periodInfo = this.getCurrentPeriodInfo(date);
+    const { currentPeriod } = periodInfo;
+    
+    return {
+      id: `${currentPeriod.startDate.getFullYear()}-${currentPeriod.number}`,
+      number: currentPeriod.number,
+      start: currentPeriod.startDate,
+      end: currentPeriod.endDate,
+      paymentDate: currentPeriod.paymentDate
+    };
+  }
 }
 
 module.exports = PayPeriodCalculator;

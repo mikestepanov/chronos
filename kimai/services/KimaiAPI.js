@@ -159,6 +159,42 @@ class KimaiAPI {
   }
 
   /**
+   * Get all users
+   * @returns {Promise<Array>} User list
+   */
+  async getUsers() {
+    const headers = await this.getHeaders();
+    
+    const response = await this.axios.get(`${this.baseUrl}/api/users`, {
+      headers
+    });
+
+    if (response.status !== 200) {
+      throw new Error(`Users fetch failed: ${response.status} - ${response.statusText}`);
+    }
+
+    return response.data;
+  }
+
+  /**
+   * Get all projects
+   * @returns {Promise<Array>} Project list
+   */
+  async getProjects() {
+    const headers = await this.getHeaders();
+    
+    const response = await this.axios.get(`${this.baseUrl}/api/projects`, {
+      headers
+    });
+
+    if (response.status !== 200) {
+      throw new Error(`Projects fetch failed: ${response.status} - ${response.statusText}`);
+    }
+
+    return response.data;
+  }
+
+  /**
    * Test API connection
    * @returns {Promise<boolean>}
    */

@@ -1,0 +1,18 @@
+Timesheet Summary
+==================================================
+
+Total Entries: 108
+Total Hours: 372.37
+
+Hours by User ID:
+------------------------------
+User 12              85.75 hours
+User 8               81.00 hours
+User 5               80.50 hours
+User 9               66.00 hours
+User 3               49.75 hours
+User 7                9.37 hours
+
+Hours by Project:
+------------------------------
+Unknown                  372.37 hours

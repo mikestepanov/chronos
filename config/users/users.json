@@ -6,6 +6,7 @@
       "email": "mikhail@starthub.academy",
       "active": true,
       "team": "dev",
+      "expectedHours": 0,
       "services": {
         "kimai": {
           "id": 4,
@@ -24,6 +25,7 @@
       "email": "dharam@example.com",
       "active": true,
       "team": "dev",
+      "expectedHours": 80,
       "services": {
         "kimai": {
           "id": 2,
@@ -42,6 +44,7 @@
       "email": "yulia@example.com",
       "active": true,
       "team": "design",
+      "expectedHours": 50,
       "services": {
         "kimai": {
           "id": 3,
@@ -60,6 +63,7 @@
       "email": "raheel@example.com",
       "active": true,
       "team": "dev",
+      "expectedHours": 80,
       "services": {
         "kimai": {
           "id": 5,
@@ -78,6 +82,7 @@
       "email": "eddy@example.com",
       "active": true,
       "team": "dev",
+      "expectedHours": 40,
       "services": {
         "kimai": {
           "id": 7,
@@ -96,6 +101,7 @@
       "email": "ariful@example.com",
       "active": true,
       "team": "dev",
+      "expectedHours": 80,
       "services": {
         "kimai": {
           "id": 8,
@@ -114,6 +120,7 @@
       "email": "mori@example.com",
       "active": true,
       "team": "dev",
+      "expectedHours": 80,
       "services": {
         "kimai": {
           "id": 9,
@@ -132,6 +139,7 @@
       "email": "pauline@example.com",
       "active": true,
       "team": "design",
+      "expectedHours": 80,
       "services": {
         "kimai": {
           "id": 12,

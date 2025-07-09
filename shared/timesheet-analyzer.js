@@ -1,10 +1,12 @@
 const { differenceInDays, parseISO, isWeekend } = require('date-fns');
 
 class TimesheetAnalyzer {
-  constructor(config) {
+  constructor(config = {}) {
     this.minHoursExpected = config.minHoursExpected || 70;
     this.minDaysExpected = config.minDaysExpected || 10;
     this.payPeriodDays = config.payPeriodDays || 14;
+    this.kimaiClient = config.kimaiClient;
+    this.userService = config.userService;
   }
 
   analyzeTimesheets(timesheets, users = []) {
@@ -240,6 +242,64 @@ class TimesheetAnalyzer {
       .map(r => ({ name: r.name, hours: r.totalHours }));
 
     return stats;
+  }
+
+  /**
+   * Get users with incomplete timesheets for a pay period
+   * Filters out users with 0 expected hours (like Mikhail)
+   */
+  async getIncompleteUsers(payPeriod) {
+    if (!this.kimaiClient || !this.userService) {
+      console.warn('TimesheetAnalyzer: kimaiClient or userService not configured');
+      return [];
+    }
+
+    // Get ALL timesheets for the period in ONE call
+    const allTimesheets = await this.kimaiClient.getTimesheets(payPeriod.start, payPeriod.end);
+    
+    // Group timesheets by user
+    const userTimesheets = {};
+    allTimesheets.forEach(entry => {
+      const userId = entry.user;
+      if (!userTimesheets[userId]) {
+        userTimesheets[userId] = [];
+      }
+      userTimesheets[userId].push(entry);
+    });
+
+    // Check each active user
+    const activeUsers = this.userService.getActiveUsers();
+    const incompleteUsers = [];
+
+    for (const user of activeUsers) {
+      // Skip users with 0 expected hours (they don't need reminders)
+      if (user.expectedHours === 0) {
+        continue;
+      }
+
+      const expectedHours = user.expectedHours || 80; // Default to 80
+      const acceptableMinimum = expectedHours - 3;
+      
+      // Get this user's entries
+      const userEntries = userTimesheets[user.services.kimai.id] || [];
+      
+      // Calculate total hours
+      const totalHours = userEntries.reduce((sum, entry) => {
+        return sum + (entry.duration / 3600); // Convert seconds to hours
+      }, 0);
+
+      // Check if below acceptable minimum
+      if (totalHours < acceptableMinimum) {
+        incompleteUsers.push({
+          user: user,
+          hours: Math.round(totalHours),
+          missing: Math.round(acceptableMinimum - totalHours),
+          expectedHours: expectedHours
+        });
+      }
+    }
+
+    return incompleteUsers;
   }
 }
 

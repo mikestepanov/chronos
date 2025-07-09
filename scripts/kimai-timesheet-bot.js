@@ -2,7 +2,7 @@ const { subDays, startOfDay, endOfDay, addDays, isWithinInterval } = require('da
 const csv = require('csv-parse/sync');
 
 const ConfigLoader = require('../shared/config-loader');
-const KimaiClient = require('../shared/kimai-client');
+const KimaiAPI = require('../kimai/services/KimaiAPI');
 const MessagingFactory = require('../shared/messaging-factory');
 const TimesheetAnalyzer = require('../shared/timesheet-analyzer');
 const BotConfig = require('../shared/bot-config');
@@ -10,7 +10,7 @@ const BotConfig = require('../shared/bot-config');
 class KimaiTimesheetBot {
   constructor() {
     this.config = ConfigLoader.load();
-    this.kimai = new KimaiClient(this.config.kimai);
+    this.kimai = new KimaiAPI(this.config.kimai);
     this.messaging = MessagingFactory.create(
       this.config.messaging.platform,
       this.config.messaging[this.config.messaging.platform]

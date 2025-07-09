@@ -1,6 +1,7 @@
 const axios = require('axios');
 const csv = require('csv-parse/sync');
 const { subDays, format, startOfDay, endOfDay } = require('date-fns');
+const KimaiAPI = require('../kimai/services/KimaiAPI');
 
 // Configuration
 const config = {
@@ -24,68 +25,22 @@ const config = {
   }
 };
 
-// Kimai API client
-class KimaiClient {
-  constructor(config) {
-    this.config = config;
-    this.token = null;
-  }
+// Removed inline KimaiClient - using canonical KimaiAPI from /kimai/services/
 
-  async authenticate() {
-    try {
-      const response = await axios.post(`${this.config.baseUrl}/api/login`, {
-        username: this.config.username,
-        password: this.config.password
-      });
-      this.token = response.data.token;
-    } catch (error) {
-      console.error('Kimai authentication failed:', error.message);
-      throw error;
-    }
+// Helper class for Pumble bot functionality
+class PumbleTimesheetBot {
+  constructor() {
+    this.config = config;
+    this.kimai = new KimaiAPI(config.kimai);
   }
 
   async getTimesheets(startDate, endDate) {
-    if (!this.token) await this.authenticate();
-
-    try {
-      const response = await axios.get(`${this.config.baseUrl}/api/timesheets`, {
-        headers: {
-          'Authorization': `Bearer ${this.token}`,
-          'X-AUTH-TOKEN': this.config.apiKey
-        },
-        params: {
-          begin: format(startDate, 'yyyy-MM-dd'),
-          end: format(endDate, 'yyyy-MM-dd'),
-          size: 1000
-        }
-      });
-      return response.data;
-    } catch (error) {
-      console.error('Failed to fetch timesheets:', error.message);
-      throw error;
-    }
+    return await this.kimai.getTimesheets(startDate, endDate);
   }
 
   async exportCSV(startDate, endDate) {
-    if (!this.token) await this.authenticate();
-
-    try {
-      const response = await axios.get(`${this.config.baseUrl}/api/export/csv`, {
-        headers: {
-          'Authorization': `Bearer ${this.token}`,
-          'X-AUTH-TOKEN': this.config.apiKey
-        },
-        params: {
-          begin: format(startDate, 'yyyy-MM-dd'),
-          end: format(endDate, 'yyyy-MM-dd')
-        },
-        responseType: 'text'
-      });
-      return csv.parse(response.data, { columns: true });
-    } catch (error) {
-      console.error('Failed to export CSV:', error.message);
-      throw error;
-    }
+    const csvData = await this.kimai.exportCSV(startDate, endDate);
+    return csv.parse(csvData, { columns: true });
   }
 }
 
@@ -212,7 +167,7 @@ class TimesheetAnalyzer {
 // Main bot logic
 class KimaiPumbleBot {
   constructor() {
-    this.kimai = new KimaiClient(config.kimai);
+    this.kimai = new PumbleTimesheetBot();
     this.pumble = new PumbleClient(config.pumble);
     this.analyzer = new TimesheetAnalyzer(config.payPeriod.minHoursExpected);
   }

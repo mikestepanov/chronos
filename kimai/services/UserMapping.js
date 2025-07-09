@@ -1,6 +1,6 @@
 const fs = require('fs').promises;
 const path = require('path');
-const UserService = require('../../users/UserService');
+const UserService = require('../../config/users/UserService');
 
 /**
  * User Mapping Service - Adapter for legacy code
