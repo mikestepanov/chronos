@@ -1,5 +1,45 @@
 # Claude Development Guidelines
 
+## Kimai Data Extraction
+
+### Getting Latest Complete Pay Period Data
+
+To extract the latest complete pay period from Kimai with hours compliance report:
+
+```bash
+node scripts/kimai-hours-report.js
+```
+
+This will:
+1. Automatically determine the most recent complete pay period
+2. Extract all timesheet data from Kimai
+3. Save versioned data to `kimai-data/YYYY-MM-DD/` with checksum tracking
+4. Generate a compliance report comparing actual vs expected hours
+
+**Output format:**
+```
+| User | Hours Worked | Expected | Difference | % of Expected | Status |
+|------|--------------|----------|------------|---------------|--------|
+| Pauline Nguyen       |        85.25 |    80.00 |      +5.25 |         106.6% | ✅ |
+| Raheel Shahzad       |        77.00 |    80.00 |      -3.00 |          96.3% | ✅ |
+| ...
+```
+
+**Data Storage:**
+- CSV files are stored in `kimai-data/YYYY-MM-DD/v{N}.csv`
+- Metadata with checksums in `kimai-data/YYYY-MM-DD/metadata.json`
+- Version tracking prevents duplicate extractions
+
+### Programmatic Usage
+
+```javascript
+const { getMostRecentPayPeriodHoursReport } = require('./scripts/kimai-hours-report');
+
+const result = await getMostRecentPayPeriodHoursReport();
+console.log(result.table);  // Formatted compliance table
+console.log(result.files);  // { csv: 'path/to/csv', metadata: 'path/to/metadata.json' }
+```
+
 ## Architecture Principles
 
 ### Separation of Concerns

@@ -5,6 +5,7 @@ const path = require('path');
 const { format } = require('date-fns');
 const PayPeriodCalculator = require('../shared/pay-period-calculator');
 const KimaiAPI = require('../kimai/services/KimaiAPI');
+const StorageFactory = require('../kimai/storage/StorageFactory');
 require('dotenv').config();
 
 // Configuration
@@ -15,8 +16,15 @@ const config = {
     username: process.env.KIMAI_USERNAME,
     password: process.env.KIMAI_PASSWORD
   },
-  outputDir: process.env.TIMESHEET_OUTPUT_DIR || './timesheets',
-  usersConfigPath: path.join(__dirname, '../config/users/users.json')
+  usersConfigPath: path.join(__dirname, '../config/users/users.json'),
+  storage: {
+    type: process.env.STORAGE_TYPE || 'file',
+    basePath: process.env.STORAGE_PATH || './kimai-data',
+    git: {
+      autoCommit: process.env.GIT_AUTO_COMMIT !== 'false',
+      autoPush: process.env.GIT_AUTO_PUSH === 'true'
+    }
+  }
 };
 
 /**
@@ -52,53 +60,46 @@ function getMostRecentCompletePayPeriod() {
 }
 
 /**
- * Extract timesheets for a given period and save to files
+ * Extract timesheets for a given period and save using versioned storage
  * @param {Date} startDate 
  * @param {Date} endDate 
  * @param {Number} periodNumber
- * @returns {Promise<Object>} Timesheet data and file paths
+ * @returns {Promise<Object>} Timesheet data and storage info
  */
 async function extractTimesheetsAndSave(startDate, endDate, periodNumber) {
   const client = new KimaiAPI(config.kimai);
+  const storage = StorageFactory.create(config);
   
   try {
-    // Create output filename
-    const dateRange = `${format(startDate, 'yyyyMMdd')}-${format(endDate, 'yyyyMMdd')}`;
-    const baseFilename = `timesheets_period${periodNumber}_${dateRange}`;
-    
-    // Ensure output directory exists
-    if (!fs.existsSync(config.outputDir)) {
-      fs.mkdirSync(config.outputDir, { recursive: true });
-    }
-    
     // Get timesheets data
     const timesheets = await client.getTimesheets(startDate, endDate);
     
-    // Save JSON
-    const jsonPath = path.join(config.outputDir, `${baseFilename}.json`);
-    fs.writeFileSync(jsonPath, JSON.stringify(timesheets, null, 2));
-    
-    // Get and save CSV
+    // Get CSV data
     const csvData = await client.exportCSV(startDate, endDate);
-    const csvPath = path.join(config.outputDir, `${baseFilename}.csv`);
-    fs.writeFileSync(csvPath, csvData);
     
-    // Generate and save summary
-    const summary = generateSummary(timesheets);
-    const summaryPath = path.join(config.outputDir, `${baseFilename}_summary.txt`);
-    fs.writeFileSync(summaryPath, summary);
+    // Period ID is the start date in YYYY-MM-DD format
+    const periodId = format(startDate, 'yyyy-MM-dd');
     
-    console.log(`✓ Files saved:`);
-    console.log(`  - ${csvPath}`);
-    console.log(`  - ${jsonPath}`);
-    console.log(`  - ${summaryPath}`);
+    // Save using versioned storage
+    const storageResult = await storage.save(periodId, csvData, {
+      periodNumber,
+      startDate: startDate.toISOString(),
+      endDate: endDate.toISOString(),
+      extractedBy: 'kimai-hours-report'
+    });
+    
+    console.log(`✓ Data saved to kimai-data/${periodId}/`);
+    console.log(`  - Version: ${storageResult.version}`);
+    console.log(`  - Records: ${storageResult.recordCount}`);
+    console.log(`  - New version: ${storageResult.isNewVersion ? 'Yes' : 'No (unchanged)'}`);
     
     return {
       timesheets,
+      storageResult,
+      periodId,
       files: {
-        csv: csvPath,
-        json: jsonPath,
-        summary: summaryPath
+        csv: `kimai-data/${periodId}/v${storageResult.version}.csv`,
+        metadata: `kimai-data/${periodId}/metadata.json`
       }
     };
   } catch (error) {
@@ -107,46 +108,6 @@ async function extractTimesheetsAndSave(startDate, endDate, periodNumber) {
   }
 }
 
-/**
- * Generate summary text
- * @param {Array} timesheets 
- * @returns {String} Summary text
- */
-function generateSummary(timesheets) {
-  const userHours = {};
-  const projectHours = {};
-  let totalHours = 0;
-  
-  timesheets.forEach(entry => {
-    const hours = entry.duration / 3600;
-    const userId = entry.user;
-    const projectName = entry.project?.name || 'Unknown';
-    
-    userHours[userId] = (userHours[userId] || 0) + hours;
-    projectHours[projectName] = (projectHours[projectName] || 0) + hours;
-    totalHours += hours;
-  });
-  
-  let summary = `Timesheet Summary\n${'='.repeat(50)}\n\n`;
-  summary += `Total Entries: ${timesheets.length}\n`;
-  summary += `Total Hours: ${totalHours.toFixed(2)}\n\n`;
-  
-  summary += `Hours by User ID:\n${'-'.repeat(30)}\n`;
-  Object.entries(userHours)
-    .sort((a, b) => b[1] - a[1])
-    .forEach(([userId, hours]) => {
-      summary += `User ${userId.toString().padEnd(10)} ${hours.toFixed(2).padStart(10)} hours\n`;
-    });
-  
-  summary += `\nHours by Project:\n${'-'.repeat(30)}\n`;
-  Object.entries(projectHours)
-    .sort((a, b) => b[1] - a[1])
-    .forEach(([project, hours]) => {
-      summary += `${project.padEnd(20)} ${hours.toFixed(2).padStart(10)} hours\n`;
-    });
-  
-  return summary;
-}
 
 /**
  * Generate hours comparison report
