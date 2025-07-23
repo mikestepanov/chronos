@@ -1,12 +1,12 @@
 {
   "pumble": {
     "dev": {
-      "id": "C06MVPXQ8CB",
+      "id": "66934de10aeebd36fe26f468",
       "name": "dev",
       "description": "Development team channel"
     },
     "design": {
-      "id": "C06MW1Y59US", 
+      "id": "66b6450b791a8769092d6f89", 
       "name": "design",
       "description": "Design team channel"
     },

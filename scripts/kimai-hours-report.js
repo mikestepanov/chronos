@@ -148,8 +148,8 @@ function generateHoursReport(timesheets, users) {
     const expected = userInfo.expectedHours;
     const diff = hours - expected;
     const percentDeviation = expected > 0 ? ((diff / expected) * 100) : (hours > 0 ? 100 : 0);
-    // Status: ✅ only if within ±3 hours (not just -3)
-    const status = (hours >= (expected - 3) && hours <= (expected + 3)) ? '✅' : '❌';
+    // Status: ✓ only if within ±3 hours
+    const status = Math.abs(diff) <= 3 ? '✓' : '✗';
     
     totalWorked += hours;
     totalExpected += expected;
@@ -175,7 +175,7 @@ function generateHoursReport(timesheets, users) {
         expectedHours: userInfo.expectedHours,
         difference: -userInfo.expectedHours,
         percentDeviation: -100,
-        status: '❌'
+        status: '✗'
       });
     }
   });
@@ -211,7 +211,7 @@ function formatReportAsTable(report) {
   const totalDiff = report.totalWorked - report.totalExpected;
   const totalDiffStr = totalDiff >= 0 ? `+${totalDiff.toFixed(2)}` : totalDiff.toFixed(2);
   const totalDeviationStr = report.overallDeviation >= 0 ? `+${report.overallDeviation.toFixed(1)}%` : `${report.overallDeviation.toFixed(1)}%`;
-  table += `| **TOTAL**            | **${report.totalWorked.toFixed(2).padStart(10)}** | **${report.totalExpected.toFixed(2).padStart(6)}** | **${totalDiffStr.padStart(8)}** | **${totalDeviationStr.padStart(9)}** |    |\n`;
+  table += `| TOTAL                | ${report.totalWorked.toFixed(2).padStart(12)} | ${report.totalExpected.toFixed(2).padStart(8)} | ${totalDiffStr.padStart(10)} | ${totalDeviationStr.padStart(11)} |    |\n`;
   
   return table;
 }
@@ -238,11 +238,23 @@ async function getMostRecentPayPeriodHoursReport() {
     const report = generateHoursReport(timesheets, users);
     const table = formatReportAsTable(report);
     
+    // Save the formatted table to a file
+    const reportPath = path.join(config.storage.basePath, extractResult.periodId, 'hours-report.txt');
+    const reportContent = `Hours Compliance Report - Pay Period #${period.number}\n` +
+                         `Period: ${format(period.start, 'MMM dd')} - ${format(period.end, 'MMM dd, yyyy')}\n` +
+                         `Generated: ${new Date().toISOString()}\n\n` +
+                         table;
+    fs.writeFileSync(reportPath, reportContent, 'utf8');
+    console.log(`✓ Report saved to ${reportPath}`);
+    
     return {
       period: period,
       report: report,
       table: table,
-      files: extractResult.files
+      files: {
+        ...extractResult.files,
+        report: reportPath
+      }
     };
   } catch (error) {
     console.error('Error generating report:', error.message);

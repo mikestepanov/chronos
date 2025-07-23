@@ -2,32 +2,111 @@
 
 ## Kimai Data Extraction
 
-### Getting Latest Complete Pay Period Data
+### Identifying Pay Period from CSV Export
 
-To extract the latest complete pay period from Kimai with hours compliance report:
+To identify which pay period(s) a Kimai CSV export covers:
 
 ```bash
-node scripts/kimai-hours-report.js
+node scripts/identify-pay-period.js <csv-file-path>
+```
+
+Example output:
+```
+CSV Date Range: 2025-07-08 to 2025-07-21
+Total Entries: 127
+
+Pay Periods Found:
+
+Period #20: 2025-07-08 to 2025-07-22
+  Entries: 127 (100.0%)
+  Dates: 2025-07-08, 2025-07-09, ... 2025-07-21
+
+Primary Period: #20 with 127 entries
+```
+
+This helps you quickly determine:
+- Which pay period number the data belongs to
+- The date range of entries in the CSV
+- If data spans multiple pay periods
+- Which period has the most entries (primary period)
+
+### Importing Manual CSV Exports
+
+To import a manually exported Kimai CSV file into the versioned storage system:
+
+```bash
+node scripts/import-kimai-csv.js <csv-file-path>
+```
+
+This will:
+- Identify which pay period the data belongs to
+- Import it into the proper `kimai-data/YYYY-MM-DD/` directory
+- Create versioned storage with metadata tracking
+- Handle duplicate data (won't create new version if data unchanged)
+
+### Generating Hours Report from CSV
+
+To generate an hours compliance report from a CSV file:
+
+```bash
+node scripts/generate-hours-report-from-csv.js <csv-file-path>
+```
+
+Example output shows compliance status for each user:
+- ✓ = Within ±3 hours of expected (compliant)
+- ✗ = More than 3 hours deviation (non-compliant)
+
+### Getting Latest Complete Pay Period Data
+
+**Automated Pull** - The recommended approach:
+
+```bash
+# One-time setup
+pnpm install
+pnpm exec playwright install chromium
+
+# Add to .env file:
+KIMAI_USERNAME=your_kimai_username
+KIMAI_PASSWORD=your_kimai_password
+
+# Pull latest data (or use slash command: /pull-kimai)
+pnpm run pull-kimai
 ```
 
 This will:
 1. Automatically determine the most recent complete pay period
-2. Extract all timesheet data from Kimai
-3. Save versioned data to `kimai-data/YYYY-MM-DD/` with checksum tracking
-4. Generate a compliance report comparing actual vs expected hours
+2. Log into Kimai using credentials from `.env`
+3. Export CSV data via browser automation
+4. Save versioned data to `kimai-data/YYYY-MM-DD/` with checksum tracking
+5. Generate a compliance report comparing actual vs expected hours
+
+**Manual Export** (if automation fails):
+
+```bash
+# Get export instructions
+node scripts/kimai-hours-report-v2.js
+
+# Process downloaded CSV
+node scripts/kimai-hours-report-v2.js ~/Downloads/kimai-export.csv
+```
 
 **Output format:**
 ```
-| User | Hours Worked | Expected | Difference | % of Expected | Status |
-|------|--------------|----------|------------|---------------|--------|
-| Pauline Nguyen       |        85.25 |    80.00 |      +5.25 |         106.6% | ✅ |
-| Raheel Shahzad       |        77.00 |    80.00 |      -3.00 |          96.3% | ✅ |
+| User | Hours Worked | Expected | Difference | % Deviation | Status |
+|------|--------------|----------|------------|-------------|--------|
+| Pauline Nguyen       |        85.25 |    80.00 |      +5.25 |       +6.6% | ✗ |
+| Raheel Shahzad       |        77.00 |    80.00 |      -3.00 |       -3.8% | ✓ |
 | ...
 ```
+
+**Compliance Threshold:**
+- Status shows ✓ if hours worked are within ±3 hours of expected (not percentage based)
+- Status shows ✗ if the difference exceeds 3 hours in either direction
 
 **Data Storage:**
 - CSV files are stored in `kimai-data/YYYY-MM-DD/v{N}.csv`
 - Metadata with checksums in `kimai-data/YYYY-MM-DD/metadata.json`
+- Hours compliance report saved to `kimai-data/YYYY-MM-DD/hours-report.txt`
 - Version tracking prevents duplicate extractions
 
 ### Programmatic Usage
@@ -37,7 +116,7 @@ const { getMostRecentPayPeriodHoursReport } = require('./scripts/kimai-hours-rep
 
 const result = await getMostRecentPayPeriodHoursReport();
 console.log(result.table);  // Formatted compliance table
-console.log(result.files);  // { csv: 'path/to/csv', metadata: 'path/to/metadata.json' }
+console.log(result.files);  // { csv: 'path/to/csv', metadata: 'path/to/metadata.json', report: 'path/to/hours-report.txt' }
 ```
 
 ## Architecture Principles

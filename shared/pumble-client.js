@@ -11,6 +11,7 @@ class PumbleClient extends MessagingInterface {
   }
 
   async sendMessage(channelId, text, asBot = false) {
+    // IMPORTANT: asBot MUST BE ALWAYS FALSE - Agent Smith authenticates as a real user, not a bot
     try {
       const response = await axios.post(`${this.baseUrl}/sendMessage`, {
         channelId,

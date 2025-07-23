@@ -1,109 +1,162 @@
-Date,User,Duration,Project,Activity,Description
-"2025-07-07","Ariful","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-07-07","Ariful","8.00","","","Tested createBooking & updateBooking mutations with real data in different timezones. Seeded bookings for various mentors; verified serialized Date output in GraphQL. Final cleanup: ensured consistent Date serialization for startTime and endTime.  Ran eslint --fix across modules; verified working end-to-end for Products; Purchases; and Bookings."
-"2025-07-07","Raheel Shahzad","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-07-07","Pauline Nguyen","0.50","","","Yulia Call"
-"2025-07-07","Yulia","4.50","","","Created 4 new variations of pricing cards for the Booking page"
-"2025-07-07","Mori Isaac","7.00","","","Workin on mentor search functionality"
-"2025-07-07","Yulia","0.50","","","Helped Pauline with component organization"
-"2025-07-07","Mori Isaac","0.50","","","FTE Engineering Team Sync Up"
-"2025-07-06","Raheel Shahzad","8.00","","","Refactor booking page (1-on-1 coaching) listing"
-"2025-07-05","Pauline Nguyen","7.00","","","Augment-inspired Worksheet"
-"2025-07-05","Pauline Nguyen","2.50","","","Augment-inspired Worksheet"
-"2025-07-04","Pauline Nguyen","1.50","","","Augment-inspired Worksheet"
-"2025-07-04","Yulia","4.50","","","Fixed the discrepancies after Hamin's worked on the Scenarios dark mode and tabled."
-"2025-07-04","Ariful","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-07-04","Ariful","7.50","","","Added CreateBookingInput and UpdateBookingInput with validation and Date transforms. Connected Booking CQRS: RabbitMQ service; contracts; and event handlers."
-"2025-07-04","Raheel Shahzad","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-07-04","Pauline Nguyen","6.00","","","Augment-inspired Worksheet"
-"2025-07-04","Mori Isaac","7.00","","","investigate and figure out about the mentor is not populating."
-"2025-07-04","Mori Isaac","0.50","","","FTE Engineering Team Sync Up"
-"2025-07-03","Raheel Shahzad","8.00","","","Refactor booking page (1-on-1 coaching)"
-"2025-07-03","Pauline Nguyen","2.00","","","Augment-inspired Worksheet"
-"2025-07-03","Pauline Nguyen","7.75","","","Augment-inspired Worksheet"
-"2025-07-03","Ariful","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-07-03","Ariful","7.50","","","Started Booking module: defined IBooking; BookingModel; and Mongoose schema. Implemented BookingStatus enums; startTime/endTime fields with ISO Date handling."
-"2025-07-03","Raheel Shahzad","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-07-03","Yulia","3.50","","","reviewed hamins scenarios"
-"2025-07-03","Yulia","0.50","","","Addy"
-"2025-07-03","Mori Isaac","7.50","","","add category validation message and update schemas to enforce category requirement"
-"2025-07-03","Mori Isaac","0.50","","","FTE Engineering Team Sync Up"
-"2025-07-02","Raheel Shahzad","8.00","","","Refactor booking page (1-on-1 coaching)"
-"2025-07-02","Pauline Nguyen","1.50","","","Augment-inspired Worksheet"
-"2025-07-02","Pauline Nguyen","5.00","","","Augment-inspired Worksheet"
-"2025-07-02","Yulia","2.50","","","Reviewed Paulines graphics components"
-"2025-07-02","Ariful","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-07-02","Ariful","7.50","","","After the migration PR; the functionality for both Products and Purchases was broken due to multiple conflicts. Even after resolving the conflicts; some functionality remained broken and certain files were missing. I am currently working on fixing these issues."
-"2025-07-02","Pauline Nguyen","1.25","","","Augment-inspired Worksheet"
-"2025-07-02","Raheel Shahzad","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-07-02","Pauline Nguyen","0.50","","","Yulia Call"
-"2025-07-02","Yulia","5.50","","","Worked on the new variation for card ratio; Created a new variation of filters for Booking. Worked on the avatar component (helped Pauline). Created variations for booking mentor's time slots."
-"2025-07-02","Yulia","0.50","","","Meeting with Pauline"
-"2025-07-02","Mori Isaac","6.00","","","update padding and class assignment for icon in SettingsPanelItem"
-"2025-07-02","Mori Isaac","0.50","","","FTE Engineering Team Sync Up"
-"2025-07-01","Raheel Shahzad","8.00","","","Refactor booking page (1-on-1 coaching)"
-"2025-07-01","Yulia","0.75","","","Design sync up"
-"2025-07-01","Pauline Nguyen","5.00","","","Read Ai for Augment-inspired Worksheet Augment-inspired Worksheets"
-"2025-07-01","Pauline Nguyen","0.50","","","Mikhail Call"
-"2025-07-01","Ariful","0.25","","","Alex: Sync Up"
-"2025-07-01","Ariful","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-07-01","Ariful","7.50","","","Resolved typing issues and done feature validation and resolved the issues that found during self validation and raised pr for the same"
-"2025-07-01","Pauline Nguyen","0.75","","","Weekly Design Sync Up"
-"2025-07-01","Raheel Shahzad","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-07-01","Raheel Shahzad","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-07-01","Yulia","4.25","","","Landing. Implemented changes on the Landing page; Graphics booklet and couple on the Booking."
-"2025-07-01","Mori Isaac","0.50","","","FTE Engineering Team Sync Up"
-"2025-06-30","Raheel Shahzad","8.00","","","Refactor booking page (1-on-1 coaching)"
-"2025-06-30","Ariful","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-06-30","Ariful","7.50","","","Resolved merge conflicts after product/purchase schema migration. Debugged GraphQL type issues with nested payment and refund fields."
-"2025-06-30","Pauline Nguyen","1.75","","","Graphics Component & Reorganizing"
-"2025-06-30","Yulia","5.00","","","Fixed comments on the Graphics page. Worked on new flow for 1to1 coaching. Fixing comments on 1to1 coaching page. Reviewed Addy's new templates."
-"2025-06-30","Yulia","0.75","","","With Addy + Mike"
-"2025-06-30","Mori Isaac","6.50","","","adjust padding for content and sidebar layout"
-"2025-06-30","Mori Isaac","0.50","","","FTE Engineering Team Sync Up"
-"2025-06-30","Raheel Shahzad","4.00","","","First time-onboarding"
-"2025-06-29","Raheel Shahzad","4.00","","","Fix issue with the filters such as 'bookmarked'"
-"2025-06-29","Pauline Nguyen","4.50","","","Graphics Component & Reorganizing"
-"2025-06-28","Pauline Nguyen","4.00","","","Graphics Component & Reorganizing"
-"2025-06-28","Raheel Shahzad","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-06-28","Pauline Nguyen","8.25","","","Graphics Component & Reorganizing"
-"2025-06-27","Pauline Nguyen","2.00","","","Graphics Component & Reorganizing"
-"2025-06-27","Ariful","8.00","","","Reviewed and refactored IPurchase model and Mongoose schema to align with GraphQL. Fixed GraphQL errors related to mixing @ObjectType and @InputType. Migrated seed data to use new Purchase structure; added booking links to purchases. Verified resolver logic and ensured status enums validate correctly."
-"2025-06-27","Pauline Nguyen","7.75","","","Graphics Component & Reorganizing"
-"2025-06-27","Yulia","0.75","","","Design team sync up + meeting with Mike"
-"2025-06-27","Pauline Nguyen","0.50","","","Meeting with Yulia"
-"2025-06-27","Mori Isaac","6.00","","","integrate Scroller component and adjust padding for layout"
-"2025-06-27","Mori Isaac","0.50","","","FTE Engineering Team Sync Up"
-"2025-06-27","Yulia","4.00","","","Resolved comments from Mike on Graphics; Tools and templates and admin dashboard views.Created couple variations of deals and discounts admin views."
-"2025-06-26","Raheel Shahzad","8.00","","","Fixed Scenario issue and working on Bookmark"
-"2025-06-26","Pauline Nguyen","3.50","","","Graphics Component & Reorganizing"
-"2025-06-26","Eddy","4.00","","","Continued with Email Templates Card Design."
-"2025-06-26","Ariful","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-06-26","Ariful","7.50","","","Finished GraphQL queries & mutations for createPurchase and updatePurchase. Added dynamic PurchaseOrderByField enums and test seeds for purchase records."
-"2025-06-26","Pauline Nguyen","2.25","","","Graphics Component & Reorganizing"
-"2025-06-26","Raheel Shahzad","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-06-26","Mori Isaac","6.50","","","add navigation links for sidebar and header components"
-"2025-06-26","Mori Isaac","0.50","","","FTE Engineering Team Sync Up"
-"2025-06-26","Yulia","6.00","","","Graphics. Implemented changes from Mike's comments. Created 3 more variations for "6 circles futures". Created new variation of skeleton loader for the fonts."
-"2025-06-25","Raheel Shahzad","8.00","","","User preference for timezone and time format v2"
-"2025-06-25","Pauline Nguyen","2.00","","","Graphics Component & Reorganizing"
-"2025-06-25","Eddy","5.37","","","Designed other cards on Version 1; retouched other versions; updated colors to variables on all Version 1 cards; Synced with Mik; and started V6; sketched other protypes outside Figma."
-"2025-06-25","Pauline Nguyen","2.00","","","Graphics Component & Reorganizing"
-"2025-06-25","Ariful","0.25","","","Alex: Sync Up"
-"2025-06-25","Ariful","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-06-25","Ariful","7.50","","","Purchase Module Built initial Purchase model structure with nested items and paymentDetails. Created MoneyModel; PurchaseItemModel; and inputs with proper enum support."
-"2025-06-25","Pauline Nguyen","1.25","","","Graphics Component & Reorganizing"
-"2025-06-25","Raheel Shahzad","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-06-25","Mori Isaac","6.50","","","improve layout and integrate Scroller component"
-"2025-06-25","Mori Isaac","0.50","","","FTE Engineering Team Sync Up"
-"2025-06-24","Raheel Shahzad","8.50","","","User preference for timezone and time format v2"
-"2025-06-24","Pauline Nguyen","3.50","","","Graphics Component & Reorganizing"
-"2025-06-24","Ariful","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-06-24","Ariful","7.50","","","Developed getProducts and getProductById queries with GraphQL union types. Seeded subscription & mentor products for local testing; verified discriminated union shape."
-"2025-06-24","Pauline Nguyen","0.75","","","Weekly Design Sync Up"
-"2025-06-24","Raheel Shahzad","0.50","","","StartHub | FTE Engineering Team Sync Up"
-"2025-06-24","Yulia","2.25","","","Meeting with Mike + Hamin's onboarding + Design sync"
-"2025-06-24","Yulia","4.00","","","Started to work on the comments from Mike on the Booking page. Created a new variation of 6 futures in Graphics."
-"2025-06-24","Mori Isaac","0.50","","","FTE Engineering Team Sync Up"
-"2025-06-24","Mori Isaac","8.00","","","scroller on sidebar"
-"2025-06-24","Raheel Shahzad","3.00","","","Onboarding: add ampm/24 hours option and timezone selection"
+Date,From,To,Duration,Currency,Price,"Internal price","Hourly price","Fixed price",Name,User,"Staff number",Customer,Project,Activity,Description,Billable,Tags,Type,category,Account,"Project number",VAT-ID,"Order number"
+2025-07-07,20:00,20:45,0:45,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy Bug on gotrue",1,,timesheet,work,0002,0014,,
+2025-07-07,22:09,22:39,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0016,,
+2025-07-07,22:09,06:09,8:00,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Programming,"Tested createBooking & updateBooking mutations with real data in different timezones.
+Seeded bookings for various mentors; verified serialized Date output in GraphQL.
+Final cleanup: ensured consistent Date serialization for startTime and endTime.
+
+Ran eslint --fix across modules; verified working end-to-end for Products, Purchases, and Bookings.",1,,timesheet,work,0002,0016,,
+2025-07-07,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-07-07,08:00,08:30,0:30,USD,0,0,0,0,pauline,pauline,,StartHub,"Team Operations",Meeting,"Yulia Call",1,Design,timesheet,work,0002,0014,,
+2025-07-07,12:00,16:30,4:30,USD,0,0,0,0,Yulia,Yulia,,StartHub,"1-to-1 Coaching",Design,"Created 4 new variations of pricing cards for the Booking page",1,,timesheet,work,0002,0006,,
+2025-07-07,14:26,14:41,0:15,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-07-07,07:08,14:08,7:00,USD,0,0,0,0,ariful,ariful,,StartHub,"Mentor Tools & Dashboard","Bug Fixing","Workin on mentor search functionality",1,,timesheet,work,0002,0012,,
+2025-07-07,11:00,11:30,0:30,USD,0,0,0,0,Yulia,Yulia,,StartHub,"Team Operations",Meeting,"Helped Pauline with component organization",1,,timesheet,work,0002,0014,,
+2025-07-07,06:37,07:07,0:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Team Operations",Meeting,"FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-07-07,08:45,10:45,2:00,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy Admin and web configurations",1,,timesheet,work,0002,0014,,
+2025-07-07,09:00,17:00,8:00,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"1-to-1 Coaching","Bug Fixing","Refactor booking page (1-on-1 coaching) listing",1,,timesheet,work,0002,0006,,
+2025-07-06,14:03,15:48,1:45,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Admin and cloud testing",1,"Test Task",timesheet,work,0002,0014,,
+2025-07-05,15:00,22:00,7:00,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Augment-inspired Worksheet",1,Design,timesheet,work,0002,0015,,
+2025-07-05,07:30,10:00,2:30,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Augment-inspired Worksheet",1,Design,timesheet,work,0002,0015,,
+2025-07-05,14:00,17:00,3:00,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Gotrue, web, and admin testing",1,"Test Task",timesheet,work,0002,0014,,
+2025-07-04,15:11,18:11,3:00,USD,0,0,0,0,eddy,eddy,,StartHub,"Tools & Templates",Design,"More Variations of the email Templates cards",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-07-04,15:00,16:30,1:30,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Augment-inspired Worksheet",1,Design,timesheet,work,0002,0015,,
+2025-07-04,18:24,22:54,4:30,USD,0,0,0,0,Yulia,Yulia,,StartHub,Scenarios,"Design Review","Fixed the discrepancies after Hamin's worked on the Scenarios dark mode and tabled.",1,,timesheet,work,0002,0017,,
+2025-07-04,22:08,22:38,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0016,,
+2025-07-04,22:08,05:38,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Programming,"' Added CreateBookingInput and UpdateBookingInput with validation and Date transforms.
+Connected Booking CQRS: RabbitMQ service, contracts, and event handlers.",1,,timesheet,work,0002,0016,,
+2025-07-04,18:15,18:25,0:10,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-07-04,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-07-04,07:30,13:30,6:00,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Augment-inspired Worksheet",1,Design,timesheet,work,0002,0015,,
+2025-07-04,14:15,16:45,2:30,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy Web configurations",1,,timesheet,work,0002,0014,,
+2025-07-04,06:55,13:55,7:00,USD,0,0,0,0,ariful,ariful,,StartHub,"Mentor Tools & Dashboard",Research,"investigate and figure out about the mentor is not populating.",1,,timesheet,work,0002,0012,,
+2025-07-04,06:37,07:07,0:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Team Operations",Meeting,"FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-07-04,08:15,13:45,5:30,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy web configurations",1,,timesheet,work,0002,0014,,
+2025-07-04,09:00,17:00,8:00,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"1-to-1 Coaching","Bug Fixing","Refactor booking page (1-on-1 coaching)",1,,timesheet,work,0002,0006,,
+2025-07-03,22:00,00:00,2:00,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Augment-inspired Worksheet",1,Design,timesheet,work,0002,0015,,
+2025-07-03,13:10,17:40,4:30,USD,0,0,0,0,eddy,eddy,,StartHub,"Tools & Templates",Design,"Continued with Designing Email Templates cards",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-07-03,13:00,20:45,7:45,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Augment-inspired Worksheet",1,Design,timesheet,work,0002,0015,,
+2025-07-03,22:08,22:38,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0016,,
+2025-07-03,22:08,05:38,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Programming,"Started Booking module: defined IBooking, BookingModel, and Mongoose schema.
+Implemented BookingStatus enums, startTime/endTime fields with ISO Date handling.",1,,timesheet,work,0002,0016,,
+2025-07-03,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-07-03,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-07-03,14:30,18:00,3:30,USD,0,0,0,0,Yulia,Yulia,,StartHub,Scenarios,"Design Review","reviewed hamins scenarios",1,,timesheet,work,0002,0017,,
+2025-07-03,14:00,14:30,0:30,USD,0,0,0,0,Yulia,Yulia,,StartHub,"Team Operations",Meeting,Addy,1,,timesheet,work,0002,0014,,
+2025-07-03,15:30,18:00,2:30,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy Web configurations",1,,timesheet,work,0002,0014,,
+2025-07-03,06:48,14:18,7:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Mentor Tools & Dashboard","Bug Fixing","add category validation message and update schemas to enforce category requirement",1,,timesheet,work,0002,0012,,
+2025-07-03,06:37,07:07,0:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Team Operations",Meeting,"FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-07-03,08:15,13:45,5:30,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy Web configuration",1,,timesheet,work,0002,0014,,
+2025-07-03,09:00,17:00,8:00,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"1-to-1 Coaching","Bug Fixing","Refactor booking page (1-on-1 coaching)",1,,timesheet,work,0002,0006,,
+2025-07-02,22:00,23:30,1:30,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Augment-inspired Worksheet",1,Design,timesheet,work,0002,0015,,
+2025-07-02,15:00,20:00,5:00,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Augment-inspired Worksheet",1,Design,timesheet,work,0002,0015,,
+2025-07-02,18:45,21:15,2:30,USD,0,0,0,0,Yulia,Yulia,,StartHub,"Team Operations","Design Review","Reviewed Paulines graphics components",1,,timesheet,work,0002,0014,,
+2025-07-02,22:08,22:38,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0016,,
+2025-07-02,22:08,05:38,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Programming,"After the migration PR, the functionality for both Products and Purchases was broken due to multiple conflicts. Even after resolving the conflicts, some functionality remained broken and certain files were missing. I am currently working on fixing these issues.",1,,timesheet,work,0002,0016,,
+2025-07-02,12:15,13:30,1:15,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Augment-inspired Worksheet",1,Design,timesheet,work,0002,0015,,
+2025-07-02,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-07-02,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-07-02,16:15,17:30,1:15,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy Web configurations",1,,timesheet,work,0002,0014,,
+2025-07-02,08:00,08:30,0:30,USD,0,0,0,0,pauline,pauline,,StartHub,"Team Operations",Meeting,"Yulia Call",1,Design,timesheet,work,0002,0014,,
+2025-07-02,11:30,17:00,5:30,USD,0,0,0,0,Yulia,Yulia,,StartHub,"1-to-1 Coaching",Design,"Worked on the new variation for card ratio, Created a new variation of filters for Booking. Worked on the avatar component (helped Pauline). Created variations for booking mentor's time slots.",1,,timesheet,work,0002,0006,,
+2025-07-02,11:00,11:30,0:30,USD,0,0,0,0,Yulia,Yulia,,StartHub,"Team Operations",Meeting,"Meeting with Pauline",1,,timesheet,work,0002,0014,,
+2025-07-02,06:46,12:46,6:00,USD,0,0,0,0,ariful,ariful,,StartHub,"User Profile & Settings","Bug Fixing","update padding and class assignment for icon in SettingsPanelItem",1,,timesheet,work,0002,0011,,
+2025-07-02,06:37,07:07,0:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Team Operations",Meeting,"FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-07-02,07:45,11:30,3:45,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy cloud, admin and gotrue bug fixes",1,,timesheet,work,0002,0014,,
+2025-07-02,09:00,17:00,8:00,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"1-to-1 Coaching","Bug Fixing","Refactor booking page (1-on-1 coaching)",1,,timesheet,work,0002,0006,,
+2025-07-01,22:40,23:25,0:45,USD,0,0,0,0,Yulia,Yulia,,StartHub,"Team Operations",Meeting,"Design sync up",1,,timesheet,work,0002,0014,,
+2025-07-01,17:00,22:00,5:00,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Read Ai for Augment-inspired Worksheet
+Augment-inspired Worksheets",1,Design,timesheet,work,0002,0015,,
+2025-07-01,15:00,15:30,0:30,USD,0,0,0,0,pauline,pauline,,StartHub,"Team Operations",Meeting,"Mikhail Call",1,Design,timesheet,work,0002,0014,,
+2025-07-01,22:42,22:57,0:15,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Meeting,"Alex: Sync Up",1,,timesheet,work,0002,0016,,
+2025-07-01,22:08,22:38,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0016,,
+2025-07-01,22:08,05:38,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Programming,"Resolved typing issues and done feature validation and resolved the issues that found during self validation and raised pr for the same",1,,timesheet,work,0002,0016,,
+2025-07-01,12:15,13:00,0:45,USD,0,0,0,0,pauline,pauline,,StartHub,"Team Operations",Meeting,"Weekly Design Sync Up",1,Design,timesheet,work,0002,0014,,
+2025-07-01,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-07-01,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,standup,timesheet,work,0002,0014,,
+2025-07-01,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-07-01,13:00,17:15,4:15,USD,0,0,0,0,Yulia,Yulia,,StartHub,"Community Forum",Design,"Landing. Implemented changes on the Landing page, Graphics booklet and couple on the Booking.",1,,timesheet,work,0002,0007,,
+2025-07-01,14:15,17:15,3:00,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy admin and web deployment",1,,timesheet,work,0002,0014,,
+2025-07-01,06:37,07:07,0:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Team Operations",Meeting,"FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-07-01,09:00,17:00,8:00,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"1-to-1 Coaching",Programming,"Refactor booking page (1-on-1 coaching)",1,,timesheet,work,0002,0006,,
+2025-07-01,06:15,08:15,2:00,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy Admin and Cloud configurations",1,,timesheet,work,0002,0014,,
+2025-06-30,22:08,22:38,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0016,,
+2025-06-30,22:08,05:38,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Programming,"Resolved merge conflicts after product/purchase schema migration.
+Debugged GraphQL type issues with nested payment and refund fields.",1,,timesheet,work,0002,0016,,
+2025-06-30,12:15,14:00,1:45,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Graphics Component & Reorganizing",1,Design,timesheet,work,0002,0015,,
+2025-06-30,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-06-30,14:45,19:45,5:00,USD,0,0,0,0,Yulia,Yulia,,StartHub,"1-to-1 Coaching",Design,"Fixed comments on the Graphics page. Worked on new flow for 1to1 coaching. Fixing comments on 1to1 coaching page. Reviewed Addy's new templates.",1,,timesheet,work,0002,0006,,
+2025-06-30,14:00,14:45,0:45,USD,0,0,0,0,Yulia,Yulia,,StartHub,"Team Operations",Meeting,"With Addy + Mike",1,,timesheet,work,0002,0014,,
+2025-06-30,06:45,13:15,6:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Admin Panel","Bug Fixing","adjust padding for content and sidebar layout",1,,timesheet,work,0002,0010,,
+2025-06-30,06:37,07:07,0:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Team Operations",Meeting,"FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-06-30,13:30,17:00,3:30,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","System analysis",1,,timesheet,work,0002,0014,,
+2025-06-30,13:00,17:00,4:00,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,Onboarding,"Bug Fixing","First time-onboarding",1,,timesheet,work,0002,0003,,
+2025-06-30,07:00,11:45,4:45,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appplowy Cloud and admin Configurations",1,,timesheet,work,0002,0014,,
+2025-06-30,09:00,13:00,4:00,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,Courses,"Bug Fixing","Fix issue with the filters such as 'bookmarked'",1,,timesheet,work,0002,0005,,
+2025-06-29,08:30,13:00,4:30,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Graphics Component & Reorganizing",1,Design,timesheet,work,0002,0015,,
+2025-06-28,17:00,21:00,4:00,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Graphics Component & Reorganizing",1,Design,timesheet,work,0002,0015,,
+2025-06-28,13:30,19:00,5:30,USD,0,0,0,0,eddy,eddy,,StartHub,"Tools & Templates",Design,"Continued with Designing Email Templates cards",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-06-28,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-06-28,07:30,15:45,8:15,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Graphics Component & Reorganizing",1,Design,timesheet,work,0002,0015,,
+2025-06-28,14:04,18:04,4:00,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy Web and gotur bugs on auth",1,,timesheet,work,0002,0014,,
+2025-06-27,22:00,00:00,2:00,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Graphics Component & Reorganizing",1,Design,timesheet,work,0002,0015,,
+2025-06-27,22:06,06:06,8:00,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Programming,"' Reviewed and refactored IPurchase model and Mongoose schema to align with GraphQL.
+Fixed GraphQL errors related to mixing @ObjectType and @InputType.
+Migrated seed data to use new Purchase structure; added booking links to purchases.
+Verified resolver logic and ensured status enums validate correctly.",1,,timesheet,work,0002,0016,,
+2025-06-27,12:15,20:00,7:45,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Graphics Component & Reorganizing",1,Design,timesheet,work,0002,0015,,
+2025-06-27,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-06-27,14:00,14:45,0:45,USD,0,0,0,0,Yulia,Yulia,,StartHub,"Team Operations",Meeting,"Design team sync up + meeting with Mike",1,,timesheet,work,0002,0014,,
+2025-06-27,07:00,07:30,0:30,USD,0,0,0,0,pauline,pauline,,StartHub,"Team Operations",Meeting,"Meeting with Yulia",1,Design,timesheet,work,0002,0014,,
+2025-06-27,06:45,12:45,6:00,USD,0,0,0,0,ariful,ariful,,StartHub,"Admin Panel","Bug Fixing","integrate Scroller component and adjust padding for layout",1,,timesheet,work,0002,0010,,
+2025-06-27,06:37,07:07,0:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Team Operations",Meeting,"FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-06-27,10:00,14:00,4:00,USD,0,0,0,0,Yulia,Yulia,,StartHub,"Deals & Discounts",Design,"Resolved comments from Mike on Graphics, Tools and templates and admin dashboard views.Created couple variations of deals and discounts admin views.",1,,timesheet,work,0002,0004,,
+2025-06-27,08:15,16:15,8:00,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Applowy App deployment",1,,timesheet,work,0002,0014,,
+2025-06-27,09:00,17:00,8:00,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,Courses,"Bug Fixing","Fixed Scenario issue and working on Bookmark",1,,timesheet,work,0002,0005,,
+2025-06-26,20:00,23:30,3:30,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Graphics Component & Reorganizing",1,Design,timesheet,work,0002,0015,,
+2025-06-26,13:28,17:28,4:00,USD,0,0,0,0,eddy,eddy,,StartHub,"Tools & Templates",Design,"Continued with Email Templates Card Design.",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-06-26,22:06,22:36,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0016,,
+2025-06-26,22:06,05:36,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Programming,"' Finished GraphQL queries & mutations for createPurchase and updatePurchase.
+Added dynamic PurchaseOrderByField enums and test seeds for purchase records.",1,,timesheet,work,0002,0016,,
+2025-06-26,12:15,14:30,2:15,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Graphics Component & Reorganizing",1,Design,timesheet,work,0002,0015,,
+2025-06-26,19:00,22:00,3:00,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure",Appflowy,1,,timesheet,work,0002,0014,,
+2025-06-26,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-06-26,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-06-26,06:43,13:13,6:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Admin Panel",Programming,"add navigation links for sidebar and header components",1,,timesheet,work,0002,0010,,
+2025-06-26,06:37,07:07,0:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Team Operations",Meeting,"FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-06-26,10:00,16:00,6:00,USD,0,0,0,0,Yulia,Yulia,,StartHub,"Community Forum",Design,"Graphics. Implemented changes from Mike's comments. Created 3 more variations for ""6 circles futures"". Created new variation of skeleton loader for the fonts.",1,,timesheet,work,0002,0007,,
+2025-06-26,09:15,15:15,6:00,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy configurations and bug fixes",1,,timesheet,work,0002,0014,,
+2025-06-26,09:00,17:00,8:00,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,Onboarding,"Bug Fixing","User preference for timezone and time format v2",1,,timesheet,work,0002,0003,,
+2025-06-25,18:30,20:30,2:00,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Graphics Component & Reorganizing",1,Design,timesheet,work,0002,0015,,
+2025-06-25,13:10,18:32,5:22,USD,0,0,0,0,eddy,eddy,,StartHub,"Tools & Templates",Design,"Designed other cards on Version 1, retouched other versions, updated colors to variables on all Version 1 cards, Synced with Mik, and started V6, sketched other protypes outside Figma.",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-06-25,14:00,16:00,2:00,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Graphics Component & Reorganizing",1,Design,timesheet,work,0002,0015,,
+2025-06-25,22:42,22:57,0:15,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Meeting,"Alex: Sync Up",1,,timesheet,work,0002,0016,,
+2025-06-25,20:00,22:15,2:15,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Review of Appflowy and configure appflowy Gotrue",1,,timesheet,work,0002,0014,,
+2025-06-25,22:06,22:36,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0016,,
+2025-06-25,22:06,05:36,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Programming,"Purchase Module
+Built initial Purchase model structure with nested items and paymentDetails.
+Created MoneyModel, PurchaseItemModel, and inputs with proper enum support.",1,,timesheet,work,0002,0016,,
+2025-06-25,12:15,13:30,1:15,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Graphics Component & Reorganizing",1,Design,timesheet,work,0002,0015,,
+2025-06-25,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-06-25,06:42,13:12,6:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Admin Panel",Programming,"improve layout and integrate Scroller component",1,,timesheet,work,0002,0010,,
+2025-06-25,06:37,07:07,0:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Team Operations",Meeting,"FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-06-25,08:30,15:30,7:00,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy Configurations and Deployment",1,,timesheet,work,0002,0014,,
+2025-06-25,09:00,17:30,8:30,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,Onboarding,"Bug Fixing","User preference for timezone and time format v2",1,,timesheet,work,0002,0003,,
+2025-06-24,20:00,23:30,3:30,USD,0,0,0,0,pauline,pauline,,StartHub,"Print Designs",Design,"Graphics Component & Reorganizing",1,Design,timesheet,work,0002,0015,,
+2025-06-24,20:00,00:00,4:00,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy helm charts Configuration",1,,timesheet,work,0002,0014,,
+2025-06-24,22:06,22:36,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0016,,
+2025-06-24,22:06,05:36,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,,StartHub,E-commerce,Programming,"Developed getProducts and getProductById queries with GraphQL union types.
+Seeded subscription & mentor products for local testing; verified discriminated union shape.",1,,timesheet,work,0002,0016,,
+2025-06-24,12:15,13:00,0:45,USD,0,0,0,0,pauline,pauline,,StartHub,"Team Operations",Meeting,"Weekly Design Sync Up",1,standup,timesheet,work,0002,0014,,
+2025-06-24,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations",Meeting,STATUS,1,standup,timesheet,work,0002,0014,,
+2025-06-24,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-06-24,14:00,16:15,2:15,USD,0,0,0,0,Yulia,Yulia,,StartHub,"Team Operations",Meeting,"Meeting with Mike + Hamin's onboarding + Design sync",1,,timesheet,work,0002,0014,,
+2025-06-24,11:00,15:00,4:00,USD,0,0,0,0,Yulia,Yulia,,StartHub,"1-to-1 Coaching",Design,"Started to work on the comments from Mike on the Booking page. Created a new variation of 6 futures in Graphics.",1,,timesheet,work,0002,0006,,
+2025-06-24,06:37,07:07,0:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Team Operations",Meeting,"FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-06-24,06:36,14:36,8:00,USD,0,0,0,0,ariful,ariful,,StartHub,"Admin Panel","Bug Fixing","scroller on sidebar",1,"Design, Tasks",timesheet,work,0002,0010,,
+2025-06-24,14:00,17:00,3:00,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,Onboarding,"Bug Fixing","Onboarding: add ampm/24 hours option and timezone selection",1,,timesheet,work,0002,0003,,
+2025-06-24,10:15,14:15,4:00,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy helm charts Configuration",1,,timesheet,work,0002,0014,,
+2025-06-24,07:30,08:30,1:00,USD,0,0,0,0,"Mori Isaac",Mori,,StartHub,"Team Operations","Dev Ops / Infrastructure","Appflowy helm charts Configuration and daily plan preparation",1,,timesheet,work,0002,0014,,
+2025-06-24,09:00,14:00,5:00,USD,0,0,0,0,"Raheel Shahzad",raheel,,StartHub,"1-to-1 Coaching","Bug Fixing","1-on-1 Coaching feedback",1,,timesheet,work,0002,0006,,
+2025-06-23,21:15,21:45,0:30,USD,0,0,0,0,ariful,ariful,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-06-23,21:49,23:19,1:30,USD,0,0,0,0,Yulia,Yulia,,StartHub,"Team Operations",Meeting,"Status Demo + Status",1,,timesheet,work,0002,0014,,
