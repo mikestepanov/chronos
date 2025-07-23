@@ -5,7 +5,11 @@ const BotConfig = require('./bot-config');
 
 class ConfigLoader {
   static load() {
-    const botIdentity = process.env.BOT_IDENTITY || 'bloodhunter';
+    // Load app configuration
+    const appConfigPath = path.join(__dirname, '../config/app.json');
+    const appConfig = JSON.parse(fs.readFileSync(appConfigPath, 'utf8'));
+    
+    const botIdentity = appConfig.app.defaultBotIdentity || 'bloodhunter';
     const bot = BotConfig.getBotIdentity(botIdentity);
     
     const config = {
@@ -14,28 +18,20 @@ class ConfigLoader {
         ...bot
       },
       messaging: {
-        platform: process.env.MESSAGING_PLATFORM || 'pumble',
+        platform: appConfig.app.messagingPlatform || 'pumble',
         pumble: {
           apiKey: bot.apiKey,
           botEmail: bot.email,
-          botId: bot.id
+          botId: bot.id,
+          baseUrl: appConfig.pumble.baseUrl
         },
         channels: this.loadChannels()
       },
       kimai: {
-        baseUrl: process.env.KIMAI_URL,
-        apiKey: process.env.KIMAI_API_KEY,
+        baseUrl: appConfig.kimai.baseUrl,
         username: process.env.KIMAI_USERNAME,
         password: process.env.KIMAI_PASSWORD
-      },
-      payPeriod: {
-        days: parseInt(process.env.PAY_PERIOD_DAYS || '14'),
-        minHoursExpected: parseInt(process.env.MIN_HOURS_EXPECTED || '70'),
-        minDaysExpected: parseInt(process.env.MIN_DAYS_EXPECTED || '10'),
-        reminderDaysBefore: parseInt(process.env.REMINDER_DAYS_BEFORE || '2')
-      },
-      employees: this.loadEmployeeMapping(),
-      managerEmail: process.env.MANAGER_EMAIL // Your email for oversight
+      }
     };
 
     this.validate(config);
@@ -54,33 +50,6 @@ class ConfigLoader {
     };
   }
 
-  static loadEmployeeMapping() {
-    const mapping = {};
-    const envMapping = process.env.EMPLOYEE_MAPPING;
-    
-    if (envMapping) {
-      // Format: email:id,email:id
-      envMapping.split(',').forEach(pair => {
-        const [email, id] = pair.trim().split(':');
-        if (email && id) {
-          mapping[email] = id;
-        }
-      });
-    }
-
-    // Also check for JSON file
-    const jsonPath = path.join(__dirname, '../employee-mapping.json');
-    if (fs.existsSync(jsonPath)) {
-      try {
-        const jsonMapping = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-        Object.assign(mapping, jsonMapping);
-      } catch (error) {
-        console.warn('Failed to load employee-mapping.json:', error.message);
-      }
-    }
-
-    return mapping;
-  }
 
   static validate(config) {
     const errors = [];

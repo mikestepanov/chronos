@@ -45,7 +45,11 @@ function getMostRecentCompletePayPeriod() {
 function displayExportInstructions(period) {
   const startStr = format(period.start, 'yyyy-MM-dd');
   const endStr = format(period.end, 'yyyy-MM-dd');
-  const kimaiUrl = process.env.KIMAI_URL || 'https://kimai.starthub.academy';
+  
+  // Load app config for Kimai URL
+  const appConfigPath = path.join(__dirname, '../config/app.json');
+  const appConfig = JSON.parse(fs.readFileSync(appConfigPath, 'utf8'));
+  const kimaiUrl = appConfig.kimai.baseUrl;
   
   console.log('\n' + '='.repeat(70));
   console.log('MANUAL EXPORT INSTRUCTIONS');

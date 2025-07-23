@@ -9,7 +9,6 @@
       "expectedHours": 0,
       "services": {
         "kimai": {
-          "id": 4,
           "username": "mikhail"
         },
         "pumble": {
@@ -28,7 +27,6 @@
       "expectedHours": 80,
       "services": {
         "kimai": {
-          "id": 2,
           "username": "dharam"
         },
         "pumble": {
@@ -47,7 +45,6 @@
       "expectedHours": 50,
       "services": {
         "kimai": {
-          "id": 3,
           "username": "yulia"
         },
         "pumble": {
@@ -66,7 +63,6 @@
       "expectedHours": 80,
       "services": {
         "kimai": {
-          "id": 5,
           "username": "raheel"
         },
         "pumble": {
@@ -85,7 +81,6 @@
       "expectedHours": 40,
       "services": {
         "kimai": {
-          "id": 7,
           "username": "eddy"
         },
         "pumble": {
@@ -104,7 +99,6 @@
       "expectedHours": 80,
       "services": {
         "kimai": {
-          "id": 8,
           "username": "ariful"
         },
         "pumble": {
@@ -123,7 +117,6 @@
       "expectedHours": 80,
       "services": {
         "kimai": {
-          "id": 9,
           "username": "mori"
         },
         "pumble": {
@@ -142,7 +135,6 @@
       "expectedHours": 80,
       "services": {
         "kimai": {
-          "id": 12,
           "username": "pauline"
         },
         "pumble": {
@@ -166,7 +158,8 @@
     }
   },
   "metadata": {
-    "updated": "2024-01-15",
-    "version": "1.0.0"
+    "updated": "2025-07-23",
+    "version": "2.0.0",
+    "note": "Removed Kimai API IDs - now using browser automation"
   }
 }

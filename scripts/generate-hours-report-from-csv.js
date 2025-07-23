@@ -55,8 +55,8 @@ function generateHoursReportFromCSV(csvPath) {
         u.services?.kimai?.username?.toLowerCase() === username
       );
       
-      if (user && user.services?.kimai?.id) {
-        userId = user.services.kimai.id;
+      if (user && user.services?.kimai?.username) {
+        userId = user.services.kimai.username;
       }
       
       return {

@@ -1,0 +1,14 @@
+{
+  "app": {
+    "name": "Chronos Timesheet Bot",
+    "version": "2.0.0",
+    "defaultBotIdentity": "agentsmith",
+    "messagingPlatform": "pumble"
+  },
+  "kimai": {
+    "baseUrl": "https://kimai.starthub.academy"
+  },
+  "pumble": {
+    "baseUrl": "https://api.pumble.com/v1"
+  }
+}

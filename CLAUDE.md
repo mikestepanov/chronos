@@ -128,12 +128,12 @@ When working on this codebase, maintain strict separation of concerns:
 ```
 cronjobs/
   ├── biweekly-reminder.js    # Orchestration only, no business logic
-  └── followup-reminder.js     # Uses shared services, no direct API calls
+  └── followup-reminder.js     # Uses shared services
 
 shared/
-  ├── timesheet-analyzer.js    # All Kimai API interaction
+  ├── timesheet-analyzer.js    # Timesheet data processing
   ├── pay-period-calculator.js # Date/period calculations
-  └── messaging-factory.js     # Pumble API/webhook abstraction
+  └── messaging-factory.js     # Messaging abstraction
 
 kimai/
   └── (Kimai-specific implementations)
@@ -152,14 +152,14 @@ const incompleteUsers = await this.timesheetAnalyzer.getIncompleteUsers(payPerio
 ```javascript
 // cronjobs/followup-reminder.js
 // DON'T put Kimai logic directly in cronjobs
-const response = await fetch(`${this.kimaiUrl}/api/timesheets`);
+const csvData = await extractKimaiData();
 ```
 
 ### Key Points
 - Cronjobs should only orchestrate, not implement business logic
-- All Kimai API interactions belong in `kimai/` or `shared/timesheet-analyzer.js`
-- Messaging (whether webhooks or API) is abstracted by `messaging-factory.js`
-- This makes it easy to switch between Pumble webhooks/API without changing cronjobs
+- All Kimai data extraction is handled via browser automation
+- Messaging is abstracted by `messaging-factory.js`
+- This makes it easy to switch between different messaging platforms
 
 ## Testing
 
@@ -180,8 +180,9 @@ Keep environment variables organized by service:
 
 ```env
 # Kimai
-KIMAI_API_URL=
-KIMAI_API_KEY=
+KIMAI_URL=https://kimai.starthub.academy
+KIMAI_USERNAME=your_username
+KIMAI_PASSWORD=your_password
 
 # Pumble (use either webhooks OR channel IDs)
 PUMBLE_GENERAL_WEBHOOK_URL=

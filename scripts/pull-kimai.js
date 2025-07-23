@@ -27,10 +27,14 @@ const StorageFactory = require('../kimai/storage/StorageFactory');
 const { generateHoursReport, formatReportAsTable } = require('./kimai-hours-report');
 require('dotenv').config();
 
+// Load app configuration
+const appConfigPath = path.join(__dirname, '../config/app.json');
+const appConfig = JSON.parse(fs.readFileSync(appConfigPath, 'utf8'));
+
 // Configuration
 const config = {
   kimai: {
-    baseUrl: process.env.KIMAI_URL || 'https://kimai.starthub.academy',
+    baseUrl: appConfig.kimai.baseUrl,
     username: process.env.KIMAI_USERNAME,
     password: process.env.KIMAI_PASSWORD
   },
