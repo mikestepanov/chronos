@@ -5,7 +5,7 @@ const MessagingFactory = require('../shared/messaging-factory');
 const PayPeriodCalculator = require('../shared/pay-period-calculator');
 const SmartScheduler = require('../shared/smart-scheduler');
 const BotConfig = require('../shared/bot-config');
-const { format, addDays, setHours, setMinutes, addMinutes } = require('date-fns');
+const DateHelper = require('../shared/date-helper');
 
 class MondayReminderBot {
   constructor() {
@@ -59,12 +59,12 @@ class MondayReminderBot {
     if (!testMode) {
       const isLastDay = this.payPeriodCalc.isLastDayOfPeriod(referenceDate);
       if (!isLastDay) {
-        console.log(`Today (${format(referenceDate, 'yyyy-MM-dd')}) is not the last day of a pay period. Skipping reminder.`);
+        console.log(`Today (${DateHelper.formatISO(referenceDate)}) is not the last day of a pay period. Skipping reminder.`);
         return;
       }
     }
 
-    console.log(`Sending Monday morning reminder for pay period ending TODAY ${format(currentPeriodInfo.currentPeriod.endDate, 'yyyy-MM-dd')}...`);
+    console.log(`Sending Monday morning reminder for pay period ending TODAY ${DateHelper.formatISO(currentPeriodInfo.currentPeriod.endDate)}...`);
 
     try {
       // Generate message
@@ -72,7 +72,7 @@ class MondayReminderBot {
       
       if (useScheduler) {
         // Use smart scheduler for advance notifications
-        const sendTime = setMinutes(setHours(referenceDate, scheduleHour), 0);
+        const sendTime = DateHelper.setTime(referenceDate, scheduleHour, 0);
         
         for (const channelType of channels) {
           const channelId = this.config.messaging.channels[channelType];
@@ -129,8 +129,8 @@ class MondayReminderBot {
 
 📊 **Pay Period Details:**
 • Period: ${periodInfo.currentPeriod.number}
-• Dates: ${format(periodInfo.currentPeriod.startDate, 'M/d')} - ${format(periodInfo.currentPeriod.endDate, 'M/d')}
-• Payment: ${format(periodInfo.currentPeriod.paymentDate, 'MMM d')}
+• Dates: ${DateHelper.formatPeriodRangeSlash(periodInfo.currentPeriod.startDate, periodInfo.currentPeriod.endDate)}
+• Payment: ${DateHelper.format(periodInfo.currentPeriod.paymentDate, DateHelper.FORMATS.SHORT_DATE)}
 
 _This is your 1-hour advance notice._`;
 
@@ -162,7 +162,7 @@ _This is your 1-hour advance notice._`;
    */
   previewMessage(date) {
     const isLastDay = this.payPeriodCalc.isLastDayOfPeriod(date);
-    console.log(`\nDate: ${format(date, 'yyyy-MM-dd EEEE')}`);
+    console.log(`\nDate: ${DateHelper.formatISO(date)} ${DateHelper.format(date, DateHelper.FORMATS.WEEKDAY)}`);
     console.log(`Is last day of period: ${isLastDay}`);
     
     if (isLastDay) {
@@ -182,13 +182,13 @@ _This is your 1-hour advance notice._`;
     const periods = this.payPeriodCalc.getNextPayPeriods(new Date(), count);
     
     periods.forEach(period => {
-      const isLastDayMonday = format(period.endDate, 'EEEE') === 'Monday';
+      const isLastDayMonday = DateHelper.format(period.endDate, DateHelper.FORMATS.WEEKDAY) === 'Monday';
       const marker = isLastDayMonday ? ' ← Monday reminder' : '';
       
       console.log(`\nPeriod ${period.number}:`);
-      console.log(`  Start: ${format(period.startDate, 'yyyy-MM-dd EEEE')}`);
-      console.log(`  End: ${format(period.endDate, 'yyyy-MM-dd EEEE')}${marker}`);
-      console.log(`  Payment: ${format(period.paymentDate, 'yyyy-MM-dd EEEE')}`);
+      console.log(`  Start: ${DateHelper.formatISO(period.startDate)} ${DateHelper.format(period.startDate, DateHelper.FORMATS.WEEKDAY)}`);
+      console.log(`  End: ${DateHelper.formatISO(period.endDate)} ${DateHelper.format(period.endDate, DateHelper.FORMATS.WEEKDAY)}${marker}`);
+      console.log(`  Payment: ${DateHelper.formatISO(period.paymentDate)} ${DateHelper.format(period.paymentDate, DateHelper.FORMATS.WEEKDAY)}`);
     });
   }
 
@@ -197,9 +197,9 @@ _This is your 1-hour advance notice._`;
    */
   async sendTestReminder() {
     const now = new Date();
-    const sendTime = addMinutes(now, 5);
+    const sendTime = DateHelper.addMinutes(now, 5);
     
-    console.log(`[${format(now, 'yyyy-MM-dd HH:mm')}] Scheduling test reminder for ${format(sendTime, 'HH:mm')}`);
+    console.log(`[${DateHelper.formatISO(now)} ${DateHelper.format(now, 'HH:mm')}] Scheduling test reminder for ${DateHelper.format(sendTime, 'HH:mm')}`);
     
     await this.sendMondayReminder({
       testMode: true,

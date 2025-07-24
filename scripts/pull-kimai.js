@@ -1,60 +1,151 @@
 #!/usr/bin/env node
 
-// Check if Playwright is available
-let playwright;
-try {
-  playwright = require('playwright');
-} catch (error) {
-  console.error('\n⚠️  Playwright is not installed.');
-  console.error('\nTo install Playwright, run:');
-  console.error('  ./scripts/install-playwright.sh');
-  console.error('\nOr manually:');
-  console.error('  pnpm install');
-  console.error('  pnpm exec playwright install chromium');
-  console.error('\nFalling back to manual mode...\n');
-  
-  // Fall back to simple mode
-  require('./pull-kimai-simple');
-  return;
-}
+/**
+ * Pull Kimai Data - Orchestrator Script
+ * 
+ * This script orchestrates the process of:
+ * 1. Determining the pay period to export
+ * 2. Exporting data from Kimai via browser automation
+ * 3. Processing and filtering the timesheet data
+ * 4. Generating compliance reports
+ * 5. Storing data in versioned storage
+ */
 
-const { chromium } = playwright;
 const fs = require('fs');
 const path = require('path');
-const { format } = require('date-fns');
+const DateHelper = require('../shared/date-helper');
+const { createLogger } = require('../shared/logger');
 const PayPeriodCalculator = require('../shared/pay-period-calculator');
 const StorageFactory = require('../kimai/storage/StorageFactory');
-const { generateHoursReport, formatReportAsTable } = require('./kimai-hours-report');
+const KimaiExporter = require('../kimai/services/KimaiExporter');
+const TimesheetProcessor = require('../kimai/services/TimesheetProcessor');
+const HoursReportGenerator = require('../kimai/services/HoursReportGenerator');
 require('dotenv').config();
 
-// Load app configuration
-const appConfigPath = path.join(__dirname, '../config/app.json');
-const appConfig = JSON.parse(fs.readFileSync(appConfigPath, 'utf8'));
+// Create logger for this script
+const logger = createLogger('pull-kimai');
 
-// Configuration
-const config = {
-  kimai: {
-    baseUrl: appConfig.kimai.baseUrl,
-    username: process.env.KIMAI_USERNAME,
-    password: process.env.KIMAI_PASSWORD
-  },
-  storage: {
-    type: process.env.STORAGE_TYPE || 'file',
-    basePath: process.env.STORAGE_PATH || './kimai-data',
-    git: {
-      autoCommit: process.env.GIT_AUTO_COMMIT !== 'false',
-      autoPush: process.env.GIT_AUTO_PUSH === 'true'
+// Load configuration
+const config = loadConfiguration();
+
+/**
+ * Main orchestration function
+ */
+async function pullKimaiData(options = {}) {
+  try {
+    // Step 1: Determine pay period
+    const payPeriod = options.period || getMostRecentCompletePayPeriod();
+    logPayPeriodInfo(payPeriod);
+    
+    // Step 2: Export data from Kimai
+    const exporter = new KimaiExporter(config);
+    const exportResult = await exporter.exportTimesheet(payPeriod.start, payPeriod.end);
+    
+    if (!exportResult.success) {
+      throw new Error('Failed to export data from Kimai');
     }
-  },
-  usersConfigPath: path.join(__dirname, '../config/users/users.json'),
-  downloads: {
-    path: path.join(__dirname, '../temp-downloads')
-  },
-  browser: {
-    headless: process.env.PLAYWRIGHT_HEADLESS !== 'false',
-    timeout: 30000
+    
+    // Step 3: Process timesheet data
+    const processor = new TimesheetProcessor(config);
+    const processedData = processor.processCSV(exportResult.csvData, payPeriod);
+    
+    logger.info('Data exported and processed', {
+      totalRecords: processedData.stats.totalRecords,
+      filteredRecords: processedData.stats.filteredRecords
+    });
+    logger.info(`Unique users: ${processedData.stats.uniqueUsers}`);
+    
+    // Step 4: Save to storage
+    const storage = StorageFactory.create(config);
+    const periodId = format(payPeriod.start, 'yyyy-MM-dd');
+    
+    const storageResult = await storage.save(periodId, exportResult.csvData, {
+      periodNumber: payPeriod.number,
+      startDate: payPeriod.start.toISOString(),
+      endDate: payPeriod.end.toISOString(),
+      extractedBy: 'pull-kimai',
+      exportMethod: 'playwright-automation',
+      stats: processedData.stats
+    });
+    
+    logger.info('Data saved', {
+      path: `kimai-data/${periodId}/`,
+      version: storageResult.version,
+      isNewVersion: storageResult.isNewVersion
+    });
+    
+    // Step 5: Generate report (if enabled)
+    if (options.generateReport !== false) {
+      const generator = new HoursReportGenerator(config);
+      const report = generator.generateReport(processedData.timesheets, payPeriod);
+      
+      // Save report
+      const reportPath = await generator.saveReport(
+        report.content, 
+        path.join(config.storage.basePath, periodId)
+      );
+      
+      logger.info('Hours report generated', {
+        path: reportPath,
+        complianceRate: report.summary.complianceRate
+      });
+      
+      // Display report
+      if (options.displayReport !== false) {
+        console.log('\n' + report.table); // Keep console.log for formatted table output
+      }
+    }
+    
+    return {
+      success: true,
+      payPeriod,
+      stats: processedData.stats,
+      storageResult,
+      reportGenerated: options.generateReport !== false
+    };
+    
+  } catch (error) {
+    logger.error('Export failed', error);
+    throw error;
   }
-};
+}
+
+/**
+ * Load configuration from various sources
+ */
+function loadConfiguration() {
+  // Load app configuration
+  const appConfig = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../config/app.json'), 'utf8')
+  );
+  
+  // Load users configuration
+  const users = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../config/users/users.json'), 'utf8')
+  );
+  
+  return {
+    kimai: {
+      baseUrl: appConfig.kimai.baseUrl,
+      username: process.env.KIMAI_USERNAME,
+      password: process.env.KIMAI_PASSWORD
+    },
+    storage: {
+      type: process.env.STORAGE_TYPE || 'file',
+      basePath: process.env.STORAGE_PATH || './kimai-data',
+      git: {
+        autoCommit: process.env.GIT_AUTO_COMMIT !== 'false',
+        autoPush: process.env.GIT_AUTO_PUSH === 'true'
+      }
+    },
+    browser: {
+      type: process.env.PLAYWRIGHT_BROWSER || 'firefox',
+      headless: process.env.PLAYWRIGHT_HEADLESS !== 'false',
+      timeout: 30000
+    },
+    users
+  };
+}
 
 /**
  * Get the most recent complete pay period
@@ -64,6 +155,7 @@ function getMostRecentCompletePayPeriod() {
   const now = new Date();
   const currentPeriodInfo = calculator.getCurrentPeriodInfo(now);
   
+  // If we're in the middle of a period, use the previous one
   if (now >= currentPeriodInfo.currentPeriod.startDate && 
       now <= currentPeriodInfo.currentPeriod.endDate) {
     const previousPeriodEnd = new Date(currentPeriodInfo.currentPeriod.startDate);
@@ -85,289 +177,23 @@ function getMostRecentCompletePayPeriod() {
 }
 
 /**
- * Pull data from Kimai using Playwright automation
+ * Log pay period information
  */
-async function pullKimaiData(options = {}) {
-  const period = options.period || getMostRecentCompletePayPeriod();
-  
-  console.log(`\n🚀 Pulling Kimai data for Pay Period #${period.number}`);
-  console.log(`📅 Period: ${format(period.start, 'MMM dd')} - ${format(period.end, 'MMM dd, yyyy')}\n`);
-  
-  // Validate credentials
+function logPayPeriodInfo(period) {
+  logger.info('Pulling Kimai data', {
+    periodNumber: period.number,
+    startDate: DateHelper.formatISO(period.start),
+    endDate: DateHelper.formatISO(period.end),
+    range: DateHelper.formatPeriodRange(period.start, period.end)
+  });
+}
+
+/**
+ * Validate configuration
+ */
+function validateConfig(config) {
   if (!config.kimai.username || !config.kimai.password) {
     throw new Error('❌ KIMAI_USERNAME and KIMAI_PASSWORD must be set in .env file');
-  }
-  
-  // Setup downloads directory
-  if (!fs.existsSync(config.downloads.path)) {
-    fs.mkdirSync(config.downloads.path, { recursive: true });
-  }
-  
-  // Clean old downloads
-  const files = fs.readdirSync(config.downloads.path);
-  files.forEach(file => {
-    if (file.endsWith('.csv')) {
-      fs.unlinkSync(path.join(config.downloads.path, file));
-    }
-  });
-  
-  const browser = await chromium.launch({ 
-    headless: config.browser.headless 
-  });
-  
-  try {
-    const context = await browser.newContext({
-      acceptDownloads: true
-    });
-    
-    const page = await context.newPage();
-    page.setDefaultTimeout(config.browser.timeout);
-    
-    // Login
-    console.log('🔐 Logging in to Kimai...');
-    await page.goto(config.kimai.baseUrl);
-    await page.fill('input[name="username"]', config.kimai.username);
-    await page.fill('input[name="password"]', config.kimai.password);
-    await page.click('button[type="submit"]');
-    await page.waitForSelector('.main-header', { timeout: 10000 });
-    console.log('✅ Login successful');
-    
-    // Navigate directly to timesheets with date filter
-    console.log('📋 Navigating to timesheets with date filter...');
-    
-    // Format dates as M/D/YYYY for URL
-    const startMonth = period.start.getMonth() + 1; // JavaScript months are 0-based
-    const startDay = period.start.getDate();
-    const startYear = period.start.getFullYear();
-    const endMonth = period.end.getMonth() + 1;
-    const endDay = period.end.getDate();
-    const endYear = period.end.getFullYear();
-    
-    const dateRangeParam = `${startMonth}/${startDay}/${startYear}+-+${endMonth}/${endDay}/${endYear}`;
-    
-    // Build URL with parameters matching the example
-    const timesheetUrl = `${config.kimai.baseUrl}/en/team/timesheet/?daterange=${encodeURIComponent(dateRangeParam)}&state=1&billable=0&exported=1&size=50&page=1&orderBy=begin&order=DESC`;
-    
-    console.log(`🔍 Date range: ${startMonth}/${startDay}/${startYear} - ${endMonth}/${endDay}/${endYear}`);
-    
-    // Navigate to the filtered timesheet page
-    await page.goto(timesheetUrl);
-    await page.waitForSelector('.datatable, table.dataTable, .table', { timeout: 15000 });
-    
-    // Wait for data to load
-    await page.waitForTimeout(2000);
-    
-    console.log(`✅ Timesheet loaded with date filter`);
-    
-    // Export CSV
-    console.log('💾 Exporting CSV...');
-    
-    // Look for the export button - typically in the toolbar or actions area
-    const exportSelectors = [
-      // Common Kimai export button patterns
-      'a[title*="Export"]',
-      'button[title*="Export"]',
-      'a.btn-export',
-      '.page-actions a[href*="export"]',
-      '.toolbar a[href*="export"]',
-      // Dropdown patterns
-      'button[data-toggle="dropdown"]:has-text("Export")',
-      'a.dropdown-toggle:has-text("Export")',
-      '.btn-group button:has-text("Export")',
-      // Generic patterns
-      'a:has-text("Export")',
-      'button:has-text("Export")'
-    ];
-    
-    let exportButton = null;
-    for (const selector of exportSelectors) {
-      const button = page.locator(selector).first();
-      if (await button.isVisible()) {
-        exportButton = button;
-        break;
-      }
-    }
-    
-    if (!exportButton) {
-      // Try looking for an icon-based export button
-      const iconSelectors = [
-        'a[class*="export"]',
-        'button[class*="export"]',
-        'a[title*="xport"]',
-        'button[title*="xport"]'
-      ];
-      
-      for (const selector of iconSelectors) {
-        const button = page.locator(selector).first();
-        if (await button.isVisible()) {
-          exportButton = button;
-          break;
-        }
-      }
-    }
-    
-    if (!exportButton) {
-      throw new Error('Could not find export button');
-    }
-    
-    await exportButton.click();
-    console.log('✅ Export button clicked');
-    
-    // Wait for dropdown/modal to appear
-    await page.waitForTimeout(500);
-    
-    // Look for CSV export option
-    const csvSelectors = [
-      // Direct CSV links
-      'a[href*="/export/csv"]',
-      'a[href*="format=csv"]',
-      'a[href*="type=csv"]',
-      // Text-based selectors
-      'a:has-text("CSV")',
-      'button:has-text("CSV")',
-      // In dropdown menus
-      '.dropdown-menu a:has-text("CSV")',
-      'ul.dropdown-menu a:has-text("CSV")',
-      // In modals
-      '.modal a:has-text("CSV")',
-      '.modal button:has-text("CSV")'
-    ];
-    
-    const downloadPromise = page.waitForEvent('download', { timeout: 30000 });
-    
-    let csvLink = null;
-    for (const selector of csvSelectors) {
-      const link = page.locator(selector).first();
-      if (await link.isVisible()) {
-        csvLink = link;
-        break;
-      }
-    }
-    
-    if (!csvLink) {
-      throw new Error('Could not find CSV export option');
-    }
-    
-    await csvLink.click();
-    console.log('✅ CSV export initiated');
-    
-    console.log('⏳ Waiting for download...');
-    const download = await downloadPromise;
-    
-    // Save download
-    const fileName = `kimai-export-${format(period.start, 'yyyy-MM-dd')}.csv`;
-    const downloadPath = path.join(config.downloads.path, fileName);
-    await download.saveAs(downloadPath);
-    console.log(`✅ Downloaded: ${fileName}`);
-    
-    // Process the CSV
-    const csvContent = fs.readFileSync(downloadPath, 'utf8');
-    const lines = csvContent.split('\n').filter(line => line.trim());
-    const recordCount = Math.max(0, lines.length - 1);
-    
-    // Save to versioned storage
-    const storage = StorageFactory.create(config);
-    const periodId = format(period.start, 'yyyy-MM-dd');
-    
-    const storageResult = await storage.save(periodId, csvContent, {
-      periodNumber: period.number,
-      startDate: period.start.toISOString(),
-      endDate: period.end.toISOString(),
-      extractedBy: 'pull-kimai',
-      exportMethod: 'playwright-automation'
-    });
-    
-    console.log(`\n✅ Data saved to kimai-data/${periodId}/`);
-    console.log(`  - Version: ${storageResult.version}`);
-    console.log(`  - Records: ${recordCount}`);
-    console.log(`  - New version: ${storageResult.isNewVersion ? 'Yes' : 'No (unchanged)'}`);
-    
-    // Generate hours report
-    if (options.generateReport !== false) {
-      console.log('\n📊 Generating hours report...');
-      
-      // Parse CSV to get timesheet data
-      const { parse } = require('csv-parse/sync');
-      const records = parse(csvContent, {
-        columns: true,
-        skip_empty_lines: true
-      });
-      
-      // Convert to timesheet format
-      const timesheets = records
-        .filter(record => record.Date && /^\d{4}-\d{2}-\d{2}$/.test(record.Date))
-        .map(record => {
-          const durationParts = (record.Duration || '0:00').split(':');
-          const hours = parseInt(durationParts[0] || 0);
-          const minutes = parseInt(durationParts[1] || 0);
-          const durationSeconds = (hours * 3600) + (minutes * 60);
-          
-          // Map username to user ID
-          const users = JSON.parse(fs.readFileSync(config.usersConfigPath, 'utf8'));
-          const username = record.User?.toLowerCase();
-          const user = users.users.find(u => 
-            u.services?.kimai?.username?.toLowerCase() === username
-          );
-          
-          return {
-            user: user?.services?.kimai?.id || username,
-            duration: durationSeconds,
-            date: record.Date,
-            project: record.Project,
-            activity: record.Activity
-          };
-        });
-      
-      // Generate report
-      const users = JSON.parse(fs.readFileSync(config.usersConfigPath, 'utf8'));
-      const report = generateHoursReport(timesheets, users);
-      const table = formatReportAsTable(report);
-      
-      // Save report
-      const reportPath = path.join(config.storage.basePath, periodId, 'hours-report.txt');
-      const reportContent = 
-        `Hours Compliance Report - Pay Period #${period.number}\n` +
-        `Period: ${format(period.start, 'MMM dd')} - ${format(period.end, 'MMM dd, yyyy')}\n` +
-        `Generated: ${new Date().toISOString()}\n` +
-        `Source: Automated pull\n\n` +
-        table;
-      
-      fs.writeFileSync(reportPath, reportContent, 'utf8');
-      console.log(`✅ Report saved to ${reportPath}`);
-      
-      // Display report
-      console.log('\n' + table);
-    }
-    
-    // Clean up
-    fs.unlinkSync(downloadPath);
-    
-    return {
-      success: true,
-      period,
-      periodId,
-      storageResult,
-      recordCount
-    };
-    
-  } catch (error) {
-    console.error('\n❌ Export failed:', error.message);
-    
-    // Take screenshot for debugging if page exists
-    try {
-      const pages = context.pages();
-      if (pages.length > 0) {
-        const screenshotPath = path.join(config.downloads.path, 'error-screenshot.png');
-        await pages[0].screenshot({ path: screenshotPath, fullPage: true });
-        console.error(`📸 Screenshot saved to: ${screenshotPath}`);
-      }
-    } catch (screenshotError) {
-      console.error('Could not take screenshot:', screenshotError.message);
-    }
-    
-    throw error;
-  } finally {
-    await browser.close();
   }
 }
 
@@ -376,12 +202,44 @@ module.exports = { pullKimaiData, getMostRecentCompletePayPeriod };
 
 // Run if called directly
 if (require.main === module) {
+  // Check Playwright availability first
+  try {
+    require('playwright');
+  } catch (error) {
+    logger.warn('Playwright is not installed', {
+      suggestion: 'Run ./scripts/install-playwright.sh or see manual instructions'
+    });
+    console.error('\n⚠️  Playwright is not installed.');
+    console.error('\nTo install Playwright, run:');
+    console.error('  ./scripts/install-playwright.sh');
+    console.error('\nOr manually:');
+    console.error('  pnpm install');
+    console.error('  pnpm exec playwright install firefox   # Recommended for Fedora');
+    console.error('  pnpm exec playwright install chromium  # Alternative');
+    console.error('\nFalling back to manual mode...\n');
+    
+    require('./pull-kimai-simple');
+    return;
+  }
+  
+  // Validate configuration
+  try {
+    validateConfig(config);
+  } catch (error) {
+    logger.error('Validation failed', error);
+    console.error(error.message);
+    process.exit(1);
+  }
+  
+  // Run the pull
   pullKimaiData()
-    .then(result => {
+    .then(() => {
+      logger.info('Pull completed successfully');
       console.log('\n✨ Pull completed successfully!');
       process.exit(0);
     })
     .catch(error => {
+      logger.error('Pull failed', error);
       console.error('\n💥 Pull failed:', error.message);
       process.exit(1);
     });

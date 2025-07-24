@@ -1,0 +1,35 @@
+{
+  "versions": [
+    {
+      "version": 1,
+      "extractedAt": "2025-07-23T05:36:00.560Z",
+      "checksum": "3d2c2eb0e6d7563d6891aacae7fdd3e454c1f8fcdc9eeb9a06dc56bf13073b32",
+      "metadata": {
+        "periodNumber": 20,
+        "startDate": "2025-07-08T05:00:00.000Z",
+        "endDate": "2025-07-22T04:59:59.999Z",
+        "importedFrom": "20250723-kimai-export.csv",
+        "importedAt": "2025-07-23T05:36:00.550Z",
+        "extractedBy": "manual-import",
+        "recordCount": 169,
+        "bytes": 24746
+      }
+    },
+    {
+      "version": 2,
+      "extractedAt": "2025-07-24T13:48:26.589Z",
+      "checksum": "9dee5b15d586141d16cd61c5c8f89a2bd44e0d70f7e51ec386ea51f8b8f69171",
+      "metadata": {
+        "periodNumber": 20,
+        "startDate": "2025-07-08T05:00:00.000Z",
+        "endDate": "2025-07-22T04:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "recordCount": 522,
+        "bytes": 81074
+      }
+    }
+  ],
+  "latest": 2,
+  "updatedAt": "2025-07-24T13:48:26.589Z"
+}

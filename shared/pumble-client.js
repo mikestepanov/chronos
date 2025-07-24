@@ -1,5 +1,6 @@
 const axios = require('axios');
 const MessagingInterface = require('./messaging-interface');
+const { ErrorHandler, ExternalServiceError, AuthenticationError } = require('./error-handler');
 
 class PumbleClient extends MessagingInterface {
   constructor(config) {
@@ -12,7 +13,7 @@ class PumbleClient extends MessagingInterface {
 
   async sendMessage(channelId, text, asBot = false) {
     // IMPORTANT: asBot MUST BE ALWAYS FALSE - Agent Smith authenticates as a real user, not a bot
-    try {
+    return ErrorHandler.wrapWithLogging(async () => {
       const response = await axios.post(`${this.baseUrl}/sendMessage`, {
         channelId,
         text,
@@ -21,17 +22,20 @@ class PumbleClient extends MessagingInterface {
         headers: { 'Api-Key': this.apiKey }
       });
       return response.data;
-    } catch (error) {
-      console.error('Failed to send Pumble message:', error.message);
-      if (error.response?.data) {
-        console.error('Error details:', error.response.data);
+    }, {
+      operation: 'sendMessage',
+      channelId,
+      service: 'pumble'
+    }).catch(error => {
+      if (error.response?.status === 401) {
+        throw new AuthenticationError('Invalid Pumble API key');
       }
-      throw error;
-    }
+      throw new ExternalServiceError('Pumble', error.message, error);
+    });
   }
 
   async sendDirectMessage(userId, text) {
-    try {
+    return ErrorHandler.wrapWithLogging(async () => {
       const response = await axios.post(`${this.baseUrl}/sendDirectMessage`, {
         userId,
         text,
@@ -40,10 +44,16 @@ class PumbleClient extends MessagingInterface {
         headers: { 'Api-Key': this.apiKey }
       });
       return response.data;
-    } catch (error) {
-      console.error('Failed to send direct message:', error.message);
-      throw new Error(`Failed to send DM: ${error.message}`);
-    }
+    }, {
+      operation: 'sendDirectMessage',
+      userId,
+      service: 'pumble'
+    }).catch(error => {
+      if (error.response?.status === 401) {
+        throw new AuthenticationError('Invalid Pumble API key');
+      }
+      throw new ExternalServiceError('Pumble', error.message, error);
+    });
   }
 
   async createGroupChat(userIds, name, isPrivate = true) {

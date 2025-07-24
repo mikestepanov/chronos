@@ -58,8 +58,8 @@ class ConfigLoader {
     if (!config.kimai.baseUrl) {
       errors.push('KIMAI_URL is required');
     }
-    if (!config.kimai.apiKey && (!config.kimai.username || !config.kimai.password)) {
-      errors.push('Either KIMAI_API_KEY or KIMAI_USERNAME/PASSWORD is required');
+    if (!config.kimai.username || !config.kimai.password) {
+      errors.push('KIMAI_USERNAME and KIMAI_PASSWORD are required');
     }
 
     // Validate messaging config

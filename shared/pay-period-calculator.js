@@ -1,4 +1,4 @@
-const { addDays, format, startOfDay, endOfDay } = require('date-fns');
+const DateHelper = require('./date-helper');
 
 class PayPeriodCalculator {
   constructor(config = {}) {
@@ -13,8 +13,8 @@ class PayPeriodCalculator {
 
   getCurrentPeriodInfo(referenceDate = new Date()) {
     // Calculate how many days have passed since the base period end date
-    const refDay = startOfDay(referenceDate);
-    const baseDay = startOfDay(this.basePeriodEndDate);
+    const refDay = DateHelper.getStartOfDay(referenceDate);
+    const baseDay = DateHelper.getStartOfDay(this.basePeriodEndDate);
     const daysSinceBase = Math.floor((refDay - baseDay) / (1000 * 60 * 60 * 24));
     
     // If reference date is before or on base period end date, we're in the base period
@@ -28,42 +28,42 @@ class PayPeriodCalculator {
     const currentPeriodNumber = this.basePeriodNumber + periodsPassed;
     
     // Calculate current period dates
-    const currentPeriodEnd = addDays(this.basePeriodEndDate, periodsPassed * this.periodLengthDays);
-    const currentPeriodStart = addDays(currentPeriodEnd, -(this.periodLengthDays - 1));
+    const currentPeriodEnd = DateHelper.addDays(this.basePeriodEndDate, periodsPassed * this.periodLengthDays);
+    const currentPeriodStart = DateHelper.addDays(currentPeriodEnd, -(this.periodLengthDays - 1));
     
     // Calculate next period info
     const nextPeriodNumber = currentPeriodNumber + 1;
-    const nextPeriodStart = addDays(currentPeriodEnd, 1);
-    const nextPeriodEnd = addDays(currentPeriodEnd, this.periodLengthDays);
+    const nextPeriodStart = DateHelper.addDays(currentPeriodEnd, 1);
+    const nextPeriodEnd = DateHelper.addDays(currentPeriodEnd, this.periodLengthDays);
     
     // Calculate payment date
-    const paymentDate = addDays(currentPeriodEnd, this.paymentDelayDays);
+    const paymentDate = DateHelper.addDays(currentPeriodEnd, this.paymentDelayDays);
     
     return {
       currentPeriod: {
         number: currentPeriodNumber,
         startDate: startOfDay(currentPeriodStart),
-        endDate: endOfDay(currentPeriodEnd),
+        endDate: DateHelper.getEndOfDay(currentPeriodEnd),
         paymentDate: startOfDay(paymentDate)
       },
       nextPeriod: {
         number: nextPeriodNumber,
         startDate: startOfDay(nextPeriodStart),
-        endDate: endOfDay(nextPeriodEnd)
+        endDate: DateHelper.getEndOfDay(nextPeriodEnd)
       }
     };
   }
 
   formatDate(date, formatString = 'M/d') {
-    return format(date, formatString);
+    return DateHelper.format(date, formatString);
   }
 
   formatDateLong(date) {
-    return format(date, 'MMMM do');
+    return DateHelper.format(date, DateHelper.FORMATS.MONTH_DAY_ORDINAL);
   }
 
   formatDateFull(date) {
-    return format(date, 'MMMM do, yyyy');
+    return DateHelper.format(date, 'MMMM do, yyyy');
   }
 
   getOrdinal(number) {

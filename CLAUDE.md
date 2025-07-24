@@ -1,193 +1,77 @@
 # Claude Development Guidelines
 
-## Kimai Data Extraction
+## 📚 Comprehensive Documentation
 
-### Identifying Pay Period from CSV Export
+For detailed documentation on all aspects of the Chronos system, please see the **[docs](./docs)** directory:
 
-To identify which pay period(s) a Kimai CSV export covers:
+- **[Getting Started](./docs/getting-started.md)** - Setup and first steps
+- **[Architecture Overview](./docs/architecture.md)** - System design and patterns
+- **[Scripts Reference](./docs/scripts.md)** - Available scripts and usage
+- **[Configuration Guide](./docs/configuration.md)** - All configuration options
+- **[API Reference](./docs/api.md)** - API endpoints and webhooks
+- **[Development Guide](./docs/development.md)** - Contributing and best practices
 
-```bash
-node scripts/identify-pay-period.js <csv-file-path>
-```
+## Quick Overview
 
-Example output:
-```
-CSV Date Range: 2025-07-08 to 2025-07-21
-Total Entries: 127
+Chronos is a timesheet reminder bot for Pumble that helps teams stay compliant with timesheet submissions. It integrates with Kimai for timesheet data and sends automated reminders via Pumble.
 
-Pay Periods Found:
+### Key Features
 
-Period #20: 2025-07-08 to 2025-07-22
-  Entries: 127 (100.0%)
-  Dates: 2025-07-08, 2025-07-09, ... 2025-07-21
+- 🤖 **Browser-based Kimai extraction** - Reliable data export using Playwright
+- 📊 **Compliance reporting** - Automatic hours tracking and deviation alerts
+- 💬 **Unified messaging** - Single CLI for all communication needs
+- 📅 **Smart scheduling** - Automated reminders based on pay periods
+- 🔧 **Configuration-driven** - Easy customization without code changes
 
-Primary Period: #20 with 127 entries
-```
+## Quick Reference
 
-This helps you quickly determine:
-- Which pay period number the data belongs to
-- The date range of entries in the CSV
-- If data spans multiple pay periods
-- Which period has the most entries (primary period)
-
-### Importing Manual CSV Exports
-
-To import a manually exported Kimai CSV file into the versioned storage system:
+### Extract Latest Pay Period Data
 
 ```bash
-node scripts/import-kimai-csv.js <csv-file-path>
-```
-
-This will:
-- Identify which pay period the data belongs to
-- Import it into the proper `kimai-data/YYYY-MM-DD/` directory
-- Create versioned storage with metadata tracking
-- Handle duplicate data (won't create new version if data unchanged)
-
-### Generating Hours Report from CSV
-
-To generate an hours compliance report from a CSV file:
-
-```bash
-node scripts/generate-hours-report-from-csv.js <csv-file-path>
-```
-
-Example output shows compliance status for each user:
-- ✓ = Within ±3 hours of expected (compliant)
-- ✗ = More than 3 hours deviation (non-compliant)
-
-### Getting Latest Complete Pay Period Data
-
-**Automated Pull** - The recommended approach:
-
-```bash
-# One-time setup
-pnpm install
-pnpm exec playwright install chromium
-
-# Add to .env file:
-KIMAI_USERNAME=your_kimai_username
-KIMAI_PASSWORD=your_kimai_password
-
-# Pull latest data (or use slash command: /pull-kimai)
+# Pull latest complete pay period with compliance report
 pnpm run pull-kimai
+
+# Show browser during extraction
+PLAYWRIGHT_HEADLESS=false pnpm run pull-kimai
 ```
 
-This will:
-1. Automatically determine the most recent complete pay period
-2. Log into Kimai using credentials from `.env`
-3. Export CSV data via browser automation
-4. Save versioned data to `kimai-data/YYYY-MM-DD/` with checksum tracking
-5. Generate a compliance report comparing actual vs expected hours
-
-**Manual Export** (if automation fails):
+### Send Messages
 
 ```bash
-# Get export instructions
-node scripts/kimai-hours-report-v2.js
+# Quick message to channel
+./scripts/send-message.js -c dev -m "Hello team!"
 
-# Process downloaded CSV
-node scripts/kimai-hours-report-v2.js ~/Downloads/kimai-export.csv
+# Use template
+./scripts/send-message.js -t timesheet-reminder -s name=John -s hours=75
+
+# Interactive mode
+./scripts/send-message.js interactive
 ```
 
-**Output format:**
-```
-| User | Hours Worked | Expected | Difference | % Deviation | Status |
-|------|--------------|----------|------------|-------------|--------|
-| Pauline Nguyen       |        85.25 |    80.00 |      +5.25 |       +6.6% | ✗ |
-| Raheel Shahzad       |        77.00 |    80.00 |      -3.00 |       -3.8% | ✓ |
-| ...
-```
+### Key Architecture Principles
 
-**Compliance Threshold:**
-- Status shows ✓ if hours worked are within ±3 hours of expected (not percentage based)
-- Status shows ✗ if the difference exceeds 3 hours in either direction
+1. **Scripts orchestrate, services implement** - Scripts in `/scripts` coordinate but don't contain business logic
+2. **Configuration-driven** - All settings in JSON files, only secrets in .env
+3. **Platform agnostic** - Messaging abstracted through factories
+4. **Separation of concerns** - Clear boundaries between layers
 
-**Data Storage:**
-- CSV files are stored in `kimai-data/YYYY-MM-DD/v{N}.csv`
-- Metadata with checksums in `kimai-data/YYYY-MM-DD/metadata.json`
-- Hours compliance report saved to `kimai-data/YYYY-MM-DD/hours-report.txt`
-- Version tracking prevents duplicate extractions
-
-### Programmatic Usage
-
-```javascript
-const { getMostRecentPayPeriodHoursReport } = require('./scripts/kimai-hours-report');
-
-const result = await getMostRecentPayPeriodHoursReport();
-console.log(result.table);  // Formatted compliance table
-console.log(result.files);  // { csv: 'path/to/csv', metadata: 'path/to/metadata.json', report: 'path/to/hours-report.txt' }
-```
-
-## Architecture Principles
-
-### Separation of Concerns
-
-When working on this codebase, maintain strict separation of concerns:
-
-```
-cronjobs/
-  ├── biweekly-reminder.js    # Orchestration only, no business logic
-  └── followup-reminder.js     # Uses shared services
-
-shared/
-  ├── timesheet-analyzer.js    # Timesheet data processing
-  ├── pay-period-calculator.js # Date/period calculations
-  └── messaging-factory.js     # Messaging abstraction
-
-kimai/
-  └── (Kimai-specific implementations)
-```
-
-**Good Example:**
-```javascript
-// cronjobs/followup-reminder.js
-const TimesheetAnalyzer = require('../shared/timesheet-analyzer');
-
-// Get incomplete users from timesheet analyzer
-const incompleteUsers = await this.timesheetAnalyzer.getIncompleteUsers(payPeriod);
-```
-
-**Bad Example:**
-```javascript
-// cronjobs/followup-reminder.js
-// DON'T put Kimai logic directly in cronjobs
-const csvData = await extractKimaiData();
-```
-
-### Key Points
-- Cronjobs should only orchestrate, not implement business logic
-- All Kimai data extraction is handled via browser automation
-- Messaging is abstracted by `messaging-factory.js`
-- This makes it easy to switch between different messaging platforms
-
-## Testing
-
-When developing, always test components in isolation:
-
-```bash
-# Test cronjobs
-node cronjobs/biweekly-reminder.js advance
-node cronjobs/followup-reminder.js
-
-# Test shared services directly
-node -e "const analyzer = require('./shared/timesheet-analyzer'); analyzer.test()"
-```
-
-## Environment Variables
-
-Keep environment variables organized by service:
+### Environment Variables (Minimal)
 
 ```env
-# Kimai
-KIMAI_URL=https://kimai.starthub.academy
-KIMAI_USERNAME=your_username
-KIMAI_PASSWORD=your_password
-
-# Pumble (use either webhooks OR channel IDs)
-PUMBLE_GENERAL_WEBHOOK_URL=
-PUMBLE_DEV_WEBHOOK_URL=
-# OR
-GENERAL_CHANNEL_ID=
-DEV_CHANNEL_ID=
+# Only 3 required credentials
+PUMBLE_API_KEY=your-api-key
+KIMAI_USERNAME=admin@example.com  
+KIMAI_PASSWORD=your-password
 ```
+
+All other configuration is in JSON files under `/config`.
+
+## For Detailed Information
+
+Please refer to the comprehensive documentation in the **[docs](./docs)** directory for:
+- Complete setup instructions
+- All available scripts and options
+- Configuration reference
+- API documentation
+- Development guidelines
+- Troubleshooting guides

@@ -43,9 +43,11 @@
   },
   "dependencies": {
     "axios": "^1.6.0",
+    "commander": "^14.0.0",
     "csv-parse": "^5.5.0",
     "date-fns": "^2.30.0",
     "dotenv": "^16.3.1",
+    "enquirer": "^2.4.1",
     "playwright": "^1.54.1"
   },
   "devDependencies": {
