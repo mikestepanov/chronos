@@ -55,8 +55,7 @@ WEBHOOK_SECRET=your-secure-secret
 PUMBLE_API_KEY=your-pumble-api-key
 KIMAI_USERNAME=admin@example.com
 KIMAI_PASSWORD=your-password
-DEV_CHANNEL_ID=66934de10aeebd36fe26f468
-DESIGN_CHANNEL_ID=66b6450b791a8769092d6f89
+# Channel IDs are loaded from config/channels.json automatically
 ```
 
 ## Troubleshooting

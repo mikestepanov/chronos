@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
 require('dotenv').config();
-const PumbleClient = require('../shared/pumble-client');
-const PayPeriodCalculator = require('../shared/pay-period-calculator');
+const PumbleClient = require('../../shared/pumble-client');
+const PayPeriodCalculator = require('../../shared/pay-period-calculator');
+const channels = require('../../shared/channels');
 
-// Mikhail's DM channel with Agent Smith bot
-const MIKHAIL_DM_CHANNEL_ID = '686860a2851f413511ab90f8';
+// Get Mikhail's DM channel from central config
+const MIKHAIL_DM_CHANNEL_ID = channels.BOT_TO_MIKHAIL;
 
 async function sendDM() {
   try {

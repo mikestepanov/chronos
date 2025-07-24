@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
 require('dotenv').config();
-const PumbleClient = require('../shared/pumble-client');
-const PayPeriodCalculator = require('../shared/pay-period-calculator');
+const PumbleClient = require('../../shared/pumble-client');
+const PayPeriodCalculator = require('../../shared/pay-period-calculator');
+const channels = require('../../shared/channels');
 
-// Bot testing channel ID (from channels.json)
-const BOT_TESTING_CHANNEL_ID = '686ca38e83b6fa7714e50f3d';
+// Get bot testing channel ID from central config
+const BOT_TESTING_CHANNEL_ID = channels.BOT_TESTING;
 
 async function sendToTestChannel() {
   try {

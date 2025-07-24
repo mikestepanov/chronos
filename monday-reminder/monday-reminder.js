@@ -224,10 +224,10 @@ _This is your 1-hour advance notice._`;
   async sendTestPreview() {
     const now = new Date();
     const message = this.generateMessage(now);
-    const dmChannelId = process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID;
+    const dmChannelId = require('../../shared/channels').BOT_TO_MIKHAIL;
     
     if (!dmChannelId) {
-      throw new Error('BOT_TO_MIKHAIL_DM_CHANNEL_ID not configured');
+      throw new Error('bot_to_mikhail channel not configured in channels.json');
     }
     
     const previewMessage = `📋 **Monday Reminder Preview**

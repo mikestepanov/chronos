@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 require('dotenv').config();
-const PumbleClient = require('../shared/pumble-client');
+const PumbleClient = require('../../shared/pumble-client');
 const { format } = require('date-fns');
 
 async function sendActualReminder() {
@@ -10,16 +10,15 @@ async function sendActualReminder() {
     
     const pumble = new PumbleClient({
       apiKey: process.env.PUMBLE_API_KEY,
-      botId: process.env.PUMBLE_BOT_ID || '686860a1851f413511ab90ef'
+      botId: require('../../shared/bots').DEFAULT_BOT_ID
     });
     
     // Get bot testing channel for preview
     const fs = require('fs');
     const path = require('path');
-    const channelsPath = path.join(__dirname, '../config/channels.json');
-    const channelsData = fs.readFileSync(channelsPath, 'utf8');
-    const channels = JSON.parse(channelsData).pumble;
-    const testChannelId = channels.bot_testing.id;
+    const channels = require('../../shared/channels');
+const bots = require('../../shared/bots');
+    const testChannelId = channels.BOT_TESTING;
     
     // Sample data for someone who needs to submit timesheet
     const userName = "Dharam";

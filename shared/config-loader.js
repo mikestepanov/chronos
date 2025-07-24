@@ -44,9 +44,10 @@ class ConfigLoader {
     const channels = JSON.parse(channelsData).pumble;
     
     return {
-      dev: channels.dev.id,
-      design: channels.design.id,
-      general: channels.general.id
+      dev: channels.dev?.id,
+      design: channels.design?.id,
+      bot_testing: channels.bot_testing?.id,
+      random: channels.random?.id
     };
   }
 

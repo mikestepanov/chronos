@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
 require('dotenv').config();
-const PumbleClient = require('../shared/pumble-client');
+const PumbleClient = require('../../shared/pumble-client');
 
 async function sendDMToMikhail() {
   try {
     console.log('Sending DM to Mikhail...\n');
     
-    const dmChannelId = process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID;
+    const dmChannelId = require('../../shared/channels').BOT_TO_MIKHAIL;
     
     if (!dmChannelId) {
-      throw new Error('BOT_TO_MIKHAIL_DM_CHANNEL_ID not found in .env');
+      throw new Error('bot_to_mikhail channel not configured');
     }
     
     console.log(`Using DM channel ID: ${dmChannelId}`);
@@ -18,7 +18,7 @@ async function sendDMToMikhail() {
     // Initialize Pumble client
     const pumble = new PumbleClient({
       apiKey: process.env.PUMBLE_API_KEY,
-      botId: process.env.PUMBLE_BOT_ID || '686860a1851f413511ab90ef'
+      botId: require('../../shared/bots').DEFAULT_BOT_ID
     });
     
     // Send message

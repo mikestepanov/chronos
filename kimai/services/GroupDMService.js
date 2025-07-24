@@ -11,11 +11,11 @@ class GroupDMService {
   constructor(config = {}) {
     this.pumbleClient = new PumbleClient({
       apiKey: process.env.PUMBLE_API_KEY || config.pumbleApiKey,
-      botId: process.env.PUMBLE_BOT_ID || config.botId
+      botId: require('../../shared/bots').DEFAULT_BOT_ID
     });
     
     this.userService = new UserService();
-    this.botId = process.env.PUMBLE_BOT_ID || config.botId;
+    this.botId = require('../../shared/bots').DEFAULT_BOT_ID;
     
     // Get Mikhail's ID from users.json
     const mikhail = this.userService.getActiveUsers().find(u => u.id === 'mikhail-stepanov');

@@ -15,13 +15,13 @@ class NotificationWrapper {
 
   async sendMessageWithNotification(channelId, text, asBot = false) {
     // Check if this is a DM to Mikhail (don't notify about notifications)
-    const isDMToMikhail = channelId === process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID;
+    const isDMToMikhail = channelId === require('./channels').BOT_TO_MIKHAIL;
     
     // Send the original message first
     const result = await this.originalSendMessage(channelId, text, asBot);
     
     // Send notification to Mikhail if it's not a DM to him
-    if (!isDMToMikhail && process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID) {
+    if (!isDMToMikhail && require('./channels').BOT_TO_MIKHAIL) {
       await this.notifyMikhail(channelId, text);
     }
     
@@ -46,7 +46,7 @@ _This message was just sent by the Agent Smith bot._`;
 
     try {
       await this.originalSendMessage(
-        process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID,
+        require('./channels').BOT_TO_MIKHAIL,
         notification,
         false
       );
@@ -56,12 +56,13 @@ _This message was just sent by the Agent Smith bot._`;
   }
 
   getChannelName(channelId) {
+    const channels = require('./channels');
     const channelMap = {
-      [process.env.DEV_CHANNEL_ID]: '#dev',
-      [process.env.DESIGN_CHANNEL_ID]: '#design',
-      [process.env.ADMIN_CHANNEL_ID]: '#admin',
-      [process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID]: 'DM with Mikhail',
-      [process.env.MIKHAIL_PERSONAL_DM_CHANNEL_ID]: 'Mikhail Personal DM'
+      [channels.DEV]: '#dev',
+      [channels.DESIGN]: '#design',
+      [channels.BOT_TESTING]: '#bot_testing',
+      [channels.RANDOM]: '#random',
+      [channels.BOT_TO_MIKHAIL]: 'DM with Mikhail'
     };
     return channelMap[channelId] || `Channel ${channelId}`;
   }

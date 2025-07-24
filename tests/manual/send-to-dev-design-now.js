@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
 require('dotenv').config();
-const PumbleClient = require('../shared/pumble-client');
-const PayPeriodCalculator = require('../shared/pay-period-calculator');
-const channels = require('../config/channels.json');
+const PumbleClient = require('../../shared/pumble-client');
+const PayPeriodCalculator = require('../../shared/pay-period-calculator');
+const channels = require('../../config/channels.json');
 
 // Load channel IDs from config
-const DEV_CHANNEL_ID = channels.pumble.dev.id;
-const DESIGN_CHANNEL_ID = channels.pumble.design.id;
+const DEV_CHANNEL_ID = channels.DEV;
+const DESIGN_CHANNEL_ID = channels.DESIGN;
 
 async function sendToChannels() {
   try {

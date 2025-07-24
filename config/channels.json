@@ -10,21 +10,21 @@
       "name": "design",
       "description": "Design team channel"
     },
-    "general": {
-      "id": "C06MVQ6B8ED",
-      "name": "general",
-      "description": "General announcements channel"
-    },
     "bot_testing": {
       "id": "686ca38e83b6fa7714e50f3d",
       "name": "bot-testing",
       "description": "Bot private testing channel (public)"
+    },
+    "random": {
+      "id": "647c855bb628c800690ac905",
+      "name": "random",
+      "description": "Random discussion channel"
     }
   },
   "dm_channels": {
-    "agentsmith_and_mikhail": {
-      "id": "DM_CHANNEL_AGENTSMITH_MIKHAIL",
-      "description": "Direct message channel between Agent Smith bot and Mikhail",
+    "bot_to_mikhail": {
+      "id": "686860a2851f413511ab90f8",
+      "description": "Direct message channel between bot and Mikhail",
       "participants": ["agentsmith", "mikhail"]
     }
   }

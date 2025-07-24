@@ -74,3 +74,7 @@ Please refer to the comprehensive documentation in the **[docs](./docs)** direct
 - API documentation
 - Development guidelines
 - Troubleshooting guides
+
+## Important Guidelines
+
+**NEVER SEND MESSAGES TO DEV OR DESIGN TEAM CHANNELS UNLESS EXPLICITLY SPECIFIED BY THE USER**

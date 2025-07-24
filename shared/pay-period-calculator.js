@@ -42,13 +42,13 @@ class PayPeriodCalculator {
     return {
       currentPeriod: {
         number: currentPeriodNumber,
-        startDate: startOfDay(currentPeriodStart),
+        startDate: DateHelper.getStartOfDay(currentPeriodStart),
         endDate: DateHelper.getEndOfDay(currentPeriodEnd),
-        paymentDate: startOfDay(paymentDate)
+        paymentDate: DateHelper.getStartOfDay(paymentDate)
       },
       nextPeriod: {
         number: nextPeriodNumber,
-        startDate: startOfDay(nextPeriodStart),
+        startDate: DateHelper.getStartOfDay(nextPeriodStart),
         endDate: DateHelper.getEndOfDay(nextPeriodEnd)
       }
     };
@@ -131,8 +131,8 @@ Thank you.
   // Check if today is the last day of a pay period
   isLastDayOfPeriod(date = new Date()) {
     const periodInfo = this.getCurrentPeriodInfo(date);
-    const today = startOfDay(date);
-    const periodEnd = startOfDay(periodInfo.currentPeriod.endDate);
+    const today = DateHelper.getStartOfDay(date);
+    const periodEnd = DateHelper.getStartOfDay(periodInfo.currentPeriod.endDate);
     
     return today.getTime() === periodEnd.getTime();
   }
@@ -140,8 +140,8 @@ Thank you.
   // Get days until period end
   getDaysUntilPeriodEnd(date = new Date()) {
     const periodInfo = this.getCurrentPeriodInfo(date);
-    const today = startOfDay(date);
-    const periodEnd = startOfDay(periodInfo.currentPeriod.endDate);
+    const today = DateHelper.getStartOfDay(date);
+    const periodEnd = DateHelper.getStartOfDay(periodInfo.currentPeriod.endDate);
     
     const diffTime = periodEnd.getTime() - today.getTime();
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));

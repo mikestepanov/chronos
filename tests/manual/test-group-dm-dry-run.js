@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const UserService = require('../config/users/UserService');
+const UserService = require('../../config/users/UserService');
 const { format } = require('date-fns');
 
 async function testGroupDMDryRun() {
@@ -12,7 +12,7 @@ async function testGroupDMDryRun() {
   
   const participants = {
     bot: {
-      id: process.env.PUMBLE_BOT_ID || '686860a1851f413511ab90ef',
+      id: require('../../shared/bots').DEFAULT_BOT_ID,
       name: 'Agent Smith'
     },
     eugene: {
@@ -61,8 +61,7 @@ Thank you!`;
   console.log('\n✅ Dry run completed successfully!');
   console.log('\nTo actually send this message, ensure:');
   console.log('1. PUMBLE_API_KEY is set in .env');
-  console.log('2. PUMBLE_BOT_ID is set in .env');
-  console.log('3. The bot has permissions to create group DMs');
+  console.log('2. The bot has permissions to create group DMs');
 }
 
 // Run the test
