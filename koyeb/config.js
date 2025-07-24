@@ -24,7 +24,7 @@ module.exports = {
   // Build configuration
   build: {
     buildCommand: 'npm install',
-    runCommand: 'node server.js',
+    runCommand: 'node koyeb-cron-server.js',
     healthCheckPath: '/health',
     healthCheckInterval: 60
   },
@@ -39,12 +39,18 @@ module.exports = {
   // Environment mapping
   envMapping: {
     // Kimai
-    'KIMAI_API_URL': process.env.KIMAI_API_URL,
-    'KIMAI_API_KEY': process.env.KIMAI_API_KEY,
+    'KIMAI_USERNAME': process.env.KIMAI_USERNAME,
+    'KIMAI_PASSWORD': process.env.KIMAI_PASSWORD,
     
     // Pumble
     'PUMBLE_API_KEY': process.env.PUMBLE_API_KEY,
-    'PUMBLE_BOT_ID': process.env.PUMBLE_BOT_ID,
+    
+    // Cron settings
+    'ENABLE_TEST_CRON': 'true', // Enable 5-minute test cron
+    'ENABLE_MONDAY_REMINDER': 'false', // Disable for testing
+    
+    // Webhook security
+    'WEBHOOK_SECRET': process.env.WEBHOOK_SECRET || 'test-secret-123',
     
     // App settings
     'NODE_ENV': 'production'

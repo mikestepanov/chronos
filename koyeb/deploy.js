@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
+
 const KoyebDeployer = require('./KoyebDeployer');
 const config = require('./config');
 const readline = require('readline');
 const fs = require('fs');
-const path = require('path');
 
 const rl = readline.createInterface({
   input: process.stdin,

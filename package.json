@@ -8,9 +8,11 @@
   },
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node koyeb-cron-server.js",
+    "start:api": "node server.js",
     "dev": "nodemon server.js",
     "deploy": "node koyeb/deploy.js",
+    "test:cron": "node scripts/test-cron.js",
     "check": "node scripts/kimai-timesheet-bot.js check",
     "remind": "node scripts/kimai-timesheet-bot.js remind",
     "monday": "node monday-reminder/monday-reminder.js send",
@@ -48,6 +50,8 @@
     "date-fns": "^2.30.0",
     "dotenv": "^16.3.1",
     "enquirer": "^2.4.1",
+    "express": "^4.18.2",
+    "node-cron": "^3.0.3",
     "playwright": "^1.54.1"
   },
   "devDependencies": {
