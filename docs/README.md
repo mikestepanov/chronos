@@ -7,7 +7,6 @@ Welcome to the Chronos timesheet system documentation. This system automates tim
 - [Architecture Overview](./architecture.md) - System design and components
 - [Getting Started](./getting-started.md) - Setup and configuration
 - [Scripts Reference](./scripts.md) - Available scripts and usage
-- [API Reference](./api.md) - API endpoints and webhooks
 - [Configuration Guide](./configuration.md) - Configuration files and options
 - [Development Guide](./development.md) - Contributing and best practices
 
@@ -53,7 +52,7 @@ chronos/
 ├── shared/           # Shared utilities and core logic
 ├── config/           # JSON configuration files
 ├── monday-reminder/  # Monday reminder system
-└── api/             # Serverless functions
+└── koyeb/            # Koyeb deployment integration
 ```
 
 ## Quick Start
@@ -77,10 +76,10 @@ See [Getting Started](./getting-started.md) for detailed setup instructions.
 
 ## Common Tasks
 
-- [Extract Kimai data for a pay period](./scripts.md#pull-kimai)
+- [Extract Kimai data for a pay period](./kimai-extraction.md)
 - [Send reminders to team](./scripts.md#send-message)
-- [Generate compliance reports](./scripts.md#kimai-hours-report)
-- [Schedule automated reminders](./configuration.md#scheduling)
+- [Setup Monday reminders](./monday-reminder.md)
+- [Configure the system](./configuration.md)
 
 ## For Developers
 

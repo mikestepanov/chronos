@@ -67,8 +67,8 @@ JSON configuration files for all aspects of the system.
 ### `/monday-reminder`
 Specialized module for Monday pay period reminders.
 
-### `/api`
-Serverless functions for webhook endpoints.
+### `/koyeb`
+Koyeb deployment integration for cloud hosting.
 
 ## Design Principles
 
@@ -99,15 +99,23 @@ Serverless functions for webhook endpoints.
 
 ## Data Flow
 
-### Kimai Data Extraction
+### Kimai Data Extraction (Browser-Based)
 ```
-User Request → pull-kimai.js → KimaiExporter → Browser Automation
-                     ↓
-              TimesheetProcessor ← CSV Data
-                     ↓
+User Request → pull-kimai.js → KimaiExporter
+                                    ↓
+                              Playwright Browser
+                                    ↓
+                           Login → Navigate → Export
+                                    ↓
+                              CSV Download
+                                    ↓
+              TimesheetProcessor ← Parse & Filter
+                                    ↓
               HoursReportGenerator → Compliance Report
-                     ↓
-               StorageService → Versioned Files
+                                    ↓
+               StorageService → Versioned Storage
+                                    ↓
+                            Deduplication Check
 ```
 
 ### Message Sending
@@ -119,6 +127,16 @@ User Command → send-message.js → MessageSender
                                Channel Resolution
                                       ↓
                                PumbleClient → API
+```
+
+### Versioned Storage Pattern
+```
+kimai-data/
+├── 2025-07-08/              # Pay period directory
+│   ├── metadata.json        # Version tracking
+│   ├── v1.csv              # Initial export
+│   ├── v2.csv              # Updated (if different)
+│   └── hours-report.txt    # Generated report
 ```
 
 ## Key Patterns
@@ -161,18 +179,26 @@ async function pullKimaiData() {
 ## Security Considerations
 
 1. **Credentials**: Only in environment variables
-2. **API Keys**: Never in code or configs
-3. **Validation**: Input validation at service boundaries
-4. **Logging**: No sensitive data in logs
-5. **Access**: Service-level access control
+2. **API Keys**: Never in code or configs  
+3. **Browser Security**: Isolated browser contexts
+4. **Validation**: Input validation at service boundaries
+5. **Logging**: No sensitive data in logs
+6. **Access**: Service-level access control
 
 ## Performance Considerations
 
-1. **Browser Automation**: Reuse browser instances
-2. **Caching**: File-based caching for API responses
-3. **Batch Operations**: Process multiple items together
-4. **Async Operations**: Non-blocking I/O throughout
-5. **Resource Cleanup**: Proper cleanup of browser instances
+1. **Browser Automation**: 
+   - Headless mode for speed
+   - Configurable timeouts
+   - Resource cleanup after each session
+2. **Deduplication**: 
+   - Checksum-based comparison
+   - Skip redundant exports
+3. **Caching**: 
+   - 30-second request cache
+   - File-based storage
+4. **Batch Operations**: Process multiple users together
+5. **Async Operations**: Non-blocking I/O throughout
 
 ## Extensibility
 

@@ -8,7 +8,6 @@ For detailed documentation on all aspects of the Chronos system, please see the 
 - **[Architecture Overview](./docs/architecture.md)** - System design and patterns
 - **[Scripts Reference](./docs/scripts.md)** - Available scripts and usage
 - **[Configuration Guide](./docs/configuration.md)** - All configuration options
-- **[API Reference](./docs/api.md)** - API endpoints and webhooks
 - **[Development Guide](./docs/development.md)** - Contributing and best practices
 
 ## Quick Overview
