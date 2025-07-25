@@ -88,6 +88,24 @@ if (process.env.ENABLE_TEST_REMINDER === 'true') {
   });
 }
 
+// TEMPORARY: 12 PM CST test - remove after testing
+if (process.env.NODE_ENV === 'production') {
+  console.log('🧪 TEMP: Enabling 12 PM CST test');
+  
+  // 12 PM CST = 5 PM UTC (during DST)
+  activeJobs.tempTest = cron.schedule('0 17 * * *', async () => {
+    console.log('🧪 TEMP: Running 12 PM CST test at', new Date().toISOString());
+    try {
+      execSync('node scripts/send-timesheet-reminder.js -c bot-testing', { 
+        cwd: __dirname,
+        stdio: 'inherit' 
+      });
+    } catch (error) {
+      console.error('❌ TEMP test failed:', error.message);
+    }
+  });
+}
+
 // Monday reminder - runs every Monday at 9 AM CST to dev & design
 if (process.env.ENABLE_MONDAY_REMINDER === 'true') {
   console.log('📅 Enabling Monday reminder (9 AM CST on pay period end)');
