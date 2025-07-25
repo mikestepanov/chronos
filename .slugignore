@@ -1,0 +1,9 @@
+pnpm-lock.yaml
+.git
+.gitignore
+docs/
+tests/
+*.test.js
+README.md
+.env
+.env.example
