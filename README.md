@@ -4,12 +4,12 @@
 
 ### System Overview
 - **Purpose**: Automated timesheet reminders and compliance tracking for Pumble
-- **Pay Periods**: 2-week periods ending on Sundays
+- **Pay Periods**: 2-week periods ending on Mondays
 - **Data Source**: Kimai timesheet system (via browser automation)
 
 ### Reminder Schedule
 1. **Test Reminder**: Daily 9 AM CST → `bot-testing` channel
-2. **Monday Reminder**: Mondays 9 AM CST → `dev` & `design` channels
+2. **Monday Reminder**: Mondays 9 AM CST → `dev` & `design` channels (only on pay period end days)
 
 ### Key Commands
 ```bash

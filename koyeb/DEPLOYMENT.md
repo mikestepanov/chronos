@@ -10,9 +10,10 @@ This guide covers deploying the Chronos cron server to Koyeb for automated times
    - Sends to `bot-testing` channel
    - Daily testing of the reminder system
 
-2. **Monday Reminder** - Every Monday at 9 AM CST
+2. **Monday Reminder** - Every other Monday at 9 AM CST
    - Sends to `dev` and `design` channels
-   - Weekly timesheet reminder
+   - Only fires on Mondays that are pay period end days
+   - Standard timesheet reminder (not compliance report)
 
 ## Deployment Steps
 

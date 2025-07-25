@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
     },
     mondayReminder: { 
       schedule: '0 14 * * 1', 
-      description: 'Monday 9 AM CST reminder to dev & design channels' 
+      description: 'Monday 9 AM CST reminder to dev & design (pay period end only)' 
     }
   };
 
@@ -66,30 +66,44 @@ if (process.env.ENABLE_TEST_REMINDER === 'true') {
 
 // Monday reminder - runs every Monday at 9 AM CST to dev & design
 if (process.env.ENABLE_MONDAY_REMINDER === 'true') {
-  console.log('📅 Enabling Monday reminder (9 AM CST to dev & design)');
+  console.log('📅 Enabling Monday reminder (9 AM CST on pay period end)');
+  
+  // Import PayPeriodCalculator to check if today is last day
+  const PayPeriodCalculator = require('./shared/pay-period-calculator');
+  const calculator = new PayPeriodCalculator();
   
   // 9 AM CST = 2 PM UTC (during DST) or 3 PM UTC (standard time)
   activeJobs.mondayReminder = cron.schedule('0 14 * * 1', async () => {
-    console.log('⏰ Running Monday reminder at', new Date().toISOString());
+    // Check if today is the last day of a pay period
+    const currentPeriod = calculator.getCurrentPayPeriod();
+    const today = new Date();
+    const periodEndDate = new Date(currentPeriod.end);
     
-    try {
-      // Send to dev channel
-      console.log('📤 Sending to dev channel...');
-      execSync('node scripts/send-timesheet-reminder.js -c dev', { 
-        cwd: __dirname,
-        stdio: 'inherit' 
-      });
+    // Check if today is the same date as period end
+    if (today.toDateString() === periodEndDate.toDateString()) {
+      console.log(`⏰ Running Monday reminder for period ${currentPeriod.number} end at`, new Date().toISOString());
       
-      // Send to design channel
-      console.log('📤 Sending to design channel...');
-      execSync('node scripts/send-timesheet-reminder.js -c design', { 
-        cwd: __dirname,
-        stdio: 'inherit' 
-      });
-      
-      console.log('✅ Monday reminders sent successfully');
-    } catch (error) {
-      console.error('❌ Monday reminder job failed:', error.message);
+      try {
+        // Send to dev channel
+        console.log('📤 Sending to dev channel...');
+        execSync('node scripts/send-timesheet-reminder.js -c dev', { 
+          cwd: __dirname,
+          stdio: 'inherit' 
+        });
+        
+        // Send to design channel
+        console.log('📤 Sending to design channel...');
+        execSync('node scripts/send-timesheet-reminder.js -c design', { 
+          cwd: __dirname,
+          stdio: 'inherit' 
+        });
+        
+        console.log('✅ Monday reminders sent successfully');
+      } catch (error) {
+        console.error('❌ Monday reminder job failed:', error.message);
+      }
+    } else {
+      console.log(`⏭️ Skipping Monday reminder (not end of pay period)`);
     }
   });
 }
