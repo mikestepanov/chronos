@@ -42,7 +42,7 @@ module.exports = {
     'PUMBLE_API_KEY': process.env.PUMBLE_API_KEY,
     
     // Cron job settings
-    'ENABLE_TEST_REMINDER': 'true',      // Every 10 minutes to bot-testing
+    'ENABLE_TEST_REMINDER': 'true',      // Daily 9 AM CST to bot-testing
     'ENABLE_MONDAY_REMINDER': 'true',    // Monday 9 AM CST to dev & design
     
     // Webhook security

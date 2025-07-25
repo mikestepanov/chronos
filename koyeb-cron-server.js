@@ -26,8 +26,8 @@ app.get('/health', (req, res) => {
 app.get('/', (req, res) => {
   const jobDetails = {
     testReminder: { 
-      schedule: '*/10 * * * *', 
-      description: 'Test reminder to bot-testing channel every 10 minutes' 
+      schedule: '0 14 * * *', 
+      description: 'Daily reminder to bot-testing channel at 9 AM CST' 
     },
     mondayReminder: { 
       schedule: '0 14 * * 1', 
@@ -46,11 +46,12 @@ app.get('/', (req, res) => {
   });
 });
 
-// Test reminder - runs every 10 minutes to bot-testing channel
+// Test reminder - runs daily at 9 AM CST to bot-testing channel
 if (process.env.ENABLE_TEST_REMINDER === 'true') {
-  console.log('🔄 Enabling test reminder (every 10 minutes to bot-testing)');
+  console.log('🔄 Enabling test reminder (daily 9 AM CST to bot-testing)');
   
-  activeJobs.testReminder = cron.schedule('*/10 * * * *', async () => {
+  // 9 AM CST = 2 PM UTC (during DST) or 3 PM UTC (standard time)
+  activeJobs.testReminder = cron.schedule('0 14 * * *', async () => {
     console.log('⏰ Running test reminder at', new Date().toISOString());
     try {
       execSync('node scripts/send-timesheet-reminder.js -c bot-testing', { 
@@ -145,7 +146,7 @@ app.listen(PORT, () => {
   console.log(`🚀 Chronos Cron Server running on port ${PORT}`);
   console.log(`📋 Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log('\nConfigured cron jobs:');
-  console.log(`⏰ Test reminder (10min): ${process.env.ENABLE_TEST_REMINDER === 'true' ? '✅ ENABLED' : '❌ DISABLED'}`);
+  console.log(`⏰ Test reminder (daily): ${process.env.ENABLE_TEST_REMINDER === 'true' ? '✅ ENABLED' : '❌ DISABLED'}`);
   console.log(`📅 Monday reminder: ${process.env.ENABLE_MONDAY_REMINDER === 'true' ? '✅ ENABLED' : '❌ DISABLED'}`);
   console.log('\nManual triggers available at:');
   console.log('  POST /trigger/test');

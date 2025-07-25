@@ -8,7 +8,7 @@
 - **Data Source**: Kimai timesheet system (via browser automation)
 
 ### Reminder Schedule
-1. **Test Reminder**: Every 10 minutes → `bot-testing` channel
+1. **Test Reminder**: Daily 9 AM CST → `bot-testing` channel
 2. **Monday Reminder**: Mondays 9 AM CST → `dev` & `design` channels
 
 ### Key Commands

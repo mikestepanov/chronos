@@ -6,9 +6,9 @@ This guide covers deploying the Chronos cron server to Koyeb for automated times
 
 ## Current Cron Jobs
 
-1. **Test Reminder** - Every 10 minutes
+1. **Test Reminder** - Daily at 9 AM CST
    - Sends to `bot-testing` channel
-   - Continuous testing of the reminder system
+   - Daily testing of the reminder system
 
 2. **Monday Reminder** - Every Monday at 9 AM CST
    - Sends to `dev` and `design` channels
@@ -72,7 +72,7 @@ curl -X POST https://your-app.koyeb.app/trigger/monday \
 
 | Reminder | Frequency | Day | Time | Recipients |
 |----------|-----------|-----|------|------------|
-| Test | Every 10 min | Any | Any | bot-testing |
+| Test | Daily | Every day | 9 AM CST | bot-testing |
 | Monday | Weekly | Monday | 9 AM CST | dev & design |
 
 ## Architecture
