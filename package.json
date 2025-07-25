@@ -7,6 +7,7 @@
     "url": "https://github.com/mikestepanov/chronos.git"
   },
   "main": "server.js",
+  "packageManager": "pnpm@9.1.1",
   "scripts": {
     "start": "node koyeb-cron-server.js",
     "start:api": "node server.js",
