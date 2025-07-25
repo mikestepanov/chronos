@@ -27,18 +27,25 @@ class HoursReportGenerator {
     // Aggregate hours by user
     const userHours = this.aggregateHoursByUser(timesheets);
     
+    // Aggregate work details by user
+    const userWorkDetails = this.aggregateWorkDetailsByUser(timesheets);
+    
     // Generate compliance data
-    const reportData = this.generateComplianceData(userHours);
+    const reportData = this.generateComplianceData(userHours, userWorkDetails);
     
     // Format as table
     const table = this.formatAsTable(reportData);
     
+    // Generate detailed table with work summary
+    const detailedTable = this.formatAsDetailedTable(reportData);
+    
     // Generate full report content
-    const reportContent = this.generateFullReport(table, payPeriod, timesheets.length);
+    const reportContent = this.generateFullReport(table, detailedTable, payPeriod, timesheets.length);
     
     return {
       data: reportData,
       table,
+      detailedTable,
       content: reportContent,
       summary: this.generateSummary(reportData)
     };
@@ -62,9 +69,34 @@ class HoursReportGenerator {
   }
 
   /**
+   * Aggregate work details by user
+   */
+  aggregateWorkDetailsByUser(timesheets) {
+    const userWorkDetails = {};
+    
+    timesheets.forEach(entry => {
+      const userId = entry.user;
+      if (!userWorkDetails[userId]) {
+        userWorkDetails[userId] = [];
+      }
+      
+      // Create a work summary combining project, activity, and description
+      const workSummary = `${entry.project} - ${entry.activity}${entry.description ? ': ' + entry.description.trim() : ''}`;
+      userWorkDetails[userId].push(workSummary);
+    });
+    
+    // Remove duplicates and join with semicolons
+    Object.keys(userWorkDetails).forEach(userId => {
+      userWorkDetails[userId] = [...new Set(userWorkDetails[userId])].join('; ');
+    });
+    
+    return userWorkDetails;
+  }
+
+  /**
    * Generate compliance data for each user
    */
-  generateComplianceData(userHours) {
+  generateComplianceData(userHours, userWorkDetails) {
     const report = [];
     
     Object.entries(userHours).forEach(([userId, hours]) => {
@@ -92,7 +124,8 @@ class HoursReportGenerator {
           expectedHours: expectedHours,
           difference: difference,
           percentDeviation: percentDeviation,
-          status: isCompliant
+          status: isCompliant,
+          workDetails: userWorkDetails[userId] || 'No work details available'
         });
       }
     });
@@ -153,9 +186,39 @@ class HoursReportGenerator {
   }
 
   /**
+   * Format report data as a detailed table with work summary
+   */
+  formatAsDetailedTable(reportData) {
+    if (!reportData || reportData.length === 0) {
+      return 'No data to display';
+    }
+    
+    let table = '\n=== DETAILED WORK SUMMARY ===\n\n';
+    
+    // Add each user's detailed information
+    reportData.forEach(row => {
+      table += `\n${row.user}\n`;
+      table += '-'.repeat(row.user.length) + '\n';
+      table += `Expected Hours: ${row.expectedHours.toFixed(2)}\n`;
+      table += `Actual Hours: ${row.hoursWorked.toFixed(2)}\n`;
+      table += `Status: ${row.status ? '✓ PASS' : '✗ FAIL'}\n`;
+      table += `Work Summary:\n`;
+      
+      // Split work details by semicolon and display each on its own line
+      const workItems = row.workDetails.split('; ');
+      workItems.forEach(item => {
+        table += `  • ${item}\n`;
+      });
+      table += '\n';
+    });
+    
+    return table;
+  }
+
+  /**
    * Generate full report content
    */
-  generateFullReport(table, payPeriod, entryCount) {
+  generateFullReport(table, detailedTable, payPeriod, entryCount) {
     const startDate = DateHelper.format(payPeriod.start, DateHelper.FORMATS.SHORT_DATE);
     const endDate = DateHelper.format(payPeriod.end, DateHelper.FORMATS.FULL_DATE);
     
@@ -165,7 +228,9 @@ Generated: ${new Date().toISOString()}
 Source: Automated pull
 Entries: ${entryCount}
 
-${table}`;
+${table}
+
+${detailedTable}`;
   }
 
   /**

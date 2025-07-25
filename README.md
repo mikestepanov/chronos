@@ -1,80 +1,120 @@
-# Bots Directory Structure
+# Chronos - Timesheet Reminder Bot
 
-[![Test Bots](https://github.com/username/omega/workflows/Test%20Bots/badge.svg)](https://github.com/username/omega/actions/workflows/test-bots.yml)
-[![Bot Quality Checks](https://github.com/username/omega/workflows/Bot%20Quality%20Checks/badge.svg)](https://github.com/username/omega/actions/workflows/bot-quality-checks.yml)
+## 📋 TLDR - Quick Reference
 
-## ⚠️ CRITICAL: Pumble Message Sending
-**NEVER use `asBot: true` when sending Pumble messages!**
-- Agent Smith bot authenticates as a real user, not a bot
-- Messages should appear from "Agent Smith" user
-- Always use: `sendMessage(channelId, text)` or `sendMessage(channelId, text, false)`
-- This applies to ALL Pumble integrations in this codebase
+### System Overview
+- **Purpose**: Automated timesheet reminders and compliance tracking for Pumble
+- **Pay Periods**: 2-week periods ending on Sundays
+- **Data Source**: Kimai timesheet system (via browser automation)
 
-## Overview
-This directory contains various bot implementations for different platforms and purposes.
+### Reminder Schedule
+1. **Test Reminder**: Every 10 minutes → `bot-testing` channel
+2. **Monday Reminder**: Mondays 9 AM CST → `dev` & `design` channels
 
-## Directory Structure
-
-### Platform-Specific Bots
-- **`discord/`** - Discord bot implementation
-- **`telegram/`** - Telegram bot bridges
-- **`pumble/`** - Pumble messaging bot and tests
-- **`kimai/`** - Kimai timesheet integration bot
-
-### Feature Bots
-- **`monday-reminder/`** - Automated Monday timesheet reminders
-  - Main bot with resilient notification system
-  - Advance notification (1 hour before)
-  - Multiple scheduling options
-
-### Shared Resources
-- **`shared/`** - Shared libraries used by multiple bots
-  - `pumble-client.js` - Pumble API client
-  - `pay-period-calculator.js` - Pay period calculations
-  - `resilient-sender.js` - Retry logic with exponential backoff
-  - `messaging-factory.js` - Platform abstraction layer
-
-### Other Directories
-- **`api/`** - Serverless function endpoints
-- **`scripts/`** - Utility scripts and tools
-- **`tests/`** - General test files
-- **`docs/`** - Documentation and setup guides
-- **`deployment/`** - Deployment configurations
-- **`kimai-data/`** - Extracted timesheet data (consider moving to `/misc/data/`)
-
-## Quick Start
-
-### Monday Reminders
+### Key Commands
 ```bash
-# Test the reminder system
-node monday-reminder/monday-reminder.js preview
+# Pull latest timesheet data
+pnpm run pull-kimai
 
-# Set up cron (runs at 8 AM and 9 AM on Mondays)
-0 8 * * 1 cd /path/to/omega/bots && node monday-reminder/send-advance-notification-resilient.js
-0 9 * * 1 cd /path/to/omega/bots && node monday-reminder/monday-reminder.js send
+# Send reminders
+./scripts/send-timesheet-reminder.js -c dev
+./scripts/send-compliance-status.js  # DM to Mikhail
+
+# Deploy to Koyeb
+cd koyeb && node deploy.js
 ```
 
-### Pumble Bot
-```bash
-# Test Pumble connection
-node pumble/tests/test-pumble-api.js
+### Architecture
+- `/scripts` - CLI entry points (orchestration)
+- `/kimai/services` - Kimai integration (browser automation)
+- `/shared` - Core utilities (pay periods, messaging)
+- `/config` - JSON configuration files
+- `/koyeb` - Cloud deployment (cron jobs)
 
-# Run Kimai-Pumble integration
-node pumble/kimai-pumble-bot.js
+### Environment Variables
+```env
+PUMBLE_API_KEY=xxx      # Required
+KIMAI_USERNAME=xxx      # Required  
+KIMAI_PASSWORD=xxx      # Required
 ```
 
-## Key Features
+---
 
-1. **Resilient Message Sending** - 5 retry attempts with smart delays
-2. **Advance Notifications** - 1-hour notice for scheduled messages
-3. **Multi-Platform Support** - Pumble, Slack, Teams ready
-4. **Pay Period Tracking** - Automatic calculation of bi-weekly periods
-5. **Error Recovery** - Comprehensive error handling and logging
+## 📚 Comprehensive Documentation
 
-## Documentation
+For detailed documentation on all aspects of the Chronos system, please see the **[docs](./docs)** directory:
 
-See the `docs/` directory for:
-- `CRON_SETUP.md` - Setting up scheduled tasks
-- `GET_PUMBLE_API_KEY.md` - Pumble API authentication
-- `MONITORING_SETUP.md` - Monitoring and alerting
-- `BOT_PERSONALITIES.md` - Bot personality system
+- **[Getting Started](./docs/getting-started.md)** - Setup and first steps
+- **[Architecture Overview](./docs/architecture.md)** - System design and patterns
+- **[Scripts Reference](./docs/scripts.md)** - Available scripts and usage
+- **[Configuration Guide](./docs/configuration.md)** - All configuration options
+- **[Development Guide](./docs/development.md)** - Contributing and best practices
+
+## Quick Overview
+
+Chronos is a timesheet reminder bot for Pumble that helps teams stay compliant with timesheet submissions. It integrates with Kimai for timesheet data and sends automated reminders via Pumble.
+
+### Key Features
+
+- 🤖 **Browser-based Kimai extraction** - Reliable data export using Playwright
+- 📊 **Compliance reporting** - Automatic hours tracking and deviation alerts
+- 💬 **Unified messaging** - Single CLI for all communication needs
+- 📅 **Smart scheduling** - Automated reminders based on pay periods
+- 🔧 **Configuration-driven** - Easy customization without code changes
+
+## Quick Reference
+
+### Extract Latest Pay Period Data
+
+```bash
+# Pull latest complete pay period with compliance report
+pnpm run pull-kimai
+
+# Show browser during extraction
+PLAYWRIGHT_HEADLESS=false pnpm run pull-kimai
+```
+
+### Send Messages
+
+```bash
+# Quick message to channel
+./scripts/send-message.js -c dev -m "Hello team!"
+
+# Use template
+./scripts/send-message.js -t timesheet-reminder -s name=John -s hours=75
+
+# Interactive mode
+./scripts/send-message.js interactive
+```
+
+### Key Architecture Principles
+
+1. **Scripts orchestrate, services implement** - Scripts in `/scripts` coordinate but don't contain business logic
+2. **Configuration-driven** - All settings in JSON files, only secrets in .env
+3. **Platform agnostic** - Messaging abstracted through factories
+4. **Separation of concerns** - Clear boundaries between layers
+
+### Environment Variables (Minimal)
+
+```env
+# Only 3 required credentials
+PUMBLE_API_KEY=your-api-key
+KIMAI_USERNAME=admin@example.com  
+KIMAI_PASSWORD=your-password
+```
+
+All other configuration is in JSON files under `/config`.
+
+## For Detailed Information
+
+Please refer to the comprehensive documentation in the **[docs](./docs)** directory for:
+- Complete setup instructions
+- All available scripts and options
+- Configuration reference
+- API documentation
+- Development guidelines
+- Troubleshooting guides
+
+## Important Guidelines
+
+**NEVER SEND MESSAGES TO DEV OR DESIGN TEAM CHANNELS UNLESS EXPLICITLY SPECIFIED BY THE USER**

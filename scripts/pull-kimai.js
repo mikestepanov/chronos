@@ -57,7 +57,7 @@ async function pullKimaiData(options = {}) {
     
     // Step 4: Save to storage
     const storage = StorageFactory.create(config);
-    const periodId = format(payPeriod.start, 'yyyy-MM-dd');
+    const periodId = String(payPeriod.number); // Use pay period number as ID
     
     const storageResult = await storage.save(periodId, exportResult.csvData, {
       periodNumber: payPeriod.number,

@@ -6,60 +6,87 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Track active cron jobs
+const activeJobs = {};
+
 // Health check endpoint for Koyeb
 app.get('/health', (req, res) => {
   res.json({ 
     status: 'healthy', 
     uptime: process.uptime(),
-    cronJobs: {
-      testCron: testCronJob ? 'running' : 'stopped',
-      mondayReminder: mondayReminderJob ? 'running' : 'stopped'
-    },
+    cronJobs: Object.keys(activeJobs).reduce((acc, key) => {
+      acc[key] = activeJobs[key] ? 'running' : 'stopped';
+      return acc;
+    }, {}),
     timestamp: new Date().toISOString() 
   });
 });
 
-// Status endpoint
+// Status endpoint with job details
 app.get('/', (req, res) => {
+  const jobDetails = {
+    testReminder: { 
+      schedule: '*/10 * * * *', 
+      description: 'Test reminder to bot-testing channel every 10 minutes' 
+    },
+    mondayReminder: { 
+      schedule: '0 14 * * 1', 
+      description: 'Monday 9 AM CST reminder to dev & design channels' 
+    }
+  };
+
   res.json({
     service: 'Chronos Cron Server',
     environment: process.env.NODE_ENV || 'development',
-    activeJobs: [
-      { name: 'test-cron', schedule: '*/5 * * * *', active: !!testCronJob },
-      { name: 'monday-reminder', schedule: '0 7 * * 1', active: !!mondayReminderJob }
-    ]
+    activeJobs: Object.keys(jobDetails).map(key => ({
+      name: key,
+      ...jobDetails[key],
+      active: !!activeJobs[key]
+    }))
   });
 });
 
-// Test cron job - runs every 5 minutes
-let testCronJob;
-if (process.env.ENABLE_TEST_CRON === 'true') {
-  console.log('🔄 Enabling test cron job (every 5 minutes)');
-  testCronJob = cron.schedule('*/5 * * * *', async () => {
-    console.log('⏰ Running test cron job at', new Date().toISOString());
+// Test reminder - runs every 10 minutes to bot-testing channel
+if (process.env.ENABLE_TEST_REMINDER === 'true') {
+  console.log('🔄 Enabling test reminder (every 10 minutes to bot-testing)');
+  
+  activeJobs.testReminder = cron.schedule('*/10 * * * *', async () => {
+    console.log('⏰ Running test reminder at', new Date().toISOString());
     try {
-      execSync('node scripts/test-cron.js', { 
+      execSync('node scripts/send-timesheet-reminder.js -c bot-testing', { 
         cwd: __dirname,
         stdio: 'inherit' 
       });
     } catch (error) {
-      console.error('❌ Test cron job failed:', error.message);
+      console.error('❌ Test reminder failed:', error.message);
     }
   });
 }
 
-// Monday reminder cron job - runs every Monday at 7 AM CST
-let mondayReminderJob;
+// Monday reminder - runs every Monday at 9 AM CST to dev & design
 if (process.env.ENABLE_MONDAY_REMINDER === 'true') {
-  // 7 AM CST = 12 PM UTC (during DST) or 1 PM UTC (standard time)
-  console.log('📅 Enabling Monday reminder cron job');
-  mondayReminderJob = cron.schedule('0 12 * * 1', async () => {
-    console.log('⏰ Running Monday reminder job at', new Date().toISOString());
+  console.log('📅 Enabling Monday reminder (9 AM CST to dev & design)');
+  
+  // 9 AM CST = 2 PM UTC (during DST) or 3 PM UTC (standard time)
+  activeJobs.mondayReminder = cron.schedule('0 14 * * 1', async () => {
+    console.log('⏰ Running Monday reminder at', new Date().toISOString());
+    
     try {
-      execSync('node monday-reminder/monday-reminder.js send', { 
+      // Send to dev channel
+      console.log('📤 Sending to dev channel...');
+      execSync('node scripts/send-timesheet-reminder.js -c dev', { 
         cwd: __dirname,
         stdio: 'inherit' 
       });
+      
+      // Send to design channel
+      console.log('📤 Sending to design channel...');
+      execSync('node scripts/send-timesheet-reminder.js -c design', { 
+        cwd: __dirname,
+        stdio: 'inherit' 
+      });
+      
+      console.log('✅ Monday reminders sent successfully');
     } catch (error) {
       console.error('❌ Monday reminder job failed:', error.message);
     }
@@ -78,25 +105,35 @@ app.post('/trigger/:job', express.json(), (req, res) => {
   try {
     switch(job) {
       case 'test':
-        console.log('🔫 Manually triggering test cron');
-        execSync('node scripts/test-cron.js', { 
+        console.log('🔫 Manually triggering test reminder');
+        execSync('node scripts/send-timesheet-reminder.js -c bot-testing', { 
           cwd: __dirname,
           stdio: 'inherit' 
         });
-        res.json({ success: true, message: 'Test cron triggered' });
+        res.json({ success: true, message: 'Test reminder sent to bot-testing' });
         break;
         
       case 'monday':
         console.log('🔫 Manually triggering Monday reminder');
-        execSync('node monday-reminder/monday-reminder.js test', { 
+        
+        // Send to both channels
+        execSync('node scripts/send-timesheet-reminder.js -c dev', { 
           cwd: __dirname,
           stdio: 'inherit' 
         });
-        res.json({ success: true, message: 'Monday reminder triggered' });
+        execSync('node scripts/send-timesheet-reminder.js -c design', { 
+          cwd: __dirname,
+          stdio: 'inherit' 
+        });
+        
+        res.json({ 
+          success: true, 
+          message: 'Monday reminder sent to dev & design'
+        });
         break;
         
       default:
-        res.status(404).json({ error: 'Unknown job' });
+        res.status(404).json({ error: 'Unknown job. Available: test, monday' });
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -107,6 +144,10 @@ app.post('/trigger/:job', express.json(), (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Chronos Cron Server running on port ${PORT}`);
   console.log(`📋 Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`⏰ Test cron: ${process.env.ENABLE_TEST_CRON === 'true' ? 'ENABLED' : 'DISABLED'}`);
-  console.log(`📅 Monday reminder: ${process.env.ENABLE_MONDAY_REMINDER === 'true' ? 'ENABLED' : 'DISABLED'}`);
+  console.log('\nConfigured cron jobs:');
+  console.log(`⏰ Test reminder (10min): ${process.env.ENABLE_TEST_REMINDER === 'true' ? '✅ ENABLED' : '❌ DISABLED'}`);
+  console.log(`📅 Monday reminder: ${process.env.ENABLE_MONDAY_REMINDER === 'true' ? '✅ ENABLED' : '❌ DISABLED'}`);
+  console.log('\nManual triggers available at:');
+  console.log('  POST /trigger/test');
+  console.log('  POST /trigger/monday');
 });

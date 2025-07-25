@@ -41,7 +41,15 @@
     "kimai:test:integration": "NODE_ENV=test node kimai/tests/integration-test.js",
     "kimai:test:load": "node kimai/tests/load-test-concurrent.js 10 && node kimai/tests/load-test-concurrent.js 50 && node kimai/tests/load-test-concurrent.js 100",
     "kimai:test:quick": "npm run kimai:test:mock && KIMAI_MOCK=true NODE_ENV=test node kimai/tests/test-pipeline.js",
-    "pull-kimai": "node scripts/pull-kimai.js"
+    "pull-kimai": "node scripts/pull-kimai.js",
+    "send-reminder": "node scripts/send-timesheet-reminder.js",
+    "send-reminder:dev": "node scripts/send-timesheet-reminder.js -c dev",
+    "send-reminder:design": "node scripts/send-timesheet-reminder.js -c design",
+    "send-reminder:bot-testing": "node scripts/send-timesheet-reminder.js -c bot-testing",
+    "send-reminder:random": "node scripts/send-timesheet-reminder.js -c random",
+    "send-reminder:preview": "node scripts/send-timesheet-reminder.js -d",
+    "send-compliance": "node scripts/send-compliance-status.js",
+    "send-compliance:preview": "node scripts/send-compliance-status.js -d"
   },
   "dependencies": {
     "axios": "^1.6.0",

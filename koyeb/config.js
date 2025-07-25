@@ -38,16 +38,12 @@ module.exports = {
 
   // Environment mapping
   envMapping: {
-    // Kimai
-    'KIMAI_USERNAME': process.env.KIMAI_USERNAME,
-    'KIMAI_PASSWORD': process.env.KIMAI_PASSWORD,
-    
-    // Pumble
+    // Pumble API key (required)
     'PUMBLE_API_KEY': process.env.PUMBLE_API_KEY,
     
-    // Cron settings
-    'ENABLE_TEST_CRON': 'true', // Enable 5-minute test cron
-    'ENABLE_MONDAY_REMINDER': 'false', // Disable for testing
+    // Cron job settings
+    'ENABLE_TEST_REMINDER': 'true',      // Every 10 minutes to bot-testing
+    'ENABLE_MONDAY_REMINDER': 'true',    // Monday 9 AM CST to dev & design
     
     // Webhook security
     'WEBHOOK_SECRET': process.env.WEBHOOK_SECRET || 'test-secret-123',
