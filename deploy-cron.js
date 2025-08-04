@@ -23,7 +23,7 @@ async function deployChronosCron() {
           { key: 'PUMBLE_API_KEY', value: process.env.PUMBLE_API_KEY },
           { key: 'KIMAI_USERNAME', value: process.env.KIMAI_USERNAME },
           { key: 'KIMAI_PASSWORD', value: process.env.KIMAI_PASSWORD },
-          { key: 'ENABLE_TEST_CRON', value: 'true' },
+          { key: 'ENABLE_TEST_REMINDER', value: 'true' },
           { key: 'ENABLE_MONDAY_REMINDER', value: 'false' },
           { key: 'WEBHOOK_SECRET', value: 'test-secret-123' },
           { key: 'NODE_ENV', value: 'production' }

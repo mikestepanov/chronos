@@ -30,8 +30,8 @@ app.get('/', (req, res) => {
       description: 'Keep-alive ping every 5 minutes (prevents sleeping)'
     },
     testReminder: { 
-      schedule: '0 14 * * *', 
-      description: 'Daily reminder to bot-testing channel at 9 AM CST' 
+      schedule: '10 4 * * *', 
+      description: 'Daily reminder to bot-testing channel at 11:10 PM CDT' 
     },
     mondayReminder: { 
       schedule: '0 14 * * 1', 
@@ -70,12 +70,12 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-// Test reminder - runs daily at 9 AM CST to bot-testing channel
+// Test reminder - runs daily at 11:10 PM CDT to bot-testing channel
 if (process.env.ENABLE_TEST_REMINDER === 'true') {
-  console.log('🔄 Enabling test reminder (daily 9 AM CST to bot-testing)');
+  console.log('🔄 Enabling test reminder (daily 11:10 PM CDT to bot-testing)');
   
-  // 9 AM CST = 2 PM UTC (during DST) or 3 PM UTC (standard time)
-  activeJobs.testReminder = cron.schedule('0 14 * * *', async () => {
+  // 11:10 PM CDT = 4:10 AM UTC
+  activeJobs.testReminder = cron.schedule('10 4 * * *', async () => {
     console.log('⏰ Running test reminder at', new Date().toISOString());
     try {
       execSync('node scripts/send-timesheet-reminder.js -c bot-testing', { 
