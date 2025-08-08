@@ -79,7 +79,7 @@ async function pullKimaiData(options = {}) {
       const generator = new HoursReportGenerator(config);
       const report = generator.generateReport(processedData.timesheets, payPeriod);
       
-      // Save report
+      // Save text report
       const reportPath = await generator.saveReport(
         report.content, 
         path.join(config.storage.basePath, periodId)
@@ -88,6 +88,32 @@ async function pullKimaiData(options = {}) {
       logger.info('Hours report generated', {
         path: reportPath,
         complianceRate: report.summary.complianceRate
+      });
+      
+      // Generate and save pay period CSV
+      const payPeriodCSV = generator.generatePayPeriodCSV(report.data, payPeriod);
+      const csvPath = await generator.savePayPeriodCSV(
+        payPeriodCSV,
+        path.join(config.storage.basePath, periodId),
+        payPeriod.number
+      );
+      
+      logger.info('Pay period CSV generated', {
+        path: csvPath,
+        periodNumber: payPeriod.number
+      });
+
+      // Generate and save pay period XLSX with formulas
+      const payPeriodXLSX = generator.generatePayPeriodXLSX(report.data, payPeriod);
+      const xlsxPath = await generator.savePayPeriodXLSX(
+        payPeriodXLSX,
+        path.join(config.storage.basePath, periodId),
+        payPeriod.number
+      );
+      
+      logger.info('Pay period XLSX generated', {
+        path: xlsxPath,
+        periodNumber: payPeriod.number
       });
       
       // Display report

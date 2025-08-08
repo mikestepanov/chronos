@@ -15,7 +15,8 @@ async function deployChronosCron() {
       appName: 'pay-period-bot' // Use existing app name
     });
     
-    const deployment = await deployer.deploy({
+    // Skip app creation since it already exists and just deploy service
+    const deployment = await deployer.deployService({
       definition: {
         name: 'pay-period-bot',
         type: 'WEB',

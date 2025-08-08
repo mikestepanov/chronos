@@ -1,0 +1,190 @@
+Hours Compliance Report - Pay Period #21
+Period: Jul 22 - Aug 04, 2025
+Generated: 2025-08-06T04:02:49.283Z
+Source: Automated pull
+Entries: 143
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Ariful               |        95.50 |    80.00 |     +15.50 |      +19.4% |      ✗ |
+| Raheel Shahzad       |        89.50 |    80.00 |      +9.50 |      +11.9% |      ✗ |
+| Pauline Nguyen       |        85.00 |    80.00 |      +5.00 |       +6.3% |      ✗ |
+| Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Yulia                |        50.25 |    50.00 |      +0.25 |       +0.5% |      ✓ |
+| Eddy                 |        47.00 |    40.00 |      +7.00 |      +17.5% |      ✗ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 95.50
+Status: ✗ FAIL
+Work Summary:
+  • Maintenance & Support - Research: trying to find Safe note calculator calculations
+  • Team Operations - Meeting
+  • Maintenance & Support - Bug Fixing: Fixed Dilution calculator Graph again
+  • Maintenance & Support - Bug Fixing: Refactor Dilution Calculator Codebase
+  • Maintenance & Support - Code Review: Refactor Runway calculator codebase
+  • Maintenance & Support - Programming: Fix Dilution Calculator Graph
+  • Maintenance & Support - Bug Fixing: Fix Calculator Input components issue
+  • Maintenance & Support - Programming: Implement Dilution Calculator
+  • Maintenance & Support - Programming: Implement Runway Calculator
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 89.50
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: StandUp meeting
+  • 1-to-1 Coaching - Programming: Update 1-1 Coaching Pages
+  • Team Operations - Meeting: Stand Up meeting
+  • Team Operations - Meeting: StandUp Meeting
+  • Team Operations - Meeting: Stand up meeting
+  • 1-to-1 Coaching - Programming: Stand up meeting
+  • User Profile & Settings - Programming: Rewrite logic for the category filtrers (removed hardcoded filters)
+  • Team Operations - Meeting: Standup
+  • Team Operations - Meeting: standup meeting
+  • SEO Optimization - Programming: Create Automated SEO Testing Suite
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 85.00
+Status: ✗ FAIL
+Work Summary:
+  • Print Designs - Design: Curriculum
+  • Team Operations - Meeting: Design Team Sync
+  • Team Operations - Meeting: Weekly Design Meeting
+  • Team Operations - Meeting: S.T.A.T.U.S. Framework Meeting
+  • Team Operations - Meeting: 1:1 Yulia
+
+
+Dharam Pal Singh
+----------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Admin Panel - Programming: Update Scenario Modal UI and Actions
+  • Admin Panel - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Admin Panel - Programming: ' Resolved conflicts, Implemented and verified event date-time conversion fix and started on scenerios.
+
+Details:
+Added statusFilter parameter in the useGetFullLiveEventQuery variables.
+Updated query to use statusFilter, state, and take for better event filtering.
+Added new event status tabs: Ongoing Events, Completed Events, and Draft.
+Mapped event statuses to LiveEventStatus.ONGOING and LiveEventStatus.COMPLETED.
+Integrated statusFilter into event query for filtering based on status.
+  • Admin Panel - Programming: ' Investigated and debugged event date-time conversion issue:
+
+Details:
+Analyzed convertToUTC function and identified the root cause of RangeError: Invalid time value.
+Reviewed AdminAddEvent and AdminEditEvent implementations to trace input data formats (startDate, startTime).
+  • Admin Panel - Meeting: Alex: Sync Up
+  • Admin Panel - Programming: UI Refactoring picture modal, Fix mentor list and Testing:
+
+Details:
+Refactored div with inline styles to use SDSFlexbox based on feedback.
+Improved cropper footer layout and slider alignment.
+Reviewed and tested modal responsiveness and cropper controls on multiple screen sizes.
+Cleaned up SCSS for modal actions and cropper slider.
+Final testing of picture input upload fixes and cross-browser checks.
+  • Admin Panel - Programming: ' Modal and Picture Input Fixes:
+
+Details:
+Fixed modal centering using flex-based layout for SDSModal.
+Updated modal action buttons alignment and added border-top wrapper.
+Scoped MuiSlider margin fixes within cropper_wrapper__actions.
+Implemented responsive styles for modal and action bar (mobile support).
+Verified picture input handling fixes and UI adjustments for document templates.
+  • Admin Panel - Programming: ' Fix document template picture schema and image upload integration
+
+Details:
+Investigated issue where picture object was always empty for document templates on form submission
+Compared document template flow with email template flow to identify schema mismatch
+Reviewed ImageInput, FormImageInput, Form.tsx, and use-picture hook to trace binding and value updates
+Updated documentTemplateSchema to use optionalImageDataSchema matching ImageInput output shape (url, original, thumbnail, meta)
+Validated form binding and confirmed proper data in handleSubmit
+Tested new upload flow for both create and edit scenarios of document templates
+Added console logs and verified schema alignment resolves the issue
+  • Admin Panel - Programming: Fix Vimeo video sync issues
+  • Admin Panel - Programming: Fix styling.
+Tested multiple scenarios for stream, chapter, and lesson-level changes.
+Cleaned up.
+prepared PR.
+  • Admin Panel - Programming: Refactored course-related components and removed outdated diff logic.
+Updated GraphQL hooks for chapter and lesson
+Cleaned up types, unused props, and state.
+  • Admin Panel - Programming: ' Updated getCourseDiff utility to include streams, chapters, and lessons for newly added course.
+Integrated getCourseDiff into useCourseDiff hook.
+Added type definitions and ensured proper diff structure handling.
+Performed initial testing and logging for diff output
+
+
+Mori Isaac
+----------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Dev Ops / Infrastructure: Robots.txt and Docker enhancements
+  • Team Operations - Meeting
+  • Team Operations - Dev Ops / Infrastructure: Robots TXT
+  • Team Operations - Dev Ops / Infrastructure: Robots txt and nginx conf update
+  • Team Operations - Dev Ops / Infrastructure: Robots TXT enhancements
+  • Team Operations - Dev Ops / Infrastructure: Robots txt enhancements
+  • Team Operations - Dev Ops / Infrastructure: Appflowy infrastructure
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Infrastructure enhancement 
+SMTP Bugs
+  • Team Operations - Dev Ops / Infrastructure: Appflowy enhancements
+  • Team Operations - Dev Ops / Infrastructure
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Enhancements and installation
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 50.25
+Status: ✓ PASS
+Work Summary:
+  • Onboarding - Design: Implemented changes on 1to1 booking and onboarding. Searched for references for onboarding.
+  • 1-to-1 Coaching - Design: Meeting design sync up. Searched for references for the onboarding.
+  • 1-to-1 Coaching - Design: Created dark mode for mobile and tablet versions of our new 1to1 booking flow. Worked on the reviews component.
+  • 1-to-1 Coaching - Design: Implemented changes from Mike on 1to1 coaching. Implemented changes on the Onboarding pages.
+  • 1-to-1 Coaching - Design: Meeting design sync +implemented changes from Mike
+  • Community Forum - Meeting: Demo status + Status + Pauline
+  • 1-to-1 Coaching - Design: Implemented changes from Mike. Created a new dark mode
+  • 1-to-1 Coaching - Design: Created Light tablet and mobile versions, dark version for tablet, mobile and desktop
+  • 1-to-1 Coaching - Meeting: design sync up
+  • 1-to-1 Coaching - Design: ' Learned about new onboarding flow. Met with Mike. Implemented changes from mike to 1to1 coaching. Added text reviews, Accordion, footer everywhere, created a new tablet version of the first screen.
+  • 1-to-1 Coaching - Design: updated plans card, updated components on booking, updated actual variation, cleaned variables and colors, gaps
+  • Maintenance & Support - Project Management: prepared components for Eddy. Reviewed Eddys work.
+  • Team Operations - Meeting: Design sync + Addy
+
+
+Eddy
+----
+Expected Hours: 40.00
+Actual Hours: 47.00
+Status: ✗ FAIL
+Work Summary:
+  • Tools & Templates - Design: Continued making variantions of the email templates cards, removed all the 4s, and Below, and all the Nos as well.
+  • Tools & Templates - Design: Continued making variations for the email template and document template cards
+  • Tools & Templates - Design: Continued Making Variations for the documents templates cards.
+  • Tools & Templates - Design: Continued making variations for the email template cards.
+  • Admin Panel - Design: Polishing of the Calculator Pages, then Design Sync Meeting a few hours later.
+  • Admin Panel - Design: Continued designing the calculator pages.
+(Second Page)
+Removed some frames not needed and polishing.
+  • Admin Panel - Design: Continued designing the calculator pages, Upadated previous variables and components with our components and variables/Tokens
+  • Admin Panel - Design: Continued designing the calculator pages.
+  • Admin Panel - Design: Continued Designing the calculator pages
+

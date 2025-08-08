@@ -1,0 +1,84 @@
+{
+  "versions": [
+    {
+      "version": 1,
+      "extractedAt": "2025-08-05T14:22:59.684Z",
+      "checksum": "167816ec8b83546b42d8c8b5fad30fcad806413fc920e8159e2713bd7fa79c19",
+      "metadata": {
+        "periodNumber": 21,
+        "startDate": "2025-07-22T05:00:00.000Z",
+        "endDate": "2025-08-05T04:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 579,
+          "filteredRecords": 136,
+          "uniqueUsers": 7,
+          "totalHours": 491.75,
+          "recordsOutsidePeriod": 443,
+          "periodNumber": 21,
+          "dateRange": {
+            "start": "2025-07-22",
+            "end": "2025-08-05"
+          }
+        },
+        "recordCount": 694,
+        "bytes": 104281
+      }
+    },
+    {
+      "version": 2,
+      "extractedAt": "2025-08-05T18:44:57.344Z",
+      "checksum": "bf84fd93b786a5995b96eb90faa9b59a96774079beba691006ee5105e4fc140e",
+      "metadata": {
+        "periodNumber": 21,
+        "startDate": "2025-07-22T05:00:00.000Z",
+        "endDate": "2025-08-05T04:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 581,
+          "filteredRecords": 138,
+          "uniqueUsers": 7,
+          "totalHours": 499.75,
+          "recordsOutsidePeriod": 443,
+          "periodNumber": 21,
+          "dateRange": {
+            "start": "2025-07-22",
+            "end": "2025-08-05"
+          }
+        },
+        "recordCount": 696,
+        "bytes": 104591
+      }
+    },
+    {
+      "version": 3,
+      "extractedAt": "2025-08-06T04:02:49.282Z",
+      "checksum": "445929ec116ae1bf04aa3b8f4dff4c634c280eb9132c4a5b4f88c446d0af1ff6",
+      "metadata": {
+        "periodNumber": 21,
+        "startDate": "2025-07-22T05:00:00.000Z",
+        "endDate": "2025-08-05T04:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 586,
+          "filteredRecords": 143,
+          "uniqueUsers": 7,
+          "totalHours": 527.25,
+          "recordsOutsidePeriod": 443,
+          "periodNumber": 21,
+          "dateRange": {
+            "start": "2025-07-22",
+            "end": "2025-08-05"
+          }
+        },
+        "recordCount": 701,
+        "bytes": 105611
+      }
+    }
+  ],
+  "latest": 3,
+  "updatedAt": "2025-08-06T04:02:49.282Z"
+}

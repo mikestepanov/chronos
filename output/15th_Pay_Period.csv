@@ -1,0 +1,42 @@
+Summary Overview Link,https://docs.google.com/document/d/1HyKhJOAoBxyWkyDJY9PHqOHRKz84fnfy_H91387b_GU
+ACTUAL EXPENSE REFS
+Name,Time Tracking,Payment Processing,Actual Expense (M),Clockify Hours Times Rate (pre-tax) (C),Actual Pay Period (Combined) Hours (C),Actual Paid Hours (M),Actual Equity Hours (M),Name of Ref1,Value of Ref1,Link to Ref1,Name of Ref2,Value of Ref2,Link to Ref2,Name of Ref3,Value of Ref3,Link to Ref3,Name of Ref4,Value of Ref4,Link to Ref4
+Total,,,1958.75
+Dharam Pal,Clockify,Gusto,735,735,83.45,42,41.45,"Clockify: Dharam, Wed, Apr 16 - Wed, Apr 30","Approved 16:00:00, Billable 8:00:00. Meaning that Equity is 8:00:00. Clockify amount is $140.00. Decimal hours: 8.00",https://app.clockify.me/approvals/682424c57f29f26a889a57e2?userId=68054b65da507d1b66d678a4,"Clockify: Dharam, Thu, May 1 - Today","Approved 67:45:00, Billable 34:00:00. Meaning that Equity is 33:45:00. Clockify amount is $595.00. Decimal hours: 67.75",https://app.clockify.me/approvals/682369b6b505c259c81bd6d5?userId=68054b65da507d1b66d678a4,-,-,-,-,-,-
+Ariful Islam,Upwork,Upwork,365,365,76.5,36.5,40,"Clockify: Ariful, Wed, Apr 16 - Wed, Apr 30","Approved 04:00:00, Billable 04:00:00. Meaning that Equity is 0. Clockify amount is $40.00. Decimal hours: 4.00",https://app.clockify.me/approvals/6823f74e1c4a824d6a73d60b?userId=68054953135498463183032e,"Clockify: Ariful, Thu, May 1 - Today","Approved 72:30:00, Billable 32:30:00. Meaning that Equity is 40:00:00. Clockify amount is $325.00. Decimal hours: 72.50",https://app.clockify.me/approvals/6823f6ce9ee5b440ea918be7?userId=68054953135498463183032e,,,,-,-,-
+Muhammad Afaq,Clockify,Gusto,151.25,151.2495,10.0833,10.0833,,"Clockify: Muhammad Afaq, Wed, Apr 16 - Wed, Apr 30","Approved 01:45:00, Billable 01:45:00. Meaning that Equity is 0. Clockify amount is $26.25. Decimal hours: 1.75",https://app.clockify.me/approvals/6822f91c50899316acca9136?userId=67350d8bf42ee443638377c2,"Clockify: Muhammad Afaq, Thu, May 1 - Thu, May 15
+","Approved 08:20:00, Billable 08:20:00. Meaning that Equity is 0. Clockify amount is $125.00. Decimal hours: 8.33",https://app.clockify.me/approvals/6822f91f403507195a0cfb76?userId=67350d8bf42ee443638377c2,-,-,-,-,-,-
+Manisha Garg,Clockify,Gusto,707.5,707.5,70.75,70.75,,"Clockify: manishacits, Wed, Apr 16 - Wed, Apr 30","Approved 17:00:00, Billable 17:00:00. Meaning that Equity is 0. Clockify amount is $170.00. Decimal hours: 17.00",https://app.clockify.me/approvals/6823122250899316accd5b8d?userId=67cef5d3cf06332f2bb60543,"Clockify: manishacits, Thu, May 1 - Thu, May 15","Approved 53:45:00, Billable 53:45:00. Meaning that Equity is 0. Clockify amount is $537.50. Decimal hours: 53.75",https://app.clockify.me/approvals/6823121a7f29f26a88813a32?userId=67cef5d3cf06332f2bb60543,-,-,-,-,-,-
+EXPECTED EXPENSES
+Name,Expected Pay Period Expense (C),Weekly Expected Expense (C),Total Paid Weekly Hours (M),"Total Expense Rate, with Tax (C)",Pre-Tax Employee Rate (C),Base Rate (M),Upwork fee (multiplier) (M),US FTE bonus (multiplier) (M),"Taxes (multiplier, approximately) (M)",Comments
+Total,1500,500
+Dharam Pal,700,350,20,17.5,17.5,17.5,1,1,1
+Ariful Islam,400,200,20,10,10,10,1,1,1
+Yulia McCoy,500,,,34.5,30,26.09,1,1.15,1.15
+Muhammad Afaq,600,300,20,15,15,15,1,1,1
+Manisha Garg,400,200,20,10,10,10,1,1,1
+HOURS
+Coloring,3 hours max is acceptable difference,3 hour+ difference
+Name,Inconsistency Ratio (C),Pay Period Hours Difference (C),Equity Hours Difference (C),Pay Period Expecteed Hours (C),Total Expected Weekly Hours (C),Total Expected Weekly Equity Hours (M),Total Expected Paid Weekly Hours (C)
+Grand Total,Average 0.22% Overworked,-0.7833,-1.45,360,180,100,80
+Dev Total,Average 0.02% Missed,0.05,-1.45,240,120,80,40
+Dharam Pal,4.31% Overworked,-3.45,-1.45,80,40,20,20
+Ariful Islam,4.38% Missed,3.5,,80,40,20,20
+Mikhail Stepanov,No Difference,,,40,20,20,
+Anatoly Stepanov,No Difference,,,40,20,20,
+Design Total,Average 0.69% Overworked,-0.8333,,120,60,20,40
+Muhammad Afaq,74.79% Missed,29.9167,,40,20,,20
+Manisha Garg,76.88% Overworked,-30.75,,40,20,,20,Manisha has been working on the booklet.
+Yulia McCoy,No Difference,,,40,20,20,
+ACTUAL EXPENSES
+Name,Incosistency Expense (C),Expected Pay Period Expense (C),Actual Expense (C),Actual Expense Paid (M),Expence Difference (C)
+Grand Total,141.25,2100,1958.75,1958.7,0.05
+Dev Total,,1100,1100,1100,
+Dharam Pal,-35,700,735,735,
+Ariful Islam,35,400,365,365,
+Mikhail Stepanov,,,,,
+Anatoly Stepanov,,,,,
+Design Total,141.25,1000,858.75,858.7,0.05
+Muhammad Afaq,448.75,600,151.25,151.2,0.05,We overapaid Afaq 5 cents.
+Manisha Garg,-307.5,400,707.5,707.5,,"We overpaid Manisha 3 cents, we overpaid again."
+Yulia McCoy,,,,,
