@@ -46,7 +46,6 @@ app.get('/', (req, res) => {
 
   res.json({
     service: 'Chronos Cron Server',
-    environment: process.env.NODE_ENV || 'development',
     activeJobs: Object.keys(jobDetails).map(key => ({
       name: key,
       ...jobDetails[key],
@@ -56,24 +55,22 @@ app.get('/', (req, res) => {
 });
 
 // Keep-alive ping - runs every 5 minutes to prevent sleeping
-if (process.env.NODE_ENV === 'production') {
-  console.log('💓 Enabling keep-alive ping (every 5 minutes)');
-  
-  activeJobs.keepAlive = cron.schedule('*/5 * * * *', async () => {
-    console.log('💓 Keep-alive ping at', new Date().toISOString());
-    try {
-      // Just a simple self-ping to keep the app awake
-      const http = require('http');
-      http.get('http://localhost:3000/health', (res) => {
-        console.log('💓 Keep-alive response:', res.statusCode);
-      }).on('error', (err) => {
-        console.error('💓 Keep-alive error:', err.message);
-      });
-    } catch (error) {
-      console.error('❌ Keep-alive failed:', error.message);
-    }
-  });
-}
+console.log('💓 Enabling keep-alive ping (every 5 minutes)');
+
+activeJobs.keepAlive = cron.schedule('*/5 * * * *', async () => {
+  console.log('💓 Keep-alive ping at', new Date().toISOString());
+  try {
+    // Just a simple self-ping to keep the app awake
+    const http = require('http');
+    http.get('http://localhost:3000/health', (res) => {
+      console.log('💓 Keep-alive response:', res.statusCode);
+    }).on('error', (err) => {
+      console.error('💓 Keep-alive error:', err.message);
+    });
+  } catch (error) {
+    console.error('❌ Keep-alive failed:', error.message);
+  }
+});
 
 // Test reminder - runs every 5 minutes to bot-testing channel
 console.log('🔄 Enabling test reminder (every 5 minutes to bot-testing)');
@@ -198,9 +195,8 @@ app.post('/trigger/:job', express.json(), (req, res) => {
 // Start server
 app.listen(PORT, () => {
   console.log(`🚀 Chronos Cron Server running on port ${PORT}`);
-  console.log(`📋 Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log('\nConfigured cron jobs:');
-  console.log(`💓 Keep-alive (5min): ${process.env.NODE_ENV === 'production' ? '✅ ENABLED' : '❌ DISABLED'}`);
+  console.log(`💓 Keep-alive (5min): ✅ ENABLED`);
   console.log(`⏰ Test reminder (5min): ✅ ENABLED`);
   console.log(`📅 Daily reminder: ✅ ENABLED`);
   console.log(`📅 Monday reminder: ✅ ENABLED`);
