@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cron = require('node-cron');
 const { execSync } = require('child_process');
@@ -30,12 +31,16 @@ app.get('/', (req, res) => {
       description: 'Keep-alive ping every 5 minutes (prevents sleeping)'
     },
     testReminder: { 
+      schedule: '*/5 * * * *', 
+      description: '5-minute test reminder to bot-testing channel' 
+    },
+    dailyReminder: { 
       schedule: '10 4 * * *', 
       description: 'Daily reminder to bot-testing channel at 11:10 PM CDT' 
     },
     mondayReminder: { 
-      schedule: '0 14 * * 1', 
-      description: 'Monday 9 AM CST reminder to dev & design (pay period end only)' 
+      schedule: '0 19 * * 1', 
+      description: 'Monday 2 PM CST reminder to dev & design (pay period end only)' 
     }
   };
 
@@ -70,67 +75,78 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-// Test reminder - runs daily at 11:10 PM CDT to bot-testing channel
-if (process.env.ENABLE_TEST_REMINDER === 'true') {
-  console.log('🔄 Enabling test reminder (daily 11:10 PM CDT to bot-testing)');
+// Test reminder - runs every 5 minutes to bot-testing channel
+console.log('🔄 Enabling test reminder (every 5 minutes to bot-testing)');
+
+activeJobs.testReminder = cron.schedule('*/5 * * * *', async () => {
+  console.log('⏰ Running 5-minute test reminder at', new Date().toISOString());
+  try {
+    execSync('node scripts/send-timesheet-reminder.js -c bot-testing', { 
+      cwd: __dirname,
+      stdio: 'inherit' 
+    });
+  } catch (error) {
+    console.error('❌ Test reminder failed:', error.message);
+  }
+});
+
+// Daily reminder - runs daily at 11:10 PM CDT to bot-testing channel  
+console.log('🔄 Enabling daily reminder (11:10 PM CDT to bot-testing)');
+
+// 11:10 PM CDT = 4:10 AM UTC
+activeJobs.dailyReminder = cron.schedule('10 4 * * *', async () => {
+  console.log('⏰ Running daily reminder at', new Date().toISOString());
+  try {
+    execSync('node scripts/send-timesheet-reminder.js -c bot-testing', { 
+      cwd: __dirname,
+      stdio: 'inherit' 
+    });
+  } catch (error) {
+    console.error('❌ Daily reminder failed:', error.message);
+  }
+});
+
+// Monday reminder - runs every Monday at 2 PM CST to dev & design
+console.log('📅 Enabling Monday reminder (2 PM CST on pay period end)');
+
+// Import PayPeriodCalculator to check if today is last day
+const PayPeriodCalculator = require('./shared/pay-period-calculator');
+const calculator = new PayPeriodCalculator();
+
+// 2 PM CST = 7 PM UTC (during DST) or 8 PM UTC (standard time)
+activeJobs.mondayReminder = cron.schedule('0 19 * * 1', async () => {
+  // Check if today is the last day of a pay period
+  const currentPeriod = calculator.getCurrentPayPeriod();
+  const today = new Date();
+  const periodEndDate = new Date(currentPeriod.end);
   
-  // 11:10 PM CDT = 4:10 AM UTC
-  activeJobs.testReminder = cron.schedule('10 4 * * *', async () => {
-    console.log('⏰ Running test reminder at', new Date().toISOString());
+  // Check if today is the same date as period end
+  if (today.toDateString() === periodEndDate.toDateString()) {
+    console.log(`⏰ Running Monday reminder for period ${currentPeriod.number} end at`, new Date().toISOString());
+    
     try {
-      execSync('node scripts/send-timesheet-reminder.js -c bot-testing', { 
+      // Send to dev channel
+      console.log('📤 Sending to dev channel...');
+      execSync('node scripts/send-timesheet-reminder.js -c dev', { 
         cwd: __dirname,
         stdio: 'inherit' 
       });
-    } catch (error) {
-      console.error('❌ Test reminder failed:', error.message);
-    }
-  });
-}
-
-// Monday reminder - runs every Monday at 9 AM CST to dev & design
-if (process.env.ENABLE_MONDAY_REMINDER === 'true') {
-  console.log('📅 Enabling Monday reminder (9 AM CST on pay period end)');
-  
-  // Import PayPeriodCalculator to check if today is last day
-  const PayPeriodCalculator = require('./shared/pay-period-calculator');
-  const calculator = new PayPeriodCalculator();
-  
-  // 9 AM CST = 2 PM UTC (during DST) or 3 PM UTC (standard time)
-  activeJobs.mondayReminder = cron.schedule('0 14 * * 1', async () => {
-    // Check if today is the last day of a pay period
-    const currentPeriod = calculator.getCurrentPayPeriod();
-    const today = new Date();
-    const periodEndDate = new Date(currentPeriod.end);
-    
-    // Check if today is the same date as period end
-    if (today.toDateString() === periodEndDate.toDateString()) {
-      console.log(`⏰ Running Monday reminder for period ${currentPeriod.number} end at`, new Date().toISOString());
       
-      try {
-        // Send to dev channel
-        console.log('📤 Sending to dev channel...');
-        execSync('node scripts/send-timesheet-reminder.js -c dev', { 
-          cwd: __dirname,
-          stdio: 'inherit' 
-        });
-        
-        // Send to design channel
-        console.log('📤 Sending to design channel...');
-        execSync('node scripts/send-timesheet-reminder.js -c design', { 
-          cwd: __dirname,
-          stdio: 'inherit' 
-        });
-        
-        console.log('✅ Monday reminders sent successfully');
-      } catch (error) {
-        console.error('❌ Monday reminder job failed:', error.message);
-      }
-    } else {
-      console.log(`⏭️ Skipping Monday reminder (not end of pay period)`);
+      // Send to design channel
+      console.log('📤 Sending to design channel...');
+      execSync('node scripts/send-timesheet-reminder.js -c design', { 
+        cwd: __dirname,
+        stdio: 'inherit' 
+      });
+      
+      console.log('✅ Monday reminders sent successfully');
+    } catch (error) {
+      console.error('❌ Monday reminder job failed:', error.message);
     }
-  });
-}
+  } else {
+    console.log(`⏭️ Skipping Monday reminder (not end of pay period)`);
+  }
+});
 
 // Manual trigger endpoints (protected by secret)
 app.post('/trigger/:job', express.json(), (req, res) => {
@@ -185,8 +201,9 @@ app.listen(PORT, () => {
   console.log(`📋 Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log('\nConfigured cron jobs:');
   console.log(`💓 Keep-alive (5min): ${process.env.NODE_ENV === 'production' ? '✅ ENABLED' : '❌ DISABLED'}`);
-  console.log(`⏰ Test reminder (daily): ${process.env.ENABLE_TEST_REMINDER === 'true' ? '✅ ENABLED' : '❌ DISABLED'}`);
-  console.log(`📅 Monday reminder: ${process.env.ENABLE_MONDAY_REMINDER === 'true' ? '✅ ENABLED' : '❌ DISABLED'}`);
+  console.log(`⏰ Test reminder (5min): ✅ ENABLED`);
+  console.log(`📅 Daily reminder: ✅ ENABLED`);
+  console.log(`📅 Monday reminder: ✅ ENABLED`);
   console.log('\nManual triggers available at:');
   console.log('  POST /trigger/test');
   console.log('  POST /trigger/monday');
