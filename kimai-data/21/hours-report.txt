@@ -1,17 +1,17 @@
 Hours Compliance Report - Pay Period #21
 Period: Jul 22 - Aug 04, 2025
-Generated: 2025-08-06T04:02:49.283Z
+Generated: 2025-08-18T18:28:15.887Z
 Source: Automated pull
-Entries: 143
+Entries: 147
 
 | User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
 |----------------------|--------------|----------|------------|-------------|--------|
 | Ariful               |        95.50 |    80.00 |     +15.50 |      +19.4% |      ✗ |
 | Raheel Shahzad       |        89.50 |    80.00 |      +9.50 |      +11.9% |      ✗ |
+| Dharam Pal Singh     |        88.00 |    80.00 |      +8.00 |      +10.0% |      ✗ |
 | Pauline Nguyen       |        85.00 |    80.00 |      +5.00 |       +6.3% |      ✗ |
-| Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
-| Yulia                |        50.25 |    50.00 |      +0.25 |       +0.5% |      ✓ |
+| Yulia                |        54.25 |    50.00 |      +4.25 |       +8.5% |      ✗ |
 | Eddy                 |        47.00 |    40.00 |      +7.00 |      +17.5% |      ✗ |
 
 
@@ -54,27 +54,16 @@ Work Summary:
   • SEO Optimization - Programming: Create Automated SEO Testing Suite
 
 
-Pauline Nguyen
---------------
-Expected Hours: 80.00
-Actual Hours: 85.00
-Status: ✗ FAIL
-Work Summary:
-  • Print Designs - Design: Curriculum
-  • Team Operations - Meeting: Design Team Sync
-  • Team Operations - Meeting: Weekly Design Meeting
-  • Team Operations - Meeting: S.T.A.T.U.S. Framework Meeting
-  • Team Operations - Meeting: 1:1 Yulia
-
-
 Dharam Pal Singh
 ----------------
 Expected Hours: 80.00
-Actual Hours: 80.00
-Status: ✓ PASS
+Actual Hours: 88.00
+Status: ✗ FAIL
 Work Summary:
-  • Admin Panel - Programming: Update Scenario Modal UI and Actions
+  • Admin Panel - Programming: refactor(admin-discount-deals): add eviction updater and notifications
   • Admin Panel - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Admin Panel - Meeting: Alex: Sync Up
+  • Admin Panel - Programming: Update Scenario Modal UI and Actions
   • Admin Panel - Programming: ' Resolved conflicts, Implemented and verified event date-time conversion fix and started on scenerios.
 
 Details:
@@ -88,7 +77,6 @@ Integrated statusFilter into event query for filtering based on status.
 Details:
 Analyzed convertToUTC function and identified the root cause of RangeError: Invalid time value.
 Reviewed AdminAddEvent and AdminEditEvent implementations to trace input data formats (startDate, startTime).
-  • Admin Panel - Meeting: Alex: Sync Up
   • Admin Panel - Programming: UI Refactoring picture modal, Fix mentor list and Testing:
 
 Details:
@@ -129,6 +117,19 @@ Added type definitions and ensured proper diff structure handling.
 Performed initial testing and logging for diff output
 
 
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 85.00
+Status: ✗ FAIL
+Work Summary:
+  • Print Designs - Design: Curriculum
+  • Team Operations - Meeting: Design Team Sync
+  • Team Operations - Meeting: Weekly Design Meeting
+  • Team Operations - Meeting: S.T.A.T.U.S. Framework Meeting
+  • Team Operations - Meeting: 1:1 Yulia
+
+
 Mori Isaac
 ----------
 Expected Hours: 80.00
@@ -152,9 +153,10 @@ SMTP Bugs
 Yulia
 -----
 Expected Hours: 50.00
-Actual Hours: 50.25
-Status: ✓ PASS
+Actual Hours: 54.25
+Status: ✗ FAIL
 Work Summary:
+  • Team Operations - Meeting: Design sync up + met with Mike + met with Dennis. Fixed comments from Mike on 1to 1 booking page
   • Onboarding - Design: Implemented changes on 1to1 booking and onboarding. Searched for references for onboarding.
   • 1-to-1 Coaching - Design: Meeting design sync up. Searched for references for the onboarding.
   • 1-to-1 Coaching - Design: Created dark mode for mobile and tablet versions of our new 1to1 booking flow. Worked on the reviews component.

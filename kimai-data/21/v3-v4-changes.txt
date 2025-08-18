@@ -1,0 +1,29 @@
+Pay Period 21 - Changes from v3 to v4
+Generated: 2025-08-18T18:28:15.884Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 81
+Removed entries: 0
+
+HOURS CHANGES BY USER
+
+
+dharam                      321.00 →   401.00 (+80.00)
+raheel                      335.25 →   399.75 (+64.50)
+Yulia                       179.75 →   224.75 (+45.00)
+dennis                        0.00 →    24.75 (+24.75)
+
+
+NEW ENTRIES ADDED
+-----------------
++ dharam - 6:15 - Programming
++ dharam - 0:45 - Meeting
++ dharam - 1:00 - Meeting
++ dennis - 2:30 - Design
++ raheel - 0:30 - Meeting
++ dennis - 2:30 - Design
++ Yulia - 5:00 - Meeting
++ dharam - 7:30 - Programming
+... and 71 more entries
