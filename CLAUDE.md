@@ -57,13 +57,40 @@ PLAYWRIGHT_HEADLESS=false npm run pull-kimai
 ### Environment Variables (Minimal)
 
 ```env
-# Only 3 required credentials
+# Required credentials
 PUMBLE_API_KEY=your-api-key
 KIMAI_USERNAME=admin@example.com  
 KIMAI_PASSWORD=your-password
+KOYEB_API_KEY=your-koyeb-api-key  # For deployments
 ```
 
 All other configuration is in JSON files under `/config`.
+
+### Koyeb Deployment
+
+The app is deployed on Koyeb with GitHub integration. Changes pushed to the `first` branch auto-deploy.
+
+**Current Cron Schedule:**
+- **Keep-alive**: Every 10 minutes - sends "Keep-alive check: HH:MM CST" to bot-testing
+- **Daily Reminder**: 11:50 AM CST - sends to bot-testing channel
+- **Monday Reminder**: 1 PM CST - sends to dev & design (only on pay period end days)
+
+**To Deploy:**
+1. Push changes to GitHub `first` branch
+2. Koyeb auto-deploys within a few minutes
+3. Check status at: https://app.koyeb.com/apps/chronos-bot
+4. Live URL: https://chronos-bot.koyeb.app
+
+**Manual Trigger Endpoints:**
+```bash
+# Test reminder
+curl -X POST https://chronos-bot.koyeb.app/trigger/test \
+  -H "x-webhook-secret: test-secret-123"
+
+# Monday reminder (forces send regardless of date)
+curl -X POST https://chronos-bot.koyeb.app/trigger/monday \
+  -H "x-webhook-secret: test-secret-123"
+```
 
 ## For Detailed Information
 
