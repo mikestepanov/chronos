@@ -24,6 +24,13 @@ Chronos is a timesheet reminder bot for Pumble that helps teams stay compliant w
 
 ## Quick Reference
 
+### Deploy to Koyeb
+
+```bash
+# Deploy the cron server
+npm run deploy
+```
+
 ### Extract Latest Pay Period Data
 
 ```bash
@@ -91,13 +98,23 @@ SERVICE_ID=$(curl -s -H "Authorization: Bearer $KOYEB_API_KEY" \
 **Current Cron Schedule:**
 - **Keep-alive**: Every 10 minutes - sends "Keep-alive check: HH:MM CST" to bot-testing
 - **Daily Reminder**: 11:50 AM CST - sends to bot-testing channel
-- **Monday Reminder**: 1:45 PM CST - sends to dev & design (only on pay period end days)
+- **Monday Reminder**: 9 AM CST - sends to dev & design (only on pay period end days)
 
 **To Deploy:**
+
+**Method 1 - Manual Deploy (PREFERRED):**
+```bash
+npm run deploy
+# This runs koyeb/deploy.js - interactive deployment script
+```
+
+**Method 2 - Auto-deploy via GitHub:**
 1. Push changes to GitHub `first` branch
 2. Koyeb auto-deploys within a few minutes (usually ~2-3 min)
-3. Check status at: https://app.koyeb.com/apps/chronos-bot
-4. Live URL: https://chronos-bot.koyeb.app (Note: web endpoints return 404 but crons still run)
+
+**After Deployment:**
+- Check status at: https://app.koyeb.com/apps/chronos-bot
+- Live URL: https://chronos-bot.koyeb.app (Note: web endpoints return 404 but crons still run)
 
 **Check Deployment Status via API:**
 ```bash
