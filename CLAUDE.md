@@ -73,7 +73,7 @@ The app is deployed on Koyeb with GitHub integration. Changes pushed to the `fir
 **Current Cron Schedule:**
 - **Keep-alive**: Every 10 minutes - sends "Keep-alive check: HH:MM CST" to bot-testing
 - **Daily Reminder**: 11:50 AM CST - sends to bot-testing channel
-- **Monday Reminder**: 1 PM CST - sends to dev & design (only on pay period end days)
+- **Monday Reminder**: 1:30 PM CST - sends to dev & design (only on pay period end days)
 
 **To Deploy:**
 1. Push changes to GitHub `first` branch
