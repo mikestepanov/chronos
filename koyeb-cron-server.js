@@ -31,8 +31,8 @@ app.get('/', (req, res) => {
       description: 'Keep-alive ping every 5 minutes (prevents sleeping)'
     },
     dailyReminder: { 
-      schedule: '40 16 * * *', 
-      description: 'Daily reminder at 11:40 AM CST to bot-testing channel' 
+      schedule: '50 16 * * *', 
+      description: 'Daily reminder at 11:50 AM CST to bot-testing channel' 
     },
     mondayReminder: { 
       schedule: '0 5 * * 1', 
@@ -70,11 +70,11 @@ activeJobs.keepAlive = cron.schedule('*/5 * * * *', async () => {
 
 // REMOVED: 5-minute test reminder - use manual triggers for testing
 
-// Daily reminder - runs daily at 11:40 AM CST to bot-testing channel  
-console.log('🔄 Enabling daily reminder (11:40 AM CST to bot-testing)');
+// Daily reminder - runs daily at 11:50 AM CST to bot-testing channel  
+console.log('🔄 Enabling daily reminder (11:50 AM CST to bot-testing)');
 
-// 11:40 AM CST = 4:40 PM UTC (during DST) or 5:40 PM UTC (standard time)
-activeJobs.dailyReminder = cron.schedule('40 16 * * *', async () => {
+// 11:50 AM CST = 4:50 PM UTC (during DST) or 5:50 PM UTC (standard time)
+activeJobs.dailyReminder = cron.schedule('50 16 * * *', async () => {
   console.log('⏰ Running daily reminder at', new Date().toISOString());
   try {
     execSync('node scripts/send-timesheet-reminder.js -c bot-testing', { 
@@ -180,7 +180,7 @@ app.listen(PORT, () => {
   console.log(`🚀 Chronos Cron Server running on port ${PORT}`);
   console.log('\nConfigured cron jobs:');
   console.log(`💓 Keep-alive (5min): ✅ ENABLED`);
-  console.log(`📅 Daily reminder (11:40am CST): ✅ ENABLED`);
+  console.log(`📅 Daily reminder (11:50am CST): ✅ ENABLED`);
   console.log(`📅 Monday reminder (12am CST): ✅ ENABLED`);
   console.log('\nManual triggers available at:');
   console.log('  POST /trigger/test');
