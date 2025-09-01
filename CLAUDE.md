@@ -97,6 +97,7 @@ SERVICE_ID=$(curl -s -H "Authorization: Bearer $KOYEB_API_KEY" \
 
 **Current Cron Schedule:**
 - **Keep-alive**: Every 10 minutes - sends "Keep-alive check: HH:MM CST" to bot-testing
+- **Daily Trivia**: 10 AM CST - sends fun fact/word etymology to bot-testing channel
 - **Daily Reminder**: 11:50 AM CST - sends to bot-testing channel
 - **Monday Reminder**: 9 AM CST - sends to dev & design (only on pay period end days)
 

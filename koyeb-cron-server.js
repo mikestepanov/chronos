@@ -34,6 +34,10 @@ app.get('/', (req, res) => {
       schedule: '50 16 * * *', 
       description: 'Daily reminder at 11:50 AM CST to bot-testing channel' 
     },
+    dailyTrivia: {
+      schedule: '0 15 * * *',
+      description: 'Daily trivia at 10 AM CST to bot-testing channel'
+    },
     mondayReminder: { 
       schedule: '0 14 * * 1', 
       description: 'Monday 9 AM CST reminder to dev & design (pay period end only)' 
@@ -89,6 +93,23 @@ activeJobs.dailyReminder = cron.schedule('50 16 * * *', async () => {
     });
   } catch (error) {
     console.error('❌ Daily reminder failed:', error.message);
+  }
+});
+
+// Daily trivia - runs daily at 10 AM CST to bot-testing channel
+console.log('💡 Enabling daily trivia (10 AM CST to bot-testing)');
+
+// 10 AM CST = 3 PM UTC (during DST) or 4 PM UTC (standard time)
+activeJobs.dailyTrivia = cron.schedule('0 15 * * *', async () => {
+  console.log('💡 Running daily trivia at', new Date().toISOString());
+  try {
+    execSync('node scripts/send-daily-trivia.js -c bot-testing', { 
+      cwd: __dirname,
+      stdio: 'inherit' 
+    });
+    console.log('✅ Daily trivia sent successfully');
+  } catch (error) {
+    console.error('❌ Daily trivia failed:', error.message);
   }
 });
 
@@ -195,6 +216,7 @@ app.listen(PORT, () => {
   console.log('\nConfigured cron jobs:');
   console.log(`💓 Keep-alive (10min): ✅ ENABLED`);
   console.log(`📅 Daily reminder (11:50am CST): ✅ ENABLED`);
+  console.log(`💁 Daily trivia (10am CST): ✅ ENABLED`);
   console.log(`📅 Monday reminder (9am CST): ✅ ENABLED`);
   console.log('\nManual triggers available at:');
   console.log('  POST /trigger/test');
