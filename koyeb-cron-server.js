@@ -35,8 +35,8 @@ app.get('/', (req, res) => {
       description: 'Daily reminder at 11:50 AM CST to bot-testing channel' 
     },
     mondayReminder: { 
-      schedule: '30 18 * * 1', 
-      description: 'Monday 1:30 PM CST reminder to dev & design (pay period end only)' 
+      schedule: '45 18 * * 1', 
+      description: 'Monday 1:45 PM CST reminder to dev & design (pay period end only)' 
     }
   };
 
@@ -92,19 +92,27 @@ activeJobs.dailyReminder = cron.schedule('50 16 * * *', async () => {
   }
 });
 
-// Monday reminder - runs every Monday at 1:30 PM CST to dev & design
-console.log('📅 Enabling Monday reminder (1:30 PM CST on pay period end)');
+// Monday reminder - runs every Monday at 1:45 PM CST to dev & design
+console.log('📅 Enabling Monday reminder (1:45 PM CST on pay period end)');
 
 // Import PayPeriodCalculator to check if today is last day
 const PayPeriodCalculator = require('./shared/pay-period-calculator');
 const calculator = new PayPeriodCalculator();
 
-// 1:30 PM CST = 6:30 PM UTC (during DST) or 7:30 PM UTC (standard time)
-activeJobs.mondayReminder = cron.schedule('30 18 * * 1', async () => {
+// 1:45 PM CST = 6:45 PM UTC (during DST) or 7:45 PM UTC (standard time)
+activeJobs.mondayReminder = cron.schedule('45 18 * * 1', async () => {
+  console.log('⏰ Monday cron triggered at', new Date().toISOString());
+  
   // Check if today is the last day of a pay period
   const currentPeriod = calculator.getCurrentPayPeriod();
   const today = new Date();
   const periodEndDate = new Date(currentPeriod.end);
+  
+  console.log('Checking conditions:', {
+    today: today.toDateString(),
+    periodEnd: periodEndDate.toDateString(),
+    isMatch: today.toDateString() === periodEndDate.toDateString()
+  });
   
   // Check if today is the same date as period end
   if (today.toDateString() === periodEndDate.toDateString()) {
@@ -187,7 +195,7 @@ app.listen(PORT, () => {
   console.log('\nConfigured cron jobs:');
   console.log(`💓 Keep-alive (10min): ✅ ENABLED`);
   console.log(`📅 Daily reminder (11:50am CST): ✅ ENABLED`);
-  console.log(`📅 Monday reminder (1:30pm CST): ✅ ENABLED`);
+  console.log(`📅 Monday reminder (1:45pm CST): ✅ ENABLED`);
   console.log('\nManual triggers available at:');
   console.log('  POST /trigger/test');
   console.log('  POST /trigger/monday');

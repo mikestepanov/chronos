@@ -70,16 +70,50 @@ All other configuration is in JSON files under `/config`.
 
 The app is deployed on Koyeb with GitHub integration. Changes pushed to the `first` branch auto-deploy.
 
+**Koyeb App Details:**
+- **App Name**: `chronos-bot` (permanent)
+- **App ID**: `04928f88-b0fc-4984-a209-7b62cbc3b551` (permanent for this app)
+- **Service ID**: `cc2ab566-308d-4a6c-bf4b-9e94fb46b683` (may change if service recreated)
+- **Service Name**: `web`
+- **Region**: `was` (Washington)
+
+**Find IDs Dynamically:**
+```bash
+# Get App ID by name
+APP_ID=$(curl -s -H "Authorization: Bearer $KOYEB_API_KEY" \
+  "https://app.koyeb.com/v1/apps" | jq -r '.apps[] | select(.name=="chronos-bot") | .id')
+
+# Get Service ID for the app
+SERVICE_ID=$(curl -s -H "Authorization: Bearer $KOYEB_API_KEY" \
+  "https://app.koyeb.com/v1/services?app_id='$APP_ID'" | jq -r '.services[0].id')
+```
+
 **Current Cron Schedule:**
 - **Keep-alive**: Every 10 minutes - sends "Keep-alive check: HH:MM CST" to bot-testing
 - **Daily Reminder**: 11:50 AM CST - sends to bot-testing channel
-- **Monday Reminder**: 1:30 PM CST - sends to dev & design (only on pay period end days)
+- **Monday Reminder**: 1:45 PM CST - sends to dev & design (only on pay period end days)
 
 **To Deploy:**
 1. Push changes to GitHub `first` branch
-2. Koyeb auto-deploys within a few minutes
+2. Koyeb auto-deploys within a few minutes (usually ~2-3 min)
 3. Check status at: https://app.koyeb.com/apps/chronos-bot
-4. Live URL: https://chronos-bot.koyeb.app
+4. Live URL: https://chronos-bot.koyeb.app (Note: web endpoints return 404 but crons still run)
+
+**Check Deployment Status via API:**
+```bash
+# Check service health
+curl -s -H "Authorization: Bearer $KOYEB_API_KEY" \
+  "https://app.koyeb.com/v1/services?app_id=04928f88-b0fc-4984-a209-7b62cbc3b551" | jq '.services[0].status'
+
+# Check latest deployment
+curl -s -H "Authorization: Bearer $KOYEB_API_KEY" \
+  "https://app.koyeb.com/v1/deployments?service_id=cc2ab566-308d-4a6c-bf4b-9e94fb46b683&limit=1" | jq '.deployments[0]'
+
+# Get deployment ID and status
+curl -s -H "Authorization: Bearer $KOYEB_API_KEY" \
+  "https://app.koyeb.com/v1/deployments?service_id=cc2ab566-308d-4a6c-bf4b-9e94fb46b683&limit=5" | \
+  jq '.deployments[] | {id, status, created_at}'
+```
 
 **Manual Trigger Endpoints:**
 ```bash
@@ -91,6 +125,12 @@ curl -X POST https://chronos-bot.koyeb.app/trigger/test \
 curl -X POST https://chronos-bot.koyeb.app/trigger/monday \
   -H "x-webhook-secret: test-secret-123"
 ```
+
+**Important Notes:**
+- The health endpoint returns 404 but the cron server still runs properly
+- Deployments show as HEALTHY even if web endpoints are not accessible
+- Cron jobs continue to execute on schedule regardless of endpoint status
+- Use the Koyeb API to verify deployment status, not the web endpoints
 
 ## For Detailed Information
 
