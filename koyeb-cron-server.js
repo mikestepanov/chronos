@@ -27,8 +27,8 @@ app.get('/health', (req, res) => {
 app.get('/', (req, res) => {
   const jobDetails = {
     keepAlive: {
-      schedule: '*/5 * * * *',
-      description: 'Keep-alive ping every 5 minutes (prevents sleeping)'
+      schedule: '*/10 * * * *',
+      description: 'Keep-alive message every 10 minutes (prevents sleeping)'
     },
     dailyReminder: { 
       schedule: '50 16 * * *', 
@@ -50,21 +50,26 @@ app.get('/', (req, res) => {
   });
 });
 
-// Keep-alive ping - runs every 5 minutes to prevent sleeping
-console.log('💓 Enabling keep-alive ping (every 5 minutes)');
+// Keep-alive message - sends a message every 10 minutes to prevent sleeping
+console.log('💓 Enabling keep-alive message (every 10 minutes)');
 
-activeJobs.keepAlive = cron.schedule('*/5 * * * *', async () => {
-  console.log('💓 Keep-alive ping at', new Date().toISOString());
+activeJobs.keepAlive = cron.schedule('*/10 * * * *', async () => {
+  const now = new Date();
+  console.log('💓 Sending keep-alive message at', now.toISOString());
   try {
-    // Ping the external URL to keep Koyeb from sleeping
-    const https = require('https');
-    https.get('https://chronos-bot.koyeb.app/health', (res) => {
-      console.log('💓 Keep-alive response:', res.statusCode);
-    }).on('error', (err) => {
-      console.error('💓 Keep-alive error:', err.message);
+    // Send a keep-alive message to bot-testing channel
+    const timeString = now.toLocaleTimeString('en-US', { 
+      hour: '2-digit', 
+      minute: '2-digit',
+      timeZone: 'America/Chicago'
     });
+    execSync(`node scripts/send-message.js -c bot-testing -m "Keep-alive check: ${timeString} CST"`, { 
+      cwd: __dirname,
+      stdio: 'inherit' 
+    });
+    console.log('💓 Keep-alive message sent successfully');
   } catch (error) {
-    console.error('❌ Keep-alive failed:', error.message);
+    console.error('❌ Keep-alive message failed:', error.message);
   }
 });
 
@@ -180,7 +185,7 @@ app.post('/trigger/:job', express.json(), (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Chronos Cron Server running on port ${PORT}`);
   console.log('\nConfigured cron jobs:');
-  console.log(`💓 Keep-alive (5min): ✅ ENABLED`);
+  console.log(`💓 Keep-alive (10min): ✅ ENABLED`);
   console.log(`📅 Daily reminder (11:50am CST): ✅ ENABLED`);
   console.log(`📅 Monday reminder (12am CST): ✅ ENABLED`);
   console.log('\nManual triggers available at:');
