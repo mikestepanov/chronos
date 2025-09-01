@@ -77,7 +77,8 @@ console.log('🔄 Enabling daily reminder (11:50 AM CST to bot-testing)');
 activeJobs.dailyReminder = cron.schedule('50 16 * * *', async () => {
   console.log('⏰ Running daily reminder at', new Date().toISOString());
   try {
-    execSync('node scripts/send-timesheet-reminder.js -c bot-testing', { 
+    // Send simple Koyeb check message
+    execSync('node scripts/send-message.js -c bot-testing -m "Daily Message Koyeb check"', { 
       cwd: __dirname,
       stdio: 'inherit' 
     });
