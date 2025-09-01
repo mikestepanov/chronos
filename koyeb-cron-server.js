@@ -56,9 +56,9 @@ console.log('💓 Enabling keep-alive ping (every 5 minutes)');
 activeJobs.keepAlive = cron.schedule('*/5 * * * *', async () => {
   console.log('💓 Keep-alive ping at', new Date().toISOString());
   try {
-    // Just a simple self-ping to keep the app awake
-    const http = require('http');
-    http.get('http://localhost:3000/health', (res) => {
+    // Ping the external URL to keep Koyeb from sleeping
+    const https = require('https');
+    https.get('https://chronos-bot.koyeb.app/health', (res) => {
       console.log('💓 Keep-alive response:', res.statusCode);
     }).on('error', (err) => {
       console.error('💓 Keep-alive error:', err.message);
