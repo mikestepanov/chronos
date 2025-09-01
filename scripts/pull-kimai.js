@@ -239,9 +239,9 @@ if (require.main === module) {
     console.error('\nTo install Playwright, run:');
     console.error('  ./scripts/install-playwright.sh');
     console.error('\nOr manually:');
-    console.error('  pnpm install');
-    console.error('  pnpm exec playwright install firefox   # Recommended for Fedora');
-    console.error('  pnpm exec playwright install chromium  # Alternative');
+    console.error('  npm install');
+    console.error('  npx playwright install firefox   # Recommended for Fedora');
+    console.error('  npx playwright install chromium  # Alternative');
     console.error('\nFalling back to manual mode...\n');
     
     require('./pull-kimai-simple');

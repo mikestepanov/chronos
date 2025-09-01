@@ -41,13 +41,13 @@ The system uses Playwright to automate Kimai's web interface:
 ### Extract Latest Pay Period
 ```bash
 # Standard extraction
-pnpm run pull-kimai
+npm run pull-kimai
 
 # Show browser (for debugging)
-PLAYWRIGHT_HEADLESS=false pnpm run pull-kimai
+PLAYWRIGHT_HEADLESS=false npm run pull-kimai
 
 # Force new version (skip deduplication)
-pnpm run pull-kimai --force
+npm run pull-kimai --force
 ```
 
 ### Manual Pay Period Analysis
@@ -167,10 +167,10 @@ npm run test:load
 ### Debug Mode
 ```bash
 # Enable debug logging
-DEBUG=kimai:* pnpm run pull-kimai
+DEBUG=kimai:* npm run pull-kimai
 
 # Show browser and debug
-PLAYWRIGHT_HEADLESS=false DEBUG=kimai:* pnpm run pull-kimai
+PLAYWRIGHT_HEADLESS=false DEBUG=kimai:* npm run pull-kimai
 ```
 
 ## Best Practices

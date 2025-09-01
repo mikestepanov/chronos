@@ -43,13 +43,13 @@ class PayPeriodCalculator {
       currentPeriod: {
         number: currentPeriodNumber,
         startDate: DateHelper.getStartOfDay(currentPeriodStart),
-        endDate: DateHelper.getEndOfDay(currentPeriodEnd),
+        endDate: DateHelper.getStartOfDay(currentPeriodEnd),
         paymentDate: DateHelper.getStartOfDay(paymentDate)
       },
       nextPeriod: {
         number: nextPeriodNumber,
         startDate: DateHelper.getStartOfDay(nextPeriodStart),
-        endDate: DateHelper.getEndOfDay(nextPeriodEnd)
+        endDate: DateHelper.getStartOfDay(nextPeriodEnd)
       }
     };
   }

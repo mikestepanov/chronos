@@ -56,7 +56,7 @@ async function sendComplianceReport(options = {}) {
         expectedPath: reportPath
       });
       console.error(`\n❌ No compliance report found for pay period ${periodNumber}`);
-      console.error(`Run 'pnpm run pull-kimai' first to generate the report.\n`);
+      console.error(`Run 'npm run pull-kimai' first to generate the report.\n`);
       return;
     }
     
@@ -154,7 +154,7 @@ Examples:
   ./send-compliance-status.js -d     # Dry run (preview only)
   
 Note: This always sends the compliance report as a DM to Mikhail.
-      Run 'pnpm run pull-kimai' first to ensure you have the latest data.
+      Run 'npm run pull-kimai' first to ensure you have the latest data.
 `);
         process.exit(0);
       default:

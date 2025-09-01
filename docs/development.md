@@ -4,7 +4,7 @@
 
 ### Prerequisites
 
-- Node.js 18+ and pnpm
+- Node.js 18+ and npm
 - Git
 - Firefox/Chromium browser
 - VS Code or preferred editor
@@ -19,8 +19,8 @@
 
 2. **Install dependencies:**
    ```bash
-   pnpm install
-   pnpm exec playwright install firefox
+   npm install
+   npx playwright install firefox
    ```
 
 3. **Set up environment:**
@@ -31,8 +31,8 @@
 
 4. **Verify setup:**
    ```bash
-   pnpm test
-   pnpm run pull-kimai -- --dry-run
+   npm test
+   npm run pull-kimai -- --dry-run
    ```
 
 ## Project Structure
@@ -272,7 +272,7 @@ Test checklist for new features:
 
 ```bash
 # Set DEBUG environment variable
-DEBUG=* pnpm run pull-kimai
+DEBUG=* npm run pull-kimai
 
 # Or specific namespace
 DEBUG=chronos:* node scripts/my-feature.js
@@ -281,7 +281,7 @@ DEBUG=chronos:* node scripts/my-feature.js
 ### Show Browser During Automation
 
 ```bash
-PLAYWRIGHT_HEADLESS=false pnpm run pull-kimai
+PLAYWRIGHT_HEADLESS=false npm run pull-kimai
 ```
 
 ### Inspect Configuration

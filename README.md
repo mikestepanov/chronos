@@ -14,7 +14,7 @@
 ### Key Commands
 ```bash
 # Pull latest timesheet data
-pnpm run pull-kimai
+npm run pull-kimai
 
 # Send reminders
 ./scripts/send-timesheet-reminder.js -c dev
@@ -68,10 +68,10 @@ Chronos is a timesheet reminder bot for Pumble that helps teams stay compliant w
 
 ```bash
 # Pull latest complete pay period with compliance report
-pnpm run pull-kimai
+npm run pull-kimai
 
 # Show browser during extraction
-PLAYWRIGHT_HEADLESS=false pnpm run pull-kimai
+PLAYWRIGHT_HEADLESS=false npm run pull-kimai
 ```
 
 ### Send Messages

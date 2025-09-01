@@ -8,12 +8,12 @@ Automated Kimai data extraction for the latest complete pay period.
 
 **Usage:**
 ```bash
-pnpm run pull-kimai
+npm run pull-kimai
 
 # With options
-PLAYWRIGHT_HEADLESS=false pnpm run pull-kimai  # Show browser
-PLAYWRIGHT_BROWSER=chromium pnpm run pull-kimai # Use Chrome
-PLAYWRIGHT_TIMEOUT=60000 pnpm run pull-kimai   # Increase timeout
+PLAYWRIGHT_HEADLESS=false npm run pull-kimai  # Show browser
+PLAYWRIGHT_BROWSER=chromium npm run pull-kimai # Use Chrome
+PLAYWRIGHT_TIMEOUT=60000 npm run pull-kimai   # Increase timeout
 ```
 
 **What it does:**

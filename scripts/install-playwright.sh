@@ -3,15 +3,11 @@
 echo "Installing Playwright for Kimai automation..."
 echo ""
 
-# Check if pnpm is installed
-if ! command -v pnpm &> /dev/null; then
-    echo "❌ pnpm is not installed. Installing pnpm..."
-    npm install -g pnpm
-fi
+# No need to check for npm as it comes with Node.js
 
 # Install dependencies
-echo "📦 Installing dependencies with pnpm..."
-if pnpm install; then
+echo "📦 Installing dependencies with npm..."
+if npm install; then
     echo "✅ Dependencies installed"
 else
     echo "❌ Failed to install dependencies"
@@ -21,16 +17,16 @@ fi
 # Install browser binaries
 echo ""
 echo "🌐 Installing Chromium browser..."
-if pnpm exec playwright install chromium; then
+if npx playwright install chromium; then
     echo "✅ Chromium installed"
 else
     echo "❌ Failed to install Chromium"
     echo ""
     echo "Try manual installation:"
-    echo "pnpm exec playwright install chromium"
+    echo "npx playwright install chromium"
     exit 1
 fi
 
 echo ""
 echo "✨ Installation complete! You can now run:"
-echo "pnpm run pull-kimai"
+echo "npm run pull-kimai"

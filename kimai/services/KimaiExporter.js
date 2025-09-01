@@ -25,7 +25,7 @@ class KimaiExporter {
     try {
       this.playwright = require('playwright');
     } catch (error) {
-      throw new Error('Playwright is not installed. Run: pnpm exec playwright install firefox');
+      throw new Error('Playwright is not installed. Run: npx playwright install firefox');
     }
   }
 

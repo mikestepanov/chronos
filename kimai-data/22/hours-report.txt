@@ -1,0 +1,156 @@
+Hours Compliance Report - Pay Period #22
+Period: Aug 5 - Aug 18, 2025
+Generated: 2025-08-21T03:57:18.726Z
+Source: Automated pull
+Entries: 150
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Pauline Nguyen       |        83.75 |    80.00 |      +3.75 |       +4.7% |      ✗ |
+| Raheel Shahzad       |        81.00 |    80.00 |      +1.00 |       +1.3% |      ✓ |
+| Ariful               |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Yulia                |        50.00 |    50.00 |      +0.00 |       +0.0% |      ✓ |
+| Eddy                 |        31.00 |    40.00 |      -9.00 |      -22.5% |      ✗ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 83.75
+Status: ✗ FAIL
+Work Summary:
+  • Print Designs - Design: Curriculum
+  • Team Operations - Meeting: Mikhail
+  • Team Operations - Meeting: Design team sync
+  • Team Operations - Meeting: Design Team Sync
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 81.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: STATUS Meeting
+  • Mentor Tools & Dashboard - Programming: Calendar Availability Feature - Frontend UX Polish
+  • Team Operations - Meeting: Stand Up meeting
+  • SEO Optimization - Programming: SEO Enhancements
+  • 1-to-1 Coaching - Programming: Update 1-1 Coaching Pages
+  • Team Operations - Meeting: StandUp meeting
+
+
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Maintenance & Support - Programming: Worked on SAFE Note Calculator
+  • Team Operations - Meeting: S.T.A.T.U.S. Framework Meeting | Dev Team
+  • Team Operations - Meeting: StartHub | FTE Engineering Team Sync Up
+
+
+Mori Isaac
+----------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: S.T.A.T.U.S
+  • Team Operations - Meeting: STATUS DEMO Prep
+  • Team Operations - Dev Ops / Infrastructure: AppFlowy Enhancements
+  • Team Operations - Meeting
+  • SEO Optimization - Dev Ops / Infrastructure: Enhancements robots.txt
+  • SEO Optimization - Dev Ops / Infrastructure: Dockerfile Landings optimization
+  • Team Operations - Programming
+  • SEO Optimization - Dev Ops / Infrastructure: Robots.txt Enhancements
+  • Team Operations - Dev Ops / Infrastructure: AppFlowy Enhancement
+  • Team Operations - Meeting: STATUS Demo Prep
+  • Team Operations - Dev Ops / Infrastructure: AppFlowy System enhancement and robots.txt
+  • SEO Optimization - Dev Ops / Infrastructure: Enhancements on Robots.txt For SEO purposes
+  • Team Operations - Dev Ops / Infrastructure: AppFlowy and robots.txt enhancements
+  • Team Operations - Dev Ops / Infrastructure: AppFlowy and Robots txt enhancements
+
+
+Dharam Pal Singh
+----------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Admin Panel - Programming: ' Implemented Create Company Modal for adding new companies
+Added form validation to ensure accurate and complete input data
+simplified AddAdminDialog using SDSModal built-in props
+  • Admin Panel - Meeting: S.T.A.T.U.S. Framework Meeting | Dev Team
+  • Admin Panel - Meeting: Engineering Team: STATUS Demo Prep
+  • Admin Panel - Programming: ' Added company listing page
+  • Admin Panel - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Admin Panel - Programming: Company Module
+Set up routes and navigation
+Defined company types and interfaces
+Created demo company data
+  • Admin Panel - Meeting: Alex: Sync Up
+  • Admin Panel - Programming: ' Built front-end component to allow file upload and trigger bulk user creation.
+Implemented user feedback (success/failure) for uploads.
+Added validation for password rules (min length, non-empty).
+Verified full flow: upload → parse → create users → response.
+  • Admin Panel - Programming: ' Implemented resolver to handle file parsing + user creation in batch.
+Defined BulkUserInput and ParsedUsersResult types for strong typing.
+Added service layer to iterate through parsed users and register them.
+Integrated proper error handling for invalid rows or missing fields.
+  • Admin Panel - Programming: ' Started implementation of a new bulk user upload feature.
+Added utility function to parse Excel/CSV files (parseUsersFile) using xlsx.
+Defined required/optional columns (email, firstName, lastName, roles) for validation.
+Implemented normalization logic for headers (trim, lowercase, remove spaces).
+  • Admin Panel - Programming: Cleaned up admin user handling code.
+Removed duplicate imports and unused logic.
+Verified end-to-end functionality for admin user lifecycle.
+Raised PR for the same
+  • Admin Panel - Meeting: Dharam: Monthly Sync Up + STATUS Demo Prep
+  • Admin Panel - Programming: ' Implemented new adminUserCreate and adminUserDelete mutations.
+Updated GraphQL typeDefs and resolvers to align with the new flow.
+Fixed logic in the user service to handle admin user lifecycle properly.
+Added error handling and validation for edge cases.
+  • Admin Panel - Programming: Issue Identified: Admin user creation and deletion were failing in the system.
+Actions Taken:
+Reviewed existing mutations and services for user management.
+Investigated inconsistencies in how admin users were being created/deleted.
+Began refactoring GraphQL mutations and service functions.
+  • Admin Panel - Programming: refactor(admin-discount-deals): add eviction updater and notifications
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 50.00
+Status: ✓ PASS
+Work Summary:
+  • Onboarding - Design: Reviewed Pauline's graphic components. Helped(described) Dennis to make a graph for the calculator page. Created a couple more variations for the onboarding for the gaps and alignment.
+  • Community Forum - Meeting: Design sync + met with Dennis twice + met with Mike. Reviewed Dennis's flows.
+  • Onboarding - Design: Created 2 more variations of the Onboarding flow. Connected reviews component.   Reviewed Dennis's calculator.
+  • Onboarding - Design: Implemented changes from Mike, created 2 more variations of Onboarding. searched for references for Price per session block.
+  • Onboarding - Design: Meetings: Design Sync up + Mike. Fixed components Icons and FAQ on the Main page. Created couple more variations of Onboarding after meeting with Mike.
+  • Team Operations - Design Review: Reviewed Landings SEO Heading Changes from Dennis. Reviewed Calculator pages from Dennis. Created 3 more variations of the Onboarding flow.
+  • Onboarding - Design: Design team sync up. Created 3 more variations for onboarding.
+  • Onboarding - Design: Fixed wrap categories on old onboarding page. Created one new variation of onboarding flow + 4 new for colors
+  • 1-to-1 Coaching - Design: Met with Mike + Dennis. Implemented changes from Mike and Raheel. Fixed components for 1to1 booking
+  • Team Operations - Meeting: Design sync up + met with Mike + met with Dennis. Fixed comments from Mike on 1to 1 booking page
+
+
+Eddy
+----
+Expected Hours: 40.00
+Actual Hours: 31.00
+Status: ✗ FAIL
+Work Summary:
+  • Tools & Templates - Design: More variations, Rearrangement and archiving of Email Templates and Document cards.
+  • Tools & Templates - Design: More variations, Rearrangement and archiving of the Document Templates cards.
+  • Tools & Templates - Design: More variations of the Email Templates cards.
+  • Tools & Templates - Design: More variations, Rearrangement and archiving of Email Templates cards.
+

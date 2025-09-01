@@ -1,40 +1,22 @@
 Hours Compliance Report - Pay Period #20
 Period: Jul 8 - Jul 21, 2025
-Generated: 2025-07-25T00:10:47.472Z
+Generated: 2025-08-21T03:57:02.447Z
 Source: Automated pull
-Entries: 151
+Entries: 148
 
 | User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
 |----------------------|--------------|----------|------------|-------------|--------|
-| Raheel Shahzad       |        81.75 |    80.00 |      +1.75 |       +2.2% |      ✓ |
 | Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Pauline Nguyen       |        79.33 |    80.00 |      -0.67 |       -0.8% |      ✓ |
 | Dharam Pal Singh     |        79.00 |    80.00 |      -1.00 |       -1.3% |      ✓ |
+| Raheel Shahzad       |        73.25 |    80.00 |      -6.75 |       -8.4% |      ✗ |
 | Ariful               |        72.00 |    80.00 |      -8.00 |      -10.0% |      ✗ |
-| Eddy                 |        62.92 |    40.00 |     +22.92 |      +57.3% |      ✗ |
-| Yulia                |        55.00 |    50.00 |      +5.00 |      +10.0% |      ✗ |
+| Eddy                 |        65.92 |    40.00 |     +25.92 |      +64.8% |      ✗ |
+| Yulia                |        49.75 |    50.00 |      -0.25 |       -0.5% |      ✓ |
 
 
 
 === DETAILED WORK SUMMARY ===
-
-
-Raheel Shahzad
---------------
-Expected Hours: 80.00
-Actual Hours: 81.75
-Status: ✓ PASS
-Work Summary:
-  • Team Operations - Meeting: standup meeting
-  • SEO Optimization - Programming: Create Automated SEO Testing Suite
-  • Team Operations - Meeting: STATUS meeting
-  • SEO Optimization - Programming: Implimented Open Graph and Twitter Card
-  • Team Operations - Meeting: StartHub | FTE Engineering Team Sync Up
-  • SEO Optimization - Programming: Create Schema.org Structured Data Framework
-  • Team Operations - Meeting: Raheel: Monthly Sync Up + STATUS Demo Prep
-  • SEO Optimization - Programming: Add automatic sitemap.xml generation for landing pages
-  • Maintenance & Support - Programming: Add automatic sitemap.xml generation for landing pages and fix build issue
-  • 1-to-1 Coaching - Bug Fixing: 1-1 coaching detail page
 
 
 Mori Isaac
@@ -140,6 +122,23 @@ Resolved GraphQL null issue by switching from BookingModel to PublicBookingRespo
 Added missing orphaned types in GraphQLConfigModule to support resolvers
 
 
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 73.25
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: STATUS meeting
+  • SEO Optimization - Programming: Implimented Open Graph and Twitter Card
+  • SEO Optimization - Programming: Create Automated SEO Testing Suite
+  • Team Operations - Meeting: StartHub | FTE Engineering Team Sync Up
+  • SEO Optimization - Programming: Create Schema.org Structured Data Framework
+  • Team Operations - Meeting: Raheel: Monthly Sync Up + STATUS Demo Prep
+  • SEO Optimization - Programming: Add automatic sitemap.xml generation for landing pages
+  • Maintenance & Support - Programming: Add automatic sitemap.xml generation for landing pages and fix build issue
+  • 1-to-1 Coaching - Bug Fixing: 1-1 coaching detail page
+
+
 Ariful
 ------
 Expected Hours: 80.00
@@ -159,9 +158,10 @@ Work Summary:
 Eddy
 ----
 Expected Hours: 40.00
-Actual Hours: 62.92
+Actual Hours: 65.92
 Status: ✗ FAIL
 Work Summary:
+  • Admin Panel - Design: Continued Designing the calculator pages.
   • Admin Panel - Design: Continued designing the tablet version of the first calculator page, got to the final stage of the design and proceeded designing the mobile version then requested for a review from Mik.
   • Admin Panel - Design: Continued with the calculator page design, reached the final stage for the first calculator page in desktop mode, and proceeded with the tablet version.
   • Admin Panel - Design: Continued designing and refining the calculation page using design system components and tokens, hours after the Design Team Sync Meeting with Yulia and Pauline.
@@ -178,11 +178,9 @@ Still on Wireframing Stage
 Yulia
 -----
 Expected Hours: 50.00
-Actual Hours: 55.00
-Status: ✗ FAIL
+Actual Hours: 49.75
+Status: ✓ PASS
 Work Summary:
-  • Maintenance & Support - Project Management: prepared components for Eddy. Reviewed Eddys work.
-  • Team Operations - Meeting: Design sync + Addy
   • 1-to-1 Coaching - Design: Created one more variation of 1to1 coaching. Fixed category chips on live events and document templates. Updated graphics booklet. created component for video reviews
   • Team Operations - Meeting: Design sync + Helped Eddy with components + Mike. Implemented changes in graphics file
   • 1-to-1 Coaching - Design: Created 2 more variations of 1to1 booking pages. Created component for reviews. Organised bootstrap icons.

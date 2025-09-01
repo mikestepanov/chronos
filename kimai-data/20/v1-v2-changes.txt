@@ -1,0 +1,35 @@
+Pay Period 20 - Changes from v1 to v2
+Generated: 2025-08-21T00:18:25.283Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 355
+Removed entries: 0
+
+HOURS CHANGES BY USER
+
+
+ariful                      216.00 →   391.50 (+175.50)
+raheel                      254.25 →   424.25 (+170.00)
+pauline                     235.00 →   403.75 (+168.75)
+dharam                      241.00 →   401.00 (+160.00)
+Mori                        243.50 →   403.50 (+160.00)
+eddy                        185.88 →   287.38 (+101.50)
+Yulia                       144.75 →   234.75 (+90.00)
+dennis                        0.00 →    41.00 (+41.00)
+
+
+NEW ENTRIES ADDED
+-----------------
++ raheel - 0:30 - Meeting
++ dennis - 3:30 - Design
++ eddy - 10:30 - Design
++ raheel - 7:30 - Programming
++ dennis - 6:00 - Design
++ raheel - 0:30 - Meeting
++ Yulia - 5:00 - Design
++ eddy - 10:00 - Design
++ raheel - 7:30 - Programming
++ ariful - 6:00 - Programming
+... and 345 more entries

@@ -62,8 +62,10 @@ class TimesheetProcessor {
     // Use date-only comparison to avoid timezone issues
     const recordDate = new Date(record.Date + 'T00:00:00.000Z');
     const startDate = new Date(payPeriod.start.toISOString().split('T')[0] + 'T00:00:00.000Z');
-    const endDate = new Date(payPeriod.end.toISOString().split('T')[0] + 'T23:59:59.999Z');
+    // End date should be the last day inclusive, but not beyond
+    const endDate = new Date(payPeriod.end.toISOString().split('T')[0] + 'T00:00:00.000Z');
     
+    // Use >= for start and <= for end to include both boundary dates
     return recordDate >= startDate && recordDate <= endDate;
   }
 

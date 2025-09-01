@@ -31,12 +31,12 @@ app.get('/', (req, res) => {
       description: 'Keep-alive ping every 5 minutes (prevents sleeping)'
     },
     dailyReminder: { 
-      schedule: '0 22 * * *', 
-      description: 'Daily reminder at 5 PM CST to bot-testing channel' 
+      schedule: '0 16 * * *', 
+      description: 'Daily reminder at 11 AM CST to bot-testing channel' 
     },
     mondayReminder: { 
-      schedule: '0 19 * * 1', 
-      description: 'Monday 2 PM CST reminder to dev & design (pay period end only)' 
+      schedule: '0 5 * * 1', 
+      description: 'Monday 12 AM CST reminder to dev & design (pay period end only)' 
     }
   };
 
@@ -70,11 +70,11 @@ activeJobs.keepAlive = cron.schedule('*/5 * * * *', async () => {
 
 // REMOVED: 5-minute test reminder - use manual triggers for testing
 
-// Daily reminder - runs daily at 5 PM CST to bot-testing channel  
-console.log('🔄 Enabling daily reminder (5 PM CST to bot-testing)');
+// Daily reminder - runs daily at 11 AM CST to bot-testing channel  
+console.log('🔄 Enabling daily reminder (11 AM CST to bot-testing)');
 
-// 5 PM CST = 10 PM UTC (during DST) or 11 PM UTC (standard time)
-activeJobs.dailyReminder = cron.schedule('0 22 * * *', async () => {
+// 11 AM CST = 4 PM UTC (during DST) or 5 PM UTC (standard time)
+activeJobs.dailyReminder = cron.schedule('0 16 * * *', async () => {
   console.log('⏰ Running daily reminder at', new Date().toISOString());
   try {
     execSync('node scripts/send-timesheet-reminder.js -c bot-testing', { 
@@ -86,15 +86,15 @@ activeJobs.dailyReminder = cron.schedule('0 22 * * *', async () => {
   }
 });
 
-// Monday reminder - runs every Monday at 2 PM CST to dev & design
-console.log('📅 Enabling Monday reminder (2 PM CST on pay period end)');
+// Monday reminder - runs every Monday at 12 AM CST to dev & design
+console.log('📅 Enabling Monday reminder (12 AM CST on pay period end)');
 
 // Import PayPeriodCalculator to check if today is last day
 const PayPeriodCalculator = require('./shared/pay-period-calculator');
 const calculator = new PayPeriodCalculator();
 
-// 2 PM CST = 7 PM UTC (during DST) or 8 PM UTC (standard time)
-activeJobs.mondayReminder = cron.schedule('0 19 * * 1', async () => {
+// 12 AM CST = 5 AM UTC (during DST) or 6 AM UTC (standard time)
+activeJobs.mondayReminder = cron.schedule('0 5 * * 1', async () => {
   // Check if today is the last day of a pay period
   const currentPeriod = calculator.getCurrentPayPeriod();
   const today = new Date();
@@ -180,8 +180,8 @@ app.listen(PORT, () => {
   console.log(`🚀 Chronos Cron Server running on port ${PORT}`);
   console.log('\nConfigured cron jobs:');
   console.log(`💓 Keep-alive (5min): ✅ ENABLED`);
-  console.log(`📅 Daily reminder (5pm CST): ✅ ENABLED`);
-  console.log(`📅 Monday reminder (2pm CST): ✅ ENABLED`);
+  console.log(`📅 Daily reminder (11am CST): ✅ ENABLED`);
+  console.log(`📅 Monday reminder (12am CST): ✅ ENABLED`);
   console.log('\nManual triggers available at:');
   console.log('  POST /trigger/test');
   console.log('  POST /trigger/monday');

@@ -4,7 +4,7 @@ This guide will help you set up and run Chronos for the first time.
 
 ## Prerequisites
 
-- Node.js 18+ and pnpm
+- Node.js 18+ and npm
 - Firefox or Chromium browser
 - Kimai account with admin access
 - Pumble workspace and API key
@@ -19,13 +19,13 @@ This guide will help you set up and run Chronos for the first time.
 
 2. **Install dependencies:**
    ```bash
-   pnpm install
+   npm install
    ```
 
 3. **Install Playwright browsers:**
    ```bash
-   pnpm exec playwright install firefox
-   # Optional: pnpm exec playwright install chromium
+   npx playwright install firefox
+   # Optional: npx playwright install chromium
    ```
 
 ## Configuration
@@ -55,10 +55,10 @@ This guide will help you set up and run Chronos for the first time.
 ### 1. Test Kimai Connection
 ```bash
 # Extract latest pay period data
-pnpm run pull-kimai
+npm run pull-kimai
 
 # Or with visible browser
-PLAYWRIGHT_HEADLESS=false pnpm run pull-kimai
+PLAYWRIGHT_HEADLESS=false npm run pull-kimai
 ```
 
 Expected output:
@@ -99,7 +99,7 @@ crontab -e
 
 # Add these lines:
 # Pull Kimai data daily at 8 AM
-0 8 * * * cd /path/to/chronos && pnpm run pull-kimai
+0 8 * * * cd /path/to/chronos && npm run pull-kimai
 
 # Monday reminders at 7 AM CST
 0 7 * * 1 cd /path/to/chronos && node monday-reminder/monday-reminder.js run
@@ -140,16 +140,16 @@ sudo systemctl start chronos
 **Firefox not found:**
 ```bash
 # Install Firefox browser
-pnpm exec playwright install firefox
+npx playwright install firefox
 
 # Or use Chromium
-PLAYWRIGHT_BROWSER=chromium pnpm run pull-kimai
+PLAYWRIGHT_BROWSER=chromium npm run pull-kimai
 ```
 
 **Timeout errors:**
 ```bash
 # Increase timeout and show browser
-PLAYWRIGHT_HEADLESS=false PLAYWRIGHT_TIMEOUT=60000 pnpm run pull-kimai
+PLAYWRIGHT_HEADLESS=false PLAYWRIGHT_TIMEOUT=60000 npm run pull-kimai
 ```
 
 ### Authentication Issues

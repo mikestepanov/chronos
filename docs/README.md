@@ -59,7 +59,7 @@ chronos/
 
 1. **Pull latest timesheet data:**
    ```bash
-   pnpm run pull-kimai
+   npm run pull-kimai
    ```
 
 2. **Send a message:**

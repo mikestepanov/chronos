@@ -301,7 +301,7 @@ Example crontab entries:
 
 ```bash
 # Kimai data pull - Daily at 8 AM
-0 8 * * * cd /path/to/chronos && pnpm run pull-kimai
+0 8 * * * cd /path/to/chronos && npm run pull-kimai
 
 # Monday reminders - 7 AM CST on Mondays
 0 7 * * 1 cd /path/to/chronos && node monday-reminder/monday-reminder.js run
@@ -339,7 +339,7 @@ Description=Pull Kimai timesheet data
 Type=oneshot
 User=chronos
 WorkingDirectory=/path/to/chronos
-ExecStart=/usr/bin/pnpm run pull-kimai
+ExecStart=/usr/bin/npm run pull-kimai
 ```
 
 ## Advanced Configuration

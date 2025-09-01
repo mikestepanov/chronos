@@ -1,0 +1,96 @@
+Hours Compliance Report - Pay Period #custom-aug18-22
+Period: Aug 18 - Aug 22, 2025
+Generated: 2025-08-20T23:29:31.813Z
+Source: Automated pull
+Entries: 23
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Eddy                 |        30.50 |    40.00 |      -9.50 |      -23.8% |      ✗ |
+| Raheel Shahzad       |        24.50 |    80.00 |     -55.50 |      -69.4% |      ✗ |
+| Yulia                |        10.00 |    50.00 |     -40.00 |      -80.0% |      ✗ |
+| Dharam Pal Singh     |         8.00 |    80.00 |     -72.00 |      -90.0% |      ✗ |
+| Mori Isaac           |         7.75 |    80.00 |     -72.25 |      -90.3% |      ✗ |
+| Ariful               |         7.00 |    80.00 |     -73.00 |      -91.3% |      ✗ |
+| Pauline Nguyen       |         1.75 |    80.00 |     -78.25 |      -97.8% |      ✗ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Eddy
+----
+Expected Hours: 40.00
+Actual Hours: 30.50
+Status: ✗ FAIL
+Work Summary:
+  • Tools & Templates - Design: Continued Making Variations for the email template cards.
+  • Tools & Templates - Design: More variations of the email templates cards, addition of the category chip.
+  • Tools & Templates - Design: More variations, Rearrangement and archiving of Email Templates and Document cards.
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 24.50
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: Stand Up meeting
+  • Mentor Tools & Dashboard - Programming: Calendar Availability Feature - Frontend UX Polish and Create SEO XLS Sheet
+  • Mentor Tools & Dashboard - Programming: Calendar Availability Feature - Frontend UX Polish
+  • Team Operations - Meeting: STATUS Meeting
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 10.00
+Status: ✗ FAIL
+Work Summary:
+  • Onboarding - Design: Sync up design team. Reviewed components from Pauline
+  • Onboarding - Design: Reviewed Pauline's graphic components. Helped(described) Dennis to make a graph for the calculator page. Created a couple more variations for the onboarding for the gaps and alignment.
+
+
+Dharam Pal Singh
+----------------
+Expected Hours: 80.00
+Actual Hours: 8.00
+Status: ✗ FAIL
+Work Summary:
+  • Admin Panel - Programming: ' Implemented Create Company Modal for adding new companies
+Added form validation to ensure accurate and complete input data
+simplified AddAdminDialog using SDSModal built-in props
+  • Admin Panel - Meeting: S.T.A.T.U.S. Framework Meeting | Dev Team
+  • Admin Panel - Meeting: Engineering Team: STATUS Demo Prep
+
+
+Mori Isaac
+----------
+Expected Hours: 80.00
+Actual Hours: 7.75
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: S.T.A.T.U.S
+  • Team Operations - Meeting: STATUS DEMO Prep
+  • Team Operations - Dev Ops / Infrastructure: AppFlowy Enhancements
+
+
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 7.00
+Status: ✗ FAIL
+Work Summary:
+  • Maintenance & Support - Programming: Worked on SAFE Note Calculator
+  • Team Operations - Meeting: S.T.A.T.U.S. Framework Meeting | Dev Team
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 1.75
+Status: ✗ FAIL
+Work Summary:
+  • Print Designs - Design: Curriculum
+
