@@ -1,6 +1,6 @@
 Hours Compliance Report - Pay Period #22
 Period: Aug 5 - Aug 18, 2025
-Generated: 2025-08-21T03:57:18.726Z
+Generated: 2025-09-04T02:41:02.700Z
 Source: Automated pull
 Entries: 150
 
@@ -12,6 +12,7 @@ Entries: 150
 | Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Yulia                |        50.00 |    50.00 |      +0.00 |       +0.0% |      ✓ |
+| Dennis               |        31.50 |    80.00 |     -48.50 |      -60.6% |      ✗ |
 | Eddy                 |        31.00 |    40.00 |      -9.00 |      -22.5% |      ✗ |
 
 
@@ -141,6 +142,18 @@ Work Summary:
   • Onboarding - Design: Fixed wrap categories on old onboarding page. Created one new variation of onboarding flow + 4 new for colors
   • 1-to-1 Coaching - Design: Met with Mike + Dennis. Implemented changes from Mike and Raheel. Fixed components for 1to1 booking
   • Team Operations - Meeting: Design sync up + met with Mike + met with Dennis. Fixed comments from Mike on 1to 1 booking page
+
+
+Dennis
+------
+Expected Hours: 80.00
+Actual Hours: 31.50
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Design
+  • Tools & Templates - Design
+  • Print Designs - Design
+  • Deals & Discounts - Design
 
 
 Eddy

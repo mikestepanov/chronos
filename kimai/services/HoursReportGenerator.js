@@ -270,7 +270,8 @@ ${detailedTable}`;
       'Mori Wesonga': { baseRate: 15, expectedExpense: 600 },
       'Yulia McCoy': { baseRate: 20, expectedExpense: 200 },
       'Pauline Nguyen': { baseRate: 25, expectedExpense: 1000 },
-      'Edward Obi': { baseRate: 20, expectedExpense: 0 }
+      'Edward Obi': { baseRate: 20, expectedExpense: 200 },
+      'Dennis': { baseRate: 0, expectedExpense: 0 }
     };
 
     const rows = [];
@@ -457,7 +458,8 @@ ${detailedTable}`;
       'Dharam Pal Singh': 'Dharam Pal',
       'Mori Isaac': 'Mori Wesonga',
       'Yulia': 'Yulia McCoy',
-      'Eddy': 'Edward Obi'
+      'Eddy': 'Edward Obi',
+      'Dennis': 'Dennis'
     };
     
     return nameMapping[kimaiName] || kimaiName;
@@ -515,7 +517,8 @@ ${detailedTable}`;
       'Mori Wesonga': { baseRate: 15, expectedExpense: 600, weeklyHours: 20 },
       'Yulia McCoy': { baseRate: 20, expectedExpense: 200, weeklyHours: 5 },
       'Pauline Nguyen': { baseRate: 25, expectedExpense: 1000, weeklyHours: 20 },
-      'Edward Obi': { baseRate: 20, expectedExpense: 0, weeklyHours: 20 }
+      'Edward Obi': { baseRate: 20, expectedExpense: 200, weeklyHours: 20 },
+      'Dennis': { baseRate: 0, expectedExpense: 0, weeklyHours: 20 }
     };
 
     // Create workbook and worksheet with exact structure

@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
     },
     mondayReminder: { 
       schedule: '0 14 * * 1', 
-      description: 'Monday 9 AM CST reminder to dev & design (pay period end only)' 
+      description: 'Monday 10 AM CST reminder to dev & design (pay period end only)' 
     }
   };
 
@@ -113,15 +113,15 @@ activeJobs.dailyTrivia = cron.schedule('0 15 * * *', async () => {
   }
 });
 
-// Monday reminder - runs every Monday at 9 AM CST to dev & design
-console.log('📅 Enabling Monday reminder (9 AM CST on pay period end)');
+// Monday reminder - runs every Monday at 10 AM CST to dev & design
+console.log('📅 Enabling Monday reminder (10 AM CST on pay period end)');
 
 // Import PayPeriodCalculator to check if today is last day
 const PayPeriodCalculator = require('./shared/pay-period-calculator');
 const calculator = new PayPeriodCalculator();
 
-// 9 AM CST = 2 PM UTC (during DST) or 3 PM UTC (standard time)
-activeJobs.mondayReminder = cron.schedule('0 14 * * 1', async () => {
+// 10 AM CST = 3 PM UTC (during DST) or 4 PM UTC (standard time)
+activeJobs.mondayReminder = cron.schedule('0 15 * * 1', async () => {
   console.log('⏰ Monday cron triggered at', new Date().toISOString());
   
   // Check if today is the last day of a pay period

@@ -77,8 +77,34 @@
         "recordCount": 882,
         "bytes": 132229
       }
+    },
+    {
+      "version": 4,
+      "extractedAt": "2025-09-04T02:39:41.329Z",
+      "checksum": "eb451ce59e744d1ddea108bb0b01e4732cf3645880dd862ccb301cfdbd88e802",
+      "metadata": {
+        "periodNumber": 22,
+        "startDate": "2025-08-05T17:00:00.000Z",
+        "endDate": "2025-08-18T17:00:00.000Z",
+        "extractedBy": "extract-periods",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 890,
+          "filteredRecords": 150,
+          "uniqueUsers": 8,
+          "totalHours": 517.25,
+          "recordsOutsidePeriod": 740,
+          "periodNumber": 22,
+          "dateRange": {
+            "start": "2025-08-05",
+            "end": "2025-08-18"
+          }
+        },
+        "recordCount": 1049,
+        "bytes": 156637
+      }
     }
   ],
-  "latest": 3,
-  "updatedAt": "2025-08-20T23:06:14.376Z"
+  "latest": 4,
+  "updatedAt": "2025-09-04T02:39:41.329Z"
 }
