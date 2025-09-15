@@ -7,8 +7,8 @@ const { format } = require('date-fns');
 const channels = require('../../config/channels.json');
 
 // Load channel IDs from config
-const DEV_CHANNEL_ID = channels.DEV;
-const DESIGN_CHANNEL_ID = channels.DESIGN;
+const DEV_CHANNEL_ID = channels.pumble.dev.id;
+const DESIGN_CHANNEL_ID = channels.pumble.design.id;
 const BOT_TESTING_CHANNEL_ID = channels.pumble.bot_testing.id;
 
 async function sendToChannels() {
@@ -52,7 +52,7 @@ async function sendToChannels() {
 }
 
 function waitUntil1PM() {
-  console.log('⏰ Waiting until 1:00 PM to send reminders...\n');
+  console.log('⏰ Waiting until 1:40 PM to send reminders...\n');
   
   const checkTime = () => {
     const now = new Date();
@@ -60,11 +60,11 @@ function waitUntil1PM() {
     const hour = now.getHours();
     const minute = now.getMinutes();
     
-    console.log(`⏱️  Current time: ${currentTime} - Waiting for 13:00:00...`);
-    
-    // Check if it's 1 PM (13:00 in 24-hour format)
-    if (hour === 13 && minute === 0) {
-      console.log('\n🎯 It\'s 1:00 PM! Time to send reminders!\n');
+    console.log(`⏱️  Current time: ${currentTime} - Waiting for 13:40:00...`);
+
+    // Check if it's 1:40 PM (13:40 in 24-hour format)
+    if (hour === 13 && minute === 40) {
+      console.log('\n🎯 It\'s 1:40 PM! Time to send reminders!\n');
       clearInterval(interval);
       sendToChannels().then(() => {
         console.log('\n✅ All done!');
