@@ -38,9 +38,9 @@ app.get('/', (req, res) => {
       schedule: '0 15 * * *',
       description: 'Daily trivia at 10 AM CST to bot-testing channel'
     },
-    mondayReminder: { 
-      schedule: '0 14 * * 1', 
-      description: 'Monday 10 AM CST reminder to dev & design (pay period end only)' 
+    mondayReminder: {
+      schedule: '30 16 * * 1',
+      description: 'Monday 11:30 AM CST reminder to dev & design (pay period end only)'
     }
   };
 
@@ -113,15 +113,15 @@ activeJobs.dailyTrivia = cron.schedule('0 15 * * *', async () => {
   }
 });
 
-// Monday reminder - runs every Monday at 10 AM CST to dev & design
-console.log('📅 Enabling Monday reminder (10 AM CST on pay period end)');
+// Monday reminder - runs every Monday at 11:30 AM CST to dev & design
+console.log('📅 Enabling Monday reminder (11:30 AM CST on pay period end)');
 
 // Import PayPeriodCalculator to check if today is last day
 const PayPeriodCalculator = require('./shared/pay-period-calculator');
 const calculator = new PayPeriodCalculator();
 
-// 10 AM CST = 3 PM UTC (during DST) or 4 PM UTC (standard time)
-activeJobs.mondayReminder = cron.schedule('0 15 * * 1', async () => {
+// 11:30 AM CST = 4:30 PM UTC (during DST) or 5:30 PM UTC (standard time)
+activeJobs.mondayReminder = cron.schedule('30 16 * * 1', async () => {
   console.log('⏰ Monday cron triggered at', new Date().toISOString());
   
   // Check if today is the last day of a pay period
@@ -217,7 +217,7 @@ app.listen(PORT, () => {
   console.log(`💓 Keep-alive (10min): ✅ ENABLED`);
   console.log(`📅 Daily reminder (11:50am CST): ✅ ENABLED`);
   console.log(`💁 Daily trivia (10am CST): ✅ ENABLED`);
-  console.log(`📅 Monday reminder (9am CST): ✅ ENABLED`);
+  console.log(`📅 Monday reminder (11:30am CST): ✅ ENABLED`);
   console.log('\nManual triggers available at:');
   console.log('  POST /trigger/test');
   console.log('  POST /trigger/monday');
