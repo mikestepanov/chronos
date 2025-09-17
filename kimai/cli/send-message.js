@@ -23,7 +23,7 @@ async function sendMessage(message, userIds) {
   // Configuration from environment
   const config = {
     apiToken: process.env.PUMBLE_API_TOKEN || process.env.AGENTSMITH_API_KEY,
-    botId: process.env.PUMBLE_BOT_USER_ID || process.env.AGENTSMITH_ID || '686860a1851f413511ab90ef',
+    botId:  require('../../shared/bots').DEFAULT_BOT_ID,
     botName: process.env.BOT_NAME || 'Agent Smith',
     workspaceId: process.env.PUMBLE_WORKSPACE_ID
   };

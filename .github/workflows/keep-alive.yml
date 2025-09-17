@@ -1,0 +1,32 @@
+name: Keep Alive Test
+
+on:
+  schedule:
+    # Run every 10 minutes
+    - cron: '*/10 * * * *'
+
+  # Allow manual trigger for testing
+  workflow_dispatch:
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Send keep-alive message
+        env:
+          PUMBLE_API_KEY: ${{ secrets.PUMBLE_API_KEY }}
+        run: |
+          echo "Sending keep-alive message at $(date)"
+          node scripts/send-message.js -c bot-testing -m "GitHub Actions keep-alive test - $(date +%H:%M) UTC"

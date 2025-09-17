@@ -1,0 +1,59 @@
+{
+  "templates": {
+    "simple": {
+      "name": "Simple Message",
+      "description": "Basic text message",
+      "template": "{{message}}",
+      "variables": ["message"]
+    },
+    "timesheet-reminder": {
+      "name": "Timesheet Reminder",
+      "description": "Standard timesheet reminder with user hours",
+      "template": "Hey {{user}}! 👋\n\n📊 **Timesheet Status for Pay Period #{{periodNumber}}**\n{{dateRange}}\n\nYou've logged **{{hoursLogged}} hours** so far.\n{{complianceMessage}}\n\n{{callToAction}}",
+      "variables": ["user", "periodNumber", "dateRange", "hoursLogged", "complianceMessage", "callToAction"]
+    },
+    "group-dm-reminder": {
+      "name": "Group DM Reminder",
+      "description": "Personalized group DM for incomplete timesheets",
+      "template": "Hi {{user}} 👋\n\nQuick reminder: Please complete your timesheet for the current pay period.\n\n📅 **Pay Period #{{periodNumber}}**\n{{dateRange}}\n\n⏰ **Hours logged**: {{hoursLogged}}/{{expectedHours}}\n\n{{motivationalMessage}}",
+      "variables": ["user", "periodNumber", "dateRange", "hoursLogged", "expectedHours", "motivationalMessage"]
+    },
+    "channel-announcement": {
+      "name": "Channel Announcement",
+      "description": "General channel reminder",
+      "template": "{{greeting}} team! {{emoji}}\n\n{{mainMessage}}\n\n{{details}}\n\n{{footer}}",
+      "variables": ["greeting", "emoji", "mainMessage", "details", "footer"]
+    },
+    "pay-period-summary": {
+      "name": "Pay Period Summary",
+      "description": "End of period summary",
+      "template": "📊 **Pay Period #{{periodNumber}} Summary**\n\n📅 Period: {{dateRange}}\n✅ Compliance Rate: {{complianceRate}}\n👥 Total Team Members: {{totalMembers}}\n\n{{details}}",
+      "variables": ["periodNumber", "dateRange", "complianceRate", "totalMembers", "details"]
+    }
+  },
+  "presets": {
+    "hi": {
+      "template": "simple",
+      "values": {
+        "message": "hi"
+      }
+    },
+    "test": {
+      "template": "simple", 
+      "values": {
+        "message": "This is a test message from Chronos Bot 🤖"
+      }
+    },
+    "reminder-80h": {
+      "template": "timesheet-reminder",
+      "values": {
+        "user": "there",
+        "periodNumber": "{{currentPeriod}}",
+        "dateRange": "{{currentDateRange}}",
+        "hoursLogged": "{{userHours}}",
+        "complianceMessage": "Expected: 80 hours",
+        "callToAction": "Please complete your timesheet by end of day."
+      }
+    }
+  }
+}

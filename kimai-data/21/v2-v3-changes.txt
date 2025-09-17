@@ -1,0 +1,22 @@
+Pay Period 21 - Changes from v2 to v3
+Generated: 2025-08-06T04:02:49.281Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 5
+Removed entries: 0
+
+HOURS CHANGES BY USER
+
+
+eddy                        208.38 →   235.88 (+27.50)
+
+
+NEW ENTRIES ADDED
+-----------------
++ eddy - 5:00 - Design
++ eddy - 5:00 - Design
++ eddy - 5:00 - Design
++ eddy - 5:30 - Design
++ eddy - 7:00 - Design

@@ -1,0 +1,51 @@
+Summary Overview Link,https://docs.google.com/document/d/1JVvntBFuce6P1xz4aa3jHfK4efWvUzzZkz67nHJhKNo
+CSV,https://drive.google.com/drive/folders/1HMkZ6fMheWDQ1Cm0zuUz5sgfcJW5OQ-K
+Bot Analysis,https://drive.google.com/drive/folders/1HMkZ6fMheWDQ1Cm0zuUz5sgfcJW5OQ-K
+ACTUAL EXPENSE REFS
+Name,Time Tracking,Payment Processing,Actual Expense (M),Actual Pay Period (Combined) Hours (C),Actual Paid Hours (M),Actual Equity Hours (M),Comments
+Total,,,3268
+Dharam Pal,Kimai,Gusto,717.5,81,41,40
+Ariful Islam,Kimai,Gusto,375,77.5,37.5,40
+Raheel Shahzad,Kimai,Gusto,675,85,45,40,Last time Raheel's equity was 2 hours off
+Mori Wesonga,Kimai,Gusto,652.5,83.5,43.5,40
+Yulia McCoy,Kimai,Gusto,100,45,5,40
+Pauline Nguyen,Kimai,Gusto,748,69.92,29.92,40
+EXPECTED EXPENSES
+Name,Expected Pay Period Expense (C),Weekly Expected Expense (C),Total Paid Weekly Hours (M),"Total Expense Rate, with Tax (C)",Pre-Tax Employee Rate (C),Base Rate (M),Upwork fee (multiplier) (M),US FTE bonus (multiplier) (M),"Taxes (multiplier, approximately) (M)"
+Total,200,100
+Dharam Pal,700,350,20,17.5,17.5,17.5,1,1,1
+Ariful Islam,400,200,20,10,10,10,1,1,1
+Raheel Shahzad,600,300,20,15,15,15,1,1,1
+Mori Wesonga,600,300,20,15,15,15,1,1,1
+Yulia McCoy,200,100,5,20,20,20,1,1,1
+Pauline Nguyen,1000,500,20,25,25,25,1,1,1
+Edward Obi,,,,20,20,20,1,1,1
+HOURS
+Coloring,3 hours max is acceptable difference,3 hour+ difference
+Name,Inconsistency Ratio (C),Pay Period Hours Difference (C),Equity Hours Difference (C),Pay Period Expecteed Hours (C),Total Expected Weekly Hours (C),Total Expected Weekly Equity Hours (M),Total Expected Paid Weekly Hours (C)
+Grand Total,Average 1.59% Overworked,-7,,440,220,140,80
+Dev Total,Average 1.75% Overworked,-7,,400,200,120,80
+Dharam Pal,1.25% Overworked,-1,,80,40,20,20
+Ariful Islam,3.13% Missed,2.5,,80,40,20,20
+Raheel Shahzad,6.25% Overworked,-5,,80,40,20,20
+Mori Wesonga,4.38% Overworked,-3.5,,80,40,20,20
+Mikhail Stepanov,No Difference,,,40,20,20,
+Anatoly Stepanov,No Difference,,,40,20,20,
+Design Total,Average No Difference,,,40,20,20,
+Yulia McCoy,No Difference,,,40,20,20,
+Pauline Nguyen,No Difference,,,40,20,20,
+Edward Obi,No Difference,,,40,20,20,
+ACTUAL EXPENSES
+Name,Incosistency Expense (C),Expected Pay Period Expense (C),Actual Expense (C),Actual Expense Paid (M),Expence Difference (C)
+Grand Total,132,3400,3268,2300,
+Dev Total,-120,2300,2420,2300,
+Dharam Pal,-17.5,700,717.5,700,
+Ariful Islam,25,400,375,400,
+Raheel Shahzad,-75,600,675,600,
+Mori Wesonga,-52.5,600,652.5,600,
+Mikhail Stepanov,,,,,
+Anatoly Stepanov,,,,,
+Design Total,252,1100,848,,
+Yulia McCoy,,100,100,,
+Pauline Nguyen,252,1000,748,,
+Edward Obi,,,,,

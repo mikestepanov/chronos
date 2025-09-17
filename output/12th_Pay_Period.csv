@@ -1,0 +1,41 @@
+Summary Overview Link,https://docs.google.com/document/d/11BaiNWHv72h6HG5Wbk8QzJxxMeu9D4G0qN0KBEqT8UA/edit?tab=t.on68xdpfd3ci
+ACTUAL EXPENSE REFS
+Name,Time Tracking,Payment Processing,Actual Expense (M),Clockify Hours Times Rate (pre-tax) (C),Actual Pay Period (Combined) Hours (C),Actual Paid Hours (M),Actual Equity Hours (M),Name of Ref1,Value of Ref1,Link to Ref1,Name of Ref2,Value of Ref2,Link to Ref2,Name of Ref3,Value of Ref3,Link to Ref3,Name of Ref4,Value of Ref4,Link to Ref4
+Total,,,933.3
+Sanjay Radadiya,Clockify,Gusto,,1125,115,75,40,Ref rejected,115 hours where 40 hours were on equity,"Rejected, no link",,,,-,-,-,-,-,-
+Akshat Arora,Clockify,Gusto,,,36,,36,"Clockify: Akshat Arora, Sun, Mar 16 - Mon, Mar 3","Approved 36:00:00, Billable 0. Meaning that Equity is 36:00:00. Clockify amount is $‎0.",https://app.clockify.me/approvals/67eadf2cec3f8e011572175c?userId=670d2adb58470b45130a3039,-,-,-,-,-,-,-,-,-
+Muhammad Afaq,Clockify,Gusto,355,355.05,23.67,23.67,,"Clockify: Muhammad Afaq, Sat, Mar 1 - Sat, Mar 15","Approved 23:40:00, Billable 23:40:00. Meaning that Equity is 0. Clockify amount is $‎355.00. Decimal: 23.67",https://app.clockify.me/approvals/67eb3142edf9a1136e3b0c11?userId=67350d8bf42ee443638377c2,-,-,-,-,-,-,-,-,-
+Manisha Garg,Clockify,Gusto,578.3,538.3,53.83,53.83,,"Clockify: manishacits, Sun, Mar 16 - Mon, Mar 31","Approved 57:09:42, Billable 57:09:42. Meaning that Equity is 0. Clockify amount is $571.61. Note: Monday is counted here! Actual hours: 53:49:37, decimal: 53.83",https://app.clockify.me/approvals/67d96c057c04a422069695d2?userId=67cef5d3cf06332f2bb60543,Manisha: Test task - 4 hours,"4 hours at base rate, $40",Verbal,-,-,-,-,-,-
+EXPECTED EXPENSES
+Name,Expected Pay Period Expense (C),Weekly Expected Expense (C),Total Paid Weekly Hours (M),"Total Expense Rate, with Tax (C)",Pre-Tax Employee Rate (C),Base Rate (M),Upwork fee (multiplier) (M),US FTE bonus (multiplier) (M),"Taxes (multiplier, approximately) (M)",Comments
+Total,2325,1162.5
+Sanjay Radadiya,1125,562.5,37.5,15,15,15,1,1,1,Sanjay needed to do extra 35 hours
+Akshat Arora,,,,10,10,10,1,1,1
+Yulia McCoy,,,,34.5,30,26.09,1,1.15,1.15
+Muhammad Afaq,600,300,20,15,15,15,1,1,1
+Manisha Garg,600,300,30,10,10,10,1,1,1,Manisha needed to do extra 20 hours
+HOURS
+Coloring,2 hours max is acceptable difference,2 hour+ difference
+Name,Inconsistency Ratio (C),Pay Period Hours Difference (C),Equity Hours Difference (C),Pay Period Expecteed Hours (C),Total Expected Weekly Hours (C),Total Expected Weekly Equity Hours (M),Total Expected Paid Weekly Hours (C)
+Grand Total,Average 7.07% Missed,26.5,4,375,187.5,100,87.5
+Dev Total,Average 1.70% Missed,4,4,235,117.5,80,37.5
+Sanjay Radadiya,No Difference,,,115,57.5,20,37.5
+Mikhail Stepanov,No Difference,,,40,20,20,
+Anatoly Stepanov,No Difference,,,40,20,20,
+Akshat Arora,10.00% Missed,4,4,40,20,20,
+Design Total,Average 16.07% Missed,22.5,,140,70,20,50
+Muhammad Afaq,40.83% Missed,16.33,,40,20,,20
+Manisha Garg,10.28% Missed,6.17,,60,30,,30
+Yulia McCoy,No Difference,,,40,20,20,
+ACTUAL EXPENSES
+Name,Incosistency Expense (C),Expected Pay Period Expense (C),Actual Expense to Pay (C),Actual Expense Paid (M),Expence Difference (C)
+Grand Total,1391.7,2325,933.3,933.25,0.05
+Dev Total,1125,1125,,,
+Sanjay Radadiya,1125,1125,,,
+Mikhail Stepanov,,,,,
+Anatoly Stepanov,,,,,
+Akshat Arora,,,,,
+Design Total,266.7,1200,933.3,933.25,0.05
+Muhammad Afaq,245,600,355,578.25,-223.25
+Manisha Garg,21.7,600,578.3,355,223.3
+Yulia McCoy,,,,,

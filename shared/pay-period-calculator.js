@@ -1,4 +1,4 @@
-const { addDays, format, startOfDay, endOfDay } = require('date-fns');
+const DateHelper = require('./date-helper');
 
 class PayPeriodCalculator {
   constructor(config = {}) {
@@ -13,8 +13,8 @@ class PayPeriodCalculator {
 
   getCurrentPeriodInfo(referenceDate = new Date()) {
     // Calculate how many days have passed since the base period end date
-    const refDay = startOfDay(referenceDate);
-    const baseDay = startOfDay(this.basePeriodEndDate);
+    const refDay = DateHelper.getStartOfDay(referenceDate);
+    const baseDay = DateHelper.getStartOfDay(this.basePeriodEndDate);
     const daysSinceBase = Math.floor((refDay - baseDay) / (1000 * 60 * 60 * 24));
     
     // If reference date is before or on base period end date, we're in the base period
@@ -28,42 +28,42 @@ class PayPeriodCalculator {
     const currentPeriodNumber = this.basePeriodNumber + periodsPassed;
     
     // Calculate current period dates
-    const currentPeriodEnd = addDays(this.basePeriodEndDate, periodsPassed * this.periodLengthDays);
-    const currentPeriodStart = addDays(currentPeriodEnd, -(this.periodLengthDays - 1));
+    const currentPeriodEnd = DateHelper.addDays(this.basePeriodEndDate, periodsPassed * this.periodLengthDays);
+    const currentPeriodStart = DateHelper.addDays(currentPeriodEnd, -(this.periodLengthDays - 1));
     
     // Calculate next period info
     const nextPeriodNumber = currentPeriodNumber + 1;
-    const nextPeriodStart = addDays(currentPeriodEnd, 1);
-    const nextPeriodEnd = addDays(currentPeriodEnd, this.periodLengthDays);
+    const nextPeriodStart = DateHelper.addDays(currentPeriodEnd, 1);
+    const nextPeriodEnd = DateHelper.addDays(currentPeriodEnd, this.periodLengthDays);
     
     // Calculate payment date
-    const paymentDate = addDays(currentPeriodEnd, this.paymentDelayDays);
+    const paymentDate = DateHelper.addDays(currentPeriodEnd, this.paymentDelayDays);
     
     return {
       currentPeriod: {
         number: currentPeriodNumber,
-        startDate: startOfDay(currentPeriodStart),
-        endDate: endOfDay(currentPeriodEnd),
-        paymentDate: startOfDay(paymentDate)
+        startDate: DateHelper.getStartOfDay(currentPeriodStart),
+        endDate: DateHelper.getStartOfDay(currentPeriodEnd),
+        paymentDate: DateHelper.getStartOfDay(paymentDate)
       },
       nextPeriod: {
         number: nextPeriodNumber,
-        startDate: startOfDay(nextPeriodStart),
-        endDate: endOfDay(nextPeriodEnd)
+        startDate: DateHelper.getStartOfDay(nextPeriodStart),
+        endDate: DateHelper.getStartOfDay(nextPeriodEnd)
       }
     };
   }
 
   formatDate(date, formatString = 'M/d') {
-    return format(date, formatString);
+    return DateHelper.format(date, formatString);
   }
 
   formatDateLong(date) {
-    return format(date, 'MMMM do');
+    return DateHelper.format(date, DateHelper.FORMATS.MONTH_DAY_ORDINAL);
   }
 
   formatDateFull(date) {
-    return format(date, 'MMMM do, yyyy');
+    return DateHelper.format(date, 'MMMM do, yyyy');
   }
 
   getOrdinal(number) {
@@ -131,8 +131,8 @@ Thank you.
   // Check if today is the last day of a pay period
   isLastDayOfPeriod(date = new Date()) {
     const periodInfo = this.getCurrentPeriodInfo(date);
-    const today = startOfDay(date);
-    const periodEnd = startOfDay(periodInfo.currentPeriod.endDate);
+    const today = DateHelper.getStartOfDay(date);
+    const periodEnd = DateHelper.getStartOfDay(periodInfo.currentPeriod.endDate);
     
     return today.getTime() === periodEnd.getTime();
   }
@@ -140,13 +140,27 @@ Thank you.
   // Get days until period end
   getDaysUntilPeriodEnd(date = new Date()) {
     const periodInfo = this.getCurrentPeriodInfo(date);
-    const today = startOfDay(date);
-    const periodEnd = startOfDay(periodInfo.currentPeriod.endDate);
+    const today = DateHelper.getStartOfDay(date);
+    const periodEnd = DateHelper.getStartOfDay(periodInfo.currentPeriod.endDate);
     
     const diffTime = periodEnd.getTime() - today.getTime();
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
     return Math.max(0, diffDays);
+  }
+
+  // Get current pay period (simplified format for services)
+  getCurrentPayPeriod(date = new Date()) {
+    const periodInfo = this.getCurrentPeriodInfo(date);
+    const { currentPeriod } = periodInfo;
+    
+    return {
+      id: `${currentPeriod.startDate.getFullYear()}-${currentPeriod.number}`,
+      number: currentPeriod.number,
+      start: currentPeriod.startDate,
+      end: currentPeriod.endDate,
+      paymentDate: currentPeriod.paymentDate
+    };
   }
 }
 

@@ -1,0 +1,15 @@
+Hours Compliance Report - Pay Period #20
+Period: Jul 8 - Jul 21, 2025
+Generated: 2025-07-24T23:40:05.636Z
+Source: Automated pull
+Entries: 151
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Raheel Shahzad       |        81.75 |    80.00 |      +1.75 |       +2.2% |      ✓ |
+| Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Pauline Nguyen       |        79.33 |    80.00 |      -0.67 |       -0.8% |      ✓ |
+| Dharam Pal Singh     |        79.00 |    80.00 |      -1.00 |       -1.3% |      ✓ |
+| Ariful               |        72.00 |    80.00 |      -8.00 |      -10.0% |      ✗ |
+| Eddy                 |        62.92 |    40.00 |     +22.92 |      +57.3% |      ✗ |
+| Yulia                |        55.00 |    50.00 |      +5.00 |      +10.0% |      ✗ |

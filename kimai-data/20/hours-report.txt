@@ -1,0 +1,198 @@
+Hours Compliance Report - Pay Period #20
+Period: Jul 8 - Jul 21, 2025
+Generated: 2025-08-21T03:57:02.447Z
+Source: Automated pull
+Entries: 148
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Pauline Nguyen       |        79.33 |    80.00 |      -0.67 |       -0.8% |      ✓ |
+| Dharam Pal Singh     |        79.00 |    80.00 |      -1.00 |       -1.3% |      ✓ |
+| Raheel Shahzad       |        73.25 |    80.00 |      -6.75 |       -8.4% |      ✗ |
+| Ariful               |        72.00 |    80.00 |      -8.00 |      -10.0% |      ✗ |
+| Eddy                 |        65.92 |    40.00 |     +25.92 |      +64.8% |      ✗ |
+| Yulia                |        49.75 |    50.00 |      -0.25 |       -0.5% |      ✓ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Mori Isaac
+----------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: status
+  • Team Operations - Meeting: STATUS
+  • Team Operations - Dev Ops / Infrastructure: Appflowy installation
+  • Team Operations - Meeting
+  • Team Operations - Dev Ops / Infrastructure: Appflowy deployment
+  • Team Operations - Dev Ops / Infrastructure: Appflowy installation and configuration
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Deployment and configuration
+  • Team Operations - Dev Ops / Infrastructure
+  • Team Operations - Dev Ops / Infrastructure: Appflowy deployment and configuration
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Deployment
+  • Team Operations - Dev Ops / Infrastructure: Appflowy configuration(extra hours)
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Infrastructure
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 79.33
+Status: ✓ PASS
+Work Summary:
+  • Print Designs - Design: Curriculum worksheet components
+  • Team Operations - Meeting: Design team sync
+  • Team Operations - Meeting: Mikhail call
+  • Team Operations - Meeting: Weekly Design Sync-Up
+  • Team Operations - Meeting: Weekly Design Sync Up
+
+
+Dharam Pal Singh
+----------------
+Expected Hours: 80.00
+Actual Hours: 79.00
+Status: ✓ PASS
+Work Summary:
+  • Admin Panel - Programming: Fixing Admin pages for video url inputs
+  • Admin Panel - Meeting: S.T.A.T.U.S. Framework Meeting | Dev Team
+  • Admin Panel - Meeting: Engineering Team: STATUS Demo Prep
+  • 1-to-1 Coaching - Programming: Booking Availability Validation + Conflict Prevention (continued)
+Resumed work on availability validation in createBooking mutation
+Designed logic to query mentor’s availability before confirming booking
+Drafted overlap detection mechanism to prevent double-booking:
+  • 1-to-1 Coaching - Meeting: StartHub | FTE Engineering Team Sync Up
+  • 1-to-1 Coaching - Programming: ' : Final Polish + Refactoring
+Removed unused dividers and applied padding/margin refinements.
+Added clean class names and cleaned up redundant styles.
+Validated form interaction and ensured accurate filter logging on apply.
+Finalized commit messages, PR description, and cleanup tasks.
+  • 1-to-1 Coaching - Programming: Alex: Sync Up
+  • 1-to-1 Coaching - Programming: Modularization + Interaction Wiring
+Integrated react-hook-form with Controller for date inputs.
+Created data-driven config file (mentor-filters.constants.ts) for options.
+Connected state with parent wrapper and extracted FilterSelections.
+Applied icon hover highlighting and dynamic icon color behavior.
+Created scoped hover/selection styles for SDSButton and calendar.
+  • 1-to-1 Coaching - Programming: ' Filter UI Component Development
+Implemented part-of-day, duration, and toggle sections.
+Integrated FormDateInput with calendar popper inside modal.
+Applied styling and spacing using custom SCSS with SDS tokens.
+Created reusable constants for labels and filter options.
+Added hover, focus, and selected state behavior for outline buttons.
+Fixed z-index and popper visibility issues inside modal.
+  • 1-to-1 Coaching - Meeting: Alex: Sync Up
+  • 1-to-1 Coaching - Programming: Figma to Component Mapping + Base Structure
+Analyzed Figma filter modal design and mapped it to reusable SDS components.
+Created initial structure: MentorFiltersWrapper, MentorFiltersDialog.
+Implemented filter icon trigger and modal open/close behavior.
+Setup SDSModal, SDSButton, and base layout using SDSFlexbox.
+  • Authentication - Meeting: StartHub | FTE Engineering Team Sync Up
+  • E-commerce - Meeting: Dharam: Monthly Sync Up + STATUS Demo Prep
+  • E-commerce - Programming: Booking Availability Validation + Conflict Prevention(In Progress)
+Refactored createBooking resolver to:
+Validate slot availability against availability data
+Check for overlapping bookings to prevent double booking
+
+Integrated mentor availability checks into resolver flow
+Outlined future scope for Notifications and Email triggers
+  • E-commerce - Meeting: StartHub | FTE Engineering Team Sync Up
+  • E-commerce - Programming: Product → mentorInfo Resolver + GraphQL Enhancements
+Implemented PublicProductResponseResolver for mentorInfo field
+Used UserService.getUserById() to fetch mentor details via RabbitMQ
+Committed GraphQL Codegen updates after resolver schema changes
+Cleaned up response types and confirmed field hydration in GraphQL playground
+  • E-commerce - Programming: ' Field Resolvers for Purchase → bookings, buyerInfo
+Implemented PublicPurchaseResponseResolver
+Added field resolvers:
+bookings: fetched list of bookings using bookingService.getBookingById()
+buyerInfo: resolved user info using userService.getUserById()
+Ensured fallback logic for empty or missing booking IDs
+Confirmed resolver registration and response hydration
+  • Authentication - Meeting
+  • E-commerce - Meeting: Alex: Sync Up
+  • E-commerce - Programming: ' Setup Field Resolvers for Booking → user
+Created and registered PublicBookingResponseResolver
+Added @ResolveField(() => UserModel) for booking's user field
+Resolved GraphQL null issue by switching from BookingModel to PublicBookingResponse
+Added missing orphaned types in GraphQLConfigModule to support resolvers
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 73.25
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: STATUS meeting
+  • SEO Optimization - Programming: Implimented Open Graph and Twitter Card
+  • SEO Optimization - Programming: Create Automated SEO Testing Suite
+  • Team Operations - Meeting: StartHub | FTE Engineering Team Sync Up
+  • SEO Optimization - Programming: Create Schema.org Structured Data Framework
+  • Team Operations - Meeting: Raheel: Monthly Sync Up + STATUS Demo Prep
+  • SEO Optimization - Programming: Add automatic sitemap.xml generation for landing pages
+  • Maintenance & Support - Programming: Add automatic sitemap.xml generation for landing pages and fix build issue
+  • 1-to-1 Coaching - Bug Fixing: 1-1 coaching detail page
+
+
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 72.00
+Status: ✗ FAIL
+Work Summary:
+  • Maintenance & Support - Programming: Trying to solved Runway & Funding Calculator issue
+  • Team Operations - Meeting
+  • Maintenance & Support - Programming: Solved Dilution Calculator calculator issue in a dummy project
+  • Maintenance & Support - Programming: Codebase read about all calculators
+  • Maintenance & Support - Manual Testing: Findout the calculator issue
+  • Maintenance & Support - Research: Calculator check
+  • Mentor Tools & Dashboard - Bug Fixing: Make sure mentor fields are filled in and are defined
+  • Mentor Tools & Dashboard - Research: Make sure mentor fields are filled in and are defined
+
+
+Eddy
+----
+Expected Hours: 40.00
+Actual Hours: 65.92
+Status: ✗ FAIL
+Work Summary:
+  • Admin Panel - Design: Continued Designing the calculator pages.
+  • Admin Panel - Design: Continued designing the tablet version of the first calculator page, got to the final stage of the design and proceeded designing the mobile version then requested for a review from Mik.
+  • Admin Panel - Design: Continued with the calculator page design, reached the final stage for the first calculator page in desktop mode, and proceeded with the tablet version.
+  • Admin Panel - Design: Continued designing and refining the calculation page using design system components and tokens, hours after the Design Team Sync Meeting with Yulia and Pauline.
+  • Admin Panel - Design: Applied design system components and tokens to the calculation page to enhance consistency and simplify developer handoff, as instructed by Mik.
+  • Admin Panel - Design: Continued designing the calculator pages right after meeting.
+  • Admin Panel - Design: Continued Designing the Calculator page.
+  • Admin Panel - Design: Continued with the layout on the calculator page.
+  • Admin Panel - Design: Designed Calculator Page overnight (West African Time) with short breaks. Focused on layout. Thanks to the recent payment, I was able to subscribe enough electricity to work continuously.
+  • Admin Panel - Design: Continued Designing Calculator page. 
+Still on Wireframing Stage
+  • Admin Panel - Design: Resume calculate pages design task, had 20 mins Design Sync meeting,  and continued.
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 49.75
+Status: ✓ PASS
+Work Summary:
+  • 1-to-1 Coaching - Design: Created one more variation of 1to1 coaching. Fixed category chips on live events and document templates. Updated graphics booklet. created component for video reviews
+  • Team Operations - Meeting: Design sync + Helped Eddy with components + Mike. Implemented changes in graphics file
+  • 1-to-1 Coaching - Design: Created 2 more variations of 1to1 booking pages. Created component for reviews. Organised bootstrap icons.
+  • 1-to-1 Coaching - Design: Worked on components for the Booking page. Created 3 more variations for card reviews.
+  • 1-to-1 Coaching - Design: Reviewed Addy's work. Gathered references for video reviews for 1to1 coaching. Created 3 variation of reviews
+  • Team Operations - Design: design sync + Addy + Mike
+  • 1-to-1 Coaching - Design: Worked on fixing comments from Mike, Created new card component, pop-up dropdown and new variation for booking mentor + met with Mike
+  • 1-to-1 Coaching - Design: Worked on comments from Mike, updated new coaching card, updated pricing cards and fixed filters.
+  • Team Operations - Meeting: Design sync + Pauline
+  • 1-to-1 Coaching - Design: worked on comments from Mike. Reviewed Hamin's work on Scenarios. Met with Mike
+  • 1-to-1 Coaching - Design: worked on comments from Mike about the Booking page. Created a new block of monthly pack for the mentor booking.
+  • Team Operations - Meeting: Taught Hamin how to create components and use them in the library.
+  • 1-to-1 Coaching - Design: Created one more variation of price cards for 1,2,3 times per month. Searched for references for pricing cards where we would add data manually.
+  • Team Operations - Meeting: Design sync, meeting with Mike
+

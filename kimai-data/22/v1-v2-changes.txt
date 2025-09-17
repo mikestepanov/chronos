@@ -1,0 +1,30 @@
+Pay Period 22 - Changes from v1 to v2
+Generated: 2025-08-20T05:21:38.718Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 23
+Removed entries: 0
+
+HOURS CHANGES BY USER
+
+
+ariful                      311.50 →   391.50 (+80.00)
+eddy                        266.88 →   276.88 (+10.00)
+raheel                      408.25 →   416.25 (+8.00)
+
+
+NEW ENTRIES ADDED
+-----------------
++ raheel - 0:30 - Meeting
++ eddy - 10:00 - Design
++ raheel - 7:30 - Programming
++ ariful - 6:00 - Programming
++ ariful - 1:00 - Meeting
++ ariful - 4:30 - Programming
++ ariful - 0:30 - Meeting
++ ariful - 8:00 - Programming
++ ariful - 0:30 - Meeting
++ ariful - 8:00 - Programming
+... and 13 more entries

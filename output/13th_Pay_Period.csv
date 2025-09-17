@@ -1,0 +1,37 @@
+Summary Overview Link,https://docs.google.com/document/d/1Z2lk0BVqHayNujwCPyiExJgViE3F0WHl16tB89lmPdI
+ACTUAL EXPENSE REFS
+Name,Time Tracking,Payment Processing,Actual Expense (M),Clockify Hours Times Rate (pre-tax) (C),Actual Pay Period (Combined) Hours (C),Actual Paid Hours (M),Actual Equity Hours (M),Name of Ref1,Value of Ref1,Link to Ref1,Name of Ref2,Value of Ref2,Link to Ref2,Name of Ref3,Value of Ref3,Link to Ref3,Name of Ref4,Value of Ref4,Link to Ref4
+Total,,,710.83
+Akshat Arora,Clockify,Gusto,,,19,,19,"Clockify: Akshat Arora, Tue, Apr 1 - Tue, Apr 15","Approved 19:00:00, Billable 0. Meaning that Equity is 19:00:00. Clockify amount is $‎0.",https://app.clockify.me/approvals/67fe4f993ad0667411a8f503?userId=670d2adb58470b45130a3039,-,-,-,-,-,-,-,-,-
+Muhammad Afaq,Clockify,Gusto,600,600,40,40,,"Clockify: Muhammad Afaq, Sat, Mar 1 - Sat, Mar 15","Approved 40:00:00, Billable 40:00:00. Meaning that Equity is 0. Clockify amount is $600. Decimal hours: 40.00",https://app.clockify.me/approvals/67fd7063fe97ae627e6449b9?userId=67350d8bf42ee443638377c2,-,-,-,-,-,-,-,-,-
+Manisha Garg,Clockify,Gusto,110.83,110.8,11.08,11.08,,"Clockify: manishacits, Tue, Apr 1 - Tue, Apr 15","Approved 11:05:00, Billable 11:05:00. Meaning that Equity is 0. Clockify amount is $110.83. Decimal hours: 11.08",https://app.clockify.me/approvals/67fe36097a08a71233f646a9?userId=67cef5d3cf06332f2bb60543,-,-,-,-,-,-,-,-,-
+EXPECTED EXPENSES
+Name,Expected Pay Period Expense (C),Weekly Expected Expense (C),Total Paid Weekly Hours (M),"Total Expense Rate, with Tax (C)",Pre-Tax Employee Rate (C),Base Rate (M),Upwork fee (multiplier) (M),US FTE bonus (multiplier) (M),"Taxes (multiplier, approximately) (M)",Comments
+Total,1000,500
+Akshat Arora,,,,10,10,10,1,1,1
+Yulia McCoy,,,,34.5,30,26.09,1,1.15,1.15
+Muhammad Afaq,600,300,20,15,15,15,1,1,1
+Manisha Garg,400,200,20,10,10,10,1,1,1
+HOURS
+Coloring,2 hours max is acceptable difference,2 hour+ difference
+Name,Inconsistency Ratio (C),Pay Period Hours Difference (C),Equity Hours Difference (C),Pay Period Expecteed Hours (C),Total Expected Weekly Hours (C),Total Expected Weekly Equity Hours (M),Total Expected Paid Weekly Hours (C)
+Grand Total,Average 20.80% Missed,49.92,21,240,120,80,40
+Dev Total,Average 17.50% Missed,21,21,120,60,60,
+Mikhail Stepanov,No Difference,,,40,20,20,
+Anatoly Stepanov,No Difference,,,40,20,20,
+Akshat Arora,52.50% Missed,21,21,40,20,20,
+Design Total,Average 24.10% Missed,28.92,,120,60,20,40
+Muhammad Afaq,No Difference,,,40,20,,20
+Manisha Garg,72.30% Missed,28.92,,40,20,,20
+Yulia McCoy,No Difference,,,40,20,20,
+ACTUAL EXPENSES
+Name,Incosistency Expense (C),Expected Pay Period Expense (C),Actual Expense (C),Actual Expense Paid (M),Expence Difference (C)
+Grand Total,289.17,1000,710.83,710.9,-0.07
+Dev Total,,,,,
+Mikhail Stepanov,,,,,
+Anatoly Stepanov,,,,,
+Akshat Arora,,,,,
+Design Total,289.17,1000,710.83,710.9,-0.07
+Muhammad Afaq,,600,600,376.8,223.2,We overpaid Afaq $223.25 in 12th Pay Period. Muhammad owes us 5 cents.
+Manisha Garg,289.17,400,110.83,334.1,-223.27,We underpaid Manisha $223.30 in 12th Pay Period. Here we still owe Manisha 3 cents.
+Yulia McCoy,,,,,

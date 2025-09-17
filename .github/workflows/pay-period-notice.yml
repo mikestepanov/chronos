@@ -1,0 +1,144 @@
+name: Pay Period Notice
+
+on:
+  schedule:
+    # 7 AM CST (1 PM UTC) every Monday - Advance Notice
+    - cron: '0 13 * * 1'
+    # 8:30 AM CST (2:30 PM UTC) every Monday - Main Reminders  
+    - cron: '30 14 * * 1'
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Action to perform'
+        required: true
+        default: 'main-reminders'
+        type: choice
+        options:
+          - advance-notice
+          - main-reminders
+          - preview
+          - status
+      channels:
+        description: 'Channels (comma-separated)'
+        required: false
+        default: 'dev,design'
+      force:
+        description: 'Force send even if not pay period end'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  pay-period-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Determine action from schedule
+        id: determine-action
+        run: |
+          CURRENT_HOUR=$(date -u +%H)
+          CURRENT_MINUTE=$(date -u +%M)
+          
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "action=${{ github.event.inputs.action }}" >> $GITHUB_OUTPUT
+            echo "channels=${{ github.event.inputs.channels }}" >> $GITHUB_OUTPUT
+            echo "force=${{ github.event.inputs.force }}" >> $GITHUB_OUTPUT
+          elif [[ "$CURRENT_HOUR" == "13" && "$CURRENT_MINUTE" -lt "15" ]]; then
+            echo "action=advance-notice" >> $GITHUB_OUTPUT
+            echo "channels=general" >> $GITHUB_OUTPUT
+            echo "force=false" >> $GITHUB_OUTPUT
+          else
+            echo "action=main-reminders" >> $GITHUB_OUTPUT
+            echo "channels=dev,design" >> $GITHUB_OUTPUT
+            echo "force=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check if pay period end
+        id: check-period
+        run: |
+          node -e "
+          const PayPeriodCalculator = require('./shared/pay-period-calculator');
+          const calc = new PayPeriodCalculator({
+            basePeriodNumber: 18,
+            basePeriodEndDate: new Date('2025-06-23T12:00:00'),
+            periodLengthDays: 14,
+            paymentDelayDays: 7
+          });
+          
+          const isLastDay = calc.isLastDayOfPeriod();
+          const periodInfo = calc.getCurrentPeriodInfo();
+          
+          console.log('Is last day of period:', isLastDay);
+          console.log('Current period:', periodInfo.currentPeriod.number);
+          console.log('::set-output name=is_last_day::' + isLastDay);
+          console.log('::set-output name=period_number::' + periodInfo.currentPeriod.number);
+          "
+
+      - name: Send notifications
+        if: steps.check-period.outputs.is_last_day == 'true' || steps.determine-action.outputs.force == 'true'
+        env:
+          PUMBLE_WEBHOOK_URL: ${{ secrets.PUMBLE_WEBHOOK_URL }}
+          PUMBLE_DEV_WEBHOOK_URL: ${{ secrets.PUMBLE_DEV_WEBHOOK_URL }}
+          PUMBLE_DESIGN_WEBHOOK_URL: ${{ secrets.PUMBLE_DESIGN_WEBHOOK_URL }}
+          PUMBLE_GENERAL_WEBHOOK_URL: ${{ secrets.PUMBLE_GENERAL_WEBHOOK_URL }}
+        run: |
+          node -e "
+          const PayPeriodNoticeBot = require('./pay-period-notice/PayPeriodNoticeBot');
+          
+          const bot = new PayPeriodNoticeBot({
+            testMode: '${{ github.event_name }}' === 'workflow_dispatch' && '${{ steps.determine-action.outputs.action }}' === 'preview'
+          });
+          
+          const action = '${{ steps.determine-action.outputs.action }}';
+          const channels = '${{ steps.determine-action.outputs.channels }}'.split(',').filter(c => c);
+          
+          (async () => {
+            try {
+              let result;
+              switch (action) {
+                case 'advance-notice':
+                  result = await bot.sendAdvanceNotice(channels);
+                  break;
+                case 'main-reminders':
+                  result = await bot.sendMainReminders(channels);
+                  break;
+                case 'preview':
+                  result = bot.previewMessages(channels);
+                  console.log('Preview:', JSON.stringify(result, null, 2));
+                  return;
+                case 'status':
+                  result = bot.getStatus();
+                  console.log('Status:', JSON.stringify(result, null, 2));
+                  return;
+              }
+              
+              console.log('Results:', JSON.stringify(result, null, 2));
+              
+              const failed = result.filter(r => !r.success);
+              if (failed.length > 0) {
+                console.error('Failed sends:', failed);
+                process.exit(1);
+              }
+            } catch (error) {
+              console.error('Error:', error);
+              process.exit(1);
+            }
+          })();
+          "
+
+      - name: Skip notification
+        if: steps.check-period.outputs.is_last_day != 'true' && steps.determine-action.outputs.force != 'true'
+        run: |
+          echo "Skipping notification - not the last day of pay period"
+          echo "Current period: ${{ steps.check-period.outputs.period_number }}"
+          echo "Is last day: ${{ steps.check-period.outputs.is_last_day }}"

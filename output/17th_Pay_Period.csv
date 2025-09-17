@@ -1,0 +1,48 @@
+Summary Overview Link,https://docs.google.com/document/d/1ypge3yyKzOen3daCFEhMAIRDo6xybN5HZ27lA_HAh74
+ACTUAL EXPENSE REFS
+Name,Time Tracking,Payment Processing,Actual Expense (M),Clockify Hours Times Rate (pre-tax) (C),Actual Pay Period (Combined) Hours (C),Actual Paid Hours (M),Actual Equity Hours (M),Name of Ref1,Value of Ref1,Link to Ref1,Name of Ref2,Value of Ref2,Link to Ref2,Name of Ref3,Value of Ref3,Link to Ref3,Name of Ref4,Value of Ref4,Link to Ref4
+Total,,,2300
+Dharam Pal,Clockify,Gusto,700,700,80.25,40,40.25,"Clockify: Dharam, Fri, May 16 - Sat, May 31
+
+","Approved 16:00:00, Billable 16:00:00. Meaning that Equity is 16:00:00. Clockify amount is $‎280.00. Decimal hours: 32.00",https://app.clockify.me/approvals/684711cabb7c56144c5b5afb?userId=68054b65da507d1b66d678a4,"Clockify: Dharam, Sun, Jun 1 - Sun, Jun 15","Approved 48:15:00, Billable 24:00:00. Meaning that Equity is 24:15:00. Clockify amount is $‎420.00. Decimal hours: 48.25",https://app.clockify.me/approvals/684711b4ba96dc05a1c078a1?userId=68054b65da507d1b66d678a4,-,-,-,-,-,-
+Ariful Islam,Clockify,Gusto,400,400,80,40,40,"Clockify: Ariful, Fri, May 16 - Sat, May 31","Approved 33:00:00, Billable 00:00:00. Meaning that Equity is 33:00:00. Clockify amount is $0.00. Decimal hours: 33.00",https://app.clockify.me/approvals/6848041a833c2b6f967a28d5?userId=68054953135498463183032e,"Clockify: Ariful, Sun, Jun 1 - Sun, Jun 15","Approved 47:00:00, Billable 40:00:00. Meaning that Equity is 7:00:00. Clockify amount is $400.00. Decimal hours: 47.00",https://app.clockify.me/approvals/684804216ea942064ff01736?userId=68054953135498463183032e,,,,-,-,-
+Raheel Shahzad,Clockify,Gusto,600,600,78,40,38,"Clockify: Raheel Shahzad, Fri, May 16 - Sat, May 31","Approved 17:00:00, Billable 09:00:00. Meaning that Equity is 08:00:00. Clockify amount is $135.00. Decimal hours: 17.00",https://app.clockify.me/approvals/684732f8ba96dc05a1c3dd0b?userId=68235448b505c259c818a457,"Clockify: Raheel Shahzad, Sun, Jun 1 - Sun, Jun 15","Approved 60:00:00, Billable 32:30:00. Meaning that Equity is 27:30:00. Clockify amount is $‎487.50. Decimal hours: 60.00",https://app.clockify.me/approvals/68486a97fe50cb725d9d83d5?userId=68235448b505c259c818a457,Siphoned 1.5 hours paid into equity to lower paid to 40,,,-,-,-
+Mori Wesonga,Clockify,Gusto,600,600,85.8797,40,45.8797,"Clockify: Isaac Mori, Fri, May 16 - Sat, May 31","Approved 41:17:47, Billable 00:00:00. Meaning that Equity is 41:17:47. Clockify amount is $000.00. Decimal hours: 41.2964",https://app.clockify.me/approvals/68486db6f8cbae590d4d94c6?userId=683481373cf11d012e3d57af,"Clockify: Isaac Mori, Sun, Jun 1 - Sun, Jun 15","Approved 44:35:00, Billable 40:00:00. Meaning that Equity is 04:35:00. Clockify amount is $600.00. Decimal hours: 44.5833",https://app.clockify.me/approvals/68486d7b9bfd9363c4575844?userId=683481373cf11d012e3d57af,,,,-,-,-
+Mohit Agrawal,Clockify,Gusto,,,51.5,,51.5,"Clockify: mohit agrawal, Sun, Jun 1 - Sun, Jun 15","Approved 15:30:00, Billable 00:00:00. Meaning that Equity is 15:30:00. Clockify amount is $0.00. Decimal hours: 15.5",https://app.clockify.me/approvals/6845a0c7f0c88d522706490c?userId=63fdde497f13a72ea96b6e13,"Clockify: mohit agrawal, Fri, May 16 - Sat, May 31
+","Approved 36:00:00, Billable 00:00:00. Meaning that Equity is 36:00:00. Clockify amount is $0.00. Decimal hours: 36.00",https://app.clockify.me/approvals/684b14635b66b766168962be?userId=63fdde497f13a72ea96b6e13,,,,-,-,-
+EXPECTED EXPENSES
+Name,Expected Pay Period Expense (C),Weekly Expected Expense (C),Total Paid Weekly Hours (M),"Total Expense Rate, with Tax (C)",Pre-Tax Employee Rate (C),Base Rate (M),Upwork fee (multiplier) (M),US FTE bonus (multiplier) (M),"Taxes (multiplier, approximately) (M)",Comments
+Total,,
+Dharam Pal,700,350,20,17.5,17.5,17.5,1,1,1
+Ariful Islam,400,200,20,10,10,10,1,1,1
+Raheel Shahzad,600,300,20,15,15,15,1,1,1
+Mori Wesonga,600,300,20,15,15,15,1,1,1
+Mohit Agrawal,,,,15,15,15,1,1,1
+Yulia McCoy,,,,34.5,30,26.09,1,1.15,1.15
+HOURS
+Coloring,3 hours max is acceptable difference,3 hour+ difference
+Name,Inconsistency Ratio (C),Pay Period Hours Difference (C),Equity Hours Difference (C),Pay Period Expecteed Hours (C),Total Expected Weekly Hours (C),Total Expected Weekly Equity Hours (M),Total Expected Paid Weekly Hours (C)
+Grand Total,Average 3.26% Overworked,-15.6297,-15.6297,480,240,160,80
+Dev Total,Average 3.55% Overworked,-15.6297,-15.6297,440,220,140,80
+Dharam Pal,0.31% Overworked,-0.25,-0.25,80,40,20,20
+Ariful Islam,No Difference,,,80,40,20,20
+Raheel Shahzad,2.50% Missed,2,2,80,40,20,20
+Mori Wesonga,7.35% Overworked,-5.8797,-5.8797,80,40,20,20
+Mohit Agrawal,28.75% Overworked,-11.5,-11.5,40,20,20,
+Mikhail Stepanov,No Difference,,,40,20,20,
+Anatoly Stepanov,No Difference,,,40,20,20,
+Design Total,Average No Difference,,,40,20,20,
+Yulia McCoy,No Difference,,,40,20,20,
+ACTUAL EXPENSES
+Name,Incosistency Expense (C),Expected Pay Period Expense (C),Actual Expense (C),Actual Expense Paid (M),Expence Difference (C)
+Grand Total,,2300,2300,2300,
+Dev Total,,2300,2300,2300,
+Dharam Pal,,700,700,700,
+Ariful Islam,,400,400,400,
+Raheel Shahzad,,600,600,600,
+Mori Wesonga,,600,600,600,
+Mohit Agrawal,,,,,
+Mikhail Stepanov,,,,,
+Anatoly Stepanov,,,,,
+Design Total,,,,,
+Yulia McCoy,,,,,

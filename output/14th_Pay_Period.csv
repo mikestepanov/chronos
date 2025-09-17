@@ -1,0 +1,43 @@
+Summary Overview Link,https://docs.google.com/document/d/1h2HZOMQ2osN54QCCmxXKJYAmWPmYe2fNWra8pl5CsYM
+ACTUAL EXPENSE REFS
+Name,Time Tracking,Payment Processing,Actual Expense (M),Clockify Hours Times Rate (pre-tax) (C),Actual Pay Period (Combined) Hours (C),Actual Paid Hours (M),Actual Equity Hours (M),Name of Ref1,Value of Ref1,Link to Ref1,Name of Ref2,Value of Ref2,Link to Ref2,Name of Ref3,Value of Ref3,Link to Ref3,Name of Ref4,Value of Ref4,Link to Ref4
+Total,,,1064.16
+Dharam Pal,Clockify,Gusto,735,560,52,32,20,"Clockify: Dharam, Wed, Apr 16 - Today","Approved 52:00:00, Billable 32:00:00. Meaning that Equity is 20:00:00. Clockify amount is $‎560.00.",https://app.clockify.me/approvals/680fbe5e2e56197b9fce2a3b?userId=68054b65da507d1b66d678a4,Test Task,"10 hours times the current pay rate, which is $17.5 => $175 for the test task",Verbal,-,-,-,-,-,-
+Ariful Islam,Upwork,Upwork,242.11,225.83,42.583,22.583,20,"Clockify: Akshat Arora, Tue, Apr 1 - Tue, Apr 15","Approved 42:35:00, Billable 22:35:00. Meaning that Equity is 20:00:00. Clockify amount is $‎225.83. Decimal hours: 22.58. 2.5 Hours are test task",https://app.clockify.me/approvals/680fbdddb884b21e99c5ed11?userId=68054953135498463183032e,Upwork initiation fee,4.99,-,,,,-,-,-
+Yulia McCoy,Clockify,Gusto,500,,,,,Bonus for the Hard Work,500,Verbal,-,-,-,-,-,-,-,-,-
+Muhammad Afaq,Clockify,Gusto,300,300,20,20,,"Clockify: Muhammad Afaq, Wed, Apr 16 - Wed, Apr 30","Approved 20:00:00, Billable 20:00:00. Meaning that Equity is 0. Clockify amount is $300.00. Decimal hours: 20.00",https://app.clockify.me/approvals/681004fc7e2ae746e81a8d53?userId=67350d8bf42ee443638377c2,-,-,-,-,-,-,-,-,-
+Manisha Garg,Clockify,Gusto,264.16,264.16,26.416,26.416,,"Clockify: manishacits, Wed, Apr 16 - Today","Approved 26:25:00, Billable 26:25:00. Meaning that Equity is 0. Clockify amount is $264.16. Decimal hours: 26.4167",https://app.clockify.me/approvals/6810c390b884b21e99db66aa?userId=67cef5d3cf06332f2bb60543,-,-,-,-,-,-,-,-,-
+,,,$225.83 Upwork to pay for Ariful
+EXPECTED EXPENSES
+Name,Expected Pay Period Expense (C),Weekly Expected Expense (C),Total Paid Weekly Hours (M),"Total Expense Rate, with Tax (C)",Pre-Tax Employee Rate (C),Base Rate (M),Upwork fee (multiplier) (M),US FTE bonus (multiplier) (M),"Taxes (multiplier, approximately) (M)",Comments
+Total,1500,500
+Dharam Pal,700,350,20,17.5,17.5,17.5,1,1,1
+Ariful Islam,420,210,20,10.5,10.5,10,1.05,1,1
+Yulia McCoy,500,,,34.5,30,26.09,1,1.15,1.15,Bonus for good work
+Muhammad Afaq,600,300,20,15,15,15,1,1,1
+Manisha Garg,400,200,20,10,10,10,1,1,1
+HOURS
+Coloring,3 hours max is acceptable difference,3 hour+ difference
+Name,Inconsistency Ratio (C),Pay Period Hours Difference (C),Equity Hours Difference (C),Pay Period Expecteed Hours (C),Total Expected Weekly Hours (C),Total Expected Weekly Equity Hours (M),Total Expected Paid Weekly Hours (C)
+Grand Total,Average 16.79% Missed,33.584,,200,100,60,40
+Dev Total,Average No Difference,,,80,40,40,
+Dharam Pal,30.00% Overworked,-12,,40,40,20,20
+Ariful Islam,0.21% Overworked,-0.083,,40,40,20,20,2.5 hours are not counted as test task
+Mikhail Stepanov,No Difference,,,40,20,20,
+Anatoly Stepanov,No Difference,,,40,20,20,
+Design Total,Average 27.99% Missed,33.584,,120,60,20,40
+Muhammad Afaq,50.00% Missed,20,,40,20,,20
+Manisha Garg,33.96% Missed,13.584,,40,20,,20
+Yulia McCoy,No Difference,,,40,20,20,
+ACTUAL EXPENSES
+Name,Incosistency Expense (C),Expected Pay Period Expense (C),Actual Expense (C),Actual Expense Paid (M),Expence Difference (C)
+Grand Total,224.97,1500,1064.16,867.5,196.66
+Dev Total,-210.87,,,,
+Dharam Pal,-210,525,735,735,
+Ariful Islam,-0.87,241.24,242.11,242.11,,"Ariful is on Upwork, we will pay Ariful $225.83, but it wil cost us $242.11."
+Mikhail Stepanov,,,,,
+Anatoly Stepanov,,,,,
+Design Total,435.84,1500,1064.16,867.5,196.66
+Muhammad Afaq,300,600,300,300,
+Manisha Garg,135.84,400,264.16,67.5,196.66,We overapaid Manisha $196.69 overall before. -$197.72 on 11th and $0.03 on 13th.
+Yulia McCoy,,500,500,500,

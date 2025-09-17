@@ -1,0 +1,30 @@
+Summary Overview Link,https://docs.google.com/document/d/[PLACEHOLDER_FOR_custom-aug22_PERIOD]
+CSV,https://drive.google.com/drive/folders/[PLACEHOLDER],,,,,7
+ACTUAL EXPENSE REFS
+Name,Time Tracking,Payment Processing,Actual Expense (M),Actual Pay Period (Combined) Hours (C),Actual Paid Hours (M),Actual Equity Hours (M),Comments
+Total,,,
+EXPECTED EXPENSES
+Name,Expected Pay Period Expense (C),Weekly Expected Expense (C),Total Paid Weekly Hours (M),"Total Expense Rate, with Tax (C)",Pre-Tax Employee Rate (C),Base Rate (M),Upwork fee (multiplier) (M),US FTE bonus (multiplier) (M),"Taxes (multiplier, approximately) (M)"
+Total,200,100
+Dharam Pal,700,350,20,17.5,17.5,17.5,1,1,1
+Ariful Islam,400,200,20,10,10,10,1,1,1
+Raheel Shahzad,600,300,20,15,15,15,1,1,1
+Mori Wesonga,600,300,20,15,15,15,1,1,1
+Yulia McCoy,200,100,5,20,20,20,1,1,1
+Pauline Nguyen,1000,500,20,25,25,25,1,1,1
+Edward Obi,,,20,20,20,20,1,1,1
+HOURS
+Coloring,3 hours max is acceptable difference,3 hour+ difference
+Name,Inconsistency Ratio (C),Pay Period Hours Difference (C),Equity Hours Difference (C),Pay Period Expected Hours (C),Total Expected Weekly Hours (C),Total Expected Weekly Equity Hours (M),Total Expected Paid Weekly Hours (C)
+Grand Total,Average 0% Missed,,,440,220,140,80
+Dev Total,Average 0% Missed,,,400,200,120,80
+Mikhail Stepanov,No Difference,,,40,20,20,
+Anatoly Stepanov,No Difference,,,40,20,20,
+Design Total,Average No Difference,,,40,20,20,
+ACTUAL EXPENSES
+Name,Inconsistency Expense (C),Expected Pay Period Expense (C),Actual Expense (C),Actual Expense Paid (M),Expense Difference (C)
+Grand Total,,,,,
+Dev Total,,-1200,-1200,-1200,
+Mikhail Stepanov,,,,,
+Anatoly Stepanov,,,,,
+Design Total,,1200,1200,1200,

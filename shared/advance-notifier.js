@@ -53,7 +53,7 @@ _This is your 1-hour advance notification._`;
 
     try {
       await this.pumble.sendMessage(
-        process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID,
+        require('../../shared/channels').BOT_TO_MIKHAIL,
         notification
       );
       console.log('✅ Advance notification sent to Mikhail');
@@ -81,10 +81,10 @@ _This message was just sent to ${channelName}._`;
 
     try {
       // Don't notify about notifications or DMs to Mikhail
-      const isDMToMikhail = channelId === process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID;
+      const isDMToMikhail = channelId === require('../../shared/channels').BOT_TO_MIKHAIL;
       if (!isDMToMikhail) {
         await this.pumble.sendMessage(
-          process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID,
+          require('../../shared/channels').BOT_TO_MIKHAIL,
           notification
         );
       }

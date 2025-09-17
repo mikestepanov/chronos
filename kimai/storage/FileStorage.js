@@ -75,6 +75,16 @@ class FileStorage extends Storage {
     // Count records (simple line count minus header)
     const recordCount = csvData.split('\n').filter(line => line.trim()).length - 1;
 
+    // Generate changes file if this is not the first version
+    if (version > 1) {
+      const previousVersion = version - 1;
+      const changes = await this.generateChangesFile(periodId, previousVersion, version, csvData);
+      if (changes) {
+        const changesPath = path.join(this.getPeriodPath(periodId), `v${previousVersion}-v${version}-changes.txt`);
+        await fs.writeFile(changesPath, changes, 'utf8');
+      }
+    }
+
     // Create storage entry
     const entry = {
       periodId,
@@ -221,6 +231,152 @@ class FileStorage extends Storage {
       removedRecords: removed,
       modifiedRecords: [] // Would need more sophisticated comparison
     };
+  }
+
+  async generateChangesFile(periodId, oldVersion, newVersion, newCsvData) {
+    try {
+      const oldCsv = await this.getCSV(periodId, oldVersion);
+      if (!oldCsv) return null;
+
+      const comparison = await this.compareVersions(periodId, oldVersion, newVersion);
+      
+      if (!comparison.hasChanges) {
+        return null;
+      }
+
+      // Parse CSVs to get user summaries
+      const oldLines = oldCsv.split('\n').filter(l => l.trim());
+      const newLines = newCsvData.split('\n').filter(l => l.trim());
+      
+      // Parse headers
+      const headers = oldLines[0].split(',').map(h => h.replace(/"/g, '').trim());
+      const userIndex = headers.indexOf('User');
+      const durationIndex = headers.indexOf('Duration');
+      
+      // Aggregate hours by user for both versions
+      const oldUserHours = this.aggregateUserHours(oldLines.slice(1), userIndex, durationIndex);
+      const newUserHours = this.aggregateUserHours(newLines.slice(1), userIndex, durationIndex);
+      
+      // Generate change report
+      let report = `Pay Period ${periodId} - Changes from v${oldVersion} to v${newVersion}\n`;
+      report += `Generated: ${new Date().toISOString()}\n`;
+      report += `${'='.repeat(60)}\n\n`;
+      
+      // Summary of changes
+      report += `SUMMARY OF CHANGES\n`;
+      report += `${''.repeat(18)}\n`;
+      report += `Added entries: ${comparison.addedRecords.length}\n`;
+      report += `Removed entries: ${comparison.removedRecords.length}\n\n`;
+      
+      // Hours changes by user
+      report += `HOURS CHANGES BY USER\n`;
+      report += `${''.repeat(21)}\n\n`;
+      
+      const allUsers = new Set([...Object.keys(oldUserHours), ...Object.keys(newUserHours)]);
+      const userChanges = [];
+      
+      allUsers.forEach(user => {
+        const oldHours = oldUserHours[user] || 0;
+        const newHours = newUserHours[user] || 0;
+        const change = newHours - oldHours;
+        
+        if (Math.abs(change) > 0.01) { // Only show if there's a meaningful change
+          userChanges.push({
+            user,
+            oldHours,
+            newHours,
+            change
+          });
+        }
+      });
+      
+      // Sort by absolute change descending
+      userChanges.sort((a, b) => Math.abs(b.change) - Math.abs(a.change));
+      
+      userChanges.forEach(({ user, oldHours, newHours, change }) => {
+        const sign = change >= 0 ? '+' : '';
+        report += `${user.padEnd(25)} ${oldHours.toFixed(2).padStart(8)} → ${newHours.toFixed(2).padStart(8)} (${sign}${change.toFixed(2)})\n`;
+      });
+      
+      if (comparison.addedRecords.length > 0) {
+        report += `\n\nNEW ENTRIES ADDED\n`;
+        report += `${'-'.repeat(17)}\n`;
+        comparison.addedRecords.slice(0, 10).forEach(record => {
+          const fields = this.parseCSVLine(record);
+          if (fields[userIndex] && fields[durationIndex]) {
+            report += `+ ${fields[userIndex]} - ${fields[durationIndex]} - ${fields[headers.indexOf('Activity')] || 'N/A'}\n`;
+          }
+        });
+        if (comparison.addedRecords.length > 10) {
+          report += `... and ${comparison.addedRecords.length - 10} more entries\n`;
+        }
+      }
+      
+      if (comparison.removedRecords.length > 0) {
+        report += `\n\nENTRIES REMOVED\n`;
+        report += `${'-'.repeat(16)}\n`;
+        comparison.removedRecords.slice(0, 10).forEach(record => {
+          const fields = this.parseCSVLine(record);
+          if (fields[userIndex] && fields[durationIndex]) {
+            report += `- ${fields[userIndex]} - ${fields[durationIndex]} - ${fields[headers.indexOf('Activity')] || 'N/A'}\n`;
+          }
+        });
+        if (comparison.removedRecords.length > 10) {
+          report += `... and ${comparison.removedRecords.length - 10} more entries\n`;
+        }
+      }
+      
+      return report;
+      
+    } catch (error) {
+      console.error('Error generating changes file:', error);
+      return null;
+    }
+  }
+
+  aggregateUserHours(lines, userIndex, durationIndex) {
+    const userHours = {};
+    
+    lines.forEach(line => {
+      const fields = this.parseCSVLine(line);
+      const user = fields[userIndex];
+      const duration = fields[durationIndex];
+      
+      if (user && duration) {
+        // Parse duration (format: "5:00" or similar)
+        const [hours, minutes] = duration.split(':').map(Number);
+        const totalHours = hours + (minutes || 0) / 60;
+        
+        if (!userHours[user]) {
+          userHours[user] = 0;
+        }
+        userHours[user] += totalHours;
+      }
+    });
+    
+    return userHours;
+  }
+
+  parseCSVLine(line) {
+    const fields = [];
+    let current = '';
+    let inQuotes = false;
+    
+    for (let i = 0; i < line.length; i++) {
+      const char = line[i];
+      
+      if (char === '"') {
+        inQuotes = !inQuotes;
+      } else if (char === ',' && !inQuotes) {
+        fields.push(current.trim());
+        current = '';
+      } else {
+        current += char;
+      }
+    }
+    
+    fields.push(current.trim());
+    return fields;
   }
 }
 

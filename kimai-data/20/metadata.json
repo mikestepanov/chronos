@@ -1,0 +1,58 @@
+{
+  "versions": [
+    {
+      "version": 1,
+      "extractedAt": "2025-07-25T00:07:01.261Z",
+      "checksum": "fd4278c5d31a968710eaae6aedeccae4e8972e062800a4becf52fcd2d657d380",
+      "metadata": {
+        "periodNumber": 20,
+        "startDate": "2025-07-08T05:00:00.000Z",
+        "endDate": "2025-07-22T04:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 448,
+          "filteredRecords": 151,
+          "uniqueUsers": 7,
+          "totalHours": 510.00000000000006,
+          "recordsOutsidePeriod": 297,
+          "periodNumber": 20,
+          "dateRange": {
+            "start": "2025-07-08",
+            "end": "2025-07-22"
+          }
+        },
+        "recordCount": 523,
+        "bytes": 81393
+      }
+    },
+    {
+      "version": 2,
+      "extractedAt": "2025-08-21T00:18:25.285Z",
+      "checksum": "efba94e1e6c064329afdb507a52a5048f5fe87ee2759ba1a420e07aa9f12892f",
+      "metadata": {
+        "periodNumber": 20,
+        "startDate": "2025-07-08T17:00:00.000Z",
+        "endDate": "2025-07-21T17:00:00.000Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 743,
+          "filteredRecords": 148,
+          "uniqueUsers": 7,
+          "totalHours": 499.25000000000006,
+          "recordsOutsidePeriod": 595,
+          "periodNumber": 20,
+          "dateRange": {
+            "start": "2025-07-08",
+            "end": "2025-07-21"
+          }
+        },
+        "recordCount": 882,
+        "bytes": 132229
+      }
+    }
+  ],
+  "latest": 2,
+  "updatedAt": "2025-08-21T00:18:25.285Z"
+}

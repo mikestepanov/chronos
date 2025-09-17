@@ -1,6 +1,4 @@
 const PumbleClient = require('./pumble-client');
-const SlackClient = require('./slack-client');
-const TeamsClient = require('./teams-client');
 const NotificationWrapper = require('./notification-wrapper');
 
 class MessagingFactory {
@@ -11,18 +9,6 @@ class MessagingFactory {
       case 'pumble':
         client = new PumbleClient(config);
         break;
-      
-      case 'slack':
-        client = new SlackClient(config);
-        break;
-      
-      case 'teams':
-        client = new TeamsClient(config);
-        break;
-      
-      case 'discord':
-        // Future: return new DiscordClient(config);
-        throw new Error('Discord integration not yet implemented');
       
       default:
         throw new Error(`Unsupported messaging platform: ${platform}`);

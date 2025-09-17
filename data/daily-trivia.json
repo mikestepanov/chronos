@@ -1,0 +1,25 @@
+{
+  "trivia": [
+    {
+      "date": "01-01",
+      "fact": "Did you know? 'January' is named after Janus, the Roman god with two faces - one looking back at the old year and one forward to the new"
+    },
+    {
+      "date": "01-02", 
+      "fact": "Etymology: 'Deadline' originally meant a line drawn around a prison - if prisoners crossed it, they'd be shot"
+    },
+    {
+      "date": "01-03",
+      "fact": "Word origin: 'Algorithm' comes from the name of 9th-century Persian mathematician Muhammad ibn Musa al-Khwarizmi"
+    },
+    {
+      "date": "01-04",
+      "fact": "Fun fact: 'Salary' comes from Latin 'salarium' - money given to Roman soldiers to buy salt, which was valuable"
+    },
+    {
+      "date": "01-05",
+      "fact": "Did you know? 'Robot' comes from Czech 'robota' meaning forced labor, first used in a 1920 play"
+    }
+  ],
+  "note": "This file contains curated trivia but is not actively used. The service fetches from APIs instead."
+}

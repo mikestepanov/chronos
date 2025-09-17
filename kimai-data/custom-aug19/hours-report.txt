@@ -1,0 +1,44 @@
+Hours Compliance Report - Pay Period #custom-aug19
+Period: Aug 19 - Aug 19, 2025
+Generated: 2025-08-20T23:28:59.706Z
+Source: Automated pull
+Entries: 5
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Eddy                 |        10.00 |    40.00 |     -30.00 |      -75.0% |      ✗ |
+| Raheel Shahzad       |         8.00 |    80.00 |     -72.00 |      -90.0% |      ✗ |
+| Yulia                |         5.00 |    50.00 |     -45.00 |      -90.0% |      ✗ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Eddy
+----
+Expected Hours: 40.00
+Actual Hours: 10.00
+Status: ✗ FAIL
+Work Summary:
+  • Tools & Templates - Design: More variations of the email templates cards, addition of the category chip.
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 8.00
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: Stand Up meeting
+  • Mentor Tools & Dashboard - Programming: Calendar Availability Feature - Frontend UX Polish
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 5.00
+Status: ✗ FAIL
+Work Summary:
+  • Onboarding - Design: Sync up design team. Reviewed components from Pauline
+

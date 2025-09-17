@@ -1,0 +1,30 @@
+Summary Overview Link,manual
+ACTUAL EXPENSE REFS
+Name,Time Tracking,Payment Processing,Actual Expense (M),Clockify Hours Times Rate (pre-tax) (C),Actual Pay Period (Combined) Hours (C),Actual Paid Hours (M),Actual Equity Hours (M),Name of Ref1,Value of Ref1,Link to Ref1,Name of Ref2,Value of Ref2,Link to Ref2
+Total,,,8064.97
+Eugene Dilbarov,Clockify,Gusto,3498.83,3250.1875,110.75,80.75,30,"Clockify: Eugene Dilbarov, Sun, Feb 16 - Fri, Feb 28","Approved 84:15:00, Billable 55:00:00. Meaning that Equity is 29:15:00. Clockify amount is $2,213.75.",https://app.clockify.me/approvals/67c62cc4f348c920961ac981?userId=670d2adb58470b45130a3037,"Clockify: Eugene Dilbarov, Sat, Mar 1 - Sat, Mar 15","Approved 26:30:00, Billable 25:45:00. Meaning that Equity is 00:45:00. Clockify amount is $1,036.43.",https://app.clockify.me/approvals/67c66f373f4d6b42ba4671ed?userId=670d2adb58470b45130a3037
+Akshat Arora,Clockify,Gusto,262.5,262.5,40.5,10.5,30,"Clockify: Akshat Arora, Sun, Feb 16 - Fri, Feb 28","Approved 34:00:00, Billable 09:30:00. Meaning that Equity is 24:30:00. Clockify amount is $237.50.",https://app.clockify.me/approvals/67c6e62f6bde8e6520aa79a4?userId=670d2adb58470b45130a3039,"Clockify: Akshat Arora, Sat, Mar 1 - Sat, Mar 15","Approved 06:30:00, BIllable 01:00:00. Menaing that Equity is 05:30:00. Clockify amount is $25.00.",https://app.clockify.me/approvals/67c6e6321b39f63db6fbe3ef?userId=670d2adb58470b45130a3039
+Diana Palamar,Upwork,Upwork,647.59,-,34,34,,Diana's Upwork Timesheet,Total hours: 34:00 for the total of $612.00. Meaning with Upwork fee (5%) it would be $642.60.,"https://www.upwork.com/nx/reports/client/timesheet/?group_by=assignment&group_by_time=day&range=20250218-20250303&columns=provider,hours,charges,payment_type&provider=436d8287&assignment=39816083&team=mtg0odqwnzqxota0nzg5mdu1nq",Upwork: Contract Initiation Fee,4.99,https://www.upwork.com/nx/wm/workroom/39816083/timesheet?timesheetDate=2025-03-03
+Yulia McCoy,Clockify,Gusto,1668.55,1490.1,83,49.67,33.33,"Clockify: Iuliia McCoy, Sun, Feb 16 - Fri, Feb 28","Approved 74:00:00, Billable 40:40:00. Meaning that Equity is 33:20:00. Clockify amount is $1,220.00.",https://app.clockify.me/approvals/67c6743d1b39f63db6f1d241?userId=670d2adb58470b45130a3035,"Clockify: Iuliia McCoy, Sat, Mar 1 - Sat, Mar 15","Approved 09:00:00, Billable 09:00:00. Meaning that Equity is 0. Clockify amount is $270.00.",https://app.clockify.me/approvals/67c7239806e74856b168fbd7?userId=670d2adb58470b45130a3035
+Muhammad Afaq,Clockify,Gusto,1187.5,1187.5,47.5,47.5,,"Clockify: Muhammad Afaq, Sun, Feb 16 - Fri, Feb 28","Approved 32:30:00, BIllable 32:30:00. Menaing that Equity is 0. Clockify amount is $812.50.",https://app.clockify.me/approvals/67c6429906e74856b15387a3?userId=67350d8bf42ee443638377c2,"Clockify: Muhammad Afaq, Sat, Mar 1 - Sat, Mar 15","Approved 15:00:00, BIllable 15:00:00. Menaing that Equity is 0. Clockify amount is $375.00.",https://app.clockify.me/approvals/67c6429e4e64ab771535799c?userId=67350d8bf42ee443638377c2
+Miguel Leal,Clockify,Gusto,800,800,32,32,,"Clockify: Miguel Leal, Sun, Feb 16 - Fri, Feb 28","Approved 32:00:00, Billable 32:00:00. Meaning that Equity is 0. Clokify amount is $800.00.",https://app.clockify.me/approvals/67c8be911b39f63db62d2d51?userId=670d2adb58470b45130a3038,-,-,-
+EXPECTED EXPENSES
+Name,Expected Pay Period Expense (C),Weekly Expected Expense (C),Total Paid Weekly Hours (M),"Total Expense Rate, with Tax (C)",Pre-Tax Employee Rate (C),Base Rate (M),Upwork fee (multiplier) (M),US FTE bonus (multiplier) (M),"Taxes (multiplier, approximately) (M)"
+Total,8467.2,4233.6
+Eugene Dilbarov,3703.2,1851.6,40,46.29,40.25,35,1,1.15,1.15
+Akshat Arora,1250,625,25,25,25,25,1,1,1
+Diana Palamar,1134,567,30,18.9,18.9,18,1.05,1,1
+Yulia McCoy,1380,690,20,34.5,30,26.09,1,1.15,1.15
+Muhammad Afaq,1000,500,20,25,25,25,1,1,1
+Miguel Leal,1000,500,20,25,25,25,1,1,1
+HOURS
+Coloring,10%-24.99%,25%+
+Name,Inconsistency Ratio (C),Pay Period Hours Difference (C),Pay Period Expecteed Hours (C),Total Expected Weekly Hours (C),Total Expected Weekly Equity Hours (M),Total Expected Paid Weekly Hours (M)
+Eugene Dilbarov,0.68% Overworked,-0.75,110,55,15,40
+Akshat Arora,45.00% Missed,49.5,90,45,15,30
+Diana Palamar,56.67% Missed,26,60,30,,30
+Yulia McCoy,3.75% Overworked,-3,80,40,15,25
+Muhammad Afaq,18.75% Overworked,-7.5,40,20,,20
+Miguel Leal,40.00% Missed,48,80,40,,40
+Mikhail Stepanov,No Difference,30,30,15,15,
+Anatoly Stepanov,No Difference,30,30,15,15,

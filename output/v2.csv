@@ -1,0 +1,15 @@
+,,,,,,12000,Initial Miscellaneous 
+,,,,,,,,,"How long, in weeks, is this period?",,,,,W2 15% multiplier,,,,W2 15% multiplier,,,,,,,,,,,,,,,,5% multiplier (Upwork fee)
+,,Expected burn rate,Actual team burn rate,Static fees,Fees memo,Difference,,,Perioid multiplier,Base burn,,,Eugene's base rate,Eugene's final rate,Eugene's hours,Eugene's salary,Yulia's base rate,Yulia's final rate,Yulia's hours,Yulia's salary,Akshat's rate,Akshat's hours,Akshat's salary,DJ's rate,DJ's hours,DJ's salary,Afaq's rate,Afaq's hours,Afaq's salary,Miguel's rate,Miguel's hours,Miguel's salary,Bogdan's rate,Bogdan's final rate,Bogdan's hours,Bogdan's salary
+,,11254.175,13291.03,,-,-2036.855,,,2,5627.0875,,,35,40.25,40,1610,26.09,30.0035,25,750.0875,25,30,750,18,25,450,25,20,500,25,40,1000,18,18.9,30,567
+,,10044.16275,8389.4,,,1654.76275,,,1.86,5400.0875,,,35,40.25,40,1610,26.09,30.0035,25,750.0875,25,30,750,10,25,250,25,20,500,25,40,1000,18,18,30,540
+,,10300.175,8064.97,,,2235.205,,,2,5150.0875,,,35,40.25,40,1610,26.09,30.0035,25,750.0875,25,30,750,10,,,25,20,500,25,40,1000,18,18,30,540
+Name,Rate,Hours a week,,Numbers of months
+Eugene,40.25,40
+Yulia,30.0035,25
+Akshat,25,30
+DJ,10,25
+Afaq,25,20
+Miguel,25,40
+Bogdan,18,30
+Dianka,18,X

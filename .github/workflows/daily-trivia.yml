@@ -1,0 +1,32 @@
+name: Daily Trivia
+
+on:
+  schedule:
+    # 10 AM CST = 3 PM UTC (during DST) or 4 PM UTC (standard time)
+    # Using 3 PM UTC for now
+    - cron: '0 15 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  send-trivia:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Send daily trivia
+        env:
+          PUMBLE_API_KEY: ${{ secrets.PUMBLE_API_KEY }}
+        run: |
+          echo "Sending daily trivia at $(date)"
+          node scripts/send-daily-trivia.js -c bot-testing

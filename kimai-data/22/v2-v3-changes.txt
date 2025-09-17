@@ -1,0 +1,26 @@
+Pay Period 22 - Changes from v2 to v3
+Generated: 2025-08-20T23:06:14.376Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 6
+Removed entries: 0
+
+HOURS CHANGES BY USER
+
+
+eddy                        276.88 →   287.38 (+10.50)
+dennis                       31.50 →    41.00 (+9.50)
+raheel                      416.25 →   424.25 (+8.00)
+Yulia                       229.75 →   234.75 (+5.00)
+
+
+NEW ENTRIES ADDED
+-----------------
++ raheel - 0:30 - Meeting
++ dennis - 3:30 - Design
++ eddy - 10:30 - Design
++ raheel - 7:30 - Programming
++ dennis - 6:00 - Design
++ Yulia - 5:00 - Design

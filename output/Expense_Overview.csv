@@ -1,0 +1,215 @@
+Name,Equity,Total Weekly Hours,Total weekly equity hours,Total paid weekly hours
+Mikhail Stepanov,0.055,20,20,,0.5% from DJ
+Dharam Pal,0.005,40,20,20,0.5% from Akshat
+Ariful Islam,0.005,40,20,20,0.5% from Eugene
+Raheel Shahzad,0.0025,40,20,20,0.25% from Eugene
+Mori Wesonga,0.0025,40,20,20,0.25% from Eugene
+Anatoly Stepanov,0.01,20,20,
+QA Automation Engineer,0.0025,30,20,10,0.25% from Eugene
+Yulia McCoy,0.01,40,20,20
+Edward Obi,0.0025,20,20,,0.25% from Eugene
+Email Designer,0.0025,40,20,20,0.25% from Eugene
+Pauline Nguyen,0.0025,40,20,20,0.25% from Eugene
+CMO,0.01,40,20,20,1% from Eugene
+Up-to-date Expenses
+Name,Title,Email,Time Tracking,Payment Processing,Yearly expense,Mothly expense,Biweekly expense,Weekly expense,Total paid weekly hours,Total Expense,Final rate,Base rate,Upwork fee,US FTE bonus,Taxes (approx.)
+Total,,,,,79200,6600,7550,1650
+Mikhail Stepanov,Head of Engineering,mikhail@starthub.academy,-,-,,,,,,,,,1,1,1
+Eugene Dilbarov,Lead Software Engineer,-,Clockify,Gusto,,,,,,20,20,20,1,1,1
+Sanjay Radadiya,Senior Software Engineer,-,Clockify,Gusto,,,,,,15,15,15,1,1,1
+Anatoly Stepanov,Software Engineer,tinisto@gmail.com,-,-,,,,,,,,,1,1,1
+Akshat Arora,Software Engineer,-,Clockify,Gusto,,,,,,15,15,15,1,1,1
+Dharam Pal,Software Engineer,dsdharam91@gmail.com,Clockify,Gusto,16800,1400,700,350,20,17.5,17.5,17.5,1,1,1
+Ariful Islam,Software Engineer,arifulbgt4@gmail.com,Clockify,Gusto,9600,800,400,200,20,10,10,10,1,1,1
+Raheel Shahzad,Software Engineer,raheelshahzad036@gmail.com,Clockify,Gusto,14400,1200,600,300,20,15,15,15,1,1,1
+Mori Wesonga,Software Engineer,wesongamori@gmail.com,Clockify,Gusto,14400,1200,600,300,20,15,15,15,1,1,1
+Diana Palamar,QA Automation Engineer,-,Upwork,Upwork,,,,,,12,12,12,1,1,1
+Mohit Agrawal,QA Automation Engineer,mohit.testing1@gmail.com,Clockify,Gusto,14400,1200,600,300,20,15,15,15,1,1,1
+Yulia McCoy,UI/UX Designer,yulia@starthub.academy,Clockify,Gusto,9600,800,400,200,10,20,20,20,1,1,1
+Manisha Garg,Graphic Designer,-,Clockify,Gusto,,,,,,10,10,10,1,1,1
+Muhammad Afaq,UI/UX Designer,-,Clockify,Gusto,,,,,,15,15,15,1,1,1
+Edward Obi,UI/UX Designer,edelobi@gmail.com,Clockify,Gusto,,,,,,20,20,20,1,1,1
+Email Designer,Email Designer,-,Clockify,Gusto,,,,,,20,20,20,1,1,1
+Pauline Nguyen,Worksheet Designer,-,Clockify,Gusto,24000,2000,1000,500,20,25,25,25,1,1,1
+CMO,CMO,-,Clockify,Gusto,36000,3000,1500,750,20,37.5,37.5,37.5,1,1,1
+Marketing Intern,Marketing Intern,-,Clockify,Gusto,6000,500,250,125,20,6.25,6.25,6.25,1,1,1
+Copywrighter 1,Copywriter,-,Clockify,Gusto,6000,500,250,125,20,6.25,6.25,6.25,1,1,1
+Copywrighter 2,Copywriter,-,Clockify,Gusto,6000,500,250,125,20,6.25,6.25,6.25,1,1,1
+Customer Success Manager,Customer Success Manager,-,Clockify,Gusto,6000,500,250,125,20,6.25,6.25,6.25,1,1,1
+Sales Intern 1,Sales Intern,-,Clockify,Gusto,6000,500,250,125,20,6.25,6.25,6.25,1,1,1
+Sales Intern 2,Sales Intern,-,Clockify,Gusto,6000,500,250,125,20,6.25,6.25,6.25,1,1,1
+Sales Intern 3,Sales Intern,-,Clockify,Gusto,6000,500,250,125,20,6.25,6.25,6.25,1,1,1
+,,,,,,,,,,,,,,Injection
+,,,,,,,,,,,,,,54000
+,,,,,March 4th,March 18th,April 1st,April 15th,April 29th,May 13th,May 27th,June 10th,June 24th,July 8th,July 22nd,August 5th,August 19th,September 2nd,September 16th,September 30th,October 14th
+,,,,Employee Names,After 11th Pay Period,After 12th Pay Period,After 13th Pay Period,After 14th Pay Period,After 15th Pay Period,After 16th Pay Period,After 17th Pay Period,After 18th Pay Period,After 19th Pay Period,After 20th Pay Period,After 21th Pay Period,After 22th Pay Period,After 23th Pay Period,After 24th Pay Period,After 25th Pay Period,After 26th Pay Period,After 27th Pay Period
+,,,,31608.17,30190.32,29257.07,28546.17,26701.56,24742.86,22243.41,19943.41,16675.41,13110.41,63690.41,60390.41,57090.41,53790.41,50490.41,47190.41,43890.41,40590.41
+,,,,Grand Total,1417.85,933.25,710.9,1844.61,1958.7,2499.45,2300,3268,3565,3420,3300,3300,3300,3300,3300,3300,3300
+,,,,Dev Total,515.55,,,977.11,1100,2357.85,2300,2420,2165,2220,2300,2300,2300,2300,2300,2300,2300
+,,,,Eugene Dilbarov,,,,,,,,,,,,,,,,,
+,,,,Sanjay Radadiya,,,,,,,,,,,,,,,,,
+,,,,Akshat Arora,,,,,,,,,,,,,,,,,
+,,,,Dharam Pal,,,,735,735,735,700,717.5,700,700,700,700,700,700,700,700,700
+,,,,Ariful Islam,,,,242.11,365,420,400,375,265,320,400,400,400,400,400,400,400
+,,,,Raheel Shahzad,,,,,,842.85,600,675,600,600,600,600,600,600,600,600,600
+,,,,Mori Wesonga,,,,,,300,600,652.5,600,600,600,600,600,600,600,600,600
+,,,,Mohit Agrawal,,,,,,60,,,,,,,,,,,
+,,,,Diana Palamar,515.55,,,,,,,,,,,,,,,,
+,,,,Design Total,902.3,933.25,710.9,867.5,858.7,141.6,,848,1400,1200,1000,1000,1000,1000,1000,1000,1000
+,,,,Yulia McCoy,,,,500,,,,100,200,200,,,,,,,
+,,,,Muhammad Afaq,615,578.25,376.8,300,151.2,,,,,,,,,,,,
+,,,,Manisha Garg,287.3,355,334.1,67.5,707.5,141.6,,,,,,,,,,,
+,,,,Edward Obi,,,,,,,,,200,,,,,,,,
+,,,,Email Designer,,,,,,,,,,,,,,,,,
+,,,,Pauline Nguyen,,,,,,,,748,1000,1000,1000,1000,1000,1000,1000,1000,1000
+,,,,Markting Total,,,,,,,,,,,,,,,,,
+,,,,CMO,,,,,,,,,,,,,,,,,
+,,,,Marketing Intern,,,,,,,,,,,,,,,,,
+,,,,Content Total,,,,,,,,,,,,,,,,,
+,,,,Copywrighter 1,,,,,,,,,,,,,,,,,
+,,,,Copywrighter 2,,,,,,,,,,,,,,,,,
+,,,,Customer Success Manager,,,,,,,,,,,,,,,,,
+,,,,Sales Total,,,,,,,,,,,,,,,,,
+,,,,Sales Intern 1,,,,,,,,,,,,,,,,,
+,,,,Sales Intern 2,,,,,,,,,,,,,,,,,
+,,,,Sales Intern 3,,,,,,,,,,,,,,,,,
+,,,,Note: Expenses includes non-hours expenses (ex: Upwork flat fees).
+,,,,Note: Negatives mean the employees overperformed the expecation. Positives mean the employees underperformed the expecation.
+,,,,20th Pay Period,Inconsistency Ratio (Full Hours),Total Hours Difference,Equity Hours Difference,Expected Total Hours,Incosistency Expense,Expected Expense,Expected To Pay,Actual Expense,Expense Difference
+,,,,Grand Total,Average 1.82% Missed,8,1000,440,80,3500,3420,3420,,
+,,,,Dev Total,Average 2.00% Missed,8,,400,80,2300,2220,2220,,
+,,,,Dharam Pal,No Difference,,,80,,700,700,700,,
+,,,,Ariful Islam,10.00% Missed,8,,80,80,400,320,320,,
+,,,,Raheel Shahzad,No Difference,,,80,,600,600,600,,Extra 7.5 carry over
+,,,,Mori Wesonga,No Difference,,,80,,600,600,600,,
+,,,,Mikhail Stepanov,No Difference,,,40,,,,,,
+,,,,Anatoly Stepanov,No Difference,,,40,,,,,,
+,,,,Design Total,Average No Difference,,,40,,1200,1200,1200,,
+,,,,Yulia McCoy,No Difference,,,40,,200,200,200,,Extra 6.25 carry over
+,,,,Pauline Nguyen,No Difference,,,40,,1000,1000,1000,,Extra 5 carry over
+,,,,Edward Obi,No Difference,,,40,,,,,,
+,,,,Note: Expenses includes non-hours expenses (ex: Upwork flat fees).
+,,,,Note: Negatives mean the employees overperformed the expecation. Positives mean the employees underperformed the expecation.
+,,,,19th Pay Period,Inconsistency Ratio (Full Hours),Total Hours Difference,Equity Hours Difference,Expected Total Hours,Incosistency Expense,Expected Expense,Expected To Pay,Actual Expense,Expense Difference
+,,,,Grand Total,Average 3.07% Missed,13.5,,440,135,3700,3565,3565,
+,,,,Dev Total,Average 3.38% Missed,13.5,,400,135,2300,2165,2165,
+,,,,Dharam Pal,No Difference,,,80,,700,700,700,,Extra 1 carry over
+,,,,Ariful Islam,16.88% Missed,13.5,,80,135,400,265,265,
+,,,,Raheel Shahzad,No Difference,,,80,,600,600,600,,Extra 5.75 carry over
+,,,,Mori Wesonga,No Difference,,,80,,600,600,600,,Extra 3.17 carry over
+,,,,Mikhail Stepanov,No Difference,,,40,,,,,,
+,,,,Anatoly Stepanov,No Difference,,,40,,,,,,
+,,,,Design Total,Average No Difference,,,40,,1400,1400,1400,
+,,,,Yulia McCoy,No Difference,,,40,,200,200,200,,Extra 1.25 carry over
+,,,,Pauline Nguyen,No Difference,,,40,,1000,1000,1000,,Extra 5.75 carry over
+,,,,Edward Obi,No Difference,,17.63,40,,200,200,200,,Negative carry over of 17.63 hours
+,,,,Note: Expenses includes non-hours expenses (ex: Upwork flat fees).
+,,,,Note: Negatives mean the employees overperformed the expecation. Positives mean the employees underperformed the expecation.
+,,,,18th Pay Period,Inconsistency Ratio (Full Hours),Total Hours Difference,Equity Hours Difference,Expected Total Hours,Incosistency Expense,Expected Expense,Expected To Pay,Actual Expense,Expense Difference
+,,,,Grand Total,Average 1.59% Overworked,-7,,440,132,3400,3268,2300,
+,,,,Dev Total,Average 1.75% Overworked,-7,,400,-120,2300,2420,2300,
+,,,,Dharam Pal,1.25% Overworked,-1,,80,-17.5,700,717.5,700,
+,,,,Ariful Islam,3.13% Missed,2.5,,80,25,400,375,400,
+,,,,Raheel Shahzad,6.25% Overworked,-5,,80,-75,600,675,600,
+,,,,Mori Wesonga,4.38% Overworked,-3.5,,80,-52.5,600,652.5,600,
+,,,,Mikhail Stepanov,No Difference,,,40,,,,,
+,,,,Anatoly Stepanov,No Difference,,,40,,,,,
+,,,,Design Total,Average No Difference,,,40,252,1100,848,,
+,,,,Yulia McCoy,No Difference,,,40,,100,100,,
+,,,,Pauline Nguyen,No Difference,,,40,252,1000,748,,
+,,,,Edward Obi,No Difference,,,40,,,,,
+,,,,Note: Expenses includes non-hours expenses (ex: Upwork flat fees).
+,,,,Note: Negatives mean the employees overperformed the expecation. Positives mean the employees underperformed the expecation.
+,,,,17th Pay Period,Inconsistency Ratio (Full Hours),Total Hours Difference,Equity Hours Difference (C),Expected Total Hours,Incosistency Expense,Expected Expense,Expected To Pay,Actual Expense,Expense Difference
+,,,,Grand Total,Average 3.26% Overworked,-15.6297,-15.6297,480,,2300,2300,2300,
+,,,,Dev Total,Average 3.55% Overworked,-15.6297,-15.6297,440,,2300,2300,2300,
+,,,,Dharam Pal,0.31% Overworked,-0.25,-0.25,80,,700,700,700,
+,,,,Ariful Islam,No Difference,,,80,,400,400,400,
+,,,,Raheel Shahzad,2.50% Missed,2,2,80,,600,600,600,
+,,,,Mori Wesonga,7.35% Overworked,-5.8797,-5.8797,80,,600,600,600,
+,,,,Mohit Agrawal,28.75% Overworked,-11.5,-11.5,40,,,,,
+,,,,Mikhail Stepanov,No Difference,,,40,,,,,
+,,,,Anatoly Stepanov,No Difference,,,40,,,,,
+,,,,Design Total,Average No Difference,,,40,,,,,
+,,,,Yulia McCoy,No Difference,,,40,,,,,
+,,,,Note: Expenses includes non-hours expenses (ex: Upwork flat fees).
+,,,,Note: Negatives mean the employees overperformed the expecation. Positives mean the employees underperformed the expecation.
+,,,,16th Pay Period,Inconsistency Ratio (Full Hours),Total Hours Difference,Equity Hours Difference,Expected Total Hours,Incosistency Expense,Expected Expense,Expected To Pay,Actual Expense,Expense Difference
+,,,,Grand Total,Average 4.26% Missed,18.75769,4.11692,440,-39.55,2460,2499.55,2499.45,0.1
+,,,,Dev Total,Average 1.97% Overworked,-7.07531,4.11692,360,-297.88,2060,2357.88,2357.85,0.03
+,,,,Dharam Pal,4.38% Overworked,-3.5,-1.5,80,-35,700,735,735,
+,,,,Ariful Islam,2.50% Overworked,-2,,80,-20,400,420,420,
+,,,,Raheel Shahzad,7.93% Overworked,-6.34001,0.85222,80,-242.88,600,842.88,842.85,0.03,We underpaid Raheel 3 cents
+,,,,Mori Wesonga,23.75% Missed,4.75,4.75,20,,300,300,300,
+,,,,Mohit Agrawal,0.07% Missed,0.0147,0.0147,20,,60,60,60,
+,,,,Mikhail Stepanov,No Difference,,,40,,,,,
+,,,,Anatoly Stepanov,No Difference,,,40,,,,,
+,,,,Design Total,Average 32.29% Missed,25.833,,80,258.33,400,141.67,141.6,0.07
+,,,,Manisha Garg,64.58% Missed,25.833,,40,258.33,400,141.67,141.6,0.07,"We overpaid Manisha 3 cents, we overpaid again.",We underpaid Manisha 4 cents in the end
+,,,,Yulia McCoy,No Difference,,,40,,,,,
+,,,,Note: Expenses includes non-hours expenses (ex: Upwork flat fees).
+,,,,Note: Negatives mean the employees overperformed the expecation. Positives mean the employees underperformed the expecation.
+,,,,15th Pay Period,Inconsistency Ratio (Full Hours),Total Hours Difference,Equity Hours Difference,Expected Total Hours,Incosistency Expense,Expected Expense,Expected To Pay,Actual Expense,Expense Difference
+,,,,Grand Total,Average 0.22% Overworked,-0.7833,-1.45,360,141.25,100,80,,
+,,,,Dev Total,Average 0.02% Missed,0.05,-1.45,240,,1100,1100,1100,
+,,,,Dharam Pal,4.31% Overworked,-3.45,-1.45,80,-35,700,735,735,
+,,,,Ariful Islam,4.38% Missed,3.5,,80,35,400,365,365,
+,,,,Mikhail Stepanov,No Difference,,,40,,,,,
+,,,,Anatoly Stepanov,No Difference,,,40,,,,,
+,,,,Design Total,Average 0.69% Overworked,-0.8333,,120,141.25,1000,858.75,858.7,0.05
+,,,,Muhammad Afaq,74.79% Missed,29.9167,,40,448.75,600,151.25,151.2,0.05,We overapaid Afaq 5 cents.
+,,,,Manisha Garg,76.88% Overworked,-30.75,,40,-307.5,400,707.5,707.5,,"We overpaid Manisha 3 cents, we overpaid again."
+,,,,Yulia McCoy,No Difference,,,40,,,,,
+,,,,Note: Expenses includes non-hours expenses (ex: Upwork flat fees).
+,,,,Note: Negatives mean the employees overperformed the expecation. Positives mean the employees underperformed the expecation.
+,,,,14th Pay Period,Inconsistency Ratio (Full Hours),Total Hours Difference,Equity Hours Difference,Expected Total Hours,Incosistency Expense,Expected Expense,Expected To Pay,Actual Expense,Expense Difference
+,,,,Grand Total,Average 16.79% Missed,33.584,,200,224.97,1500,1064.16,867.5,196.66
+,,,,Dev Total,Average No Difference,,,80,-210.87,,,,
+,,,,Dharam Pal,30.00% Overworked,-12,,40,-210,525,735,735,
+,,,,Ariful Islam,0.21% Overworked,-0.083,,40,-0.87,241.24,242.11,242.11,
+,,,,Mikhail Stepanov,No Difference,,,40,,,,,
+,,,,Anatoly Stepanov,No Difference,,,40,,,,,
+,,,,Design Total,Average 27.99% Missed,33.584,,120,435.84,1500,1064.16,867.5,196.66
+,,,,Muhammad Afaq,50.00% Missed,20,,40,300,600,300,300,
+,,,,Manisha Garg,33.96% Missed,13.584,,40,135.84,400,264.16,67.5,196.66,We overapaid Manisha $196.69 overall before. -$197.72 on 11th and $0.03 on 13th.
+,,,,Yulia McCoy,No Difference,,,40,,500,500,500,
+,,,,Note: Expenses includes non-hours expenses (ex: Upwork flat fees).
+,,,,Note: Negatives mean the employees overperformed the expecation. Positives mean the employees underperformed the expecation.
+,,,,13th Pay Period,Inconsistency Ratio (Full Hours),Total Hours Difference,Equity Hours Difference,Expected Total Hours,Incosistency Expense,Expected Expense,Expected To Pay,Actual Expense,Expense Difference
+,,,,Grand Total,Average 20.80% Missed,49.92,21,240,289.17,1000,710.83,710.9,-0.07
+,,,,Dev Total,Average 17.50% Missed,21,21,120,,,,,
+,,,,Mikhail Stepanov,No Difference,,,40,,,,,
+,,,,Anatoly Stepanov,No Difference,,,40,,,,,
+,,,,Akshat Arora,52.50% Missed,21,21,40,,,,,
+,,,,Design Total,Average 24.10% Missed,28.92,,120,289.17,1000,710.83,710.9,-0.07
+,,,,Muhammad Afaq,No Difference,,,40,,600,600,376.8,223.2,We overpaid Afaq $223.25 in 12th Pay Period. Muhammad owes us 5 cents.
+,,,,Manisha Garg,72.30% Missed,28.92,,40,289.17,400,110.83,334.1,-223.27,We underpaid Manisha $223.30 in 12th Pay Period. Here we still owe Manisha 3 cents.
+,,,,Yulia McCoy,No Difference,,,40,,,,,
+,,,,Note: Expenses includes non-hours expenses (ex: Upwork flat fees).
+,,,,Note: Negatives mean the employees overperformed the expecation. Positives mean the employees underperformed the expecation.
+,,,,12th Pay Period,Inconsistency Ratio (Full Hours),Total Hours Difference,Equity Hours Difference,Expected Total Hours,Incosistency Expense,Expected Expense,Expected To Pay,Actual Expense,Expense Difference
+,,,,Grand Total,Average 7.07% Missed,26.5,4,375,1391.7,2325,933.3,933.25,0.05
+,,,,Dev Total,Average 1.70% Missed,4,4,235,1125,1125,,,
+,,,,Sanjay Radadiya,No Difference,,,115,1125,1125,,,
+,,,,Mikhail Stepanov,No Difference,,,40,,,,,
+,,,,Anatoly Stepanov,No Difference,,,40,,,,,
+,,,,Akshat Arora,10.00% Missed,4,4,40,,,,,
+,,,,Design Total,Average 16.07% Missed,22.5,,140,266.7,1200,933.3,933.25,0.05
+,,,,Muhammad Afaq,40.83% Missed,16.33,,40,245,600,355,578.25,-223.25
+,,,,Manisha Garg,10.28% Missed,6.17,,60,21.7,600,578.3,355,223.3
+,,,,Yulia McCoy,No Difference,,,40,,,,,
+,,,,Note: Expenses includes non-hours expenses (ex: Upwork flat fees).
+,,,,Note: Negatives mean the employees overperformed the expecation. Positives mean the employees underperformed the expecation.
+,,,,11th Pay Period,Inconsistency Ratio (Full Hours),Total Hours Difference,Equity Hours Difference,Expected Total Hours,Incosistency Expense,Expected Expense,Expected To Pay,Actual Expense,Expense Difference
+,,,,Grand Total,Average 31.57% Missed,145.23,-1,460,3091.29,4354,1220.13,1417.85,-197.72
+,,,,Dev Total,Average 34.71% Missed,118.02,,340,2818.45,3334,515.55,515.55,
+,,,,Eugene Dilbarov,67.50% Missed,54,,80,1600,1600,,,
+,,,,Sanjay Radadiya,54.68% Missed,54.68,,100,600,600,,,
+,,,,Diana Palamar,23.35% Missed,9.34,,40,618.45,1134,515.55,515.55,
+,,,,Mikhail Stepanov,No Difference,,,40,,,,,
+,,,,Anatoly Stepanov,No Difference,,,40,,,,,
+,,,,Akshat Arora,No Difference,,,40,,,,,
+,,,,Design Total,Average 22.68% Missed,27.21,-1,120,272.84,1020,704.58,902.3,-197.72
+,,,,Muhammad Afaq,2.50% Overworked,-1,,40,-15,600,615,615,
+,,,,Manisha Garg,73.03% Missed,29.21,,40,287.84,420,89.58,287.3,-197.72
+,,,,Yulia McCoy,,,,,,,,,

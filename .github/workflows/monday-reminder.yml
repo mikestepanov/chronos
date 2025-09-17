@@ -2,13 +2,9 @@ name: Monday Pay Period Reminder
 
 on:
   schedule:
-    # Run every Monday at 7 AM CST (12 PM UTC during DST, 1 PM UTC during standard time)
-    # This sends the 1-hour advance notice to Mikhail
-    - cron: '0 12 * * 1'
-    
-    # Run every Monday at 8:30 AM CST (1:30 PM UTC during DST, 2:30 PM UTC during standard time)
-    # This sends the main reminders to channels
-    - cron: '30 13 * * 1'
+    # Run every Monday at 12 PM CST (5 PM UTC during DST, 6 PM UTC during standard time)
+    # Matching Koyeb configuration
+    - cron: '0 17 * * 1'
     
   workflow_dispatch:
     inputs:
@@ -28,11 +24,9 @@ on:
           - 'main-only'     # Only send main reminders to channels
 
 jobs:
-  send-advance-notice:
-    # Run at 7 AM or when manually triggered
-    if: |
-      (github.event_name == 'schedule' && contains(github.event.schedule, '0 12')) ||
-      (github.event_name == 'workflow_dispatch' && (github.event.inputs.action == 'both' || github.event.inputs.action == 'advance-only'))
+  send-reminders:
+    # Run on schedule or when manually triggered
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     
     steps:
@@ -48,7 +42,7 @@ jobs:
       run: |
         npm install
     
-    - name: Send 1-Hour Advance Notice to Mikhail
+    - name: Send Monday Reminders
       env:
         # Bot configuration
         BOT_IDENTITY: ${{ secrets.BOT_IDENTITY || 'agentsmith' }}
@@ -73,65 +67,17 @@ jobs:
         KIMAI_API_KEY: ${{ secrets.KIMAI_API_KEY || 'dummy-key-for-reminder' }}
         
       run: |
-        cd monday-reminder
-        echo "📨 Sending 1-hour advance notice to Mikhail..."
-        node monday-reminder.js advance
+        echo "📅 Monday reminder check at $(date)"
 
-  send-main-reminders:
-    # Run at 8:30 AM or when manually triggered
-    if: |
-      (github.event_name == 'schedule' && contains(github.event.schedule, '30 13')) ||
-      (github.event_name == 'workflow_dispatch' && (github.event.inputs.action == 'both' || github.event.inputs.action == 'main-only'))
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '22'
-    
-    - name: Install dependencies
-      run: |
-        npm install
-    
-    - name: Send Monday Reminders to Channels
-      env:
-        # Bot configuration
-        BOT_IDENTITY: ${{ secrets.BOT_IDENTITY || 'agentsmith' }}
-        BOT_NAME: ${{ secrets.BOT_NAME || 'Agent Smith' }}
-        BOT_EMAIL: ${{ secrets.BOT_EMAIL }}
-        BOT_ID: ${{ secrets.BOT_ID }}
-        
-        # Messaging platform
-        MESSAGING_PLATFORM: ${{ secrets.MESSAGING_PLATFORM || 'pumble' }}
-        
-        # Pumble credentials
-        PUMBLE_API_KEY: ${{ secrets.PUMBLE_API_KEY }}
-        PUMBLE_BASE_URL: ${{ secrets.PUMBLE_BASE_URL || 'https://pumble.com/api/v1' }}
-        
-        # Channel IDs (hardcoded since they don't change)
-        DEV_CHANNEL_ID: ${{ secrets.DEV_CHANNEL_ID || '66934de10aeebd36fe26f468' }}
-        DESIGN_CHANNEL_ID: ${{ secrets.DESIGN_CHANNEL_ID || '66b6450b791a8769092d6f89' }}
-        SPICY_CHANNEL_ID: ${{ secrets.SPICY_CHANNEL_ID || '675e6f8cfef1b9289bd46888' }}
-        
-        # Mikhail's info
-        MIKHAIL_PUMBLE_ID: ${{ secrets.MIKHAIL_PUMBLE_ID || '66908542f1798a06218c1fc5' }}
-        MIKHAIL_EMAIL: ${{ secrets.MIKHAIL_EMAIL }}
-        BOT_TO_MIKHAIL_DM_CHANNEL_ID: ${{ secrets.BOT_TO_MIKHAIL_DM_CHANNEL_ID || '686860a2851f413511ab90f8' }}
-        
-        # Kimai configuration (required by config but not used for reminders)
-        KIMAI_URL: ${{ secrets.KIMAI_URL || 'https://kimai.starthub.academy' }}
-        KIMAI_API_KEY: ${{ secrets.KIMAI_API_KEY || 'dummy-key-for-reminder' }}
-        
-      run: |
-        cd monday-reminder
-        if [ "${{ github.event.inputs.test_mode }}" == "true" ]; then
-          echo "📤 Running in test mode..."
-          node monday-reminder.js test
-        else
-          echo "📤 Sending reminders to #dev and #design channels..."
+        # Check if we're in the monday-reminder directory structure
+        if [ -d "monday-reminder" ]; then
+          cd monday-reminder
           node monday-reminder.js send
+        else
+          # Use the new scripts structure (matching Koyeb)
+          echo "Sending to dev channel..."
+          node scripts/send-timesheet-reminder.js -c dev
+
+          echo "Sending to design channel..."
+          node scripts/send-timesheet-reminder.js -c design
         fi

@@ -1,0 +1,51 @@
+Summary Overview Link,https://docs.google.com/document/d/1D5l579OZu0PwxSxl0l59gH8qU1q8xx7YXMuVG9rK1y0
+CSV,https://drive.google.com/file/d/1Qs6KpFSupaGeXEhHZ7NLz3ZkxDWKSlxF/view?usp=drive_link,,,,,7
+ACTUAL EXPENSE REFS
+Name,Time Tracking,Payment Processing,Actual Expense (M),Actual Pay Period (Combined) Hours (C),Actual Paid Hours (M),Actual Equity Hours (M),Comments
+Total,,,3365
+Dharam Pal,Kimai,Gusto,700,80,40,40,Extra 1 carry over
+Ariful Islam,Kimai,Gusto,265,66.5,26.5,40
+Raheel Shahzad,Kimai,Gusto,600,80,40,40,Extra 5.75 carry over
+Mori Wesonga,Kimai,Gusto,600,80,40,40,Extra 3.17 carry over
+Yulia McCoy,Kimai,Gusto,200,50,10,40,Extra 1.25 carry over
+Pauline Nguyen,Kimai,Gusto,1000,80,40,40,Extra 5.75 carry over
+Edward Obi,Kimai,Gusto,200,22.37,,22.37,We will pay him for the test task - $200
+EXPECTED EXPENSES
+Name,Expected Pay Period Expense (C),Weekly Expected Expense (C),Total Paid Weekly Hours (M),"Total Expense Rate, with Tax (C)",Pre-Tax Employee Rate (C),Base Rate (M),Upwork fee (multiplier) (M),US FTE bonus (multiplier) (M),"Taxes (multiplier, approximately) (M)"
+Total,200,100
+Dharam Pal,700,350,20,17.5,17.5,17.5,1,1,1
+Ariful Islam,400,200,20,10,10,10,1,1,1
+Raheel Shahzad,600,300,20,15,15,15,1,1,1
+Mori Wesonga,600,300,20,15,15,15,1,1,1
+Yulia McCoy,200,100,5,20,20,20,1,1,1
+Pauline Nguyen,1000,500,20,25,25,25,1,1,1
+Edward Obi,,,,20,20,20,1,1,1
+HOURS
+Coloring,3 hours max is acceptable difference,3 hour+ difference
+Name,Inconsistency Ratio (C),Pay Period Hours Difference (C),Equity Hours Difference (C),Pay Period Expecteed Hours (C),Total Expected Weekly Hours (C),Total Expected Weekly Equity Hours (M),Total Expected Paid Weekly Hours (C)
+Grand Total,Average 3.07% Missed,13.5,,440,220,140,80
+Dev Total,Average 3.38% Missed,13.5,,400,200,120,80
+Dharam Pal,No Difference,,,80,40,20,20
+Ariful Islam,16.88% Missed,13.5,,80,40,20,20
+Raheel Shahzad,No Difference,,,80,40,20,20
+Mori Wesonga,No Difference,,,80,40,20,20
+Mikhail Stepanov,No Difference,,,40,20,20,
+Anatoly Stepanov,No Difference,,,40,20,20,
+Design Total,Average No Difference,,,40,20,20,
+Yulia McCoy,No Difference,,,40,20,20,
+Pauline Nguyen,No Difference,,,40,20,20,
+Edward Obi,No Difference,,17.63,40,20,20,
+ACTUAL EXPENSES
+Name,Incosistency Expense (C),Expected Pay Period Expense (C),Actual Expense (C),Actual Expense Paid (M),Expence Difference (C)
+Grand Total,135,3700,3565,3565,
+Dev Total,135,2300,2165,2165,
+Dharam Pal,,700,700,700,,Extra 1 carry over
+Ariful Islam,135,400,265,265,
+Raheel Shahzad,,600,600,600,,Extra 5.75 carry over
+Mori Wesonga,,600,600,600,,Extra 3.17 carry over
+Mikhail Stepanov,,,,,
+Anatoly Stepanov,,,,,
+Design Total,,1400,1400,1400,
+Yulia McCoy,,200,200,200,,Extra 1.25 carry over
+Pauline Nguyen,,1000,1000,1000,,Extra 5.75 carry over
+Edward Obi,,200,200,200,,Negative carry over of 17.63 hours

@@ -1,0 +1,34 @@
+Pay Period 21 - Changes from v4 to v5
+Generated: 2025-08-21T00:18:34.375Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 100
+Removed entries: 0
+
+HOURS CHANGES BY USER
+
+
+pauline                     320.00 →   403.75 (+83.75)
+ariful                      311.50 →   391.50 (+80.00)
+Mori                        323.50 →   403.50 (+80.00)
+eddy                        235.88 →   287.38 (+51.50)
+raheel                      399.75 →   424.25 (+24.50)
+dennis                       24.75 →    41.00 (+16.25)
+Yulia                       224.75 →   234.75 (+10.00)
+
+
+NEW ENTRIES ADDED
+-----------------
++ raheel - 0:30 - Meeting
++ dennis - 3:30 - Design
++ eddy - 10:30 - Design
++ raheel - 7:30 - Programming
++ dennis - 6:00 - Design
++ raheel - 0:30 - Meeting
++ Yulia - 5:00 - Design
++ eddy - 10:00 - Design
++ raheel - 7:30 - Programming
++ ariful - 6:00 - Programming
+... and 90 more entries

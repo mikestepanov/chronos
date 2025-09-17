@@ -1,0 +1,168 @@
+Hours Compliance Report - Pay Period #23
+Period: Aug 19 - Sep 01, 2025
+Generated: 2025-09-04T02:41:10.551Z
+Source: Automated pull
+Entries: 150
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Pauline Nguyen       |        81.75 |    80.00 |      +1.75 |       +2.2% |      ✓ |
+| Mori Isaac           |        80.25 |    80.00 |      +0.25 |       +0.3% |      ✓ |
+| Ariful               |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Raheel Shahzad       |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Eddy                 |        61.00 |    40.00 |     +21.00 |      +52.5% |      ✗ |
+| Yulia                |        50.00 |    50.00 |      +0.00 |       +0.0% |      ✓ |
+| Dennis               |        33.75 |    80.00 |     -46.25 |      -57.8% |      ✗ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 81.75
+Status: ✓ PASS
+Work Summary:
+  • Print Designs - Design: Curriculum
+  • Print Designs - Design: Document Templates
+  • Team Operations - Meeting: Design team sync
+  • Team Operations - Meeting: STATUS Framework
+  • Team Operations - Meeting: STATUS Demo Prep
+  • Team Operations - Meeting: Design Team Sync
+  • Team Operations - Meeting: Weekly Design
+
+
+Mori Isaac
+----------
+Expected Hours: 80.00
+Actual Hours: 80.25
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting
+  • Team Operations - Dev Ops / Infrastructure: Bug fix on the white screen when client dev is deployed
+  • Team Operations - Dev Ops / Infrastructure: API gateway CSRF update in prod, staging, dev
+  • Team Operations - Dev Ops / Infrastructure: API gateway CSRF bug fix
+  • Team Operations - Dev Ops / Infrastructure: Dev deployment  rewrite in the cluster
+  • Team Operations - Dev Ops / Infrastructure: Cluster Optimization and Dev deployment bug
+  • Team Operations - Dev Ops / Infrastructure: Cluster Optimization and Maintenance
+  • Team Operations - Dev Ops / Infrastructure: Cluster optimization and catches
+
+Fix the nginx ingress configuration for staging
+  • Team Operations - Dev Ops / Infrastructure: Cluster optimization
+Fix on the helm charts
+  • Team Operations - Dev Ops / Infrastructure: Cluster optimization
+  • Team Operations - Dev Ops / Infrastructure: Cluster Optimization on metrics
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Enhancements
+
+Cluster optimization
+
+
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Maintenance & Support - Programming: Safe note calculator
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: Stand Up meeting
+  • Community Forum - Programming: Add a post Communitity done
+  • Community Forum - Programming: Add a post Communitity
+  • SEO Optimization - Programming: Fix Sitemap Generation for Landing Pages
+  • Mentor Tools & Dashboard - Programming: Calendar Availability Feature - Frontend UX Polish
+  • Mentor Tools & Dashboard - Programming: Calendar Availability Feature - Frontend UX Polish and Create SEO XLS Sheet
+
+
+Dharam Pal Singh
+----------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Admin Panel - Programming: Done PR feedback changes
+Started on company tabs
+  • Admin Panel - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Admin Panel - Programming: Integrated modal with existing user management flow.
+Connected modal actions (open, close, assign) with data handling.
+Worked on validation and controlled state updates.
+Raised PR
+  • Admin Panel - Programming: ' Started implementation of Assign User Modal component.
+Built modal structure with form elements and props.
+Added base UI styling and layout alignment.
+  • Admin Panel - Programming: Performed testing and minor bug fixes across all new components.
+Code cleanup, refactoring, and alignment with project conventions.
+Prepared and raised PR for review.
+  • Admin Panel - Programming: Implemented Company Info component and integrated with header/stats.
+Consumed SDS components as much as we can.
+Refined UI consistency and resolved layout issues.
+  • Admin Panel - Meeting: Alex: Sync Up
+  • Admin Panel - Programming: Started work on company detail view components.
+Set up initial structure for Company Header and Company Stats components.
+Defined props, layout, and styling approach for reusability.
+  • Admin Panel - Meeting: Sync about Read.ai
+  • Admin Panel - Programming: Done refinements in company listing and Forms
+Resolve some type check issues
+Raised PR after validation
+  • Admin Panel - Programming: ' Added company multiple selections using checkboxes
+Added company suspend and deletion
+  • Admin Panel - Programming: Fixed add and Edit company form Validation
+Done some code refinements
+  • Admin Panel - Programming: Reactor: ResultSection component for bulk user upload dialog
+ Raised PR for initial setup for company management with company listing
+
+
+Eddy
+----
+Expected Hours: 40.00
+Actual Hours: 61.00
+Status: ✗ FAIL
+Work Summary:
+  • Tools & Templates - Design: Minor tweaks, introduced the “Edit/Editable” icon, After Research and Editing outside Figma.
+  • Tools & Templates - Design: More Variations of the Email Templates cards in and Outside Figma, And Research.
+  • Tools & Templates - Design: Continued designing email and document templates cards for 12 hours non-stop and 2hours + research.
+  • Tools & Templates - Design: Cleaned up and rearranged the Email Templates board and made new V3 variations.
+  • Tools & Templates - Design: Continued making variations for email templates cards
+  • Tools & Templates - Design: Continued Making Variations on Email and Document Templates Cards
+  • Tools & Templates - Design: Continued Making Variations for the email template cards.
+  • Tools & Templates - Design: More variations of the email templates cards, addition of the category chip.
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 50.00
+Status: ✓ PASS
+Work Summary:
+  • Onboarding - Design: Created another variation for the Schedule tab component. Created mobile view for the Onboarding flow. Created dark mode for all views(web, tablet, mob).
+  • Courses - Design: Created screens for all resolutions on the courses page. Worked on onboarding pages. Created tablet variation.
+  • Team Operations - Meeting: Design sync up
+  • Onboarding - Design: ' Reorganized onboarding by groups and content frames. Added some components for Raheel. Fixed feed thread components
+  • Tools & Templates - Design Review: Met with Dennis. Reviewed Dennis's calculator. Fixed comments, organized Tools and Templates.
+  • Courses - Design: Cleaned up components (subheaders, sidebar, curses cards), Created a new subheader component. + Design sync up
+  • Live Workshops & Recorded Events - Design: Demo Status + Status + met with Mike. Cleaned components for Live Workshop events
+  • Onboarding - Design: Reviewed Dennis's flows. Implemented changes from Mike. Searched for 1to1 coaching onboarding references
+  • Team Operations - Meeting: Design sync up + Met with Dennis + Met with Mike. Started to reorganise the card structure.
+  • Onboarding - Design: created the last variation of the onboarding. Organized components for the Booking for Raheel.
+  • Onboarding - Design: Sync up design team. Reviewed components from Pauline
+
+
+Dennis
+------
+Expected Hours: 80.00
+Actual Hours: 33.75
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting
+  • Team Operations - Design
+

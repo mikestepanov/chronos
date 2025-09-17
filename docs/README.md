@@ -1,75 +1,89 @@
-# Bots
+# Chronos Documentation
 
-This folder contains all bot implementations and automation systems.
+Welcome to the Chronos timesheet system documentation. This system automates timesheet tracking, reminders, and compliance reporting for teams using Kimai.
 
-## Contents
+## Quick Links
 
-### Discord Bot
-- `start_discord_bot.sh` - Discord bot startup script
-- `discord_bot.log` - Discord bot activity log
-- `claude_worker.py` - Claude integration for Discord
+- [Architecture Overview](./architecture.md) - System design and components
+- [Getting Started](./getting-started.md) - Setup and configuration
+- [Scripts Reference](./scripts.md) - Available scripts and usage
+- [Configuration Guide](./configuration.md) - Configuration files and options
+- [Development Guide](./development.md) - Contributing and best practices
 
-### Telegram Bot
-- `telegram_claude_bridge.py` - Telegram-Claude bridge implementation
-- `telegram_claude_cloud.py` - Cloud-based Telegram bot
-- `telegram_claude_setup.md` - Setup guide for Telegram bot
+## What is Chronos?
 
-### Pumble Bot
-- `pumble-bot-docs/` - Pumble bot documentation
-  - Free hosting guide
-  - General bot guide
-  - Vercel quick start guide
-- `pumble-client.js` - Pumble client implementation
+Chronos is an automated timesheet management system that:
+- 📊 Extracts timesheet data from Kimai using browser automation
+- 📅 Tracks pay periods and calculates compliance
+- 💬 Sends automated reminders via Pumble
+- 📈 Generates hours compliance reports
+- 🤖 Provides a unified CLI for messaging
 
-### Kimai Integration
-- `kimai/` - Complete Kimai timesheet bot system
-  - API integration
-  - User mapping
-  - Compliance checking
-  - Testing suite
-- `kimai-extract-timesheets.js` - Timesheet extraction script
-- `kimai-pumble-bot.js` - Kimai-Pumble integration
-- `kimai-timesheet-bot.js` - Main timesheet bot
-- `kimai-scheduler.sh` - Scheduling script
-- `kimai-data/` - Extracted timesheet data by pay period
-- `KIMAI_API_KEY_GUIDE.md` - API key setup guide
-- `KIMAI_EXTRACTION_README.md` - Extraction process documentation
+## Key Features
 
-### Monday Reminder System
-- `monday-reminder.js` - Monday reminder bot
-- `MONDAY_REMINDER.md` - Reminder bot documentation
-- `MONDAY_REMINDER_SETUP.md` - Setup guide
-- `test-monday-message.js` - Test script for Monday messages
+### Automated Data Extraction
+- Browser-based Kimai export (no flaky API)
+- Versioned storage with deduplication
+- Automatic pay period detection
 
-### Bot Infrastructure
-- `lib/` - Shared libraries
-  - Bot configuration
-  - Client implementations (Slack, Teams, Pumble)
-  - Timesheet analyzer
-  - Pay period calculator
-- `api/` - API endpoints
-  - `check-timesheets.js`
-  - `send-reminder.js`
-- `package.json`, `node_modules/` - Node.js dependencies
-- `vercel.json` - Vercel deployment configuration
+### Smart Reminders
+- Monday morning reminders on pay period end
+- Follow-up reminders for incomplete timesheets
+- Customizable templates and scheduling
 
-### Documentation
-- `BOT_ACCOUNTS_SETUP.md` - Bot account setup guide
-- `BOT_PERSONALITIES.md` - Bot personality configurations
+### Compliance Reporting
+- Hours worked vs expected comparison
+- Deviation tracking with thresholds
+- Per-user and team summaries
 
-## Usage
+### Unified Messaging
+- Single CLI for all messaging needs
+- Template-based messages
+- Channel, DM, and group DM support
 
-### Start Discord Bot
-```bash
-./start_discord_bot.sh
+## System Components
+
+```
+chronos/
+├── scripts/           # Executable scripts (orchestrators)
+├── kimai/            # Kimai-specific implementations
+│   └── services/     # Browser automation and processing
+├── services/         # High-level services (messaging)
+├── shared/           # Shared utilities and core logic
+├── config/           # JSON configuration files
+├── monday-reminder/  # Monday reminder system
+└── koyeb/            # Koyeb deployment integration
 ```
 
-### Run Kimai Extraction
-```bash
-node kimai-extract-timesheets.js
-```
+## Quick Start
 
-### Test Monday Reminder
-```bash
-node test-monday-message.js
-```
+1. **Pull latest timesheet data:**
+   ```bash
+   npm run pull-kimai
+   ```
+
+2. **Send a message:**
+   ```bash
+   ./scripts/send-message.js -c dev -m "Hello team!"
+   ```
+
+3. **Check Monday reminders:**
+   ```bash
+   node monday-reminder/monday-reminder.js preview
+   ```
+
+See [Getting Started](./getting-started.md) for detailed setup instructions.
+
+## Common Tasks
+
+- [Extract Kimai data for a pay period](./kimai-extraction.md)
+- [Send reminders to team](./scripts.md#send-message)
+- [Setup Monday reminders](./monday-reminder.md)
+- [Configure the system](./configuration.md)
+
+## For Developers
+
+- [Architecture patterns](./architecture.md#design-principles)
+- [Adding new features](./development.md#adding-features)
+- [Testing guidelines](./development.md#testing)
+- [Refactoring opportunities](./development.md#refactoring)
