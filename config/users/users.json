@@ -161,6 +161,24 @@
           "mention": "<@PUMBLE_ID_HERE>"
         }
       }
+    },
+    {
+      "id": "forrest",
+      "name": "Forrest",
+      "email": "forrest@example.com",
+      "active": true,
+      "team": "dev",
+      "expectedHours": 80,
+      "services": {
+        "kimai": {
+          "username": "forrest"
+        },
+        "pumble": {
+          "id": "PUMBLE_ID_HERE",
+          "username": "forrest",
+          "mention": "<@PUMBLE_ID_HERE>"
+        }
+      }
     }
   ],
   "teams": {
