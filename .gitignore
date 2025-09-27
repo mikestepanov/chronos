@@ -11,3 +11,4 @@ dist/
 .cache/
 kimai-data/exports/
 .claude/
+data/trivia-history.json
