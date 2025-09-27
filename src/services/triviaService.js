@@ -51,81 +51,74 @@ class TriviaService {
       }
     }
 
-    // Try to get a random word and its etymology from Free Dictionary API
-    try {
-      // List of interesting business/tech words to look up
-      const words = ['algorithm', 'deadline', 'mentor', 'protocol', 'freelance', 'entrepreneur', 'sabotage', 'robot'];
-      const word = words[Math.floor(Math.random() * words.length)];
-      
-      const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-      const data = await response.json();
-      
-      if (data && data[0]) {
-        const origin = data[0].origin;
-        const definition = data[0].meanings?.[0]?.definitions?.[0]?.definition;
-        if (origin) {
-          return `Etymology: "${word}" - ${origin}`;
-        } else if (definition) {
-          return `Word spotlight: "${word}" - ${definition}`;
-        }
-      }
-    } catch (error) {
-      console.log('Dictionary API failed:', error.message);
-    }
-
+    // Don't use hardcoded words - not useful for daily variety
     return null;
   }
 
   async fetchFromAPI() {
-    // Try multiple APIs in order of preference
-    
-    // 1. Try word of the day / etymology
-    const wordTrivia = await this.fetchWordOfTheDay();
-    if (wordTrivia) return wordTrivia;
+    const today = new Date();
 
-    // 2. Try Today in History
-    try {
-      const today = new Date();
-      const response = await fetch(`http://history.muffinlabs.com/date/${today.getMonth() + 1}/${today.getDate()}`);
-      const data = await response.json();
-      if (data && data.data && data.data.Events && data.data.Events.length > 0) {
-        const events = data.data.Events;
-        // Pick a random event from today's history
-        const event = events[Math.floor(Math.random() * Math.min(events.length, 5))]; // Random from first 5 events
-        return `On this day in ${event.year}: ${event.text}`;
-      }
-    } catch (error) {
-      console.log('History API failed:', error.message);
+    // Fetch from all APIs in parallel
+    const apiPromises = [
+      // History API - historical events
+      fetch(`https://history.muffinlabs.com/date/${today.getMonth() + 1}/${today.getDate()}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data?.data?.Events?.length > 0) {
+            const events = data.data.Events;
+            const randomIndex = Math.floor(Math.random() * Math.min(events.length, 10));
+            const event = events[randomIndex];
+            return `📜 On this day in ${event.year}: ${event.text}`;
+          }
+          return null;
+        })
+        .catch(err => {
+          console.log('History API failed:', err.message);
+          return null;
+        }),
+
+      // Useless Facts API - random fun facts
+      fetch('https://uselessfacts.jsph.pl/api/v2/facts/random?language=en')
+        .then(res => res.json())
+        .then(data => data?.text ? `🎲 Random fact: ${data.text}` : null)
+        .catch(err => {
+          console.log('Useless facts API failed:', err.message);
+          return null;
+        }),
+
+      // API Ninjas - additional facts
+      fetch('https://api.api-ninjas.com/v1/facts', {
+        headers: { 'X-Api-Key': process.env.NINJAS_KEY || '' }
+      })
+        .then(res => res.json())
+        .then(data => data?.[0]?.fact ? `💭 Did you know? ${data[0].fact}` : null)
+        .catch(err => {
+          console.log('API Ninjas failed:', err.message);
+          return null;
+        }),
+
+      // Word of the Day (if API key exists)
+      this.fetchWordOfTheDay()
+    ];
+
+    // Wait for all APIs to respond (or fail)
+    const results = await Promise.allSettled(apiPromises);
+
+    // Collect successful results
+    const successfulFacts = results
+      .filter(result => result.status === 'fulfilled' && result.value !== null)
+      .map(result => result.value);
+
+    if (successfulFacts.length === 0) {
+      console.log('All trivia APIs failed');
+      return null;
     }
 
-    // 3. Try Numbers API for date facts
-    try {
-      const today = new Date();
-      const response = await fetch(`http://numbersapi.com/${today.getMonth() + 1}/${today.getDate()}/date`);
-      const fact = await response.text();
-      if (fact && !fact.includes('ERR')) {
-        return `On this day: ${fact}`;
-      }
-    } catch (error) {
-      console.log('Numbers API failed:', error.message);
-    }
+    // Log success rate
+    console.log(`Trivia APIs: ${successfulFacts.length}/${apiPromises.length} succeeded`);
 
-    // 4. Try API Ninjas Facts (requires API key)
-    if (process.env.API_NINJAS_KEY) {
-      try {
-        const response = await fetch('https://api.api-ninjas.com/v1/facts?limit=1', {
-          headers: { 'X-Api-Key': process.env.API_NINJAS_KEY }
-        });
-        const data = await response.json();
-        if (data && data[0]) {
-          return `Did you know? ${data[0].fact}`;
-        }
-      } catch (error) {
-        console.log('API Ninjas failed:', error.message);
-      }
-    }
-
-    return null;
+    // Compile all successful facts into a single message
+    return successfulFacts.join('\n\n');
   }
 
   async getDailyTrivia() {

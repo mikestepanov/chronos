@@ -2,8 +2,8 @@ name: Keep Alive Test
 
 on:
   schedule:
-    # Run every 10 minutes
-    - cron: '*/10 * * * *'
+    # Run twice daily at 9 AM and 5 PM UTC (4 AM and 12 PM CDT / 3 AM and 11 AM CST)
+    - cron: '0 9,17 * * *'
 
   # Allow manual trigger for testing
   workflow_dispatch:
