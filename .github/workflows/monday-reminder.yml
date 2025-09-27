@@ -44,27 +44,7 @@ jobs:
     
     - name: Send Monday Reminders
       env:
-        # Bot configuration
-        BOT_IDENTITY: ${{ secrets.BOT_IDENTITY || 'agentsmith' }}
-        BOT_NAME: ${{ secrets.BOT_NAME || 'Agent Smith' }}
-        BOT_EMAIL: ${{ secrets.BOT_EMAIL }}
-        BOT_ID: ${{ secrets.BOT_ID }}
-        
-        # Messaging platform
-        MESSAGING_PLATFORM: ${{ secrets.MESSAGING_PLATFORM || 'pumble' }}
-        
-        # Pumble credentials
         PUMBLE_API_KEY: ${{ secrets.PUMBLE_API_KEY }}
-        PUMBLE_BASE_URL: ${{ secrets.PUMBLE_BASE_URL || 'https://pumble.com/api/v1' }}
-        
-        # Mikhail's info
-        MIKHAIL_PUMBLE_ID: ${{ secrets.MIKHAIL_PUMBLE_ID || '66908542f1798a06218c1fc5' }}
-        MIKHAIL_EMAIL: ${{ secrets.MIKHAIL_EMAIL }}
-        BOT_TO_MIKHAIL_DM_CHANNEL_ID: ${{ secrets.BOT_TO_MIKHAIL_DM_CHANNEL_ID || '686860a2851f413511ab90f8' }}
-        
-        # Kimai configuration (required by config but not used for reminders)
-        KIMAI_URL: ${{ secrets.KIMAI_URL || 'https://kimai.starthub.academy' }}
-        KIMAI_API_KEY: ${{ secrets.KIMAI_API_KEY || 'dummy-key-for-reminder' }}
         
       run: |
         echo "📅 Monday reminder check at $(date)"
