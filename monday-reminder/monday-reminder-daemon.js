@@ -16,7 +16,7 @@ class MondayReminderDaemon {
     this.pumble = new PumbleClient({
       apiKey: process.env.AGENTSMITH_API_KEY,
       botEmail: process.env.AGENTSMITH_EMAIL,
-      botId: process.env.AGENTSMITH_ID
+      botId: require('../shared/bots').DEFAULT_BOT_ID
     });
   }
 
@@ -91,7 +91,7 @@ _The full reminder will be sent to both channels in 1 hour._`;
 
     try {
       await this.pumble.sendMessage(
-        process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID,
+        require('../../shared/channels').BOT_TO_MIKHAIL,
         notification
       );
       console.log('✅ Advance notification sent');

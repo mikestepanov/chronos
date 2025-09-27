@@ -1,0 +1,177 @@
+Hours Compliance Report - Pay Period #18
+Period: Jun 10 - Jun 23, 2025
+Generated: 2025-08-21T03:56:46.300Z
+Source: Automated pull
+Entries: 143
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Raheel Shahzad       |        87.00 |    80.00 |      +7.00 |       +8.8% |      ✗ |
+| Mori Isaac           |        83.50 |    80.00 |      +3.50 |       +4.4% |      ✗ |
+| Dharam Pal Singh     |        81.00 |    80.00 |      +1.00 |       +1.3% |      ✓ |
+| Ariful               |        78.00 |    80.00 |      -2.00 |       -2.5% |      ✓ |
+| Pauline Nguyen       |        69.92 |    80.00 |     -10.08 |      -12.6% |      ✗ |
+| Eddy                 |        37.62 |    40.00 |      -2.38 |       -6.0% |      ✓ |
+| Yulia                |        30.00 |    50.00 |     -20.00 |      -40.0% |      ✗ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 87.00
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: StartHub | FTE Engineering Team Sync Up
+  • 1-to-1 Coaching - Bug Fixing: 1-on-1 Coaching feedback
+  • 1-to-1 Coaching - Programming: 1-on-1 Coaching
+  • 1-to-1 Coaching - Bug Fixing: 1-on-1 Coaching
+  • Scenarios - Bug Fixing: Scenario Feedback Fixed
+  • Team Operations - Meeting: Engineering Team: STATUS Demo Prep
+  • Onboarding - Bug Fixing: Onboarding: add ampm/24 hours option and timezone selection
+  • Team Operations - Meeting: Raheel, Mike Meeting and Yulia McCoy for figma
+  • Courses - Bug Fixing: Fix toggle dropdown in courses
+  • Maintenance & Support - Bug Fixing: Scenario Feedback Fixed
+  • Maintenance & Support - Bug Fixing: Fix Founders page
+  • Onboarding - Bug Fixing: Fix Founders page
+  • Onboarding - Bug Fixing: Investigate signup issue
+
+
+Mori Isaac
+----------
+Expected Hours: 80.00
+Actual Hours: 83.50
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: STATUS
+  • Team Operations - Dev Ops / Infrastructure: Appflowy helm charts
+  • Team Operations - Dev Ops / Infrastructure: Appflowy helm charts and debugging
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Chart Readme
+  • Team Operations - Dev Ops / Infrastructure: Kimai Test and Update, also Appflowy Chart preparation
+  • Team Operations - Dev Ops / Infrastructure: Kimai Test on bug fixes
+  • Team Operations - Meeting: STATUS DEMO
+  • Team Operations - Meeting
+  • Team Operations - Dev Ops / Infrastructure: Kimai Bug Fix and code changes
+  • Team Operations - Dev Ops / Infrastructure: Working on Kimai PHP bug and chart edits
+
+
+Dharam Pal Singh
+----------------
+Expected Hours: 80.00
+Actual Hours: 81.00
+Status: ✓ PASS
+Work Summary:
+  • E-commerce - Meeting: StartHub | FTE Engineering Team Sync Up
+  • E-commerce - Programming: Started designing the core Product GraphQL schema for Subscription & Mentor Service products.
+Drafted CreateProductInput, UpdateProductInput, PriceInput, and discriminator logic for ProductType.
+  • E-commerce - Meeting
+  • E-commerce - Programming
+  • Authentication - Meeting
+  • Authentication - Programming
+
+
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 78.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting
+  • Admin Panel - Bug Fixing: Sidebar scrolling
+  • Live Workshops & Recorded Events - Bug Fixing: fix correct contend data of completed events
+  • Live Workshops & Recorded Events - Research: recorded event data empty
+  • Courses - Bug Fixing: Get bookmarks item with reload
+  • Courses - Bug Fixing: Fix bookmarked from sub category
+  • Courses - Bug Fixing: Get bookmarks item without reload
+  • Courses - Research: Bookmarked items not get without reload
+  • Authentication - Programming: Get Current Onboarding Process service
+  • Authentication - Programming: made routes common constant
+  • Authentication - Research: refactor auth redirect route path
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 69.92
+Status: ✗ FAIL
+Work Summary:
+  • Print Designs - Design: Avatars - Adjusting layout
+  • Print Designs - Meeting: STATUS Framework
+  • Print Designs - Meeting: Design Team STATUS Prep
+  • Print Designs - Design: Document template - Problem Solution, Adjusting layouts
+  • Print Designs - Design: Document template - Adjusting layouts
+  • Print Designs - Design: Avatars - Adjusting layout
+Document template - Choosing the Right Legal Structure, Industry Trends, SWOT Analysis
+  • Print Designs - Design: Avatars - Adjusting layout
+Document template - Ensuring variables
+  • Team Operations - Meeting: Design team sync
+  • Team Operations - Meeting: STATUS Demo prep
+  • Print Designs - Design: Document Template - Industry Trends, Customer Interviews
+  • Print Designs - Design: Avatars - Adjusting layout
+Document Template - Value Preposition
+  • Print Designs - Design: Avatars - New members: Hamin, Matthew, Dylan
+Adjusting layout
+Document Template - Problem Statement
+  • Print Designs - Design: Avatars - New members: Alex, Christian
+Adjusting layout
+  • Team Operations - Meeting: Design Sync-up with Mikhail, Yulia, and Eddy
+  • Print Designs - Design: Avatars - Adding titles and photos
+  • Courses - Design: Avatars - editing photos
+  • 1-to-1 Coaching - Design: 1:1 Mikhail - Confluence, Jira, Pay period, Hourly expectations
+  • 1-to-1 Coaching - Design Review: 1:1 Yulia - Avatars update and discussing other files in Graphics (tables plugins)
+  • Team Operations - Meeting: Daily Fires - discussed payment and weekly hour expectations
+  • Courses - Design: The Business Model Canvas: Finished implementing variables
+Choosing the Right Legal Structure for Your Startup: Started implementing variables
+  • Courses - Design: The Business Model Canva - editing fonts and layout
+Design System - created new variables
+  • Team Operations - Design: Trying to work components into avatars. Avatar with Figma strokes? Avatar from PNG? Seems like there are many different ways we created the avatars. Currently seeking the most efficient way. Will inquire Yulia tomorrow in a meeting.
+  • Team Operations - Design: Avatar variables
+  • 1-to-1 Coaching - Meeting: Yulia explains creating a variable in the Designs System and auto layout functions mishaps
+  • Courses - Design: The Business Model Canva - Editing fonts and layout.
+  • Courses - Design: Competitor Analysis Worksheet for Startup Founders Pages 1-8 (Variables for color) and Start The Business Model Canvas (Variables for font and spacing).
+  • Onboarding - Design: Test Task Brochure & Figma
+  • Courses - Design: Competitor Analysis Worksheet for Startup Founders Pages 1-8 (Variables for font and spacing, not color)
+  • Onboarding - Design: Yulia introduced me to the Figma file and explained how she needed me to work on adding variables and setting consistent padding with auto layout.
+
+
+Eddy
+----
+Expected Hours: 40.00
+Actual Hours: 37.62
+Status: ✓ PASS
+Work Summary:
+  • Deals & Discounts - Design: Updated V1 of the sponsors part of the booklet to V3, and then created V6 V6II
+  • Deals & Discounts - Design: Finished V5 of The Sponsors part of the booklet and continued with V3
+  • Deals & Discounts - Design: Continue with Editing V3 and V4 of the Sponsors/ Our Partners Page of the Booklet
+  • Courses - Design: Continuation: 
+Created V3 of Traction and Podcast Reach, where I updated the logo containers, on booklet in Graphics Files.
+  • Courses - Design: Created V3 of Traction and Podcast Reach, where I updated the logo containers, on booklet in Graphics Files.
+  • Deals & Discounts - Design: More variations of the email Templates Card
+  • Live Workshops & Recorded Events - Design: Test Task:
+Designed the Live Workshop Card aligned with our brand’s theme.
+After initial delivery, I spent an additional 4 hours retouching the design—making enhancements such as adding a button to the previously submitted design—before resubmitting the final version.
+  • Team Operations - Design: ' Added myself under Starthub ID labs.
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 30.00
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: Status Demo + Status
+  • Courses - Design: Created a new view for the Courses page for the Graphics file. Worked on comments for Components file.
+  • Team Operations - Meeting: Design team and Mile 1to1 meetings.
+  • Community Forum - Design: Fixed feedback from Mike and Avraham for Graphics.
+  • Team Operations - Meeting: Hamin onboarding
+  • Community Forum - Design: Finished implementing new Scenarios flow.
+  • Community Forum - Design: Created one more variation of graphic page Vision & Mission. 
+Scenarios. Updated a new scenario flow light mode.
+  • Team Operations - Meeting: Design sync
+  • Community Forum - Design: Started to implement new scenario flow to old flow. Created new variation for Vision & Mission page in Graphics.
+  • Team Operations - Meeting: Mikhail and Raheel
+  • Community Forum - Design: Fixed comment from Avraham and Mike on the Graphics page. Created the Select component for the Onboarding page. Fixed icon sizes on Status chip.
+

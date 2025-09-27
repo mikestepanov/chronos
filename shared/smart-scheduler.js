@@ -90,7 +90,7 @@ class SmartScheduler {
     const result = await this.pumble.sendMessage(channelId, message);
     
     // Send post-notification (unless it's to Mikhail's DM)
-    if (channelId !== process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID) {
+    if (channelId !== require('../../shared/channels').BOT_TO_MIKHAIL) {
       await this.sendPostNotification({
         channelId,
         targetName: targetName || this.getChannelName(channelId),
@@ -125,7 +125,7 @@ _This is your ${advanceMinutes}-minute advance notification._`;
 
     try {
       await this.pumble.sendMessage(
-        process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID,
+        require('../../shared/channels').BOT_TO_MIKHAIL,
         notification
       );
     } catch (error) {
@@ -155,7 +155,7 @@ _This message was just sent._`;
 
     try {
       await this.pumble.sendMessage(
-        process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID,
+        require('../../shared/channels').BOT_TO_MIKHAIL,
         notification
       );
     } catch (error) {
@@ -182,10 +182,9 @@ _This message was just sent._`;
    */
   getChannelName(channelId) {
     const channelMap = {
-      [process.env.DEV_CHANNEL_ID]: '#dev',
-      [process.env.DESIGN_CHANNEL_ID]: '#design',
-      [process.env.ADMIN_CHANNEL_ID]: '#admin',
-      [process.env.BOT_TO_MIKHAIL_DM_CHANNEL_ID]: 'Mikhail (DM)',
+      [require('./channels').DEV]: '#dev',
+      [require('./channels').DESIGN]: '#design',
+      [require('../../shared/channels').BOT_TO_MIKHAIL]: 'Mikhail (DM)',
     };
     return channelMap[channelId] || `Channel ${channelId}`;
   }

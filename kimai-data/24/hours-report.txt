@@ -1,0 +1,180 @@
+Hours Compliance Report - Pay Period #24
+Period: Sep 2 - Sep 15, 2025
+Generated: 2025-09-17T19:58:26.758Z
+Source: Automated pull
+Entries: 163
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Pauline Nguyen       |        84.75 |    80.00 |      +4.75 |       +5.9% |      ✗ |
+| Ariful               |        81.00 |    80.00 |      +1.00 |       +1.3% |      ✓ |
+| Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Raheel Shahzad       |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Forrest              |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Dennis               |        54.50 |    80.00 |     -25.50 |      -31.9% |      ✗ |
+| Yulia                |        50.00 |    50.00 |      +0.00 |       +0.0% |      ✓ |
+| Eddy                 |        47.00 |    40.00 |      +7.00 |      +17.5% |      ✗ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 84.75
+Status: ✗ FAIL
+Work Summary:
+  • Print Designs - Design: Document Templates
+  • Team Operations - Meeting: Design team sync
+  • Team Operations - Meeting: Weekly design team sync
+
+
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 81.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: S.T.A.T.U.S. Framework Meeting | Dev Team
+  • Maintenance & Support - Programming: Consolidate SDS imports across components
+  • Team Operations - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Maintenance & Support - Bug Fixing: Update prototype method definitions for consistency
+  • Maintenance & Support - Bug Fixing: Refactor code structure for improved readability and maintainability
+  • Live Workshops & Recorded Events - Bug Fixing: Recorded events card redesign
+  • Admin Panel - Bug Fixing: Document template card redesign
+  • Maintenance & Support - Bug Fixing: Storybook run time error fixing
+  • Admin Panel - Bug Fixing: Storybook run time error fixing
+  • Admin Panel - Bug Fixing: Update color variables for LiveEventCard styles
+  • Maintenance & Support - Bug Fixing: Enhance tooltip styling and structure in runway calculator
+
+
+Mori Isaac
+----------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting
+  • Team Operations - Dev Ops / Infrastructure
+  • Team Operations - Dev Ops / Infrastructure: Cluster optimization
+  • Team Operations - Dev Ops / Infrastructure: Cluster Optimization and backend container rewrite
+  • Team Operations - Dev Ops / Infrastructure: Cluster Optimization
+  • Team Operations - Meeting: STATUS Prep and Meeting
+  • Team Operations - Dev Ops / Infrastructure: Bug fix on dev white screen and optimization
+  • Team Operations - Dev Ops / Infrastructure: Bug fix on dev container and cluster optimization
+  • Team Operations - Dev Ops / Infrastructure: Bug Fix on the dev container
+  • Team Operations - Dev Ops / Infrastructure: Bug fix on dev concerning the white screen
+  • Team Operations - Dev Ops / Infrastructure: Bug fix on the white screen in dev
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: Stand Up meeting
+  • Maintenance & Support - Programming: SDS Icon revamp
+  • Maintenance & Support - Programming: Addition variable
+  • Scenarios - Programming: Implement comment section in scenarios and community feed
+  • Community Forum - Programming: SDS Sperator
+
+
+Forrest
+-------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Onboarding - Research: project Research
+  • Onboarding - Research: project set up
+
+
+Dharam Pal Singh
+----------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Admin Panel - Programming: Confirmed that we need a plain SDS Internal Modal without header, footer, or title. Currently working on implementing it.
+  • Admin Panel - Meeting: S.T.A.T.U.S. Framework Meeting | Dev Team
+  • Admin Panel - Meeting: Dharam: Monthly Sync Up
+  • Admin Panel - Programming: Started working on the SDS Internal Modal and exploring how to handle the SDS Modal within it. Running into issues since the SDS Modal comes with its own header, footer, and title. Might need to consider an alternative approach.
+  • Admin Panel - Meeting: Engineering Team: STATUS Demo Prep
+  • Admin Panel - Meeting: Dharam: Monthly Sync Up + STATUS Demo Prep
+  • Admin Panel - Meeting: improve button text size for better visibility
+  • Admin Panel - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Admin Panel - Meeting: Code review fixes, cleanup, final testing, and PR submission.
+  • Admin Panel - Programming: Implemented styling fixes in VideoModal.css, updated container logic, tested
+  • Admin Panel - Programming: Analysis of modal issues, initial refactoring of SDModal.
+  • Admin Panel - Programming: ' Implemented bulk export functionality for CompanyUsers using xlsx library.
+Added export-utils.ts utility to generate Excel workbook with user details (First Name, Last Name, Email, Job Title, Role, Status, Joined Date).
+Styled Excel headers and formatted columns for better readability.
+Integrated export logic into CompanyUsers component with success/error toast notifications.
+Handled validations (e.g., no users selected → show warning).
+Performed testing  and verify Excel download and data formatting.
+  • Admin Panel - Programming: Performed code refactoring and cleanup to align with coding guidelines.
+Fix typescript issues
+Conducted self-review and tested with sample data to ensure correctness.
+Raised PR for the same
+Started on Bulk company user download
+  • Admin Panel - Programming: ' Refactor CompanyUsers component to display user list in tabular format.
+Integrated both components into the CompanyDetail page.
+Added styling and responsive adjustments for consistent UI.
+  • Admin Panel - Programming: Implemented CompanyTabs component with tab switching logic and UI updates.
+Developed CompanyUsers component to display user list in tabular format.
+
+
+Dennis
+------
+Expected Hours: 80.00
+Actual Hours: 54.50
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Design
+  • Team Operations - Meeting
+  • 1-to-1 Coaching - Meeting
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 50.00
+Status: ✓ PASS
+Work Summary:
+  • Scenarios - Design: created tablet and mobile versions for new scenario flows. Created dark mode.
+  • Scenarios - Design: Worked on Scenarios. Created a new flow. Created dark mode for web and tablet versions old flows. Created a new versions for tablet and half for mob.
+  • Onboarding - Design: Fixed comments on the Onboarding page.
+  • Scenarios - Design: Created a couple of variations for the text typing component. Created a tablet version of Report, Reply and Submit a scenario.
+  • Community Forum - Meeting: Had meeting with Dennis + Reviewed Dennis's calculator flow. Design team sync up. Met with Raheel and Mike.
+  • Scenarios - Design: Created a new mobile version for scenarios flow. Updated Scenarios and notifications components. Searched for the references for the text and bookmark components.
+  • Scenarios - Design: Meeting Design sync + Met Dennis. Created a 2 new flows for Scenarios( Report on somebodies scenario, Submitting a new scenario, scenario under review).
+  • Team Operations - Design Review: reviewed Dennis's flows. Changed comments from Mike on Tools and Templates and Live events. Changes the card for the templates.
+  • Scenarios - Design: Worked on Scenarios thread flow. Created share flow and reply
+  • Scenarios - Design: Design sync + with Mike. Worked on comments from Mike and old comments to compile feed and scenarios.
+
+
+Eddy
+----
+Expected Hours: 40.00
+Actual Hours: 47.00
+Status: ✗ FAIL
+Work Summary:
+  • Tools & Templates - Design: Made more variations for the email template card
+  • Tools & Templates - Design: Designed more variations for the email templates card, and cleaned up Tools and Templates Artboard
+  • Tools & Templates - Design: Research, And Designed More Variations.
+  • Tools & Templates - Design: More Variations and Research for the email templates cards before and after the meetings.
+  • Tools & Templates - Design: Research and minor tweaks on the email templates cards.
+  • Tools & Templates - Research: Research
+  • Tools & Templates - Design: More Tweaks on the email templates cards before and after the meetings.
+  • Tools & Templates - Design: Research and More variations on Email Templates Carda
+  • Tools & Templates - Design: More variations for email templates cards.
+  • Tools & Templates - Design: Cleaned up the artboard and made more variations for email templates cards.
+  • Tools & Templates - Design: Minor tweaks on the email templates cards before and after the meetings.
+  • Tools & Templates - Design: Continued making variations for the email template cards. 
+Introduced a new version of the icon for editable chip and made more variations.
+  • Tools & Templates - Design: Continued making variations for the email template cards, a brief meeting and then continued.
+

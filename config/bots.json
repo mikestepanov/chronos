@@ -1,0 +1,24 @@
+{
+  "bots": {
+    "agentsmith": {
+      "name": "Agent Smith",
+      "email": "agentsmith@starthub.academy",
+      "services": {
+        "pumble": {
+          "id": "686860a1851f413511ab90ef",
+          "username": "agentsmith"
+        }
+      }
+    },
+    "bloodhunter": {
+      "name": "Blood Hunter",
+      "email": "bloodhunter@starthub.academy",
+      "services": {
+        "pumble": {
+          "id": "YOUR_BLOODHUNTER_BOT_ID",
+          "username": "bloodhunter"
+        }
+      }
+    }
+  }
+}

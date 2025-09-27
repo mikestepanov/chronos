@@ -1,0 +1,177 @@
+Hours Compliance Report - Pay Period #19
+Period: Jun 24 - Jul 07, 2025
+Generated: 2025-08-21T03:56:54.418Z
+Source: Automated pull
+Entries: 144
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Pauline Nguyen       |        85.75 |    80.00 |      +5.75 |       +7.2% |      ✗ |
+| Raheel Shahzad       |        85.50 |    80.00 |      +5.50 |       +6.9% |      ✗ |
+| Dharam Pal Singh     |        81.00 |    80.00 |      +1.00 |       +1.3% |      ✓ |
+| Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Ariful               |        66.00 |    80.00 |     -14.00 |      -17.5% |      ✗ |
+| Yulia                |        49.75 |    50.00 |      -0.25 |       -0.5% |      ✓ |
+| Eddy                 |        22.37 |    40.00 |     -17.63 |      -44.1% |      ✗ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 85.75
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: Yulia Call
+  • Print Designs - Design: Augment-inspired Worksheet
+  • Print Designs - Design: Read Ai for Augment-inspired Worksheet
+Augment-inspired Worksheets
+  • Team Operations - Meeting: Mikhail Call
+  • Team Operations - Meeting: Weekly Design Sync Up
+  • Print Designs - Design: Graphics Component & Reorganizing
+  • Team Operations - Meeting: Meeting with Yulia
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 85.50
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: StartHub | FTE Engineering Team Sync Up
+  • 1-to-1 Coaching - Bug Fixing: Refactor booking page (1-on-1 coaching) listing
+  • 1-to-1 Coaching - Bug Fixing: Refactor booking page (1-on-1 coaching)
+  • 1-to-1 Coaching - Programming: Refactor booking page (1-on-1 coaching)
+  • Onboarding - Bug Fixing: First time-onboarding
+  • Courses - Bug Fixing: Fix issue with the filters such as 'bookmarked'
+  • Courses - Bug Fixing: Fixed Scenario issue and working on Bookmark
+  • Onboarding - Bug Fixing: User preference for timezone and time format v2
+  • Onboarding - Bug Fixing: Onboarding: add ampm/24 hours option and timezone selection
+  • 1-to-1 Coaching - Bug Fixing: 1-on-1 Coaching feedback
+
+
+Dharam Pal Singh
+----------------
+Expected Hours: 80.00
+Actual Hours: 81.00
+Status: ✓ PASS
+Work Summary:
+  • E-commerce - Meeting: StartHub | FTE Engineering Team Sync Up
+  • E-commerce - Programming: Tested createBooking & updateBooking mutations with real data in different timezones.
+Seeded bookings for various mentors
+  • verified serialized Date output in GraphQL.
+Final cleanup: ensured consistent Date serialization for startTime and endTime.
+
+Ran eslint --fix across modules
+  • verified working end-to-end for Products, Purchases, and Bookings.
+  • E-commerce - Programming: ' Added CreateBookingInput and UpdateBookingInput with validation and Date transforms.
+Connected Booking CQRS: RabbitMQ service, contracts, and event handlers.
+  • E-commerce - Programming: Started Booking module: defined IBooking, BookingModel, and Mongoose schema.
+Implemented BookingStatus enums, startTime/endTime fields with ISO Date handling.
+  • E-commerce - Programming: After the migration PR, the functionality for both Products and Purchases was broken due to multiple conflicts. Even after resolving the conflicts, some functionality remained broken and certain files were missing. I am currently working on fixing these issues.
+  • E-commerce - Meeting: Alex: Sync Up
+  • E-commerce - Programming: Resolved typing issues and done feature validation and resolved the issues that found during self validation and raised pr for the same
+  • E-commerce - Programming: Resolved merge conflicts after product/purchase schema migration.
+Debugged GraphQL type issues with nested payment and refund fields.
+  • E-commerce - Programming: ' Reviewed and refactored IPurchase model and Mongoose schema to align with GraphQL.
+Fixed GraphQL errors related to mixing @ObjectType and @InputType.
+Migrated seed data to use new Purchase structure
+  • added booking links to purchases.
+Verified resolver logic and ensured status enums validate correctly.
+  • E-commerce - Programming: ' Finished GraphQL queries & mutations for createPurchase and updatePurchase.
+Added dynamic PurchaseOrderByField enums and test seeds for purchase records.
+  • E-commerce - Programming: Purchase Module
+Built initial Purchase model structure with nested items and paymentDetails.
+Created MoneyModel, PurchaseItemModel, and inputs with proper enum support.
+  • E-commerce - Programming: Developed getProducts and getProductById queries with GraphQL union types.
+Seeded subscription & mentor products for local testing
+  • verified discriminated union shape.
+
+
+Mori Isaac
+----------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Bug on gotrue
+  • Team Operations - Meeting
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Admin and web configurations
+  • Team Operations - Dev Ops / Infrastructure: Admin and cloud testing
+  • Team Operations - Dev Ops / Infrastructure: Gotrue, web, and admin testing
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Web configurations
+  • Team Operations - Dev Ops / Infrastructure: Appflowy web configurations
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Web configuration
+  • Team Operations - Dev Ops / Infrastructure: Appflowy cloud, admin and gotrue bug fixes
+  • Team Operations - Dev Ops / Infrastructure: Appflowy admin and web deployment
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Admin and Cloud configurations
+  • Team Operations - Dev Ops / Infrastructure: System analysis
+  • Team Operations - Dev Ops / Infrastructure: Appplowy Cloud and admin Configurations
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Web and gotur bugs on auth
+  • Team Operations - Dev Ops / Infrastructure: Applowy App deployment
+  • Team Operations - Dev Ops / Infrastructure: Appflowy
+  • Team Operations - Dev Ops / Infrastructure: Appflowy configurations and bug fixes
+  • Team Operations - Dev Ops / Infrastructure: Review of Appflowy and configure appflowy Gotrue
+  • Team Operations - Dev Ops / Infrastructure: Appflowy Configurations and Deployment
+  • Team Operations - Dev Ops / Infrastructure: Appflowy helm charts Configuration
+  • Team Operations - Meeting: STATUS
+  • Team Operations - Dev Ops / Infrastructure: Appflowy helm charts Configuration and daily plan preparation
+
+
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 66.00
+Status: ✗ FAIL
+Work Summary:
+  • Mentor Tools & Dashboard - Bug Fixing: Workin on mentor search functionality
+  • Team Operations - Meeting: FTE Engineering Team Sync Up
+  • Mentor Tools & Dashboard - Research: investigate and figure out about the mentor is not populating.
+  • Mentor Tools & Dashboard - Bug Fixing: add category validation message and update schemas to enforce category requirement
+  • User Profile & Settings - Bug Fixing: update padding and class assignment for icon in SettingsPanelItem
+  • Admin Panel - Bug Fixing: adjust padding for content and sidebar layout
+  • Admin Panel - Bug Fixing: integrate Scroller component and adjust padding for layout
+  • Admin Panel - Programming: add navigation links for sidebar and header components
+  • Admin Panel - Programming: improve layout and integrate Scroller component
+  • Admin Panel - Bug Fixing: scroller on sidebar
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 49.75
+Status: ✓ PASS
+Work Summary:
+  • 1-to-1 Coaching - Design: Created 4 new variations of pricing cards for the Booking page
+  • Team Operations - Meeting: Helped Pauline with component organization
+  • Scenarios - Design Review: Fixed the discrepancies after Hamin's worked on the Scenarios dark mode and tabled.
+  • Scenarios - Design Review: reviewed hamins scenarios
+  • Team Operations - Meeting: Addy
+  • Team Operations - Design Review: Reviewed Paulines graphics components
+  • 1-to-1 Coaching - Design: Worked on the new variation for card ratio, Created a new variation of filters for Booking. Worked on the avatar component (helped Pauline). Created variations for booking mentor's time slots.
+  • Team Operations - Meeting: Meeting with Pauline
+  • Team Operations - Meeting: Design sync up
+  • Community Forum - Design: Landing. Implemented changes on the Landing page, Graphics booklet and couple on the Booking.
+  • 1-to-1 Coaching - Design: Fixed comments on the Graphics page. Worked on new flow for 1to1 coaching. Fixing comments on 1to1 coaching page. Reviewed Addy's new templates.
+  • Team Operations - Meeting: With Addy + Mike
+  • Team Operations - Meeting: Design team sync up + meeting with Mike
+  • Deals & Discounts - Design: Resolved comments from Mike on Graphics, Tools and templates and admin dashboard views.Created couple variations of deals and discounts admin views.
+  • Community Forum - Design: Graphics. Implemented changes from Mike's comments. Created 3 more variations for "6 circles futures". Created new variation of skeleton loader for the fonts.
+  • Team Operations - Meeting: Meeting with Mike + Hamin's onboarding + Design sync
+  • 1-to-1 Coaching - Design: Started to work on the comments from Mike on the Booking page. Created a new variation of 6 futures in Graphics.
+
+
+Eddy
+----
+Expected Hours: 40.00
+Actual Hours: 22.37
+Status: ✗ FAIL
+Work Summary:
+  • Tools & Templates - Design: More Variations of the email Templates cards
+  • Tools & Templates - Design: Continued with Designing Email Templates cards
+  • Tools & Templates - Design: Continued with Email Templates Card Design.
+  • Tools & Templates - Design: Designed other cards on Version 1, retouched other versions, updated colors to variables on all Version 1 cards, Synced with Mik, and started V6, sketched other protypes outside Figma.
+

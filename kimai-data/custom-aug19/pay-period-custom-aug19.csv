@@ -1,0 +1,39 @@
+Summary Overview Link,https://docs.google.com/document/d/[PLACEHOLDER_FOR_custom-aug19_PERIOD]
+CSV,https://drive.google.com/drive/folders/[PLACEHOLDER],,,,,7
+ACTUAL EXPENSE REFS
+Name,Time Tracking,Payment Processing,Actual Expense (M),Actual Pay Period (Combined) Hours (C),Actual Paid Hours (M),Actual Equity Hours (M),Comments
+Total,,,420
+Edward Obi,Kimai,Gusto,200,10.00,0.00,10.00,Short 30.00 hours
+Raheel Shahzad,Kimai,Gusto,120,8.00,4.00,4.00,Short 72.00 hours
+Yulia McCoy,Kimai,Gusto,100,5.00,5.00,0.00,Short 45.00 hours
+EXPECTED EXPENSES
+Name,Expected Pay Period Expense (C),Weekly Expected Expense (C),Total Paid Weekly Hours (M),"Total Expense Rate, with Tax (C)",Pre-Tax Employee Rate (C),Base Rate (M),Upwork fee (multiplier) (M),US FTE bonus (multiplier) (M),"Taxes (multiplier, approximately) (M)"
+Total,200,100
+Dharam Pal,700,350,20,17.5,17.5,17.5,1,1,1
+Ariful Islam,400,200,20,10,10,10,1,1,1
+Raheel Shahzad,600,300,20,15,15,15,1,1,1
+Mori Wesonga,600,300,20,15,15,15,1,1,1
+Yulia McCoy,200,100,5,20,20,20,1,1,1
+Pauline Nguyen,1000,500,20,25,25,25,1,1,1
+Edward Obi,,,20,20,20,20,1,1,1
+HOURS
+Coloring,3 hours max is acceptable difference,3 hour+ difference
+Name,Inconsistency Ratio (C),Pay Period Hours Difference (C),Equity Hours Difference (C),Pay Period Expected Hours (C),Total Expected Weekly Hours (C),Total Expected Weekly Equity Hours (M),Total Expected Paid Weekly Hours (C)
+Grand Total,Average 49.00% Missed,147,,440,220,140,80
+Dev Total,Average 49.00% Missed,147,,400,200,120,80
+Edward Obi,-75.0% Missed,-30.00,,40,20,20,10
+Raheel Shahzad,-90.0% Missed,-72.00,,80,40,40,20
+Yulia McCoy,-90.0% Missed,-45.00,,50,25,20,
+Mikhail Stepanov,No Difference,,,40,20,20,
+Anatoly Stepanov,No Difference,,,40,20,20,
+Design Total,Average No Difference,,,40,20,20,
+ACTUAL EXPENSES
+Name,Inconsistency Expense (C),Expected Pay Period Expense (C),Actual Expense (C),Actual Expense Paid (M),Expense Difference (C)
+Grand Total,780,800,420,420,
+Dev Total,780,-400,-780,-780,
+Edward Obi,200,,200,200,,
+Raheel Shahzad,480,600,120,120,,
+Yulia McCoy,100,200,100,100,,
+Mikhail Stepanov,,,,,
+Anatoly Stepanov,,,,,
+Design Total,,1200,1200,1200,

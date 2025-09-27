@@ -1,0 +1,32 @@
+{
+  "versions": [
+    {
+      "version": 1,
+      "extractedAt": "2025-08-20T23:29:07.879Z",
+      "checksum": "efba94e1e6c064329afdb507a52a5048f5fe87ee2759ba1a420e07aa9f12892f",
+      "metadata": {
+        "periodNumber": "custom-aug20",
+        "startDate": "2025-08-20T05:00:00.000Z",
+        "endDate": "2025-08-20T05:00:00.000Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 743,
+          "filteredRecords": 4,
+          "uniqueUsers": 3,
+          "totalHours": 22,
+          "recordsOutsidePeriod": 739,
+          "periodNumber": "custom-aug20",
+          "dateRange": {
+            "start": "2025-08-20",
+            "end": "2025-08-20"
+          }
+        },
+        "recordCount": 882,
+        "bytes": 132229
+      }
+    }
+  ],
+  "latest": 1,
+  "updatedAt": "2025-08-20T23:29:07.879Z"
+}

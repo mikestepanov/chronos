@@ -1,0 +1,35 @@
+Pay Period 22 - Changes from v3 to v4
+Generated: 2025-09-04T02:39:41.328Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 167
+Removed entries: 0
+
+HOURS CHANGES BY USER
+
+
+pauline                     403.75 →   485.50 (+81.75)
+Mori                        403.50 →   483.75 (+80.25)
+raheel                      424.25 →   504.25 (+80.00)
+ariful                      391.50 →   471.50 (+80.00)
+dharam                      401.00 →   481.00 (+80.00)
+Yulia                       234.75 →   289.75 (+55.00)
+eddy                        287.38 →   327.88 (+40.50)
+dennis                       41.00 →    65.25 (+24.25)
+
+
+NEW ENTRIES ADDED
+-----------------
++ raheel - 0:30 - Meeting
++ Yulia - 5:00 - Design
++ raheel - 7:30 - Programming
++ raheel - 0:30 - Meeting
++ Yulia - 5:00 - Design
++ raheel - 7:30 - Programming
++ ariful - 0:30 - Meeting
++ pauline - 3:30 - Design
++ raheel - 0:30 - Meeting
++ Mori - 0:15 - Meeting
+... and 157 more entries

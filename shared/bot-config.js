@@ -1,11 +1,18 @@
+const fs = require('fs');
+const path = require('path');
+
 class BotConfig {
   static getBotIdentity(identity) {
+    // Load bot configuration
+    const botConfigPath = path.join(__dirname, '../config/bots.json');
+    const botConfig = JSON.parse(fs.readFileSync(botConfigPath, 'utf8'));
+    
     const bots = {
       bloodhunter: {
         name: 'Blood Hunter',
-        email: process.env.BLOODHUNTER_EMAIL,
-        id: process.env.BLOODHUNTER_ID,
-        apiKey: process.env.BLOODHUNTER_API_KEY || process.env.PUMBLE_API_KEY,
+        email: botConfig.bots.bloodhunter?.email,
+        id: botConfig.bots.bloodhunter?.services?.pumble?.id,
+        apiKey: process.env.PUMBLE_API_KEY,
         personality: {
           greeting: '🩸 I have identified the target...',
           signoff: '~ The Blood Hunter',
@@ -25,9 +32,9 @@ class BotConfig {
       },
       agentsmith: {
         name: 'Agent Smith',
-        email: process.env.AGENTSMITH_EMAIL,
-        id: process.env.AGENTSMITH_ID,
-        apiKey: process.env.AGENTSMITH_API_KEY || process.env.PUMBLE_API_KEY,
+        email: botConfig.bots.agentsmith?.email,
+        id: botConfig.bots.agentsmith?.services?.pumble?.id,
+        apiKey: process.env.PUMBLE_API_KEY,
         personality: {
           greeting: '🕴️ Mr. Anderson...',
           signoff: '~ Agent Smith',
