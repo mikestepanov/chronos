@@ -1,37 +1,6 @@
-const fs = require('fs').promises;
-const path = require('path');
-
 class TriviaService {
   constructor() {
-    this.historyFile = path.join(process.cwd(), 'data', 'trivia-history.json');
-  }
-
-  async loadHistory() {
-    try {
-      const data = await fs.readFile(this.historyFile, 'utf8');
-      return JSON.parse(data);
-    } catch (error) {
-      // If file doesn't exist, return empty history
-      return {
-        usedFacts: {},
-        lastFetch: null
-      };
-    }
-  }
-
-  async saveHistory(history) {
-    await fs.mkdir(path.dirname(this.historyFile), { recursive: true });
-    await fs.writeFile(this.historyFile, JSON.stringify(history, null, 2));
-  }
-
-  async loadTriviaData() {
-    try {
-      const triviaFile = path.join(process.cwd(), 'data', 'daily-trivia.json');
-      const data = await fs.readFile(triviaFile, 'utf8');
-      return JSON.parse(data);
-    } catch (error) {
-      return { trivia: [] };
-    }
+    // No caching - always fetch fresh trivia
   }
 
 
@@ -117,32 +86,18 @@ class TriviaService {
     // Log success rate
     console.log(`Trivia APIs: ${successfulFacts.length}/${apiPromises.length} succeeded`);
 
+    // Clean up any backticks that should be apostrophes
+    const cleanedFacts = successfulFacts.map(fact =>
+      fact.replace(/`/g, "'")
+    );
+
     // Compile all successful facts into a single message
-    return successfulFacts.join('\n\n');
+    return cleanedFacts.join('\n\n');
   }
 
   async getDailyTrivia() {
-    const history = await this.loadHistory();
-    const today = new Date().toISOString().split('T')[0];
-    
-    // Check if we already have trivia for today
-    if (history.usedFacts[today]) {
-      return history.usedFacts[today];
-    }
-
-    // Try to fetch from API
-    let trivia = await this.fetchFromAPI();
-    
-    if (!trivia) {
-      return null; // No trivia available today
-    }
-
-    // Save to history
-    history.usedFacts[today] = trivia;
-    history.lastFetch = new Date().toISOString();
-
-    await this.saveHistory(history);
-    return trivia;
+    // Always fetch fresh trivia - no caching
+    return await this.fetchFromAPI();
   }
 }
 
