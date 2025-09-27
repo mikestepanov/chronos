@@ -29,4 +29,4 @@ jobs:
           PUMBLE_API_KEY: ${{ secrets.PUMBLE_API_KEY }}
         run: |
           echo "Sending daily trivia at $(date)"
-          node scripts/send-daily-trivia.js -c bot-testing
+          node scripts/send-daily-trivia.js -c random
