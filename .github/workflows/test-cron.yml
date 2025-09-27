@@ -34,6 +34,5 @@ jobs:
         PUMBLE_API_KEY: ${{ secrets.PUMBLE_API_KEY }}
         
       run: |
-        cd monday-reminder
-        echo "🔔 Running 5-minute test cron job..."
-        node monday-reminder.js test-preview
+        echo "🔔 Running test cron job..."
+        node scripts/send-message.js -c bot-testing -m "Test cron job executed successfully at $(date +%H:%M) CST"
