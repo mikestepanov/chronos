@@ -1,5 +1,5 @@
 const { format } = require('date-fns');
-const PumbleClient = require('../../shared/pumble-client');
+const MessagingFactory = require('../../shared/messaging-factory');
 const PayPeriodCalculator = require('../../shared/pay-period-calculator');
 const fs = require('fs');
 const path = require('path');
@@ -12,7 +12,10 @@ const path = require('path');
  */
 class BiweeklyReminderService {
   constructor() {
-    this.messaging = new PumbleClient({ apiKey: process.env.PUMBLE_API_KEY });
+    this.messaging = MessagingFactory.create('pumble',
+      { apiKey: process.env.PUMBLE_API_KEY },
+      { enableNotifications: false } // Set to true if you want Mikhail notifications
+    );
     this.payPeriodCalc = new PayPeriodCalculator();
   }
 
