@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/mikestepanov/chronos.git"
   },
-  "main": "server.js",
+  "main": "koyeb-cron-server.js",
   "scripts": {
     "start": "node koyeb-cron-server.js",
     "start:api": "node server.js",
@@ -20,7 +20,6 @@
     "test:unit": "jest --testPathPattern=tests/",
     "test:integration": "jest --testPathPattern=integration",
     "test:pay-period": "jest tests/pay-period-calculator.test.js",
-    "test:monday": "jest tests/monday-reminder.test.js",
     "test:resilient": "jest tests/resilient-sender.test.js",
     "test:security": "jest tests/pumble-client-security.test.js tests/storage-layer.test.js tests/webhook-handler.test.js",
     "test:kimai": "jest tests/kimai-client.test.js",

@@ -33,24 +33,19 @@ async function main() {
 
     // Check which service to deploy
     console.log('Which service would you like to deploy?');
-    console.log('1. Cron Jobs Server (/cronjobs/server.js)');
-    console.log('2. Pay Period Notice (/pay-period-notice/server.js)');
-    console.log('3. Custom path\n');
-    
-    const choice = await question('Select (1-3): ');
-    
+    console.log('1. Koyeb Cron Server (koyeb-cron-server.js)');
+    console.log('2. Custom path\n');
+
+    const choice = await question('Select (1-2): ');
+
     let deployPath, appName;
-    
+
     switch(choice) {
       case '1':
-        deployPath = path.join(__dirname, '../cronjobs');
-        appName = 'chronos-cronjobs';
+        deployPath = path.join(__dirname, '..');
+        appName = 'chronos-bot';
         break;
       case '2':
-        deployPath = path.join(__dirname, '../pay-period-notice');
-        appName = 'pay-period-bot';
-        break;
-      case '3':
         deployPath = await question('Enter path: ');
         appName = await question('Enter app name: ');
         break;
