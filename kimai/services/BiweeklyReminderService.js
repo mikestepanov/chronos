@@ -12,7 +12,10 @@ const path = require('path');
  */
 class BiweeklyReminderService {
   constructor() {
-    this.messaging = MessagingFactory.create('pumble');
+    this.messaging = MessagingFactory.create('pumble',
+      { apiKey: process.env.PUMBLE_API_KEY },
+      { enableNotifications: false } // Set to true if you want Mikhail notifications
+    );
     this.payPeriodCalc = new PayPeriodCalculator();
   }
 

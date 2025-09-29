@@ -27,6 +27,7 @@ jobs:
       - name: Send daily trivia
         env:
           PUMBLE_API_KEY: ${{ secrets.PUMBLE_API_KEY }}
+          NINJAS_KEY: ${{ secrets.NINJAS_KEY }}
         run: |
           echo "Sending daily trivia at $(date)"
           node scripts/send-daily-trivia.js -c random

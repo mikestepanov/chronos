@@ -24,13 +24,6 @@ Chronos is a timesheet reminder bot for Pumble that helps teams stay compliant w
 
 ## Quick Reference
 
-### Deploy to Koyeb
-
-```bash
-# Deploy the cron server
-npm run deploy
-```
-
 ### Extract Latest Pay Period Data
 
 ```bash
@@ -66,89 +59,36 @@ PLAYWRIGHT_HEADLESS=false npm run pull-kimai
 ```env
 # Required credentials
 PUMBLE_API_KEY=your-api-key
-KIMAI_USERNAME=admin@example.com  
+KIMAI_USERNAME=admin@example.com
 KIMAI_PASSWORD=your-password
-KOYEB_API_KEY=your-koyeb-api-key  # For deployments
 ```
 
 All other configuration is in JSON files under `/config`.
 
-### Koyeb Deployment
+### GitHub Actions Deployment
 
-The app is deployed on Koyeb with GitHub integration. Changes pushed to the `first` branch auto-deploy.
+The app uses GitHub Actions for automated scheduling. All cron jobs run via GitHub Actions workflows.
 
-**Koyeb App Details:**
-- **App Name**: `chronos-bot` (permanent)
-- **App ID**: `04928f88-b0fc-4984-a209-7b62cbc3b551` (permanent for this app)
-- **Service ID**: `cc2ab566-308d-4a6c-bf4b-9e94fb46b683` (may change if service recreated)
-- **Service Name**: `web`
-- **Region**: `was` (Washington)
+**Current Schedule (GitHub Actions):**
+- **Keep-alive**: Workflow runs periodically
+- **Daily Trivia**: 10 AM CST daily
+- **Monday Reminder**: 12 PM CST on Mondays (only on pay period end days)
 
-**Find IDs Dynamically:**
-```bash
-# Get App ID by name
-APP_ID=$(curl -s -H "Authorization: Bearer $KOYEB_API_KEY" \
-  "https://app.koyeb.com/v1/apps" | jq -r '.apps[] | select(.name=="chronos-bot") | .id')
-
-# Get Service ID for the app
-SERVICE_ID=$(curl -s -H "Authorization: Bearer $KOYEB_API_KEY" \
-  "https://app.koyeb.com/v1/services?app_id='$APP_ID'" | jq -r '.services[0].id')
-```
-
-**Current Cron Schedule:**
-- **Keep-alive**: Every 10 minutes - sends "Keep-alive check: HH:MM CST" to bot-testing
-- **Daily Trivia**: 10 AM CST - sends fun fact/word etymology to bot-testing channel
-- **Daily Reminder**: 11:50 AM CST - sends to bot-testing channel
-- **Monday Reminder**: 10 AM CST - sends to dev & design (only on pay period end days)
+**Workflows are in:** `.github/workflows/`
+- `monday-reminder.yml` - Pay period end reminders
+- `daily-trivia.yml` - Daily trivia messages
+- `keep-alive.yml` - Keep-alive checks
 
 **To Deploy:**
+1. Push changes to GitHub `main` branch
+2. Workflows run automatically on schedule
 
-**Method 1 - Manual Deploy (PREFERRED):**
+**Manual Workflow Triggers:**
+Use GitHub UI or CLI:
 ```bash
-npm run deploy
-# This runs koyeb/deploy.js - interactive deployment script
+gh workflow run monday-reminder.yml
+gh workflow run daily-trivia.yml
 ```
-
-**Method 2 - Auto-deploy via GitHub:**
-1. Push changes to GitHub `first` branch
-2. Koyeb auto-deploys within a few minutes (usually ~2-3 min)
-
-**After Deployment:**
-- Check status at: https://app.koyeb.com/apps/chronos-bot
-- Live URL: https://chronos-bot.koyeb.app (Note: web endpoints return 404 but crons still run)
-
-**Check Deployment Status via API:**
-```bash
-# Check service health
-curl -s -H "Authorization: Bearer $KOYEB_API_KEY" \
-  "https://app.koyeb.com/v1/services?app_id=04928f88-b0fc-4984-a209-7b62cbc3b551" | jq '.services[0].status'
-
-# Check latest deployment
-curl -s -H "Authorization: Bearer $KOYEB_API_KEY" \
-  "https://app.koyeb.com/v1/deployments?service_id=cc2ab566-308d-4a6c-bf4b-9e94fb46b683&limit=1" | jq '.deployments[0]'
-
-# Get deployment ID and status
-curl -s -H "Authorization: Bearer $KOYEB_API_KEY" \
-  "https://app.koyeb.com/v1/deployments?service_id=cc2ab566-308d-4a6c-bf4b-9e94fb46b683&limit=5" | \
-  jq '.deployments[] | {id, status, created_at}'
-```
-
-**Manual Trigger Endpoints:**
-```bash
-# Test reminder
-curl -X POST https://chronos-bot.koyeb.app/trigger/test \
-  -H "x-webhook-secret: test-secret-123"
-
-# Monday reminder (forces send regardless of date)
-curl -X POST https://chronos-bot.koyeb.app/trigger/monday \
-  -H "x-webhook-secret: test-secret-123"
-```
-
-**Important Notes:**
-- The health endpoint returns 404 but the cron server still runs properly
-- Deployments show as HEALTHY even if web endpoints are not accessible
-- Cron jobs continue to execute on schedule regardless of endpoint status
-- Use the Koyeb API to verify deployment status, not the web endpoints
 
 ## For Detailed Information
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const PumbleComplianceBot = require('./pumble-compliance-bot');
-const PumbleClient = require('../../lib/pumble-client');
+const PumbleClient = require('../../shared/pumble-client');
 
 /**
  * Webhook handler for Pumble messages

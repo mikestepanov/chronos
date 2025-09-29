@@ -7,9 +7,9 @@ module.exports = {
   ],
   collectCoverageFrom: [
     'shared/**/*.js',
-    'monday-reminder/**/*.js',
     'pumble/**/*.js',
     'kimai/**/*.js',
+    'scripts/**/*.js',
     '!**/node_modules/**',
     '!**/tests/**',
     '!**/*.test.js',
@@ -26,8 +26,8 @@ module.exports = {
   // Module name mapper for our structure
   moduleNameMapper: {
     '^@shared/(.*)$': '<rootDir>/shared/$1',
-    '^@monday-reminder/(.*)$': '<rootDir>/monday-reminder/$1',
     '^@pumble/(.*)$': '<rootDir>/pumble/$1',
-    '^@kimai/(.*)$': '<rootDir>/kimai/$1'
+    '^@kimai/(.*)$': '<rootDir>/kimai/$1',
+    '^@scripts/(.*)$': '<rootDir>/scripts/$1'
   }
 };
