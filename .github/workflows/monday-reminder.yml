@@ -45,9 +45,6 @@ jobs:
     - name: Send Monday Reminders
       env:
         PUMBLE_API_KEY: ${{ secrets.PUMBLE_API_KEY }}
-        # Add dummy Kimai credentials (not needed for sending reminders)
-        KIMAI_USERNAME: dummy@example.com
-        KIMAI_PASSWORD: dummy-password
 
       run: |
         echo "📅 Monday reminder check at $(date)"
@@ -65,7 +62,7 @@ jobs:
         console.log('Is last day of period?', isLastDay);
         if (!isLastDay) {
           console.log('⏭️ Skipping - not the last day of pay period');
-          process.exit(0);
+          process.exit(1);
         }
         console.log('✅ Proceeding - today is the last day of pay period', period.number);
         "

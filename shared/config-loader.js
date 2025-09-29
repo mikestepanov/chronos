@@ -63,16 +63,9 @@ class ConfigLoader {
       errors.push('KIMAI_USERNAME and KIMAI_PASSWORD are required');
     }
 
-    // Validate messaging config
-    const platform = config.messaging.platform;
-    if (platform === 'pumble') {
-      if (!config.messaging.pumble.apiKey) {
-        errors.push('PUMBLE_API_KEY is required for Pumble platform');
-      }
-    } else if (platform === 'slack') {
-      if (!config.messaging.slack.token) {
-        errors.push('SLACK_BOT_TOKEN is required for Slack platform');
-      }
+    // Validate Pumble API key
+    if (!config.messaging.pumble.apiKey) {
+      errors.push('PUMBLE_API_KEY is required');
     }
 
     // Validate channels
