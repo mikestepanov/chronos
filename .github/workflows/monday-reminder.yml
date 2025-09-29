@@ -45,19 +45,38 @@ jobs:
     - name: Send Monday Reminders
       env:
         PUMBLE_API_KEY: ${{ secrets.PUMBLE_API_KEY }}
-        
+        # Add dummy Kimai credentials (not needed for sending reminders)
+        KIMAI_USERNAME: dummy@example.com
+        KIMAI_PASSWORD: dummy-password
+
       run: |
         echo "📅 Monday reminder check at $(date)"
 
-        # Check if we're in the monday-reminder directory structure
-        if [ -d "monday-reminder" ]; then
-          cd monday-reminder
-          node monday-reminder.js send
-        else
-          # Use the new scripts structure (matching Koyeb)
+        # Check if today is the last day of a pay period
+        node -e "
+        const PayPeriodCalculator = require('./shared/pay-period-calculator');
+        const calc = new PayPeriodCalculator();
+        const today = new Date();
+        const period = calc.getCurrentPayPeriod();
+        const periodEnd = new Date(period.end);
+        const isLastDay = today.toDateString() === periodEnd.toDateString();
+        console.log('Period', period.number, 'ends on', periodEnd.toDateString());
+        console.log('Today is', today.toDateString());
+        console.log('Is last day of period?', isLastDay);
+        if (!isLastDay) {
+          console.log('⏭️ Skipping - not the last day of pay period');
+          process.exit(0);
+        }
+        console.log('✅ Proceeding - today is the last day of pay period', period.number);
+        "
+
+        # Only send if it's the last day of the period
+        if [ $? -eq 0 ]; then
           echo "Sending to dev channel..."
           node scripts/send-timesheet-reminder.js -c dev
 
           echo "Sending to design channel..."
           node scripts/send-timesheet-reminder.js -c design
+        else
+          echo "Not sending reminders - not the last day of pay period"
         fi
