@@ -1,0 +1,196 @@
+Hours Compliance Report - Pay Period #25
+Period: Sep 16 - Sep 29, 2025
+Generated: 2025-10-03T17:39:54.009Z
+Source: Automated pull
+Entries: 168
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Forrest              |        88.00 |    80.00 |      +8.00 |      +10.0% |      ✗ |
+| Pauline Nguyen       |        82.00 |    80.00 |      +2.00 |       +2.5% |      ✓ |
+| Raheel Shahzad       |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Dennis               |        67.50 |    80.00 |     -12.50 |      -15.6% |      ✗ |
+| Ariful               |        60.00 |    80.00 |     -20.00 |      -25.0% |      ✗ |
+| Yulia                |        50.00 |    50.00 |      +0.00 |       +0.0% |      ✓ |
+| Eddy                 |        48.00 |    40.00 |      +8.00 |      +20.0% |      ✗ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Forrest
+-------
+Expected Hours: 80.00
+Actual Hours: 88.00
+Status: ✗ FAIL
+Work Summary:
+  • Courses - Test Automation: fixing skipped tests
+  • Deals & Discounts - Test Automation: fixing skipped tests
+  • Live Workshops & Recorded Events - Test Automation: fixing skipped tests
+  • Admin Panel - Test Automation: fixing skipped tests
+  • Onboarding - Research: project Research
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 82.00
+Status: ✓ PASS
+Work Summary:
+  • Print Designs - Design: Document Templates
+  • Team Operations - Meeting: Design Sync
+  • Team Operations - Meeting: STATUS Frame Update
+  • Team Operations - Meeting: Design team sync
+  • Team Operations - Meeting: 1:1 Mikhail
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: Stand Up meeting
+  • Maintenance & Support - Programming: SDS icon revamp and remove duplicate component and ts lint issue and build issue fixed
+  • Maintenance & Support - Programming: SDS icon revamp and remove duplicate component
+  • Maintenance & Support - Programming: SDS Icon revert issue and dev server issue
+  • Maintenance & Support - Programming: SDS Icon revamp
+
+
+Mori Isaac
+----------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting
+  • Team Operations - Dev Ops / Infrastructure: Clean up of the code and testing
+  • Team Operations - Dev Ops / Infrastructure: Test the deployed test package on the cluster
+  • Team Operations - Dev Ops / Infrastructure: Fix bugs and deploy the new backend, setup a test package
+  • Team Operations - Dev Ops / Infrastructure: Fix bugs on the docker build
+  • Team Operations - Dev Ops / Infrastructure: Fix bugs on the docker and rewrite the dockerfile and nginx conf
+  • Team Operations - Dev Ops / Infrastructure: Fix bugs on docker build
+  • Team Operations - Dev Ops / Infrastructure: Deploy the new backend into the cluster
+  • Team Operations - Dev Ops / Infrastructure: Deploy the backend into our cluster
+  • Team Operations - Dev Ops / Infrastructure: Deploy new backend and fix bugs
+  • Team Operations - Dev Ops / Infrastructure: Implement the new backend and deploy to our cluster
+
+
+Dharam Pal Singh
+----------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Admin Panel - Programming: Create unified MessagingModule combining conversation and message functionality
+Eliminate circular dependency between MessageModule and ConversationModule
+Update app.module.ts to use new MessagingModule instead of separate modules
+Fix shared module imports in presentation and application layers
+Resolve AIResponseEventHandler dependency injection error
+Maintain all existing functionality while improving module architecture
+Add proper TypeScript typing for IConversationModel
+This approach follows DDD principles by keeping related messaging domain components together and avoids the performance overhead of forwardRef().
+  • Admin Panel - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Admin Panel - Programming: ' - Change _id field type from MongooseSchema.Types.UUID to String in common plugin
+- Fixes 'Cast to ObjectId failed' error when querying users by UUID string
+- Maintains UUID generation using randomUUID() but stores as string
+- Resolves JWT authentication failure for existing users with UUID _id values
+
+Fixes authentication issue where valid JWT tokens were rejected due to
+Mongoose being unable to query UUID string _id fields properly.
+  • Admin Panel - Programming: ' - Fix ContentRepository countByCategory aggregation to handle primaryCategory and secondaryCategories fields
+- Update query builder to support both workflowStatus and state fields for backward compatibility
+
+Resolves issues with:
+- GetAllNonEmptyCategories query not returning data
+- Courses query authentication failures
+- UUID query issues in user authentication
+  • Admin Panel - Programming: ' Added new rate limiting parameters to .env.example for GraphQL security: SECURITY_GRAPHQL_RATE_LIMIT_WINDOW_MS, SECURITY_GRAPHQL_RATE_LIMIT_MAX_REQUESTS, and SECURITY_GRAPHQL_RATE_LIMIT_MAX_COMPLEXITY_POINTS.
+Reverted JWT expiration time in configuration.ts from '1y' back to '15m' for improved security.
+Removed outdated comment in common.repository.impl.ts regarding ID field usage, streamlining the code for clarity.
+  • Admin Panel - Programming: ' Enhanced user and credential interfaces for seed data compatibility
+Added createdBy, updatedBy, fullName, loginCount fields to IUser interface
+Added createdBy, updatedBy, authProvider fields to IUserCredential interface
+Ensured seeded data matches backend schema requirements
+
+Updated seed data to include authProvider field
+
+Maintained backward compatibility with providerType field
+
+Fixed JWT authentication failures, currentUser query returning null, and frontend redirect issues after login
+  • Admin Panel - Programming: Fixed UserRepository.findById to use id instead of _id
+Resolved Mongoose issue with Buffer UUID vs. string UUID
+Ensured proper JWT authentication flow for currentUser queries
+Updated authentication service to remove redundant user save operations
+Removed user.recordLogin() and userRepository.save() calls during login
+
+Prevented duplicate key errors and improved login performance
+Delegated login statistics handling to UserCredentialRepository.updateLoginInfo()
+  • Admin Panel - Programming: Fix database seed and device token related issues and raised PR for the same.
+  • Admin Panel - Programming: Working on device token registration issues
+  • Admin Panel - Programming: Encountered database seeding issues and TypeScript linting errors in the seed file, and worked on resolving them.
+  • Admin Panel - Programming: Worked on app startup issues
+
+
+Dennis
+------
+Expected Hours: 80.00
+Actual Hours: 67.50
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Design
+  • Team Operations - Meeting
+
+
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 60.00
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Maintenance & Support - Programming: Refactor dulation calculator code
+  • Maintenance & Support - Bug Fixing: Fixed dulation calculator issue
+  • Maintenance & Support - Bug Fixing: Fixing dilation calculator
+  • Maintenance & Support - Research: Cross match all calculator
+  • Admin Panel - Bug Fixing: Typecheck issues
+  • Maintenance & Support - Bug Fixing: cli type issues fixing
+  • Admin Panel - Bug Fixing: Fix typecheck issues
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 50.00
+Status: ✓ PASS
+Work Summary:
+  • Onboarding - Design: Started to create a new onboarding flow after meeting with Mike. Worked with components for the time format forms.
+  • 1-to-1 Coaching - Design: Meetings sync up with the design team + Met with Avraham and Mike. Created a new flow for the Onboarding with new steps.
+  • Onboarding - Design: Started to work on new onboarding flow from Mike
+  • Onboarding - Design: Been working on the Onboarding updates. Created mentors and 1to1 Coaching.
+  • Onboarding - Design: Worked on 1to1 coaching onboarding after meeting with Mike. Created a new variation with new questions for 1to1 coaching onboarding. Design sync up meeting.
+  • Scenarios - Design: Demo prep status + Status Meeting + Met with Mike. Created a new Event details page.
+  • Team Operations - Meeting: Meetings: Design sync up + Status prep + Met with Dennis. Continue changing onboarding components ( left curtain)
+  • Courses - Design: Fixed comments for Onboarding, Courses from Mike. Had a meeting with Mike. Reviewed Dennis's flow.
+  • Scenarios - Design: Started to work on feed flow, cleaned up file, Started to create an updated flow based on old variations and Scenarios.
+  • Team Operations - Design Review: Meetings with design team + Mike and Avraham. Reviwed Dennis's calculator flow, found references for him.
+
+
+Eddy
+----
+Expected Hours: 40.00
+Actual Hours: 48.00
+Status: ✗ FAIL
+Work Summary:
+  • Tools & Templates - Design: More Tweaks, Cleanup, Variations and Design on Email Template Card.
+  • Tools & Templates - Design: Research, Cleanups and More Variations and Tweaks on Tools and Template ( Email Template and Document Template Cards).
+  • Tools & Templates - Design: More Variations, Tweaks and Cleanups on Tools and Template ( Email Template and Document Template Cards).
+  • Tools & Templates - Design: Research on Email Template Card, and More Variations and Tweaks on Tools and Template ( Email Template and Document Template Cards).
+  • Tools & Templates - Design: More Variations and Tweaks on Tools and Template ( Email Template and Document Template Cards).
+  • Tools & Templates - Design: More Variations and Tweaks on Tools and Template.
+  • Tools & Templates - Design: Research and More Variations on Email Template Card.
+  • Tools & Templates - Design: More variations and tweaks on Email Templates Card.
+

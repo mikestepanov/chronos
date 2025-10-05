@@ -1,0 +1,21 @@
+Pay Period 25 - Changes from v2 to v3
+Generated: 2025-10-03T17:39:54.006Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 3
+Removed entries: 0
+
+HOURS CHANGES BY USER
+
+
+raheel                      664.25 →   672.25 (+8.00)
+Yulia                       384.75 →   389.75 (+5.00)
+
+
+NEW ENTRIES ADDED
+-----------------
++ raheel - 0:30 - Meeting
++ raheel - 7:30 - Programming
++ Yulia - 5:00 - Design
