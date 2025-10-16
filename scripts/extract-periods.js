@@ -105,14 +105,14 @@ async function extractPeriod(periodNumber) {
     
     // Save the reports
     const dataDir = `kimai-data/${periodId}`;
-    fs.writeFileSync(path.join(dataDir, 'hours-report.txt'), hoursReport.content);
+    await reportGenerator.saveReport(hoursReport.content, dataDir);
     
     // Generate and save CSV/XLSX
     const csvContent = reportGenerator.generatePayPeriodCSV(hoursReport.data, payPeriod);
-    fs.writeFileSync(path.join(dataDir, `pay-period-${periodNumber}.csv`), csvContent);
+    await reportGenerator.savePayPeriodCSV(csvContent, dataDir, periodNumber);
     
     const xlsxBuffer = reportGenerator.generatePayPeriodXLSX(hoursReport.data, payPeriod);
-    fs.writeFileSync(path.join(dataDir, `pay-period-${periodNumber}.xlsx`), xlsxBuffer);
+    await reportGenerator.savePayPeriodXLSX(xlsxBuffer, dataDir, periodNumber);
     
     console.log(`   ✅ Period ${periodNumber} extracted successfully`);
     console.log(`   📁 Data saved to: ${dataDir}`);
@@ -131,27 +131,21 @@ async function extractPeriod(periodNumber) {
 }
 
 async function main() {
-  console.log('🚀 Starting extraction of pay periods 22 and 23...\n');
+  console.log('🚀 Starting extraction of pay period 26...\n');
+
+  const periodNumber = process.argv[2] || 26;
   
-  // Extract period 22
-  const period22Result = await extractPeriod(22);
-  
-  // Extract period 23  
-  const period23Result = await extractPeriod(23);
+  // Extract period
+  const periodResult = await extractPeriod(periodNumber);
   
   // Display results
   console.log('\n' + '='.repeat(80));
   console.log('📊 EXTRACTION RESULTS');
   console.log('='.repeat(80));
   
-  if (period22Result) {
-    console.log('\n📅 Pay Period 22:');
-    console.log(period22Result.report);
-  }
-  
-  if (period23Result) {
-    console.log('\n📅 Pay Period 23:');
-    console.log(period23Result.report);
+  if (periodResult) {
+    console.log(`\n📅 Pay Period ${periodNumber}:`);
+    console.log(periodResult.report);
   }
   
   console.log('\n✨ Extraction complete!');

@@ -1,0 +1,168 @@
+Hours Compliance Report - Pay Period #26
+Period: Sep 30 - Oct 13, 2025
+Generated: 2025-10-16T18:26:12.716Z
+Source: Automated pull
+Entries: 160
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Raheel Shahzad       |        87.50 |    80.00 |      +7.50 |       +9.4% |      ✗ |
+| Pauline Nguyen       |        84.83 |    80.00 |      +4.83 |       +6.0% |      ✗ |
+| Forrest              |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Ariful               |        66.50 |    80.00 |     -13.50 |      -16.9% |      ✗ |
+| Dennis               |        60.00 |    80.00 |     -20.00 |      -25.0% |      ✗ |
+| Eddy                 |        56.00 |    40.00 |     +16.00 |      +40.0% |      ✗ |
+| Yulia                |        50.00 |    50.00 |      +0.00 |       +0.0% |      ✓ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 87.50
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: Stand Up meeting
+  • Maintenance & Support - Programming: onboarding flow
+  • Maintenance & Support - Programming: forgot password flow
+  • Maintenance & Support - Programming: fixed authentication icon issue and working on forgot ui issue
+  • Maintenance & Support - Programming: sign up flow issue
+  • Maintenance & Support - Programming: SDS icon revamp and remove duplicate component and ts lint issue and build issue fixed
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 84.83
+Status: ✗ FAIL
+Work Summary:
+  • Print Designs - Design: Document Templates + Join Team
+  • Team Operations - Meeting: Design Sync
+
+
+Forrest
+-------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Mentor Tools & Dashboard - Test Automation: local host 4000 page
+  • Onboarding - Test Automation: test updates
+  • User Profile & Settings - Test Automation: test updates
+  • Courses - Test Automation: fixing skipped tests pr updates
+
+
+Dharam Pal Singh
+----------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Admin Panel - Programming: Add useSignupAllowed hook to check domain-based signup permissions
+Create SignupAllowedWrapper component for conditional rendering
+Hide signup buttons and links on dev/staging domains
+Redirect users from signup page to login when signup is blocked
+Add comprehensive unit tests for domain validation logic
+Update LoginUserInfo, AuthButtons, and HeaderAuthButtons components
+Prevent direct access to signup page on restricted domains
+  • Admin Panel - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Admin Panel - Programming: implement global document transformation in ContentRepository
+  • Admin Panel - Meeting: Engineering Team: STATUS Demo Prep
+  • Admin Panel - Programming: fix: resolve CategoryService dependency injection issue
+  • Admin Panel - Meeting: Dharam: Monthly Sync Up + STATUS Demo Prep
+  • Admin Panel - Programming: Updated GraphQL security plugin to use @apollo/server types and handle undefined documents.
+Improved error handling and type safety across authentication and monitoring services.
+  • Admin Panel - Programming: Resolved authentication failures where getCurrentUser query returned 401 Unauthorized due to UUID format mismatch between seed data and Schema.Types.UUID expectations.
+  • Admin Panel - Programming: ' Fixed UUID schema compatibility in seed script to store UUIDs in binary format for Schema.Types.UUID.
+Added @types/cors dependency for proper CORS typing.
+Fixed PerformanceObserver and PerformanceEntry type issues with custom interfaces.
+  • Admin Panel - Programming: fix: resolve document and email templates linting and filter issues
+  • Admin Panel - Programming: fix: remove field resolvers and fix useFragment import error
+  • Admin Panel - Programming: Removed dependency on individual field resolvers for basic properties.
+Ensured proper category structure extraction from aggregates.
+Maintained backward compatibility with the existing GraphQL schema.
+Verified that the new approach provides better separation of concerns between domain logic (aggregates) and presentation logic (mappers), while handling the complex category structure mapping required by the GraphQL schema.
+  • Admin Panel - Programming: ' Updated LiveEventMapper to extend EventMapper and handle LiveEvent-specific fields.
+Added field resolvers for primaryCategory, secondaryCategories, and categoryLabel.
+Integrated mapper into LiveEventResolver for consistent data transformation.
+
+
+Mori Isaac
+----------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Dev Ops / Infrastructure: Cluster enhancements and migration plans
+  • Team Operations - Meeting
+  • Team Operations - Dev Ops / Infrastructure: Cluster enhancements
+  • Team Operations - Dev Ops / Infrastructure: Cluster optimization and enhancements
+  • Team Operations - Dev Ops / Infrastructure
+  • Team Operations - Dev Ops / Infrastructure: Cluster optimization
+  • Team Operations - Meeting: Cluster optimization and enhancements
+  • Team Operations - Dev Ops / Infrastructure: Cluster Enhancements and optimizations
+  • Team Operations - Dev Ops / Infrastructure: Cluster optimism’s enhancement
+
+
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 66.50
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Maintenance & Support - Bug Fixing: Landing pages alignment design resolve
+  • Team Operations - Meeting: Engineering Team: STATUS Demo Prep
+  • Maintenance & Support - Bug Fixing: Landing page responsive design resolve
+  • Maintenance & Support - Bug Fixing: Landing page super hydration error fixed
+  • Maintenance & Support - Bug Fixing: MultiColorText Hydration issue solved
+  • Live Workshops & Recorded Events - Bug Fixing: Refactor CourseCard and LiveEventCard components image design
+  • Tools & Templates - Programming: reuse card media component
+  • Admin Panel - Research: upgrade Apollo Client to version 4.0.6 and update related imports
+
+
+Dennis
+------
+Expected Hours: 80.00
+Actual Hours: 60.00
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Design
+  • Team Operations - Meeting
+
+
+Eddy
+----
+Expected Hours: 40.00
+Actual Hours: 56.00
+Status: ✗ FAIL
+Work Summary:
+  • Scenarios - Design: Updated UI elements of Scenarios and Home Dashboard, which includes Components, Fonts and Chip Components, and Synced up with Yulia for Clarity in some areas.
+  • Tools & Templates - Design: Updated UI elements of Home Dashboard, Admin Dashboard and Landing Page, which includes Components, Fonts and Chip Components.
+  • Onboarding - Design: Updated UI elements of Onboarding, Home Dashboard, Admin Dashboard and Landing Page, which includes Components, Fonts and Chip Components.
+  • Tools & Templates - Design: More variations on Email Templates Cards With the New Title, and illustrations based on the Comments on each Title then move on to updating Pages.
+  • Tools & Templates - Design: More variations on Email Templates Cards
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 50.00
+Status: ✓ PASS
+Work Summary:
+  • Onboarding - Design: Met with Eddy. Created two variations for the Onboarding 1to1 availability flow.
+  • Onboarding - Design: Meeting: synced up with the design team, met with Eddy. Created filters component for the notifications.
+  • Tools & Templates - Design: Met with Addy. Cleaned the Home Dashboard flow, fixed the card sliders. Worked on notification flows.
+  • User Profile & Settings - Design: Worked on Notifications window, created 2 variations for the new flow + hover.
+  • Onboarding - Design: Meetings: Design sync up + Met with Mike. Fixed comments in the Onboarding flow.
+  • Onboarding - Design: ' Cleaned a new Onboarding flow. Added a new component for the input field and. select dropdown. Started to work notification, searched for the references.
+  • Onboarding - Design: Meeting Sync up with designers. Finished working on 1to1 Coaching Onboarding flow. Created preview page for this.
+  • Onboarding - Design: Started to work on 1to1 Coaching onboarding.
+  • Onboarding - Design: Onboarding flow meeting with Mike and Avraham. Created Onboarding for the mentor.
+  • Onboarding - Design: Created a new variation of the Onboarding. Meeting Design sync up and onboarding for a new designer.
+
