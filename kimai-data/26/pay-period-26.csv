@@ -2,16 +2,16 @@ Summary Overview Link,https://docs.google.com/document/d/[PLACEHOLDER_FOR_26_PER
 CSV,https://drive.google.com/drive/folders/[PLACEHOLDER],,,,,7
 ACTUAL EXPENSE REFS
 Name,Time Tracking,Payment Processing,Actual Expense (M),Actual Pay Period (Combined) Hours (C),Actual Paid Hours (M),Actual Equity Hours (M),Comments
-Total,,,8819
-Raheel Shahzad,Kimai,Gusto,1313,87.50,43.75,43.75,Extra 7.50 hours carry over
-Pauline Nguyen,Kimai,Gusto,2121,84.83,42.42,42.42,Extra 4.83 hours carry over
-Forrest,Kimai,Gusto,,80.00,40.00,40.00,
-Dharam Pal,Kimai,Gusto,1400,80.00,40.00,40.00,
-Mori Wesonga,Kimai,Gusto,1200,80.00,40.00,40.00,
-Ariful Islam,Kimai,Gusto,665,66.50,33.25,33.25,Short 13.50 hours
-Dennis,Kimai,Gusto,,60.00,30.00,30.00,Short 20.00 hours
-Edward Obi,Kimai,Gusto,1120,56.00,0.00,56.00,Extra 16.00 hours carry over
-Yulia McCoy,Kimai,Gusto,1000,50.00,10.00,40.00,
+Total,,,3865
+Raheel Shahzad,Kimai,Gusto,600,87.50,40.00,40.00,Extra 7.50 hours carry over
+Pauline Nguyen,Kimai,Gusto,1000,84.83,40.00,40.00,Extra 4.83 hours carry over
+Forrest Cordova,Kimai,Gusto,400,80.00,40.00,40.00,
+Dharam Pal,Kimai,Gusto,700,80.00,40.00,40.00,
+Mori Wesonga,Kimai,Gusto,600,80.00,40.00,40.00,
+Ariful Islam,Kimai,Gusto,265,66.50,26.50,40.00,Short 13.50 hours
+Dennis Fisher,Kimai,Gusto,,60.00,0.00,0.00,Short 20.00 hours
+Edward Obi,Kimai,Gusto,100,56.00,5.00,40.00,Extra 11.00 hours carry over
+Yulia McCoy,Kimai,Gusto,200,50.00,10.00,40.00,
 EXPECTED EXPENSES
 Name,Expected Pay Period Expense (C),Weekly Expected Expense (C),Total Paid Weekly Hours (M),"Total Expense Rate, with Tax (C)",Pre-Tax Employee Rate (C),Base Rate (M),Upwork fee (multiplier) (M),US FTE bonus (multiplier) (M),"Taxes (multiplier, approximately) (M)"
 Total,200,100
@@ -21,39 +21,40 @@ Raheel Shahzad,600,300,20,15,15,15,1,1,1
 Mori Wesonga,600,300,20,15,15,15,1,1,1
 Yulia McCoy,200,100,5,20,20,20,1,1,1
 Pauline Nguyen,1000,500,20,25,25,25,1,1,1
-Edward Obi,200,100,20,20,20,20,1,1,1
-Dennis,,,20,,,,1,1,1
-Forrest,,,20,,,,1,1,1
+Edward Obi,100,50,20,20,20,20,1,1,1
+Dennis Fisher,,,20,,,,1,1,1
+Forrest Cordova,400,200,20,10,10,10,1,1,1
+Jamie,,,20,,,,1,1,1
 HOURS
 Coloring,3 hours max is acceptable difference,3 hour+ difference
 Name,Inconsistency Ratio (C),Pay Period Hours Difference (C),Equity Hours Difference (C),Pay Period Expected Hours (C),Total Expected Weekly Hours (C),Total Expected Weekly Equity Hours (M),Total Expected Paid Weekly Hours (C)
-Grand Total,Average 6.87% Missed,61.83333333333333,,440,220,140,80
-Dev Total,Average 6.87% Missed,61.83333333333333,,400,200,120,80
+Grand Total,Average 6.31% Missed,56.83333333333333,,440,220,140,80
+Dev Total,Average 6.31% Missed,56.83333333333333,,400,200,120,80
 Raheel Shahzad,9.4% Missed,+7.50,,80,40,40,20
 Pauline Nguyen,6.0% Missed,+4.83,,80,40,40,20
-Forrest,No Difference,,,80,40,40,20
+Forrest Cordova,No Difference,,,80,40,40,20
 Dharam Pal,No Difference,,,80,40,40,20
 Mori Wesonga,No Difference,,,80,40,40,20
 Ariful Islam,-16.9% Missed,-13.50,,80,40,40,20
-Dennis,-25.0% Missed,-20.00,,80,40,40,20
-Edward Obi,40.0% Missed,+16.00,,40,20,20,10
+Dennis Fisher,-25.0% Missed,-20.00,,80,40,40,20
+Edward Obi,24.4% Missed,+11.00,,45,22.5,22.5,11.25
 Yulia McCoy,No Difference,,,50,25,20,
 Mikhail Stepanov,No Difference,,,40,20,20,
 Anatoly Stepanov,No Difference,,,40,20,20,
 Design Total,Average No Difference,,,40,20,20,
 ACTUAL EXPENSES
 Name,Inconsistency Expense (C),Expected Pay Period Expense (C),Actual Expense (C),Actual Expense Paid (M),Expense Difference (C)
-Grand Total,3019,3700,8819,8819,
-Dev Total,3019,2500,7619,7619,
-Raheel Shahzad,713,600,1313,1313,,Extra 7.50 carry over
-Pauline Nguyen,1121,1000,2121,2121,,Extra 4.83 carry over
-Forrest,,,,,,
-Dharam Pal,,700,1400,1400,,
-Mori Wesonga,,600,1200,1200,,
-Ariful Islam,265,400,665,665,,
-Dennis,,,,,,
-Edward Obi,920,200,1120,1120,,Extra 16.00 carry over
-Yulia McCoy,,200,1000,1000,,
+Grand Total,135,4000,3865,3865,
+Dev Total,135,2800,2665,2665,
+Raheel Shahzad,,600,600,600,,Extra 7.50 carry over
+Pauline Nguyen,,1000,1000,1000,,Extra 4.83 carry over
+Forrest Cordova,,400,400,400,,
+Dharam Pal,,700,700,700,,
+Mori Wesonga,,600,600,600,,
+Ariful Islam,135,400,265,265,,
+Dennis Fisher,,,,,,
+Edward Obi,,100,100,100,,Extra 11.00 carry over
+Yulia McCoy,,200,200,200,,
 Mikhail Stepanov,,,,,
 Anatoly Stepanov,,,,,
 Design Total,,1200,1200,1200,

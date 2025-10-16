@@ -122,10 +122,10 @@ class KimaiExporter {
     
     // Format dates for URL
     const dateRange = this.formatDateRange(startDate, endDate);
-    
+
     // Build filtered URL
     let url = `${this.config.kimai.baseUrl}/en/team/timesheet/?`;
-    url += `daterange=${encodeURIComponent(dateRange)}`;
+    url += `daterange=${dateRange}`;  // dateRange is already properly encoded
     url += '&state=1&billable=0&exported=1&size=50&page=1&orderBy=begin&order=DESC&searchTerm=';
     
     if (csrfToken) {
@@ -226,7 +226,8 @@ class KimaiExporter {
   formatDateRange(startDate, endDate) {
     const start = `${startDate.getMonth() + 1}/${startDate.getDate()}/${startDate.getFullYear()}`;
     const end = `${endDate.getMonth() + 1}/${endDate.getDate()}/${endDate.getFullYear()}`;
-    return `${start}+-+${end}`;
+    // Encode the dates but keep the +-+ separator literal (Kimai requires this format)
+    return `${encodeURIComponent(start)}+-+${encodeURIComponent(end)}`;
   }
 
   /**

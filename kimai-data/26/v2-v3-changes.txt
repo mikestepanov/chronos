@@ -1,0 +1,37 @@
+Pay Period 26 - Changes from v2 to v3
+Generated: 2025-10-16T19:23:12.419Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 0
+Removed entries: 1423
+
+HOURS CHANGES BY USER
+
+
+raheel                      751.75 →    87.50 (-664.25)
+pauline                     737.08 →    84.83 (-652.25)
+Mori                        723.75 →    80.00 (-643.75)
+dharam                      721.00 →    80.00 (-641.00)
+ariful                      679.00 →    66.50 (-612.50)
+eddy                        483.88 →    56.00 (-427.88)
+Yulia                       439.75 →    50.00 (-389.75)
+dennis                      254.75 →    60.00 (-194.75)
+Forrest                     264.00 →    80.00 (-184.00)
+test                          3.50 →     0.00 (-3.50)
+
+
+ENTRIES REMOVED
+----------------
+- Yulia - 5:00 - Design
+- raheel - 0:30 - Meeting
+- Forrest - 8:00 - Test Automation
+- raheel - 7:30 - Programming
+- Yulia - 5:00 - Design
+- raheel - 0:30 - Meeting
+- Forrest - 8:00 - Test Automation
+- raheel - 7:30 - Programming
+- ariful - 0:30 - Meeting
+- eddy - 5:00 - Design
+... and 1413 more entries

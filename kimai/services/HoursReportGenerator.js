@@ -270,9 +270,10 @@ ${detailedTable}`;
       'Mori Wesonga': { baseRate: 15, expectedExpense: 600 },
       'Yulia McCoy': { baseRate: 20, expectedExpense: 200 },
       'Pauline Nguyen': { baseRate: 25, expectedExpense: 1000 },
-      'Edward Obi': { baseRate: 20, expectedExpense: 200 },
-      'Dennis': { baseRate: 0, expectedExpense: 0 },
-      'Forrest': { baseRate: 0, expectedExpense: 0 }
+      'Edward Obi': { baseRate: 20, expectedExpense: 100 },
+      'Dennis Fisher': { baseRate: 0, expectedExpense: 0 },
+      'Forrest Cordova': { baseRate: 10, expectedExpense: 400 },
+      'Jamie': { baseRate: 0, expectedExpense: 0 }
     };
 
     const rows = [];
@@ -292,18 +293,26 @@ ${detailedTable}`;
       const rate = baseRates[payrollName];
       const actualExpense = this.calculateActualExpense(user, baseRates);
       totalExpense += actualExpense;
-      
-      // Split hours between paid and equity
-      let paidHours, equityHours;
-      if (payrollName === 'Yulia McCoy') {
-        paidHours = Math.min(10, user.hoursWorked);
-        equityHours = Math.max(0, user.hoursWorked - 10);
-      } else if (payrollName === 'Edward Obi') {
+
+      // Split hours between equity and paid (equity hours filled first)
+      const userConfig = this.findUserConfig(user.user);
+      const expectedEquityHours = userConfig?.expectedEquityHours || 0;
+      const expectedPaidHours = userConfig?.expectedPaidHours || 0;
+
+      let equityHours, paidHours;
+      if (expectedEquityHours === 0 && expectedPaidHours === 0) {
+        // Intern - no equity or paid
+        equityHours = 0;
         paidHours = 0;
-        equityHours = user.hoursWorked;
       } else {
-        paidHours = user.hoursWorked / 2;
-        equityHours = user.hoursWorked / 2;
+        // Fill equity hours first, then paid hours (capped at expected)
+        equityHours = Math.min(user.hoursWorked, expectedEquityHours);
+        paidHours = Math.max(0, user.hoursWorked - expectedEquityHours);
+
+        // Cap paid hours at expected (unless allowOvertime flag is set)
+        if (!userConfig?.allowOvertime) {
+          paidHours = Math.min(paidHours, expectedPaidHours);
+        }
       }
       
       let comments = '';
@@ -460,26 +469,59 @@ ${detailedTable}`;
       'Mori Isaac': 'Mori Wesonga',
       'Yulia': 'Yulia McCoy',
       'Eddy': 'Edward Obi',
-      'Dennis': 'Dennis',
-      'Forrest': 'Forrest'
+      'Dennis': 'Dennis Fisher',
+      'Dennis Fisher': 'Dennis Fisher',
+      'Forrest': 'Forrest Cordova',
+      'Forrest Cordova': 'Forrest Cordova',
+      'Jamie': 'Jamie'
     };
-    
+
     return nameMapping[kimaiName] || kimaiName;
   }
 
   /**
-   * Calculate actual expense for a user
+   * Find user configuration
+   */
+  findUserConfig(userName) {
+    return this.users.users.find(u =>
+      u.name === userName ||
+      u.name?.toLowerCase() === userName?.toLowerCase() ||
+      u.services?.kimai?.username === userName ||
+      u.services?.kimai?.username?.toLowerCase() === userName?.toLowerCase()
+    );
+  }
+
+  /**
+   * Calculate actual expense for a user (only paid hours, capped at expected)
    */
   calculateActualExpense(user, baseRates) {
     const payrollName = this.mapKimaiNameToPayrollName(user.user);
     const rate = baseRates[payrollName];
-    
+
     if (!rate) {
       console.warn(`No rate found for ${payrollName}, using 0`);
       return 0;
     }
-    
-    return Math.round(user.hoursWorked * rate.baseRate);
+
+    // Calculate paid hours (equity hours filled first)
+    const userConfig = this.findUserConfig(user.user);
+    const expectedEquityHours = userConfig?.expectedEquityHours || 0;
+    const expectedPaidHours = userConfig?.expectedPaidHours || 0;
+
+    if (expectedEquityHours === 0 && expectedPaidHours === 0) {
+      // Intern - no payment
+      return 0;
+    }
+
+    // Paid hours = total - equity (equity filled first)
+    let paidHours = Math.max(0, user.hoursWorked - expectedEquityHours);
+
+    // Cap paid hours at expected (unless allowOvertime flag is set)
+    if (!userConfig?.allowOvertime) {
+      paidHours = Math.min(paidHours, expectedPaidHours);
+    }
+
+    return Math.round(paidHours * rate.baseRate);
   }
 
   /**
@@ -519,9 +561,10 @@ ${detailedTable}`;
       'Mori Wesonga': { baseRate: 15, expectedExpense: 600, weeklyHours: 20 },
       'Yulia McCoy': { baseRate: 20, expectedExpense: 200, weeklyHours: 5 },
       'Pauline Nguyen': { baseRate: 25, expectedExpense: 1000, weeklyHours: 20 },
-      'Edward Obi': { baseRate: 20, expectedExpense: 200, weeklyHours: 20 },
-      'Dennis': { baseRate: 0, expectedExpense: 0, weeklyHours: 20 },
-      'Forrest': { baseRate: 0, expectedExpense: 0, weeklyHours: 0 }
+      'Edward Obi': { baseRate: 20, expectedExpense: 100, weeklyHours: 22.5 },
+      'Dennis Fisher': { baseRate: 0, expectedExpense: 0, weeklyHours: 40 },
+      'Forrest Cordova': { baseRate: 10, expectedExpense: 400, weeklyHours: 40 },
+      'Jamie': { baseRate: 0, expectedExpense: 0, weeklyHours: 20 }
     };
 
     // Create workbook and worksheet with exact structure
@@ -570,12 +613,17 @@ ${detailedTable}`;
     const sortedUsers = [...reportData].sort((a, b) => {
       const orderMap = {
         'Dharam Pal Singh': 1,
-        'Ariful': 2, 
+        'Ariful': 2,
         'Raheel Shahzad': 3,
         'Mori Isaac': 4,
         'Yulia': 5,
         'Pauline Nguyen': 6,
-        'Eddy': 7
+        'Eddy': 7,
+        'Dennis': 8,
+        'Dennis Fisher': 8,
+        'Forrest': 9,
+        'Forrest Cordova': 9,
+        'Jamie': 10
       };
       return (orderMap[a.user] || 99) - (orderMap[b.user] || 99);
     });
@@ -597,21 +645,30 @@ ${detailedTable}`;
         worksheet[`D${row}`] = { t: 'n', f: `F${row} * F${rateRow}` };
       }
       
-      // Combined hours - just the value
-      setCell(`F${row}`, user.hoursWorked);
-      
-      // Paid hours and equity hours
-      if (payrollName === 'Yulia McCoy') {
-        setCell(`G${row}`, Math.min(10, user.hoursWorked));
-        setCell(`H${row}`, Math.max(0, user.hoursWorked - 10));
-      } else if (payrollName === 'Edward Obi') {
-        setCell(`G${row}`, '');
-        setCell(`H${row}`, user.hoursWorked);
+      // Calculate equity and paid hours (equity filled first, paid capped at expected)
+      const userConfig = this.findUserConfig(user.user);
+      const expectedEquityHours = userConfig?.expectedEquityHours || 0;
+      const expectedPaidHours = userConfig?.expectedPaidHours || 0;
+
+      let equityHours, paidHours;
+      if (expectedEquityHours === 0 && expectedPaidHours === 0) {
+        // Intern
+        equityHours = 0;
+        paidHours = 0;
       } else {
-        setCell(`G${row}`, user.hoursWorked / 2);
-        setCell(`H${row}`, user.hoursWorked / 2);
+        equityHours = Math.min(user.hoursWorked, expectedEquityHours);
+        paidHours = Math.max(0, user.hoursWorked - expectedEquityHours);
+
+        // Cap paid hours at expected (unless allowOvertime flag is set)
+        if (!userConfig?.allowOvertime) {
+          paidHours = Math.min(paidHours, expectedPaidHours);
+        }
       }
-      
+
+      // Paid hours and equity hours
+      setCell(`F${row}`, paidHours);
+      setCell(`G${row}`, equityHours);
+
       // Combined hours formula: =F{row} + G{row}
       worksheet[`E${row}`] = { t: 'n', f: `F${row} + G${row}` };
       

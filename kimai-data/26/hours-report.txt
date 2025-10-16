@@ -1,6 +1,6 @@
 Hours Compliance Report - Pay Period #26
 Period: Sep 30 - Oct 13, 2025
-Generated: 2025-10-16T18:26:12.716Z
+Generated: 2025-10-16T21:38:52.228Z
 Source: Automated pull
 Entries: 160
 
@@ -8,12 +8,12 @@ Entries: 160
 |----------------------|--------------|----------|------------|-------------|--------|
 | Raheel Shahzad       |        87.50 |    80.00 |      +7.50 |       +9.4% |      ✗ |
 | Pauline Nguyen       |        84.83 |    80.00 |      +4.83 |       +6.0% |      ✗ |
-| Forrest              |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Forrest Cordova      |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Ariful               |        66.50 |    80.00 |     -13.50 |      -16.9% |      ✗ |
-| Dennis               |        60.00 |    80.00 |     -20.00 |      -25.0% |      ✗ |
-| Eddy                 |        56.00 |    40.00 |     +16.00 |      +40.0% |      ✗ |
+| Dennis Fisher        |        60.00 |    80.00 |     -20.00 |      -25.0% |      ✗ |
+| Eddy                 |        56.00 |    45.00 |     +11.00 |      +24.4% |      ✗ |
 | Yulia                |        50.00 |    50.00 |      +0.00 |       +0.0% |      ✓ |
 
 
@@ -45,8 +45,8 @@ Work Summary:
   • Team Operations - Meeting: Design Sync
 
 
-Forrest
--------
+Forrest Cordova
+---------------
 Expected Hours: 80.00
 Actual Hours: 80.00
 Status: ✓ PASS
@@ -126,8 +126,8 @@ Work Summary:
   • Admin Panel - Research: upgrade Apollo Client to version 4.0.6 and update related imports
 
 
-Dennis
-------
+Dennis Fisher
+-------------
 Expected Hours: 80.00
 Actual Hours: 60.00
 Status: ✗ FAIL
@@ -138,7 +138,7 @@ Work Summary:
 
 Eddy
 ----
-Expected Hours: 40.00
+Expected Hours: 45.00
 Actual Hours: 56.00
 Status: ✗ FAIL
 Work Summary:
