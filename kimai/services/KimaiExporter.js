@@ -222,10 +222,27 @@ class KimaiExporter {
 
   /**
    * Format date range for Kimai URL
+   * NOTE: Kimai is configured to use America/New_York (EST/EDT) timezone
+   *
+   * IMPORTANT: Kimai interprets end date as start-of-day (00:00:00), not end-of-day.
+   * To include the full last day (e.g., Oct 13 23:59:59), we must send the NEXT day.
+   * Example: To include all of Oct 13, send "10/14/2025" to Kimai.
+   * Our TimesheetProcessor then filters out any Oct 14 entries locally.
    */
   formatDateRange(startDate, endDate) {
-    const start = `${startDate.getMonth() + 1}/${startDate.getDate()}/${startDate.getFullYear()}`;
-    const end = `${endDate.getMonth() + 1}/${endDate.getDate()}/${endDate.getFullYear()}`;
+    const DateHelper = require('../../shared/date-helper');
+
+    // Get date parts in EST timezone (not local timezone)
+    const startParts = DateHelper.getDatePartsEST(startDate);
+    const start = `${startParts.month}/${startParts.day}/${startParts.year}`;
+
+    // Add 1 day to end date for Kimai's start-of-day interpretation
+    const endDatePlusOne = new Date(endDate);
+    endDatePlusOne.setDate(endDatePlusOne.getDate() + 1);
+
+    const endParts = DateHelper.getDatePartsEST(endDatePlusOne);
+    const end = `${endParts.month}/${endParts.day}/${endParts.year}`;
+
     // Encode the dates but keep the +-+ separator literal (Kimai requires this format)
     return `${encodeURIComponent(start)}+-+${encodeURIComponent(end)}`;
   }

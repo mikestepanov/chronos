@@ -1,0 +1,25 @@
+Pay Period 26 - Changes from v4 to v5
+Generated: 2025-10-16T22:23:54.543Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 0
+Removed entries: 5
+
+HOURS CHANGES BY USER
+
+
+raheel                       95.50 →    87.50 (-8.00)
+Forrest                      88.00 →    80.00 (-8.00)
+Yulia                        55.00 →    50.00 (-5.00)
+ariful                       67.00 →    66.50 (-0.50)
+
+
+ENTRIES REMOVED
+----------------
+- Yulia - 5:00 - Design
+- raheel - 0:30 - Meeting
+- Forrest - 8:00 - Test Automation
+- raheel - 7:30 - Programming
+- ariful - 0:30 - Meeting

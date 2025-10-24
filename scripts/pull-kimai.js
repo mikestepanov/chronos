@@ -208,9 +208,9 @@ function getMostRecentCompletePayPeriod() {
 function logPayPeriodInfo(period) {
   logger.info('Pulling Kimai data', {
     periodNumber: period.number,
-    startDate: DateHelper.formatISO(period.start),
-    endDate: DateHelper.formatISO(period.end),
-    range: DateHelper.formatPeriodRange(period.start, period.end)
+    startDate: DateHelper.formatISOInEST(period.start),
+    endDate: DateHelper.formatISOInEST(period.end),
+    range: DateHelper.formatPeriodRangeInEST(period.start, period.end)
   });
 }
 

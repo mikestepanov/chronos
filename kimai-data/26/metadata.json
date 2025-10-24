@@ -77,8 +77,138 @@
         "recordCount": 174,
         "bytes": 31819
       }
+    },
+    {
+      "version": 4,
+      "extractedAt": "2025-10-16T22:14:33.197Z",
+      "checksum": "1e51bb0685382b80fa2240d4c9a9cc8f7c0266dfbc37ce30799bbfaf8064044d",
+      "metadata": {
+        "periodNumber": 26,
+        "startDate": "2025-09-30T05:00:00.000Z",
+        "endDate": "2025-10-14T04:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 165,
+          "filteredRecords": 164,
+          "uniqueUsers": 9,
+          "totalHours": 665.8333333333334,
+          "recordsOutsidePeriod": 1,
+          "periodNumber": 26,
+          "dateRange": {
+            "start": "2025-09-30",
+            "end": "2025-10-14"
+          }
+        },
+        "recordCount": 179,
+        "bytes": 32814
+      }
+    },
+    {
+      "version": 5,
+      "extractedAt": "2025-10-16T22:23:54.544Z",
+      "checksum": "732e4148587b6723309f4d3c53aa63f5e8dfcd18c4fadbec9924d1d6c872cdf2",
+      "metadata": {
+        "periodNumber": 26,
+        "startDate": "2025-09-30T05:00:00.000Z",
+        "endDate": "2025-10-14T04:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 160,
+          "filteredRecords": 159,
+          "uniqueUsers": 9,
+          "totalHours": 644.3333333333334,
+          "recordsOutsidePeriod": 1,
+          "periodNumber": 26,
+          "dateRange": {
+            "start": "2025-09-30",
+            "end": "2025-10-14"
+          }
+        },
+        "recordCount": 174,
+        "bytes": 31819
+      }
+    },
+    {
+      "version": 6,
+      "extractedAt": "2025-10-16T22:24:33.464Z",
+      "checksum": "1e51bb0685382b80fa2240d4c9a9cc8f7c0266dfbc37ce30799bbfaf8064044d",
+      "metadata": {
+        "periodNumber": 26,
+        "startDate": "2025-09-30T05:00:00.000Z",
+        "endDate": "2025-10-14T04:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 165,
+          "filteredRecords": 160,
+          "uniqueUsers": 9,
+          "totalHours": 644.8333333333334,
+          "recordsOutsidePeriod": 5,
+          "periodNumber": 26,
+          "dateRange": {
+            "start": "2025-09-30",
+            "end": "2025-10-14"
+          }
+        },
+        "recordCount": 179,
+        "bytes": 32814
+      }
+    },
+    {
+      "version": 7,
+      "extractedAt": "2025-10-16T22:30:39.059Z",
+      "checksum": "db7773f095c69f18689755cdd9ee595c6facf732d71e996fe515502aa50b649c",
+      "metadata": {
+        "periodNumber": 26,
+        "startDate": "2025-09-30T04:00:00.000Z",
+        "endDate": "2025-10-14T03:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 176,
+          "filteredRecords": 172,
+          "uniqueUsers": 9,
+          "totalHours": 692.8333333333334,
+          "recordsOutsidePeriod": 4,
+          "periodNumber": 26,
+          "dateRange": {
+            "start": "2025-09-30",
+            "end": "2025-10-14"
+          }
+        },
+        "recordCount": 197,
+        "bytes": 35495
+      }
+    },
+    {
+      "version": 8,
+      "extractedAt": "2025-10-16T22:34:27.293Z",
+      "checksum": "1e51bb0685382b80fa2240d4c9a9cc8f7c0266dfbc37ce30799bbfaf8064044d",
+      "metadata": {
+        "periodNumber": 26,
+        "startDate": "2025-09-30T04:00:00.000Z",
+        "endDate": "2025-10-14T03:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 165,
+          "filteredRecords": 161,
+          "uniqueUsers": 9,
+          "totalHours": 645.3333333333334,
+          "recordsOutsidePeriod": 4,
+          "periodNumber": 26,
+          "dateRange": {
+            "start": "2025-09-30",
+            "end": "2025-10-14"
+          }
+        },
+        "recordCount": 179,
+        "bytes": 32814
+      }
     }
   ],
-  "latest": 2,
-  "updatedAt": "2025-10-16T21:37:34.073Z"
+  "latest": 8,
+  "updatedAt": "2025-10-16T22:34:27.293Z"
 }

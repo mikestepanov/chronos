@@ -220,11 +220,11 @@ class HoursReportGenerator {
    * Generate full report content
    */
   generateFullReport(table, detailedTable, payPeriod, entryCount) {
-    const startDate = DateHelper.format(payPeriod.start, DateHelper.FORMATS.SHORT_DATE);
-    const endDate = DateHelper.format(payPeriod.end, DateHelper.FORMATS.FULL_DATE);
-    
+    // Use EST-aware formatting to match Kimai's timezone
+    const dateRange = DateHelper.formatPeriodRangeInEST(payPeriod.start, payPeriod.end);
+
     return `Hours Compliance Report - Pay Period #${payPeriod.number}
-Period: ${startDate} - ${endDate}
+Period: ${dateRange}
 Generated: ${new Date().toISOString()}
 Source: Automated pull
 Entries: ${entryCount}

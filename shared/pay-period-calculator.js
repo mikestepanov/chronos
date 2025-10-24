@@ -4,52 +4,57 @@ class PayPeriodCalculator {
   constructor(config = {}) {
     // Base reference point for calculations
     this.basePeriodNumber = config.basePeriodNumber || 18;
-    // Use local noon to avoid timezone issues
+    // Use EST/EDT timezone (America/New_York) to match Kimai
     // June 23, 2025 is a Monday (end of period 18)
-    this.basePeriodEndDate = config.basePeriodEndDate || new Date('2025-06-23T12:00:00');
+    // June 23, 2025 23:59:59.999 EDT = June 24, 2025 03:59:59.999 UTC
+    this.basePeriodEndDate = config.basePeriodEndDate || new Date('2025-06-24T03:59:59.999Z');
     this.periodLengthDays = config.periodLengthDays || 14;
     this.paymentDelayDays = config.paymentDelayDays || 7; // Payment the following Monday
+
+    // All Kimai operations use America/New_York timezone
+    this.timezone = 'America/New_York';
   }
 
   getCurrentPeriodInfo(referenceDate = new Date()) {
     // Calculate how many days have passed since the base period end date
-    const refDay = DateHelper.getStartOfDay(referenceDate);
-    const baseDay = DateHelper.getStartOfDay(this.basePeriodEndDate);
+    // Use EST timezone to match Kimai
+    const refDay = DateHelper.getStartOfDayEST(referenceDate);
+    const baseDay = DateHelper.getStartOfDayEST(this.basePeriodEndDate);
     const daysSinceBase = Math.floor((refDay - baseDay) / (1000 * 60 * 60 * 24));
-    
+
     // If reference date is before or on base period end date, we're in the base period
     let periodsPassed = 0;
     if (daysSinceBase > 0) {
       // We've moved past the base period, calculate how many full periods
       periodsPassed = Math.floor((daysSinceBase - 1) / this.periodLengthDays) + 1;
     }
-    
+
     // Calculate current period number
     const currentPeriodNumber = this.basePeriodNumber + periodsPassed;
-    
+
     // Calculate current period dates
     const currentPeriodEnd = DateHelper.addDays(this.basePeriodEndDate, periodsPassed * this.periodLengthDays);
     const currentPeriodStart = DateHelper.addDays(currentPeriodEnd, -(this.periodLengthDays - 1));
-    
+
     // Calculate next period info
     const nextPeriodNumber = currentPeriodNumber + 1;
     const nextPeriodStart = DateHelper.addDays(currentPeriodEnd, 1);
     const nextPeriodEnd = DateHelper.addDays(currentPeriodEnd, this.periodLengthDays);
-    
+
     // Calculate payment date
     const paymentDate = DateHelper.addDays(currentPeriodEnd, this.paymentDelayDays);
-    
+
     return {
       currentPeriod: {
         number: currentPeriodNumber,
-        startDate: DateHelper.getStartOfDay(currentPeriodStart),
-        endDate: DateHelper.getStartOfDay(currentPeriodEnd),
-        paymentDate: DateHelper.getStartOfDay(paymentDate)
+        startDate: DateHelper.getStartOfDayEST(currentPeriodStart),
+        endDate: DateHelper.getEndOfDayEST(currentPeriodEnd), // Include full last day (23:59:59 EST)
+        paymentDate: DateHelper.getStartOfDayEST(paymentDate)
       },
       nextPeriod: {
         number: nextPeriodNumber,
-        startDate: DateHelper.getStartOfDay(nextPeriodStart),
-        endDate: DateHelper.getStartOfDay(nextPeriodEnd)
+        startDate: DateHelper.getStartOfDayEST(nextPeriodStart),
+        endDate: DateHelper.getEndOfDayEST(nextPeriodEnd) // Include full last day (23:59:59 EST)
       }
     };
   }
@@ -128,24 +133,24 @@ Thank you.
     };
   }
 
-  // Check if today is the last day of a pay period
+  // Check if today is the last day of a pay period (EST timezone)
   isLastDayOfPeriod(date = new Date()) {
     const periodInfo = this.getCurrentPeriodInfo(date);
-    const today = DateHelper.getStartOfDay(date);
-    const periodEnd = DateHelper.getStartOfDay(periodInfo.currentPeriod.endDate);
-    
+    const today = DateHelper.getStartOfDayEST(date);
+    const periodEnd = DateHelper.getStartOfDayEST(periodInfo.currentPeriod.endDate);
+
     return today.getTime() === periodEnd.getTime();
   }
 
-  // Get days until period end
+  // Get days until period end (EST timezone)
   getDaysUntilPeriodEnd(date = new Date()) {
     const periodInfo = this.getCurrentPeriodInfo(date);
-    const today = DateHelper.getStartOfDay(date);
-    const periodEnd = DateHelper.getStartOfDay(periodInfo.currentPeriod.endDate);
-    
+    const today = DateHelper.getStartOfDayEST(date);
+    const periodEnd = DateHelper.getStartOfDayEST(periodInfo.currentPeriod.endDate);
+
     const diffTime = periodEnd.getTime() - today.getTime();
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
+
     return Math.max(0, diffDays);
   }
 

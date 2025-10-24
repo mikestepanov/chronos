@@ -61,6 +61,24 @@ class DateHelper {
   }
 
   /**
+   * Format a date range in EST timezone
+   * @param {Date} start - Start date
+   * @param {Date} end - End date
+   * @param {string} separator - Separator string (default: ' - ')
+   * @returns {string} Formatted range like "Jan 15 - Jan 28" in EST
+   */
+  static formatPeriodRangeInEST(start, end, separator = ' - ') {
+    const startParts = this.getDatePartsEST(start);
+    const endParts = this.getDatePartsEST(end);
+
+    const months = ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const startStr = `${months[startParts.month]} ${startParts.day}`;
+    const endStr = `${months[endParts.month]} ${endParts.day}`;
+
+    return `${startStr}${separator}${endStr}`;
+  }
+
+  /**
    * Format a date range with slash notation
    * @param {Date} start - Start date
    * @param {Date} end - End date
@@ -96,6 +114,16 @@ class DateHelper {
    */
   static formatISO(date) {
     return format(date, this.FORMATS.ISO_DATE);
+  }
+
+  /**
+   * Format date in ISO format using EST timezone
+   * @param {Date} date - Date to format
+   * @returns {string} Date like "2025-01-15" in EST
+   */
+  static formatISOInEST(date) {
+    const parts = this.getDatePartsEST(date);
+    return `${parts.year}-${String(parts.month).padStart(2, '0')}-${String(parts.day).padStart(2, '0')}`;
   }
 
   /**
@@ -303,6 +331,85 @@ class DateHelper {
    */
   static createUTCDate(dateString) {
     return new Date(dateString + 'T00:00:00.000Z');
+  }
+
+  /**
+   * Get start of day in America/New_York timezone (EST/EDT)
+   * This is used for Kimai operations which are timezone-aware
+   * @param {Date} date - Input date
+   * @returns {Date} Start of day in EST (00:00:00 EST)
+   */
+  static getStartOfDayEST(date) {
+    // Get the date components in EST timezone
+    const year = date.toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric' });
+    const month = date.toLocaleString('en-US', { timeZone: 'America/New_York', month: '2-digit' });
+    const day = date.toLocaleString('en-US', { timeZone: 'America/New_York', day: '2-digit' });
+
+    // Create ISO string for midnight EST
+    // America/New_York is UTC-5 (EST) or UTC-4 (EDT)
+    const dateStr = `${year}-${month}-${day}`;
+
+    // Parse as if it's midnight in EST
+    // We need to figure out the UTC offset for this specific date
+    const testDate = new Date(`${dateStr}T12:00:00`);
+    const estOffset = testDate.toLocaleString('en-US', {
+      timeZone: 'America/New_York',
+      timeZoneName: 'short'
+    }).includes('EDT') ? 4 : 5; // EDT = UTC-4, EST = UTC-5
+
+    // Create UTC timestamp for midnight EST
+    const utcHour = estOffset;
+    return new Date(`${dateStr}T${String(utcHour).padStart(2, '0')}:00:00.000Z`);
+  }
+
+  /**
+   * Get end of day in America/New_York timezone (EST/EDT)
+   * This is used for Kimai operations which are timezone-aware
+   * @param {Date} date - Input date
+   * @returns {Date} End of day in EST (23:59:59.999 EST)
+   */
+  static getEndOfDayEST(date) {
+    // Get the date components in EST timezone
+    const year = date.toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric' });
+    const month = date.toLocaleString('en-US', { timeZone: 'America/New_York', month: '2-digit' });
+    const day = date.toLocaleString('en-US', { timeZone: 'America/New_York', day: '2-digit' });
+
+    const dateStr = `${year}-${month}-${day}`;
+
+    // Figure out if this date is in EDT or EST
+    const testDate = new Date(`${dateStr}T12:00:00`);
+    const estOffset = testDate.toLocaleString('en-US', {
+      timeZone: 'America/New_York',
+      timeZoneName: 'short'
+    }).includes('EDT') ? 4 : 5;
+
+    // End of day is 23:59:59.999 EST
+    // In UTC, that's (estOffset + 23):59:59.999, but we need next day if >= 24
+    const utcHour = estOffset + 23;
+
+    if (utcHour >= 24) {
+      // Rolls over to next day
+      const nextDay = new Date(dateStr);
+      nextDay.setDate(nextDay.getDate() + 1);
+      const nextDayStr = nextDay.toISOString().split('T')[0];
+      const nextUtcHour = utcHour - 24;
+      return new Date(`${nextDayStr}T${String(nextUtcHour).padStart(2, '0')}:59:59.999Z`);
+    } else {
+      return new Date(`${dateStr}T${String(utcHour).padStart(2, '0')}:59:59.999Z`);
+    }
+  }
+
+  /**
+   * Get date parts in EST timezone
+   * @param {Date} date - Input date
+   * @returns {Object} Object with year, month (1-12), day
+   */
+  static getDatePartsEST(date) {
+    const year = parseInt(date.toLocaleString('en-US', { timeZone: 'America/New_York', year: 'numeric' }));
+    const month = parseInt(date.toLocaleString('en-US', { timeZone: 'America/New_York', month: 'numeric' }));
+    const day = parseInt(date.toLocaleString('en-US', { timeZone: 'America/New_York', day: 'numeric' }));
+
+    return { year, month, day };
   }
 }
 

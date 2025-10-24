@@ -1,0 +1,34 @@
+Pay Period 26 - Changes from v7 to v8
+Generated: 2025-10-16T22:34:27.292Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 0
+Removed entries: 18
+
+HOURS CHANGES BY USER
+
+
+raheel                      103.50 →    95.50 (-8.00)
+Forrest                      96.00 →    88.00 (-8.00)
+dharam                       88.00 →    80.00 (-8.00)
+Mori                         85.50 →    80.00 (-5.50)
+Yulia                        60.00 →    55.00 (-5.00)
+eddy                         61.00 →    56.00 (-5.00)
+dennis                       65.00 →    60.00 (-5.00)
+pauline                      87.83 →    84.83 (-3.00)
+
+
+ENTRIES REMOVED
+----------------
+- eddy - 5:00 - Design
+- Mori - 0:15 - Meeting
+- raheel - 0:30 - Meeting
+- dennis - 5:00 - Design
+- Yulia - 5:00 - Design
+- Forrest - 8:00 - Test Automation
+- pauline - 3:00 - Design
+- dharam - 0:30 - Meeting
+- dharam - 7:30 - Programming
+... and 8 more entries

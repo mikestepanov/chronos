@@ -53,20 +53,30 @@ class TimesheetProcessor {
 
   /**
    * Check if record is within pay period
+   * Uses EST timezone to match Kimai's timezone
    */
   isInPayPeriod(record, payPeriod) {
     if (!record.Date || !/^\d{4}-\d{2}-\d{2}$/.test(record.Date)) {
       return false;
     }
-    
-    // Use date-only comparison to avoid timezone issues
-    const recordDate = new Date(record.Date + 'T00:00:00.000Z');
-    const startDate = new Date(payPeriod.start.toISOString().split('T')[0] + 'T00:00:00.000Z');
-    // End date should be the last day inclusive, but not beyond
-    const endDate = new Date(payPeriod.end.toISOString().split('T')[0] + 'T00:00:00.000Z');
-    
-    // Use >= for start and <= for end to include both boundary dates
-    return recordDate >= startDate && recordDate <= endDate;
+
+    const DateHelper = require('../../shared/date-helper');
+
+    // Extract calendar dates from record (Kimai exports in EST)
+    const recordYear = parseInt(record.Date.substring(0, 4));
+    const recordMonth = parseInt(record.Date.substring(5, 7)); // 1-indexed
+    const recordDay = parseInt(record.Date.substring(8, 10));
+
+    // Get pay period dates in EST timezone (not local timezone!)
+    const startParts = DateHelper.getDatePartsEST(payPeriod.start);
+    const endParts = DateHelper.getDatePartsEST(payPeriod.end);
+
+    // Compare as YYYYMMDD integers for simplicity
+    const recordYYYYMMDD = recordYear * 10000 + recordMonth * 100 + recordDay;
+    const startYYYYMMDD = startParts.year * 10000 + startParts.month * 100 + startParts.day;
+    const endYYYYMMDD = endParts.year * 10000 + endParts.month * 100 + endParts.day;
+
+    return recordYYYYMMDD >= startYYYYMMDD && recordYYYYMMDD <= endYYYYMMDD;
   }
 
   /**
