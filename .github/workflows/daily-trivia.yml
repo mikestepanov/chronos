@@ -1,10 +1,11 @@
 name: Daily Trivia
 
 on:
-  schedule:
-    # 10 AM CST = 3 PM UTC (during DST) or 4 PM UTC (standard time)
-    # Using 3 PM UTC for now
-    - cron: '0 15 * * *'
+  # DISABLED - Schedule commented out
+  # schedule:
+  #   # 10 AM CST = 3 PM UTC (during DST) or 4 PM UTC (standard time)
+  #   # Using 3 PM UTC for now
+  #   - cron: '0 15 * * *'
 
   workflow_dispatch:
 
