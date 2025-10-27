@@ -49,16 +49,18 @@ jobs:
       run: |
         echo "📅 Monday reminder check at $(date)"
 
-        # Check if today is the last day of a pay period
+        # Check if today is the last day of a pay period (using EST timezone)
         node -e "
         const PayPeriodCalculator = require('./shared/pay-period-calculator');
+        const DateHelper = require('./shared/date-helper');
         const calc = new PayPeriodCalculator();
         const today = new Date();
         const period = calc.getCurrentPayPeriod();
-        const periodEnd = new Date(period.end);
-        const isLastDay = today.toDateString() === periodEnd.toDateString();
-        console.log('Period', period.number, 'ends on', periodEnd.toDateString());
-        console.log('Today is', today.toDateString());
+        const isLastDay = calc.isLastDayOfPeriod(today);
+        const todayEST = DateHelper.getDatePartsEST(today);
+        const endEST = DateHelper.getDatePartsEST(period.end);
+        console.log('Period', period.number, 'ends on', endEST.month + '/' + endEST.day + '/' + endEST.year, '(EST)');
+        console.log('Today is', todayEST.month + '/' + todayEST.day + '/' + todayEST.year, '(EST)');
         console.log('Is last day of period?', isLastDay);
         if (!isLastDay) {
           console.log('⏭️ Skipping - not the last day of pay period');
