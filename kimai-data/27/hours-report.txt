@@ -1,0 +1,283 @@
+Hours Compliance Report - Pay Period #27
+Period: Oct 14 - Oct 27
+Generated: 2025-10-29T20:45:08.893Z
+Source: Automated pull
+Entries: 137
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Ariful               |        85.50 |    80.00 |      +5.50 |       +6.9% |      ✗ |
+| Raheel Shahzad       |        80.25 |    80.00 |      +0.25 |       +0.3% |      ✓ |
+| Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Forrest Cordova      |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Dennis Fisher        |        60.50 |    40.00 |     +20.50 |      +51.2% |      ✗ |
+| Eddy                 |        55.00 |    45.00 |     +10.00 |      +22.2% |      ✗ |
+| Yulia                |        50.00 |    50.00 |      +0.00 |       +0.0% |      ✓ |
+| Jamie                |         9.40 |    40.00 |     -30.60 |      -76.5% |      ✗ |
+| Pauline Nguyen       |         0.00 |    80.00 |     -80.00 |     -100.0% |      ✗ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 85.50
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: StartHub | FTE Engineering Team Sync Up
+  • User Profile & Settings - Bug Fixing: Settings navigation and profile page sticky design
+  • Authentication - Bug Fixing: Set password for google auth users
+  • User Profile & Settings - Bug Fixing: update change password functionality to allow optional current password
+  • User Profile & Settings - Bug Fixing: Implement feature X to enhance user experience and optimize performance
+  • User Profile & Settings - Bug Fixing: improve change password validation logic
+  • User Profile & Settings - Bug Fixing: update password state management to reflect changes after password update
+  • User Profile & Settings - Bug Fixing: Refactor package rebuild check to improve validation for existing packages and their package.json files
+  • User Profile & Settings - Bug Fixing: add change password modal and GraphQL mutation
+  • Authentication - Bug Fixing: Extend password change
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 80.25
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: Stand Up meeting
+  • Maintenance & Support - Programming: Dialog Box modify
+  • Maintenance & Support - Programming: Fixed design Goodie bag
+  • Maintenance & Support - Programming: admin side email template add/edit common component
+  • Maintenance & Support - Programming: admin side email template
+  • Team Operations - Meeting: S.T.A.T.U.S meeting
+  • Maintenance & Support - Programming: customer side email
+  • Maintenance & Support - Programming: Email template admin side for email and linkdin
+  • Maintenance & Support - Programming: Email template dropdown fixed
+  • Maintenance & Support - Programming: back step onboard flow fixed
+  • Maintenance & Support - Programming: onboarding flow done
+
+
+Dharam Pal Singh
+----------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Admin Panel - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Admin Panel - Programming: ' - FIx company Detail page rendering
+- Add company status field support in backend
+- Fix company suspend functionality
+- Improve SDSCheckbox visibility and styling
+- Fix table selection and ActionMenu components
+- Clean up CSS specificity issues
+- Improve cache eviction and error handling
+- Fix TypeScript casing conflicts in events imports
+- Update import paths from 'pages/adminPages/events' to 'pages/adminPages/Events'
+- Fix casing conflicts in route-chunks.ts and AppRoutes.tsx
+- Ensure consistent file naming across the codebase
+  • Admin Panel - Programming: ' - Fix form submission by replacing DOM query with React useRef and FormRef
+- Resolve GraphQL mutation errors by aligning enum values with backend schema
+- Fix validation error messages not displaying by replacing Base UI Field.Error with SDSInputErrorMessage
+- Update validation schemas to handle string inputs for numeric fields (employeeCount, maxSeats)
+- Replace hardcoded validation messages with specific ValidationMessages constants
+- Remove duplicate success toast message from handleCreateCompany function
+- Fix TypeScript type mismatches in EditCompanyModal and CompanyDetail
+- Ensure proper error handling and user feedback throughout the form flow
+
+Changes include:
+- CreateCompanyModal: Use formRef.current?.submitForm() instead of DOM manipulation
+- create-company-form-fields: Update Zod schemas for enum validation and number field handling
+- SDSTextInput: Replace custom error div with SDSInputErrorMessage component
+- companies/index: Remove duplicate toast and fix GraphQL mutation mapping
+- error-labels: Add company-specific validation message constants
+- EditCompanyModal: Fix type mismatches for industry and size fields
+- CompanyDetail: Fix handleUpdateCompany function type conversion
+
+refactor: use enum constants everywhere to eliminate duplication
+
+- Update CompanyIndustry and CompanySize enums to use uppercase values
+- Replace hardcoded string arrays in Zod schema with Object.values(enum)
+- Create helper function to generate form options from enum values
+- Update default values to use enum constants instead of hardcoded strings
+- Simplify EditCompanyModal by removing unnecessary helper functions
+- Ensure single source of truth for enum values across the codebase
+  • Admin Panel - Programming: ' Added null safety and type corrections in EditCompanyModal and CompanyDetail components.
+
+Updated form logic to use formRef.current?.submitForm() instead of direct DOM manipulation.
+
+Refactored codebase to use enum constants throughout, ensuring a single source of truth across the stack.
+
+Simplified enum handling by dynamically generating form options via helper functions using Object.values(enum).
+
+Removed duplicate success toasts and redundant helper functions for cleaner UX.
+
+Completed regression testing for CRUD, validation, and search workflows, confirming stable production readiness.
+  • Admin Panel - Programming: Improved the AdminCompanies component by refactoring to reduce complexity and improve maintainability.
+
+Implemented debounced search functionality using the new GraphQL-backed search APIs.
+
+Fixed UI issues with the company status badge display (consistent color mapping).
+
+Updated Zod validation schemas for better type safety and string-to-number handling (e.g., employeeCount, maxSeats).
+
+Replaced hardcoded validation messages with centralized constants in ValidationMessages.
+
+Fixed validation message rendering by replacing BaseUI Field.Error with SDSInputErrorMessage.
+  • Admin Panel - Programming: ' Extended GraphQL integration with company user assignment mutations (AssignUserToCompany, RemoveUserFromCompany).
+
+Added MongoDB text search indexes for title, description, and domain fields to optimize search.
+
+Enhanced the company repository with an aggregation pipeline for improved query performance.
+
+Fixed enum inconsistencies between backend and frontend by standardizing all enum values (e.g., COMPANY_SIZE, COMPANY_STATUS) to uppercase.
+
+Conducted backend cleanup: improved import sorting, removed unused variables, and ensured production readiness.
+  • Admin Panel - Meeting: S.T.A.T.U.S. Framework Meeting | Dev Team
+  • Admin Panel - Meeting: Dharam: Monthly Sync Up
+  • Admin Panel - Programming: ' Connected frontend company management module to the backend GraphQL API.
+
+Replaced mock data with real GraphQL queries and mutations using Apollo Client.
+
+Implemented core CRUD operations: GetCompanies, GetCompany, CreateCompany, UpdateCompany, and DeleteCompany.
+
+Added initial error handling, loading states, and success feedback within forms.
+
+Verified GraphQL schema compatibility and aligned client types with backend models.
+  • Admin Panel - Programming: Integrated updated domain validation logic into the authentication resolver’s registration flow.
+
+Wrote comprehensive unit and integration tests covering all domain validation scenarios (restricted, unrestricted, null/invalid).
+
+Updated internal service documentation to describe new conditional behavior and environment-specific rules.
+
+Conducted regression testing to confirm compatibility with existing signup restriction features.
+  • Admin Panel - Programming: ' Enhanced DomainValidationService to support conditional email domain validation.
+
+Implemented logic to restrict user registration to @starthub.academy email addresses when the host domain is starthub.academy.
+
+Ensured flexibility by allowing all email domains for local and development environments.
+
+Added null safety checks to domain extraction methods to improve reliability.
+
+Performed initial integration testing to validate new domain-based restrictions in different environments.
+  • Admin Panel - Programming: Add email domain validation to DomainValidationService
+Restrict email registration to @starthub.academy only when host domain is starthub.academy
+Allow any email domain for localhost/development environments
+Integrate email validation into auth resolver registration flow
+Add comprehensive test coverage for email domain validation scenarios
+Update service documentation with conditional behavior explanation
+Add null safety to domain extraction methods
+  • Admin Panel - Programming: ' Implemented useSignupAllowed custom hook to handle domain-based signup restrictions.
+
+Added logic to identify restricted domains (e.g., dev/staging) and determine signup availability.
+
+Created SignupAllowedWrapper component for conditional rendering of signup-related UI elements.
+
+Integrated the wrapper into key components like LoginUserInfo, AuthButtons, and HeaderAuthButtons.
+
+Updated routing logic to prevent access to the signup page when restricted.
+
+
+Mori Isaac
+----------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting
+  • Team Operations - Dev Ops / Infrastructure: Bug on pr and merge, prep for GCP
+  • Team Operations - Dev Ops / Infrastructure: Fix Backend Prod and conflicts and review
+  • Team Operations - Dev Ops / Infrastructure: New IaC for migration and pr fixes for the new backend
+  • Team Operations - Dev Ops / Infrastructure: IaC migration script and fix or
+  • Team Operations - Dev Ops / Infrastructure: Fix backend prod pr and resume migration IaC
+  • Team Operations - Dev Ops / Infrastructure: Fix backend or and resume migration changes
+  • Team Operations - Dev Ops / Infrastructure: New Backend prod fixes
+  • Team Operations - Dev Ops / Infrastructure: Prod new backend fixes
+  • Team Operations - Dev Ops / Infrastructure: Cluster enhancements and debug improvements of the new backend
+  • Team Operations - Dev Ops / Infrastructure: Cluster enhancements and migration plans
+  • Team Operations - Meeting: I
+
+
+Forrest Cordova
+---------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Mentor Tools & Dashboard - Test Automation: local host 4000 page
+
+
+Dennis Fisher
+-------------
+Expected Hours: 40.00
+Actual Hours: 60.50
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Design
+  • Team Operations - Meeting
+  • Courses - Design
+  • Courses - Meeting
+
+
+Eddy
+----
+Expected Hours: 45.00
+Actual Hours: 55.00
+Status: ✗ FAIL
+Work Summary:
+  • Tools & Templates - Design: Updated email template cards with the new chip design with 32px-HUG for height (13 x 16).
+  • Tools & Templates - Design: Updated the content card components of our page with the new chip design and also updated the chip on the email template thumbnail cards. 
+Then Synced up with Mik and Yulia for more clarification.
+  • Tools & Templates - Design: Updated the content card components of our page with the new chip design and email template thumbnail cards. 
+Made new variants of the content cards and synced up with yulia for more clarification on the use of the chips.
+  • Tools & Templates - Design: Updated the content card components of our page with the new chip design and email template thumbnail cards.
+  • Tools & Templates - Design: Make variations of the LinkedIn cover
+  • Tools & Templates - Design: Made new variations of Documents Template Cards.
+  • Mentor Tools & Dashboard - Design: Updated UI elements of Home Dashboard and Onboarding, which includes Components, Fonts and Chip Components.
+  • Mentor Tools & Dashboard - Design: Updated UI elements of Home Dashboard, which includes Components, Fonts and Chip Components.
+  • Scenarios - Design: Updated UI elements of Scenarios and Home Dashboard, which includes Components, Fonts and Chip Components.
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 50.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: Mettings: Demo Prep Status + Status + met with Mike and Avraham + Met with Mike. Created new flow foe reviews
+  • Team Operations - Meeting: Design team sync up + met with Jamie + met with Dennis. Fixed chips component. Met with Mike and Eddy about the templates. Reviewed Jamie's work.
+  • Onboarding - Design: Had Meeting with Eddy + Met with Raheel and Mike. Fixed components on Onboarding, fixed fonts. Created chip for the Onboarding. Created couple variations for previews, and one for the 1st step with picture. and bigger screen
+  • User Profile & Settings - Design: Fixed Goodie bag and tools and templates for Raheel
+  • Community Forum - Meeting: Design Sync Up. Meetings: with Mike + with Jamie + 2 meetings with Eddy.
+  • Onboarding - Design: Updated the admin side for the notifications for tools and templates. Updated a new course notifications. Updated the new notifications creation. Updated on the dashboad
+  • Community Forum - Meeting: Meetings: Design sync up + met with Mike + Met with Jamie. Created a new flow variation for the new Notifications. Fixed comments on the Onboarding.
+  • User Profile & Settings - Design: Met with Jamie. Cleaned up the Admin side for Jamie's new task. Fixed comments on Settings and profile flows from Afaq.
+  • Onboarding - Design: Meetings: Met with Mike + Jamie and Mike. Fixe comments on the Onboarding pages
+  • User Profile & Settings - Design: Meeting: design team sync up. Cleaned up and fixed comments from Mike on Settings Profile and Landing pages.
+
+
+Jamie
+-----
+Expected Hours: 40.00
+Actual Hours: 9.40
+Status: ✗ FAIL
+Work Summary:
+  • Admin Panel - Design: Fixed the gap and alignment for the sub-title and filters. I went back through all the pages I did previously to make sure they were all the same.
+  • Admin Panel - Design: adding filters to the last sections (gatekeeper, Events and videos)
+  • Admin Panel - Design: I was trying to figure out how to put a filter in the same frame with the button and title.
+  • Admin Panel - Design: Finishing up on adding the filter icon to the title sections and adding buttons to the tabs sections.
+  • Admin Panel - Design: Fixing the filter and button icons to fit into the title and tab frames
+  • Admin Panel - Design: Adding/Moving buttons & Filter icon
+  • Admin Panel - Design: Adding/moving buttons and filter icons to student pages.
+  • Admin Panel - Design: ' I added filter icons to the Roles & permissions pages.
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 0.00
+Status: ✗ FAIL
+Work Summary:
+  • No hours logged
+

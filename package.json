@@ -40,7 +40,9 @@
     "send-reminder:random": "node scripts/send-timesheet-reminder.js -c random",
     "send-reminder:preview": "node scripts/send-timesheet-reminder.js -d",
     "send-compliance": "node scripts/send-compliance-status.js",
-    "send-compliance:preview": "node scripts/send-compliance-status.js -d"
+    "send-compliance:preview": "node scripts/send-compliance-status.js -d",
+    "send-summary": "node scripts/send-detailed-summary.js",
+    "send-summary:preview": "node scripts/send-detailed-summary.js -d"
   },
   "dependencies": {
     "axios": "^1.6.0",

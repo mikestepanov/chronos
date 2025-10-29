@@ -1,0 +1,121 @@
+name: Pay Period Summary (Tue/Wed)
+
+on:
+  schedule:
+    # Run on Tuesday at 6 PM EST (23:00 UTC) - 24 hours after Monday reminder
+    - cron: '0 23 * * 2'
+    # Run on Wednesday at 6 PM EST (23:00 UTC) - 48 hours after Monday reminder
+    - cron: '0 23 * * 3'
+
+  workflow_dispatch:
+    inputs:
+      period:
+        description: 'Specific pay period number (leave empty for latest)'
+        required: false
+        type: string
+      skip_check:
+        description: 'Skip the pay period check (send regardless of timing)'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  pull-and-summarize:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22'
+
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: Install Playwright browsers
+      run: |
+        npx playwright install --with-deps chromium
+
+    - name: Check if this week had a pay period end
+      id: check_period
+      run: |
+        echo "🔍 Checking if previous Monday was end of pay period..."
+
+        # Calculate if the Monday of this week was the last day of a pay period
+        node -e "
+        const PayPeriodCalculator = require('./shared/pay-period-calculator');
+        const DateHelper = require('./shared/date-helper');
+        const calc = new PayPeriodCalculator();
+
+        // Get this week's Monday (yesterday if Tuesday, 2 days ago if Wednesday)
+        const today = new Date();
+        const dayOfWeek = today.getUTCDay(); // 0=Sunday, 1=Monday, 2=Tuesday, 3=Wednesday
+        const daysToMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+        const monday = new Date(today);
+        monday.setUTCDate(monday.getUTCDate() - daysToMonday);
+
+        // Check if that Monday was the last day of a pay period
+        const wasLastDay = calc.isLastDayOfPeriod(monday);
+        const mondayEST = DateHelper.getDatePartsEST(monday);
+
+        console.log('Today:', today.toISOString().split('T')[0]);
+        console.log('This week Monday:', mondayEST.month + '/' + mondayEST.day + '/' + mondayEST.year, '(EST)');
+        console.log('Was Monday the last day of pay period?', wasLastDay);
+
+        if (!wasLastDay && '${{ github.event.inputs.skip_check }}' !== 'true') {
+          console.log('⏭️ Skipping - Monday was not the end of a pay period');
+          process.exit(1);
+        }
+
+        console.log('✅ Proceeding - Monday was the end of a pay period');
+        "
+
+        if [ $? -eq 0 ]; then
+          echo "should_run=true" >> $GITHUB_OUTPUT
+        else
+          echo "should_run=false" >> $GITHUB_OUTPUT
+          echo "Skipping summary - not a pay period week"
+        fi
+
+    - name: Pull Kimai data
+      if: steps.check_period.outputs.should_run == 'true'
+      env:
+        KIMAI_USERNAME: ${{ secrets.KIMAI_USERNAME }}
+        KIMAI_PASSWORD: ${{ secrets.KIMAI_PASSWORD }}
+        PLAYWRIGHT_HEADLESS: true
+      run: |
+        echo "📊 Pulling Kimai data at $(date)"
+        npm run pull-kimai
+
+    - name: Send detailed summary to Mikhail
+      if: steps.check_period.outputs.should_run == 'true'
+      env:
+        PUMBLE_API_KEY: ${{ secrets.PUMBLE_API_KEY }}
+      run: |
+        echo "📤 Sending detailed summary..."
+        if [ -n "${{ github.event.inputs.period }}" ]; then
+          node scripts/send-detailed-summary.js -p ${{ github.event.inputs.period }}
+        else
+          node scripts/send-detailed-summary.js
+        fi
+
+    - name: Commit updated Kimai data
+      if: steps.check_period.outputs.should_run == 'true'
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+
+        # Add all changes in kimai-data directory
+        git add kimai-data/
+
+        # Check if there are changes to commit
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Auto-update Kimai data - $(date +'%Y-%m-%d %H:%M UTC')"
+          git push
+        fi

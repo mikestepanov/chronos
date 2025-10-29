@@ -164,7 +164,7 @@
       "email": "dennis@example.com",
       "active": true,
       "team": "design",
-      "expectedHours": 80,
+      "expectedHours": 40,
       "expectedEquityHours": 0,
       "expectedPaidHours": 0,
       "isIntern": true,

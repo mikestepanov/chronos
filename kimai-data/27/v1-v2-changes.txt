@@ -1,0 +1,18 @@
+Pay Period 27 - Changes from v1 to v2
+Generated: 2025-10-28T18:19:13.682Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 1
+Removed entries: 0
+
+HOURS CHANGES BY USER
+
+
+Yulia                        44.00 →    50.00 (+6.00)
+
+
+NEW ENTRIES ADDED
+-----------------
++ Yulia - 6:00 - Design

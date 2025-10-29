@@ -99,41 +99,46 @@ class HoursReportGenerator {
    */
   generateComplianceData(userHours, userWorkDetails) {
     const report = [];
-    
-    Object.entries(userHours).forEach(([userId, hours]) => {
-      // Find user details
-      const user = this.users.users.find(u => 
-        u.services?.kimai?.id === userId || 
-        u.services?.kimai?.username === userId ||
-        u.username === userId ||
-        u.name === userId ||
-        u.services?.kimai?.username?.toLowerCase() === userId?.toLowerCase() ||
-        u.name?.toLowerCase() === userId?.toLowerCase()
+
+    // Get all active users with expected hours > 0
+    const activeUsers = this.users.users.filter(u =>
+      u.active && u.expectedHours > 0
+    );
+
+    // Process each active user
+    activeUsers.forEach(user => {
+      // Find matching hours entry (by various identifiers)
+      const userId = Object.keys(userHours).find(id =>
+        user.services?.kimai?.id === id ||
+        user.services?.kimai?.username === id ||
+        user.username === id ||
+        user.name === id ||
+        user.services?.kimai?.username?.toLowerCase() === id?.toLowerCase() ||
+        user.name?.toLowerCase() === id?.toLowerCase()
       );
-      
-      if (user) {
-        const expectedHours = user.expectedHours || 80;
-        const difference = hours - expectedHours;
-        const percentDeviation = ((difference / expectedHours) * 100).toFixed(1);
-        
-        // Check if within compliance threshold (±3 hours)
-        const isCompliant = Math.abs(difference) <= 3;
-        
-        report.push({
-          user: user.name || user.username,
-          hoursWorked: hours,
-          expectedHours: expectedHours,
-          difference: difference,
-          percentDeviation: percentDeviation,
-          status: isCompliant,
-          workDetails: userWorkDetails[userId] || 'No work details available'
-        });
-      }
+
+      const hours = userId ? userHours[userId] : 0;
+      const expectedHours = user.expectedHours || 80;
+      const difference = hours - expectedHours;
+      const percentDeviation = expectedHours > 0 ? ((difference / expectedHours) * 100).toFixed(1) : '0.0';
+
+      // Check if within compliance threshold (±3 hours)
+      const isCompliant = Math.abs(difference) <= 3;
+
+      report.push({
+        user: user.name || user.username,
+        hoursWorked: hours,
+        expectedHours: expectedHours,
+        difference: difference,
+        percentDeviation: percentDeviation,
+        status: isCompliant,
+        workDetails: userId ? (userWorkDetails[userId] || 'No work details available') : 'No hours logged'
+      });
     });
-    
+
     // Sort by hours worked descending
     report.sort((a, b) => b.hoursWorked - a.hoursWorked);
-    
+
     return report;
   }
 

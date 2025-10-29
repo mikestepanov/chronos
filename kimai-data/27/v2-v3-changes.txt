@@ -1,0 +1,33 @@
+Pay Period 27 - Changes from v2 to v3
+Generated: 2025-10-29T17:45:30.984Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 61
+Removed entries: 0
+
+HOURS CHANGES BY USER
+
+
+ariful                        0.50 →    86.00 (+85.50)
+Mori                          0.00 →    80.00 (+80.00)
+eddy                          0.00 →    55.00 (+55.00)
+dennis                       42.00 →    60.50 (+18.50)
+raheel                       80.25 →    88.25 (+8.00)
+Yulia                        50.00 →    55.00 (+5.00)
+
+
+NEW ENTRIES ADDED
+-----------------
++ raheel - 0:30 - Meeting
++ Yulia - 5:00 - Design
++ raheel - 7:30 - Programming
++ ariful - 0:30 - Meeting
++ ariful - 8:00 - Bug Fixing
++ eddy - 5:00 - Design
++ Mori - 0:15 - Meeting
++ Mori - 7:45 - Dev Ops / Infrastructure
++ dennis - 2:30 - Design
++ dennis - 5:00 - Design
+... and 51 more entries

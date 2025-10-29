@@ -1,0 +1,84 @@
+{
+  "versions": [
+    {
+      "version": 1,
+      "extractedAt": "2025-10-28T17:39:00.867Z",
+      "checksum": "8d492df3d69174da1f674a011c14057c2e9eaf00ceec0d8b3df01e1a8c10e573",
+      "metadata": {
+        "periodNumber": 27,
+        "startDate": "2025-10-14T04:00:00.000Z",
+        "endDate": "2025-10-28T03:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 84,
+          "filteredRecords": 80,
+          "uniqueUsers": 6,
+          "totalHours": 335.65,
+          "recordsOutsidePeriod": 4,
+          "periodNumber": 27,
+          "dateRange": {
+            "start": "2025-10-14",
+            "end": "2025-10-28"
+          }
+        },
+        "recordCount": 151,
+        "bytes": 22345
+      }
+    },
+    {
+      "version": 2,
+      "extractedAt": "2025-10-28T18:19:13.685Z",
+      "checksum": "2e729d741e87730957a31d283b5e842beb3742e0e9b3c7e7faa552dbbdd6ac1c",
+      "metadata": {
+        "periodNumber": 27,
+        "startDate": "2025-10-14T04:00:00.000Z",
+        "endDate": "2025-10-28T03:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 85,
+          "filteredRecords": 81,
+          "uniqueUsers": 6,
+          "totalHours": 341.65,
+          "recordsOutsidePeriod": 4,
+          "periodNumber": 27,
+          "dateRange": {
+            "start": "2025-10-14",
+            "end": "2025-10-28"
+          }
+        },
+        "recordCount": 152,
+        "bytes": 22650
+      }
+    },
+    {
+      "version": 3,
+      "extractedAt": "2025-10-29T17:45:30.985Z",
+      "checksum": "e6625c03b8a159aa7a75d1c544255282ddf95d6763a8487b61ab728d3722e53c",
+      "metadata": {
+        "periodNumber": 27,
+        "startDate": "2025-10-14T04:00:00.000Z",
+        "endDate": "2025-10-28T03:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 144,
+          "filteredRecords": 137,
+          "uniqueUsers": 9,
+          "totalHours": 580.65,
+          "recordsOutsidePeriod": 7,
+          "periodNumber": 27,
+          "dateRange": {
+            "start": "2025-10-14",
+            "end": "2025-10-28"
+          }
+        },
+        "recordCount": 213,
+        "bytes": 34495
+      }
+    }
+  ],
+  "latest": 3,
+  "updatedAt": "2025-10-29T17:45:30.985Z"
+}
