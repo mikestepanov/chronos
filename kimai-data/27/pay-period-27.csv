@@ -2,7 +2,8 @@ Summary Overview Link,https://docs.google.com/document/d/[PLACEHOLDER_FOR_27_PER
 CSV,https://drive.google.com/drive/folders/[PLACEHOLDER],,,,,7
 ACTUAL EXPENSE REFS
 Name,Time Tracking,Payment Processing,Actual Expense (M),Actual Pay Period (Combined) Hours (C),Actual Paid Hours (M),Actual Equity Hours (M),Comments
-Total,,,3000
+Total,,,4000
+Pauline Nguyen,Kimai,Gusto,1000,86.92,40.00,40.00,Extra 6.92 hours carry over
 Ariful Islam,Kimai,Gusto,400,85.50,40.00,40.00,Extra 5.50 hours carry over
 Raheel Shahzad,Kimai,Gusto,600,80.25,40.00,40.00,
 Dharam Pal,Kimai,Gusto,700,80.00,40.00,40.00,
@@ -12,7 +13,6 @@ Dennis Fisher,Kimai,Gusto,,60.50,0.00,0.00,Extra 20.50 hours carry over
 Edward Obi,Kimai,Gusto,100,55.00,5.00,40.00,Extra 10.00 hours carry over
 Yulia McCoy,Kimai,Gusto,200,50.00,10.00,40.00,
 Jamie,Kimai,Gusto,,9.40,0.00,0.00,Short 30.60 hours
-Pauline Nguyen,Kimai,Gusto,,0.00,0.00,0.00,Short 80.00 hours
 EXPECTED EXPENSES
 Name,Expected Pay Period Expense (C),Weekly Expected Expense (C),Total Paid Weekly Hours (M),"Total Expense Rate, with Tax (C)",Pre-Tax Employee Rate (C),Base Rate (M),Upwork fee (multiplier) (M),US FTE bonus (multiplier) (M),"Taxes (multiplier, approximately) (M)"
 Total,200,100
@@ -29,8 +29,9 @@ Jamie,,,20,,,,1,1,1
 HOURS
 Coloring,3 hours max is acceptable difference,3 hour+ difference
 Name,Inconsistency Ratio (C),Pay Period Hours Difference (C),Equity Hours Difference (C),Pay Period Expected Hours (C),Total Expected Weekly Hours (C),Total Expected Weekly Equity Hours (M),Total Expected Paid Weekly Hours (C)
-Grand Total,Average 14.66% Missed,146.6,,440,220,140,80
-Dev Total,Average 14.66% Missed,146.6,,400,200,120,80
+Grand Total,Average 7.35% Missed,73.51666666666668,,440,220,140,80
+Dev Total,Average 7.35% Missed,73.51666666666668,,400,200,120,80
+Pauline Nguyen,8.6% Missed,+6.92,,80,40,40,20
 Ariful Islam,6.9% Missed,+5.50,,80,40,40,20
 Raheel Shahzad,No Difference,,,80,40,40,20
 Dharam Pal,No Difference,,,80,40,40,20
@@ -40,14 +41,14 @@ Dennis Fisher,51.2% Missed,+20.50,,40,20,20,10
 Edward Obi,22.2% Missed,+10.00,,45,22.5,22.5,11.25
 Yulia McCoy,No Difference,,,50,25,20,
 Jamie,-76.5% Missed,-30.60,,40,20,20,10
-Pauline Nguyen,-100.0% Missed,-80.00,,80,40,40,20
 Mikhail Stepanov,No Difference,,,40,20,20,
 Anatoly Stepanov,No Difference,,,40,20,20,
 Design Total,Average No Difference,,,40,20,20,
 ACTUAL EXPENSES
 Name,Inconsistency Expense (C),Expected Pay Period Expense (C),Actual Expense (C),Actual Expense Paid (M),Expense Difference (C)
-Grand Total,1000,4000,3000,3000,
-Dev Total,1000,2800,1800,1800,
+Grand Total,,4000,4000,4000,
+Dev Total,,2800,2800,2800,
+Pauline Nguyen,,1000,1000,1000,,Extra 6.92 carry over
 Ariful Islam,,400,400,400,,Extra 5.50 carry over
 Raheel Shahzad,,600,600,600,,
 Dharam Pal,,700,700,700,,
@@ -57,7 +58,6 @@ Dennis Fisher,,,,,,Extra 20.50 carry over
 Edward Obi,,100,100,100,,Extra 10.00 carry over
 Yulia McCoy,,200,200,200,,
 Jamie,,,,,,
-Pauline Nguyen,1000,1000,,,,
 Mikhail Stepanov,,,,,
 Anatoly Stepanov,,,,,
 Design Total,,1200,1200,1200,

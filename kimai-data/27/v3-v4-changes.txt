@@ -1,0 +1,40 @@
+Pay Period 27 - Changes from v3 to v4
+Generated: 2025-10-30T16:53:41.808Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 50
+Removed entries: 8
+
+HOURS CHANGES BY USER
+
+
+pauline                       0.00 →    86.92 (+86.92)
+
+
+NEW ENTRIES ADDED
+-----------------
++ pauline - 0:45 - Design
++ pauline - 0:45 - Meeting
++ pauline - 0:45 - Meeting
++ pauline - 2:00 - Design
++ pauline - 3:45 - Design
++ jamie - 1:41 - Design
++ pauline - 1:15 - Design
++ pauline - 3:35 - Design
++ pauline - 1:45 - Design
++ pauline - 1:15 - Design
+... and 40 more entries
+
+
+ENTRIES REMOVED
+----------------
+- jamie - 1:41 - Design
+- jamie - 0:42 - Design
+- jamie - 1:15 - Design
+- jamie - 1:14 - Design
+- jamie - 0:58 - Design
+- jamie - 1:04 - Design
+- jamie - 1:33 - Design
+- jamie - 0:57 - Design

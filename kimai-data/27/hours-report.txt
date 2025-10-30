@@ -1,11 +1,12 @@
 Hours Compliance Report - Pay Period #27
 Period: Oct 14 - Oct 27
-Generated: 2025-10-29T20:45:08.893Z
+Generated: 2025-10-30T16:53:41.812Z
 Source: Automated pull
-Entries: 137
+Entries: 179
 
 | User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
 |----------------------|--------------|----------|------------|-------------|--------|
+| Pauline Nguyen       |        86.92 |    80.00 |      +6.92 |       +8.6% |      ✗ |
 | Ariful               |        85.50 |    80.00 |      +5.50 |       +6.9% |      ✗ |
 | Raheel Shahzad       |        80.25 |    80.00 |      +0.25 |       +0.3% |      ✓ |
 | Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
@@ -15,11 +16,25 @@ Entries: 137
 | Eddy                 |        55.00 |    45.00 |     +10.00 |      +22.2% |      ✗ |
 | Yulia                |        50.00 |    50.00 |      +0.00 |       +0.0% |      ✓ |
 | Jamie                |         9.40 |    40.00 |     -30.60 |      -76.5% |      ✗ |
-| Pauline Nguyen       |         0.00 |    80.00 |     -80.00 |     -100.0% |      ✗ |
 
 
 
 === DETAILED WORK SUMMARY ===
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 86.92
+Status: ✗ FAIL
+Work Summary:
+  • Print Designs - Design: Document Templates + Join Team
+  • Team Operations - Meeting: STATUS Framework Meeting
+  • Team Operations - Meeting: Design Tea: STATUS Demo Prep
+  • Team Operations - Meeting: Design Team Weekly Sync Up
+  • Team Operations - Meeting: Weekly Design Sync Up
+  • Team Operations - Meeting: Pauline Monthly Sync Up with Mikhail
+  • Team Operations - Meeting: Monthly Sync + STATUS Demo Prep w Mikhail
 
 
 Ariful
@@ -271,13 +286,4 @@ Work Summary:
   • Admin Panel - Design: Adding/Moving buttons & Filter icon
   • Admin Panel - Design: Adding/moving buttons and filter icons to student pages.
   • Admin Panel - Design: ' I added filter icons to the Roles & permissions pages.
-
-
-Pauline Nguyen
---------------
-Expected Hours: 80.00
-Actual Hours: 0.00
-Status: ✗ FAIL
-Work Summary:
-  • No hours logged
 
