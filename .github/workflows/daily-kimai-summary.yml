@@ -38,7 +38,7 @@ jobs:
 
     - name: Install Playwright browsers
       run: |
-        npx playwright install --with-deps chromium
+        npx playwright install --with-deps firefox
 
     - name: Check if this week had a pay period end
       id: check_period
