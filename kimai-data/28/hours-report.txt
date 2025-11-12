@@ -1,0 +1,211 @@
+Hours Compliance Report - Pay Period #28
+Period: Oct 28 - Nov 10
+Generated: 2025-11-12T18:40:50.439Z
+Source: Automated pull
+Entries: 152
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Ariful               |        85.00 |    80.00 |      +5.00 |       +6.3% |      ✗ |
+| Pauline Nguyen       |        85.00 |    80.00 |      +5.00 |       +6.3% |      ✗ |
+| Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Raheel Shahzad       |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Forrest Cordova      |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Yulia                |        50.00 |    50.00 |      +0.00 |       +0.0% |      ✓ |
+| Dennis Fisher        |        23.00 |    40.00 |     -17.00 |      -42.5% |      ✗ |
+| Jamie                |        12.12 |    40.00 |     -27.88 |      -69.7% |      ✗ |
+| Eddy                 |         0.00 |    45.00 |     -45.00 |     -100.0% |      ✗ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 85.00
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Meeting: StartHub | FTE Engineering Team Sync Up
+  • User Profile & Settings - Research: Implementation of availability
+  • User Profile & Settings - Programming: update categoryPriority to allow optional properties and improve fallback handling
+  • User Profile & Settings - Programming: enhance notification settings with disable option and refactor handling logic
+  • User Profile & Settings - Programming: remove dynamic import of NotificationPreferencesAggregate
+  • User Profile & Settings - Programming: update schema to allow optional notification settings and improve user preference handling
+  • User Profile & Settings - Programming: add additional notification options and icons for better user experience
+  • User Profile & Settings - Programming: add NotificationBlock component with styles
+  • User Profile & Settings - Bug Fixing: Add sticky positioning to SettingsPanel for improved layout
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 85.00
+Status: ✗ FAIL
+Work Summary:
+  • Print Designs - Design: Document Templates
+  • Team Operations - Meeting: Weekly Design Sync Up
+  • Team Operations - Meeting: Pauline and Mikhail meeting
+
+
+Dharam Pal Singh
+----------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Admin Panel - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Admin Panel - Programming: ' Implemented Update Command Handler to process company update requests with proper validation and domain logic.
+
+Developed Cancel Command Handler to handle company cancellation workflows and state transitions.
+
+Added Query Handlers to efficiently fetch company data using CQRS pattern for separation of concerns.
+
+Created GraphQL Resolvers to expose update, cancel, and query operations through the API layer.
+  • Admin Panel - Meeting: Coffee Hour | StartHub
+  • Admin Panel - Programming: Working on one-to-one coaching backend development
+  • Admin Panel - Programming: ' Updated frontend logic to use the new bulk mutations instead of individual per-item API calls, improving performance and reducing network load.
+
+Added updateMany method to the ICommonRepository interface to standardize batch update handling across repositories.
+  • Admin Panel - Programming: Implemented new GraphQL mutations — bulkDeleteCompanies and bulkSuspendCompanies — to support multi-company operations.
+
+Integrated domain event publishing for each affected company to ensure consistent event-driven updates across services.
+  • Admin Panel - Programming: ' Added new GraphQL mutations — bulkDeleteCompanies and bulkSuspendCompanies — for multi-company actions.
+
+Integrated domain event publishing for each affected company to maintain consistent event-driven workflows.
+
+Updated frontend logic to use the new bulk mutations instead of per-item API calls.
+
+Added updateMany method to the ICommonRepository interface for broader multi-update support across repositories.
+  • Admin Panel - Programming: ' mplemented bulk delete and bulk suspend operations for companies using MongoDB bulk methods for performance improvement.
+
+Added findByIds method to CompanyRepository to support efficient batch fetching.
+
+Introduced updateMany and softDeleteMany methods for handling multi-record updates and soft deletions.
+  • Admin Panel - Programming: ' Added suspendUsers and reactivateUser mutations to manage user lifecycle.
+
+Created GraphQL documents for assignUsersToCompany, suspendUsers, and reactivateUser.
+
+Updated company-related screens to use isActive and companyJoinedAt instead of placeholder data.
+
+Enhanced user management flows to support bulk suspend/reactivate actions and ensure data refresh after operations.
+
+Refactored assignment modal to use the new single bulk-assign mutation.
+
+Performed cleanup — removed unused helpers, fixed typings, and resolved lint issues.
+  • Admin Panel - Programming: ' Added companyJoinedAt field to User schema, including snapshot and aggregate updates.
+
+Implemented logic to set companyJoinedAt when a user is assigned to a company and clear it on removal.
+
+Exposed companyJoinedAt in GraphQL User and mapped it in the user mapper layer.
+
+Created a new assignUsersToCompany mutation to support both single and bulk user assignments.
+  • Admin Panel - Programming: Replace manual refetch with createEvictionUpdater for updateCompany mutation
+Remove refetchCompany from GetCompanyDocument query
+Simplify handleUpdateCompany by removing await refetchCompany() call
+Improve performance by using Apollo cache eviction instead of refetching
+Maintain consistent cache update pattern across the application
+  • Admin Panel - Programming: Working on company details page
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: Stand Up meeting
+  • Onboarding - Programming: Onboarding flow design
+  • Onboarding - Programming: Onboarding
+  • Maintenance & Support - Programming: Notification Design Module and feedback fixed
+  • Maintenance & Support - Programming: Notification Design Module
+  • Maintenance & Support - Programming: email template issue fixed
+  • Maintenance & Support - Programming: Dialog Box modify polish and email template issue fixed
+
+
+Mori Isaac
+----------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting
+  • Team Operations - Dev Ops / Infrastructure: Prepare digital ocean backup scripts to be implemented soonest
+  • Team Operations - Dev Ops / Infrastructure: Optimization of migration plan
+  • Team Operations - Dev Ops / Infrastructure: Prepare any necessary files and scripts needed for migration also checked on infra health and also fixed the bug on assets not being show
+  • Team Operations - Dev Ops / Infrastructure: Write terraform scripts for the necessary modules
+  • Team Operations - Dev Ops / Infrastructure: Write k8s manifests, and helm charts for new structure
+  • Team Operations - Dev Ops / Infrastructure: Write Terraform scripts for the migration
+  • Team Operations - Dev Ops / Infrastructure: Migration plan, change the structure to capture multi cloud deployment
+  • Team Operations - Dev Ops / Infrastructure: System migration plan and infra health
+  • Team Operations - Dev Ops / Infrastructure: Fix Assets and Migration plan
+  • Team Operations - Dev Ops / Infrastructure
+
+
+Forrest Cordova
+---------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Admin Panel - Test Automation: email and document templates
+  • Mentor Tools & Dashboard - Test Automation: local host 4000 page
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 50.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Design: Fixed old comments on Landing pages. On founders landing pages and Main Landing page. Reviewed Jamie's work. Created 4 variations for booking company logos page.
+  • Team Operations - Design: Meetings: Design sync + coffee hour + met with Mike and Jamie + Met with Jamie + met with Addy + met with Mike. Fixed comments on onboarding.
+  • Onboarding - Design: Created a new Booklet file. Created 8 variations for the left side for the reviews on Onboarding.
+  • Admin Panel - Design: Meetings: Design Sync up, met with Mike + met with Jamie. Reviewed Jamie's work. Fixed comments on the Admin Dashboard.
+  • Onboarding - Design: created a new variations for Onboarding flow. Created a new Booklet file. Updated commponents field in the Onboarding
+  • Onboarding - Design: Meeting: Design sync up. Fixed comments on the onboarding from Mike and Avraham, Created a couple more variations for the review component.
+  • User Profile & Settings - Design: Cleaned up notifications flow, created new components for notifications. Updated variables side.
+  • User Profile & Settings - Design: Worked on the notifications, fixed comments from Raheel. Created a new onboarding flow( left side)
+  • Onboarding - Design: Meetings: Design team sync up. Created a new version for the comment section for the Onboarding. Fixed comments from Mike on the Onboarding and Auth pages. Reviewed Jamie's work.
+
+
+Dennis Fisher
+-------------
+Expected Hours: 40.00
+Actual Hours: 23.00
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Design
+  • Team Operations - Meeting
+
+
+Jamie
+-----
+Expected Hours: 40.00
+Actual Hours: 12.12
+Status: ✗ FAIL
+Work Summary:
+  • Admin Panel - Design: Creating variations of switcher buttons for lists and cards layout
+  • Admin Panel - Design: Creating switcher button for list and grid view.
+  • Admin Panel - Design: Finished adding the Category section to the Mentor and student pages. Also went into Illustrator to work on header variations.
+  • Admin Panel - Design: ' Added the Category section to the pages and started working in Illustrator for new header variations
+  • Admin Panel - Design Review: Meeting
+  • Admin Panel - Design: I went back through every sub-heading, filter and button to make sure all sizing and alignments were the same throughout all pages.
+  • Admin Panel - Design: Fixing the "videos" section in the admin panel
+  • Admin Panel - Design: still trying to figure out the layout
+  • Admin Panel - Design: Played around some more with auto layout. I watched videos on how to use it and applied them to the frames in the "video" section of the admin panel.
+  • Admin Panel - Design: I played around with the auto layout for the subheading, filter and button to better understand it and how to keep the position of the elements.
+  • Admin Panel - Design: started removing extra frames that were created.
+  • Admin Panel - Design: ' I went back to all admin pages and ungrouped sections that did not need to be grouped. I also Fixed some buttons that needed the variables added to them.
+
+
+Eddy
+----
+Expected Hours: 45.00
+Actual Hours: 0.00
+Status: ✗ FAIL
+Work Summary:
+  • No hours logged
+
