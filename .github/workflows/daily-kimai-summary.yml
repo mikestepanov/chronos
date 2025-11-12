@@ -45,25 +45,34 @@ jobs:
       run: |
         echo "🔍 Checking if previous Monday was end of pay period..."
 
-        # Calculate if the Monday of this week was the last day of a pay period
         node -e "
         const PayPeriodCalculator = require('./shared/pay-period-calculator');
-        const DateHelper = require('./shared/date-helper');
         const calc = new PayPeriodCalculator();
 
-        // Get this week's Monday (yesterday if Tuesday, 2 days ago if Wednesday)
+        // Get yesterday (if running on Tuesday) or day before yesterday (if Wednesday)
         const today = new Date();
-        const dayOfWeek = today.getUTCDay(); // 0=Sunday, 1=Monday, 2=Tuesday, 3=Wednesday
-        const daysToMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+        const dayOfWeek = today.getUTCDay(); // 2=Tuesday, 3=Wednesday
+        
+        // Calculate Monday of this week
+        let daysAgo;
+        if (dayOfWeek === 2) { // Tuesday
+          daysAgo = 1; // Yesterday was Monday
+        } else if (dayOfWeek === 3) { // Wednesday  
+          daysAgo = 2; // Day before yesterday was Monday
+        } else {
+          daysAgo = 0; // Manual run, check most recent Monday
+          const daysSinceMonday = (dayOfWeek + 6) % 7;
+          daysAgo = daysSinceMonday === 0 ? 7 : daysSinceMonday;
+        }
+        
         const monday = new Date(today);
-        monday.setUTCDate(monday.getUTCDate() - daysToMonday);
+        monday.setUTCDate(monday.getUTCDate() - daysAgo);
 
         // Check if that Monday was the last day of a pay period
         const wasLastDay = calc.isLastDayOfPeriod(monday);
-        const mondayEST = DateHelper.getDatePartsEST(monday);
 
-        console.log('Today:', today.toISOString().split('T')[0]);
-        console.log('This week Monday:', mondayEST.month + '/' + mondayEST.day + '/' + mondayEST.year, '(EST)');
+        console.log('Today (UTC):', today.toISOString().split('T')[0], '- Day', dayOfWeek);
+        console.log('Monday being checked:', monday.toISOString().split('T')[0]);
         console.log('Was Monday the last day of pay period?', wasLastDay);
 
         if (!wasLastDay && '${{ github.event.inputs.skip_check }}' !== 'true') {
