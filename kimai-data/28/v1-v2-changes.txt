@@ -1,0 +1,28 @@
+Pay Period 28 - Changes from v1 to v2
+Generated: 2025-11-12T23:05:34.214Z
+============================================================
+
+SUMMARY OF CHANGES
+
+Added entries: 10
+Removed entries: 0
+
+HOURS CHANGES BY USER
+
+
+eddy                          0.00 →    43.00 (+43.00)
+Yulia                        50.00 →    53.00 (+3.00)
+
+
+NEW ENTRIES ADDED
+-----------------
++ Yulia - 3:00 - Design
++ eddy - 3:00 - Research
++ eddy - 5:00 - Design
++ eddy - 5:00 - Design
++ eddy - 5:00 - Research
++ eddy - 5:00 - Design
++ eddy - 5:00 - Design
++ eddy - 5:00 - Design
++ eddy - 5:00 - Design
++ eddy - 5:00 - Design

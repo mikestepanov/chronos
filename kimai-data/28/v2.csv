@@ -1,0 +1,219 @@
+Date,From,To,Duration,Currency,Price,"Internal price","Hourly price","Fixed price",Name,User,E-mail,"Staff number",Customer,Project,Activity,Description,Billable,Tags,Type,category,Account,"Project number",VAT-ID,"Order number"
+2025-11-11,21:38,05:08,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' - Updated CancelMeetingInput to use CancellationRole enum for clearer role identification during meeting cancellations.
+- Introduced CancellationRole enum to specify who initiated the cancellation (ADMIN, MENTOR, STUDENT).
+- Modified GraphQL schema to reflect these changes, improving API clarity and usability.
+- Added validation logic in MeetingAggregate to prevent scheduling meetings in the past, ensuring better time management.
+- Updated CreateMeetingInput to enforce date string validation for start and end times, enhancing data integrity.
+- Added requesterRole to CancelMeetingCommand for improved role-based access control during meeting cancellations.
+- Implemented validation logic in CancelMeetingCommandHandler to restrict admin cancellation to authorized roles only.
+- Updated GraphQL resolver to pass the user's role when executing the cancelMeeting mutation, ensuring proper permission checks.",1,,timesheet,work,0002,0010,,
+2025-11-11,21:38,22:08,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-11,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-11,08:55,09:28,0:33,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"changing the sizing of the icons using variables.",1,,timesheet,work,0002,0010,,
+2025-11-11,08:00,16:00,8:00,USD,0,0,0,0,Forrest,Forrest,fcordova0616@gmail.com,,StartHub,"Admin Panel","Test Automation","email and document templates",1,,timesheet,work,0002,0010,,
+2025-11-11,13:15,16:15,3:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,"Team Operations",Design,"Met with Dennis. Fixed comments on the main landing page",1,,timesheet,work,0002,0014,,
+2025-11-11,07:00,08:31,1:31,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"Created switcher buttons",1,,timesheet,work,0002,0010,,
+2025-11-10,23:20,23:50,0:30,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-11-11,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,"Onboarding flow design",1,,timesheet,work,0002,0003,,
+2025-11-10,12:58,15:58,3:00,USD,0,0,0,0,eddy,eddy,edelobi@gmail.com,,StartHub,"Tools & Templates",Research,"More Research on Notifications Modal",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-11-10,13:20,21:20,8:00,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"User Profile & Settings",Research,"Implementation of availability",1,,timesheet,work,0002,0011,,
+2025-11-10,11:00,12:30,1:30,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-10,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-10,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-10,08:00,16:00,8:00,USD,0,0,0,0,Forrest,Forrest,fcordova0616@gmail.com,,StartHub,"Admin Panel","Test Automation","email and document templates",1,,timesheet,work,0002,0010,,
+2025-11-10,07:40,09:16,1:36,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"Creating variations of switcher buttons for lists and cards layout",1,,timesheet,work,0002,0010,,
+2025-11-10,11:00,18:00,7:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,"Team Operations",Design,"Fixed old comments on Landing pages. On founders landing pages and Main Landing page. Reviewed Jamie's work. Created 4 variations for booking company logos page.",1,,timesheet,work,0002,0014,,
+2025-11-10,14:03,14:33,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-10,14:03,21:33,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' Implemented Update Command Handler to process company update requests with proper validation and domain logic.
+
+Developed Cancel Command Handler to handle company cancellation workflows and state transitions.
+
+Added Query Handlers to efficiently fetch company data using CQRS pattern for separation of concerns.
+
+Created GraphQL Resolvers to expose update, cancel, and query operations through the API layer.",1,,timesheet,work,0002,0010,,
+2025-11-10,07:15,14:30,7:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Prepare digital ocean backup scripts to be implemented soonest",1,,timesheet,work,0002,0014,,
+2025-11-10,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,"Onboarding flow design",1,,timesheet,work,0002,0003,,
+2025-11-09,14:00,19:00,5:00,USD,0,0,0,0,eddy,eddy,edelobi@gmail.com,,StartHub,"Tools & Templates",Design,"Designed More Variations of the Notification Modal",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-11-09,11:00,14:00,3:00,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-08,14:30,16:00,1:30,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-08,10:18,10:57,0:39,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"Creating switcher button for list and grid view.",1,,timesheet,work,0002,0010,,
+2025-11-07,23:20,23:50,0:30,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-11-07,13:20,21:20,8:00,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"User Profile & Settings",Programming,"update categoryPriority to allow optional properties and improve fallback handling",1,,timesheet,work,0002,0011,,
+2025-11-07,12:45,17:00,4:15,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-07,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-07,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-07,08:00,16:00,8:00,USD,0,0,0,0,Forrest,Forrest,fcordova0616@gmail.com,,StartHub,"Admin Panel","Test Automation","email and document templates",1,,timesheet,work,0002,0010,,
+2025-11-07,08:00,11:45,3:45,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-07,09:00,17:00,8:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,"Team Operations",Design,"Meetings: Design sync + coffee hour + met with Mike and Jamie + Met with Jamie + met with Addy + met with Mike. Fixed comments on onboarding.",1,,timesheet,work,0002,0014,,
+2025-11-07,14:03,14:33,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"Coffee Hour | StartHub",1,,timesheet,work,0002,0010,,
+2025-11-07,14:03,14:33,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-07,14:03,21:03,7:00,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"Working on one-to-one coaching backend development",1,,timesheet,work,0002,0010,,
+2025-11-07,08:45,16:45,8:00,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Optimization of migration plan",1,,timesheet,work,0002,0014,,
+2025-11-06,23:20,23:50,0:30,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-11-07,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,"Onboarding flow design",1,,timesheet,work,0002,0003,,
+2025-11-06,16:45,20:00,3:15,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-06,14:00,19:00,5:00,USD,0,0,0,0,eddy,eddy,edelobi@gmail.com,,StartHub,"Tools & Templates",Design,"Design and More Research on Notifications Modal",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-11-06,14:00,16:15,2:15,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-06,13:19,21:19,8:00,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"User Profile & Settings",Programming,"update categoryPriority to allow optional properties and improve fallback handling",1,,timesheet,work,0002,0011,,
+2025-11-06,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-06,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-06,08:55,09:43,0:48,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"Finished adding the Category section to the Mentor and student pages. Also went into Illustrator to work on header variations.",1,,timesheet,work,0002,0010,,
+2025-11-06,08:00,16:00,8:00,USD,0,0,0,0,Forrest,Forrest,fcordova0616@gmail.com,,StartHub,"Admin Panel","Test Automation","email and document templates",1,,timesheet,work,0002,0010,,
+2025-11-06,08:45,11:45,3:00,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-06,14:03,14:33,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-06,14:03,21:33,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' Updated frontend logic to use the new bulk mutations instead of individual per-item API calls, improving performance and reducing network load.
+
+Added updateMany method to the ICommonRepository interface to standardize batch update handling across repositories.",1,,timesheet,work,0002,0010,,
+2025-11-05,23:20,23:50,0:30,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-11-06,07:15,14:30,7:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Prepare any necessary files and scripts needed for migration also checked on infra health and also fixed the bug on assets not being show",1,,timesheet,work,0002,0014,,
+2025-11-06,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,Onboarding,1,,timesheet,work,0002,0003,,
+2025-11-05,20:45,22:00,1:15,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-05,14:00,19:00,5:00,USD,0,0,0,0,eddy,eddy,edelobi@gmail.com,,StartHub,"Tools & Templates",Research,"Research on Notifications Modal",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-11-05,13:16,21:16,8:00,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"User Profile & Settings",Programming,"enhance notification settings with disable option and refactor handling logic",1,,timesheet,work,0002,0011,,
+2025-11-05,12:45,17:00,4:15,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-05,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-05,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-05,08:12,09:52,1:40,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"' Added the Category section to the pages and started working in Illustrator for new header variations",1,,timesheet,work,0002,0010,,
+2025-11-05,08:00,16:00,8:00,USD,0,0,0,0,Forrest,Forrest,fcordova0616@gmail.com,,StartHub,"Admin Panel","Test Automation","email and document templates",1,,timesheet,work,0002,0010,,
+2025-11-05,08:45,11:45,3:00,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-05,13:00,18:00,5:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,Onboarding,Design,"Created a new Booklet file. Created 8 variations for the left side for the reviews on Onboarding.",1,,timesheet,work,0002,0003,,
+2025-11-05,14:03,14:33,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-05,14:03,21:33,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"Implemented new GraphQL mutations — bulkDeleteCompanies and bulkSuspendCompanies — to support multi-company operations.
+
+Integrated domain event publishing for each affected company to ensure consistent event-driven updates across services.",1,,timesheet,work,0002,0010,,
+2025-11-05,08:15,15:30,7:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Write terraform scripts for the necessary modules",1,,timesheet,work,0002,0014,,
+2025-11-04,23:20,23:50,0:30,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-11-05,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,Onboarding,1,,timesheet,work,0002,0003,,
+2025-11-04,21:00,23:45,2:45,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-04,17:00,19:45,2:45,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-04,14:27,15:13,0:46,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel","Design Review",Meeting,1,,timesheet,work,0002,0010,,
+2025-11-04,12:53,17:53,5:00,USD,0,0,0,0,eddy,eddy,edelobi@gmail.com,,StartHub,"Tools & Templates",Design,"Updated the card components of our UI page",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-11-04,13:45,16:15,2:30,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-04,13:16,21:16,8:00,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"User Profile & Settings",Programming,"remove dynamic import of NotificationPreferencesAggregate",1,,timesheet,work,0002,0011,,
+2025-11-04,12:30,13:00,0:30,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Team Operations",Meeting,"Weekly Design Sync Up",1,standup,timesheet,work,0002,0014,,
+2025-11-04,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-04,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-04,08:00,16:00,8:00,USD,0,0,0,0,Forrest,Forrest,fcordova0616@gmail.com,,StartHub,"Admin Panel","Test Automation","email and document templates",1,,timesheet,work,0002,0010,,
+2025-11-04,08:45,12:30,3:45,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-04,13:00,18:00,5:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,"Admin Panel",Design,"Meetings: Design Sync up, met with Mike + met with Jamie. Reviewed Jamie's work. Fixed comments on the Admin Dashboard.",1,,timesheet,work,0002,0010,,
+2025-11-04,14:03,14:33,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-04,14:03,21:33,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' Added new GraphQL mutations — bulkDeleteCompanies and bulkSuspendCompanies — for multi-company actions.
+
+Integrated domain event publishing for each affected company to maintain consistent event-driven workflows.
+
+Updated frontend logic to use the new bulk mutations instead of per-item API calls.
+
+Added updateMany method to the ICommonRepository interface for broader multi-update support across repositories.",1,,timesheet,work,0002,0010,,
+2025-11-04,08:00,15:15,7:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Write k8s manifests, and helm charts for new structure",1,,timesheet,work,0002,0014,,
+2025-11-03,23:20,23:50,0:30,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-11-04,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Maintenance & Support",Programming,"Notification Design Module and feedback fixed",1,,timesheet,work,0002,0013,,
+2025-11-03,18:16,19:27,1:11,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"I went back through every sub-heading, filter and button to make sure all sizing and alignments were the same throughout all pages.",1,,timesheet,work,0002,0010,,
+2025-11-03,13:15,21:15,8:00,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"User Profile & Settings",Programming,"update schema to allow optional notification settings and improve user preference handling",1,,timesheet,work,0002,0011,,
+2025-11-03,12:30,13:00,0:30,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Team Operations",Meeting,"Pauline and Mikhail meeting",1,standup,timesheet,work,0002,0014,,
+2025-11-03,11:45,12:30,0:45,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-03,19:15,19:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-03,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-03,08:13,08:45,0:32,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"Fixing the ""videos"" section in the admin panel",1,,timesheet,work,0002,0010,,
+2025-11-03,08:00,16:00,8:00,USD,0,0,0,0,Forrest,Forrest,fcordova0616@gmail.com,,StartHub,"Admin Panel","Test Automation","email and document templates",1,,timesheet,work,0002,0010,,
+2025-11-03,11:00,16:00,5:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,Onboarding,Design,"created a new variations for Onboarding flow. Created a new Booklet file. Updated commponents field in the Onboarding",1,,timesheet,work,0002,0003,,
+2025-11-03,14:03,14:33,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-03,14:03,21:33,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' mplemented bulk delete and bulk suspend operations for companies using MongoDB bulk methods for performance improvement.
+
+Added findByIds method to CompanyRepository to support efficient batch fetching.
+
+Introduced updateMany and softDeleteMany methods for handling multi-record updates and soft deletions.",1,,timesheet,work,0002,0010,,
+2025-11-03,08:15,15:30,7:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Write Terraform scripts for the migration",1,,timesheet,work,0002,0014,,
+2025-11-03,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Maintenance & Support",Programming,"Notification Design Module",1,,timesheet,work,0002,0013,,
+2025-11-02,19:00,21:00,2:00,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-02,12:00,15:15,3:15,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Design,,1,,timesheet,work,0002,0014,,
+2025-11-02,11:00,13:00,2:00,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-01,19:45,23:45,4:00,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-01,14:00,18:00,4:00,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-11-01,12:00,15:00,3:00,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Design,,1,,timesheet,work,0002,0014,,
+2025-11-01,09:48,11:00,1:12,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"still trying to figure out the layout",1,,timesheet,work,0002,0010,,
+2025-10-31,23:20,23:50,0:30,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-10-31,14:00,19:00,5:00,USD,0,0,0,0,eddy,eddy,edelobi@gmail.com,,StartHub,"Tools & Templates",Design,"Updated the card components of our UI page",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-10-31,13:14,21:14,8:00,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"User Profile & Settings",Programming,"add additional notification options and icons for better user experience",1,,timesheet,work,0002,0011,,
+2025-10-31,11:35,12:23,0:48,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"Played around some more with auto layout. I watched videos on how to use it and applied them to the frames in the ""video"" section of the admin panel.",1,,timesheet,work,0002,0010,,
+2025-10-31,12:00,16:00,4:00,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-10-31,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-10-31,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-10-31,10:30,13:30,3:00,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Design,,1,,timesheet,work,0002,0014,,
+2025-10-31,14:30,19:30,5:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,Onboarding,Design,"Meeting: Design sync up. Fixed comments on the onboarding from Mike and Avraham, Created a couple more variations for the review component.",1,,timesheet,work,0002,0003,,
+2025-10-31,10:00,10:30,0:30,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-10-31,08:00,16:00,8:00,USD,0,0,0,0,Forrest,Forrest,fcordova0616@gmail.com,,StartHub,"Admin Panel","Test Automation","email and document templates",1,,timesheet,work,0002,0010,,
+2025-10-31,08:45,11:45,3:00,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-10-31,14:02,21:32,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' Added suspendUsers and reactivateUser mutations to manage user lifecycle.
+
+Created GraphQL documents for assignUsersToCompany, suspendUsers, and reactivateUser.
+
+Updated company-related screens to use isActive and companyJoinedAt instead of placeholder data.
+
+Enhanced user management flows to support bulk suspend/reactivate actions and ensure data refresh after operations.
+
+Refactored assignment modal to use the new single bulk-assign mutation.
+
+Performed cleanup — removed unused helpers, fixed typings, and resolved lint issues.",1,,timesheet,work,0002,0010,,
+2025-10-31,14:02,14:32,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-10-31,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Maintenance & Support",Programming,"Notification Design Module",1,,timesheet,work,0002,0013,,
+2025-10-30,23:20,23:50,0:30,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-10-31,06:15,14:30,8:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Migration plan, change the structure to capture multi cloud deployment",1,Tasks,timesheet,work,0002,0014,,
+2025-10-30,20:24,21:10,0:46,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"I played around with the auto layout for the subheading, filter and button to better understand it and how to keep the position of the elements.",1,,timesheet,work,0002,0010,,
+2025-10-30,12:47,17:47,5:00,USD,0,0,0,0,eddy,eddy,edelobi@gmail.com,,StartHub,"Tools & Templates",Design,"Updated the card components of our UI page",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-10-30,13:14,21:14,8:00,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"User Profile & Settings",Programming,"add NotificationBlock component with styles",1,,timesheet,work,0002,0011,,
+2025-10-30,13:00,18:00,5:00,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-10-30,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-10-30,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-10-30,14:29,19:29,5:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,"User Profile & Settings",Design,"Cleaned up notifications flow, created new components for notifications. Updated variables side.",1,,timesheet,work,0002,0011,,
+2025-10-30,10:00,15:00,5:00,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Design,,1,,timesheet,work,0002,0014,,
+2025-10-30,08:00,16:00,8:00,USD,0,0,0,0,Forrest,Forrest,fcordova0616@gmail.com,,StartHub,"Admin Panel","Test Automation","email and document templates",1,,timesheet,work,0002,0010,,
+2025-10-30,08:45,11:45,3:00,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-10-30,14:02,21:32,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' Added companyJoinedAt field to User schema, including snapshot and aggregate updates.
+
+Implemented logic to set companyJoinedAt when a user is assigned to a company and clear it on removal.
+
+Exposed companyJoinedAt in GraphQL User and mapped it in the user mapper layer.
+
+Created a new assignUsersToCompany mutation to support both single and bulk user assignments.",1,,timesheet,work,0002,0010,,
+2025-10-30,14:02,14:32,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-10-30,07:00,15:15,8:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","System migration plan and infra health",1,,timesheet,work,0002,0014,,
+2025-10-30,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Maintenance & Support",Programming,"Notification Design Module",1,,timesheet,work,0002,0013,,
+2025-10-29,23:20,23:50,0:30,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-10-29,21:00,22:45,1:45,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-10-29,19:24,20:00,0:36,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"started removing extra frames that were created.",1,,timesheet,work,0002,0010,,
+2025-10-29,14:00,18:30,4:30,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Design,,1,,timesheet,work,0002,0014,,
+2025-10-29,12:45,17:45,5:00,USD,0,0,0,0,eddy,eddy,edelobi@gmail.com,,StartHub,"Tools & Templates",Design,"More more changes on Tools and Templates",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-10-29,13:13,21:13,8:00,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"User Profile & Settings",Programming,"add NotificationBlock component with styles",1,,timesheet,work,0002,0011,,
+2025-10-29,13:00,18:00,5:00,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-10-29,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-10-29,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-10-29,14:26,19:26,5:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,"User Profile & Settings",Design,"Worked on the notifications, fixed comments from Raheel. Created a new onboarding flow( left side)",1,,timesheet,work,0002,0011,,
+2025-10-29,08:05,09:38,1:33,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"' I went back to all admin pages and ungrouped sections that did not need to be grouped. I also Fixed some buttons that needed the variables added to them.",1,,timesheet,work,0002,0010,,
+2025-10-29,08:00,16:00,8:00,USD,0,0,0,0,Forrest,Forrest,fcordova0616@gmail.com,,StartHub,"Admin Panel","Test Automation","email and document templates",1,,timesheet,work,0002,0010,,
+2025-10-29,08:45,11:45,3:00,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-10-29,14:02,21:32,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"Replace manual refetch with createEvictionUpdater for updateCompany mutation
+Remove refetchCompany from GetCompanyDocument query
+Simplify handleUpdateCompany by removing await refetchCompany() call
+Improve performance by using Apollo cache eviction instead of refetching
+Maintain consistent cache update pattern across the application",1,,timesheet,work,0002,0010,,
+2025-10-29,14:02,14:32,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-10-29,07:30,15:45,8:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Fix Assets and Migration plan",1,,timesheet,work,0002,0014,,
+2025-10-29,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Maintenance & Support",Programming,"email template issue fixed",1,,timesheet,work,0002,0013,,
+2025-10-28,23:20,23:50,0:30,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-10-28,20:45,22:00,1:15,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-10-28,16:45,18:00,1:15,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-10-28,15:30,16:00,0:30,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-10-28,13:00,18:00,5:00,USD,0,0,0,0,eddy,eddy,edelobi@gmail.com,,StartHub,"Tools & Templates",Design,"More more changes on Tools and Templates, and Admin Dashboard",1,"Design, Tasks",timesheet,work,0002,0018,,
+2025-10-28,12:19,20:19,8:00,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"User Profile & Settings","Bug Fixing","Add sticky positioning to SettingsPanel for improved layout",1,,timesheet,work,0002,0011,,
+2025-10-28,12:00,15:15,3:15,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Design,,1,,timesheet,work,0002,0014,,
+2025-10-28,18:15,18:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-10-28,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-10-28,08:00,16:00,8:00,USD,0,0,0,0,Forrest,Forrest,fcordova0616@gmail.com,,StartHub,"Mentor Tools & Dashboard","Test Automation","local host 4000 page",1,,timesheet,work,0002,0012,,
+2025-10-28,08:45,10:00,1:15,USD,0,0,0,0,pauline,pauline,paulinexpedition@gmail.com,,StartHub,"Print Designs",Design,"Document Templates",1,Design,timesheet,work,0002,0015,,
+2025-10-28,12:15,17:15,5:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,Onboarding,Design,"Meetings: Design team sync up. Created a new version for the comment section for the Onboarding. Fixed comments from Mike on the Onboarding and Auth pages. Reviewed Jamie's work.",1,,timesheet,work,0002,0003,,
+2025-10-28,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Maintenance & Support",Programming,"Dialog Box modify polish and email template issue fixed",1,,timesheet,work,0002,0013,,
+2025-10-27,23:20,23:50,0:30,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-10-28,06:15,14:45,8:30,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure",,1,,timesheet,work,0002,0014,,
+2025-10-27,21:52,05:52,8:00,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"User Profile & Settings","Bug Fixing","Settings navigation and profile page sticky design",1,,timesheet,work,0002,0011,,
+2025-10-28,06:28,06:58,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-10-28,06:28,13:58,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"Working on company details page",1,,timesheet,work,0002,0010,,

@@ -1,8 +1,8 @@
 Hours Compliance Report - Pay Period #28
 Period: Oct 28 - Nov 10
-Generated: 2025-11-12T18:40:50.439Z
+Generated: 2025-11-12T23:05:34.220Z
 Source: Automated pull
-Entries: 152
+Entries: 161
 
 | User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
 |----------------------|--------------|----------|------------|-------------|--------|
@@ -13,9 +13,9 @@ Entries: 152
 | Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Forrest Cordova      |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Yulia                |        50.00 |    50.00 |      +0.00 |       +0.0% |      ✓ |
+| Eddy                 |        43.00 |    45.00 |      -2.00 |       -4.4% |      ✓ |
 | Dennis Fisher        |        23.00 |    40.00 |     -17.00 |      -42.5% |      ✗ |
 | Jamie                |        12.12 |    40.00 |     -27.88 |      -69.7% |      ✗ |
-| Eddy                 |         0.00 |    45.00 |     -45.00 |     -100.0% |      ✗ |
 
 
 
@@ -171,6 +171,21 @@ Work Summary:
   • Onboarding - Design: Meetings: Design team sync up. Created a new version for the comment section for the Onboarding. Fixed comments from Mike on the Onboarding and Auth pages. Reviewed Jamie's work.
 
 
+Eddy
+----
+Expected Hours: 45.00
+Actual Hours: 43.00
+Status: ✓ PASS
+Work Summary:
+  • Tools & Templates - Research: More Research on Notifications Modal
+  • Tools & Templates - Design: Designed More Variations of the Notification Modal
+  • Tools & Templates - Design: Design and More Research on Notifications Modal
+  • Tools & Templates - Research: Research on Notifications Modal
+  • Tools & Templates - Design: Updated the card components of our UI page
+  • Tools & Templates - Design: More more changes on Tools and Templates
+  • Tools & Templates - Design: More more changes on Tools and Templates, and Admin Dashboard
+
+
 Dennis Fisher
 -------------
 Expected Hours: 40.00
@@ -199,13 +214,4 @@ Work Summary:
   • Admin Panel - Design: I played around with the auto layout for the subheading, filter and button to better understand it and how to keep the position of the elements.
   • Admin Panel - Design: started removing extra frames that were created.
   • Admin Panel - Design: ' I went back to all admin pages and ungrouped sections that did not need to be grouped. I also Fixed some buttons that needed the variables added to them.
-
-
-Eddy
-----
-Expected Hours: 45.00
-Actual Hours: 0.00
-Status: ✗ FAIL
-Work Summary:
-  • No hours logged
 
