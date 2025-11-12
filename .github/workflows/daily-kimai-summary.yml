@@ -22,6 +22,8 @@ on:
 jobs:
   pull-and-summarize:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout code
