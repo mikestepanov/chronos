@@ -1,0 +1,213 @@
+Date,From,To,Duration,Currency,Price,"Internal price","Hourly price","Fixed price",Name,User,E-mail,"Staff number",Customer,Project,Activity,Description,Billable,Tags,Type,category,Account,"Project number",VAT-ID,"Order number"
+2025-11-25,15:30,16:00,0:30,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-11-25,16:53,,0:00,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Documentation,"Starthub University(Instructors Hub Courses's)",1,Tasks,timesheet,work,0002,0008,,
+2025-11-25,16:46,16:54,0:08,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Meeting,"Engineering Team: STATUS Demo Prep",1,,timesheet,work,0002,0008,,
+2025-11-25,18:00,19:00,1:00,USD,0,0,0,0,Akshat,Akshat,akshatarora130@gmail.com,,StartHub,Courses,"Bug Fixing","Re-tested everything for pickup where you left section (courses), and fixed issues caused after resolving merge conflicts",1,,timesheet,work,0002,0005,,
+2025-11-24,22:06,23:52,1:46,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Documentation,"Starthub University(Instructors Hub Courses's)",1,Tasks,timesheet,work,0002,0008,,
+2025-11-24,22:08,22:38,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-24,22:08,05:38,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' Added mentorshipEventId to MeetingSnapshot
+Updated Meeting schema to include the field
+Added linkMentorshipEvent() method to MeetingAggregate
+Added getter method getMentorshipEventId()",1,,timesheet,work,0002,0010,,
+2025-11-24,19:15,19:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-24,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-24,14:42,21:22,6:40,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Maintenance & Support",Programming,"Fix two issues on the One-on-One Coaching page",1,Tasks,timesheet,work,0002,0013,,
+2025-11-24,07:58,12:58,5:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,Onboarding,Design,"Meeting: Met with Avraham + Mike + Status.Fixed new comments from Mike and Avraham on the Onboarding",1,,timesheet,work,0002,0003,,
+2025-11-24,12:00,16:00,4:00,USD,0,0,0,0,Akshat,Akshat,akshatarora130@gmail.com,,StartHub,Courses,"Bug Fixing","Fixed mark as complete/incomplete feature 
+Fixed pickup where you left section for courses",1,,timesheet,work,0002,0005,,
+2025-11-24,08:15,15:45,7:30,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Begin AWS Migration",1,,timesheet,work,0002,0014,,
+2025-11-24,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,"one to one Onboarding flow design",1,,timesheet,work,0002,0003,,
+2025-11-22,20:56,00:03,3:07,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Tools & Templates",Research,"Sketched my headings",1,,timesheet,work,0002,0018,,
+2025-11-22,07:56,09:56,2:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,Onboarding,Design,"Fixed Eddie's comments",1,,timesheet,work,0002,0003,,
+2025-11-21,19:44,01:44,6:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,Onboarding,Design,"Met with Mike + General meeting with Avraham. Fixed comments for me and Eddy on the Onboarding flow",1,,timesheet,work,0002,0003,,
+2025-11-21,18:45,23:34,4:49,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Maintenance & Support",Programming,"Fix two issues on the One-on-One Coaching page",1,Tasks,timesheet,work,0002,0013,,
+2025-11-21,17:59,18:46,0:47,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Meeting,"Engineering Sync Up",1,,timesheet,work,0002,0008,,
+2025-11-21,10:43,11:46,1:03,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Tools & Templates",Meeting,"worked on sketching headers and joined Avraham's meeting.",1,,timesheet,work,0002,0018,,
+2025-11-21,22:08,22:38,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-21,22:08,05:08,7:00,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"Add chapterLessonsLoader to DataLoaderService to prevent N+1 queries
+Remove LessonMapper injection from ChapterResolver as DataLoader returns DTOs directly
+Update chapter resolver to use DataLoader for lessons field resolution
+Add @Injectable decorator to LearningDataLoader for proper DI
+Apply consistent code formatting (double quotes, spacing)",1,,timesheet,work,0002,0010,,
+2025-11-21,22:08,22:38,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"Meeting with Avraham",1,,timesheet,work,0002,0010,,
+2025-11-21,19:15,19:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-11-21,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-21,15:55,18:00,2:05,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Maintenance & Support",Programming,"Fix two issues on the One-on-One Coaching page",1,Tasks,timesheet,work,0002,0013,,
+2025-11-21,15:25,15:56,0:31,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,Courses,Documentation,"Starthub University",1,Tasks,timesheet,work,0002,0005,,
+2025-11-21,08:00,10:02,2:02,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Tools & Templates",Research,"researching headings, meeting, and sketching headers that I found.",1,,timesheet,work,0002,0018,,
+2025-11-21,08:30,16:00,7:30,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Data Backup and Migration analysis",1,,timesheet,work,0002,0014,,
+2025-11-21,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,"Onboarding flow design",1,,timesheet,work,0002,0003,,
+2025-11-20,21:58,23:07,1:09,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Tools & Templates",Research,"did some research on templates for the headers",1,,timesheet,work,0002,0018,,
+2025-11-20,22:54,23:10,0:16,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Admin Panel","Code Review","Sync with the latest commit and implement the new changes.",1,Tasks,timesheet,work,0002,0010,,
+2025-11-20,14:25,15:14,0:49,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Tools & Templates",Research,"Doing more research on website headings.",1,,timesheet,work,0002,0018,,
+2025-11-20,13:02,13:40,0:38,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Tools & Templates",Research,"Doing some more research on website headings.",1,,timesheet,work,0002,0018,,
+2025-11-20,22:08,05:38,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' Modified SendVerificationEmailHandler to:
+
+Create a new OperationTokenAggregate
+
+Persist the token into operation_tokens before sending emails
+
+Added logic to invalidate existing tokens for idempotency
+
+Updated verification email flow to consistently use DB-backed tokens
+
+Confirmed the fix resolves the previous verification failure
+
+Retested entire email verification lifecycle end-to-end",1,,timesheet,work,0002,0010,,
+2025-11-20,22:08,22:38,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-20,19:15,19:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-20,16:50,22:47,5:57,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Documentation,"Starthub University(Instructors Hub Courses's)",1,Tasks,timesheet,work,0002,0008,,
+2025-11-20,16:44,16:51,0:07,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Meeting,"Engineering Sync Up",1,,timesheet,work,0002,0008,,
+2025-11-20,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-20,14:56,16:45,1:49,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Documentation,"Starthub University(Instructors Hub Courses's)",1,Tasks,timesheet,work,0002,0008,,
+2025-11-20,17:30,21:30,4:00,USD,0,0,0,0,Akshat,Akshat,akshatarora130@gmail.com,,StartHub,Courses,"Bug Fixing","1. Fixed courses/id page - To show course content (lessons, videos) 
+2. Trying to fix mark as complete bug",1,,timesheet,work,0002,0005,,
+2025-11-20,08:15,15:45,7:30,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Data Backup",1,,timesheet,work,0002,0014,,
+2025-11-20,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,"Onboarding flow design",1,,timesheet,work,0002,0003,,
+2025-11-19,15:45,17:22,1:37,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"Meeting with Pauline and doing research on headings",1,,timesheet,work,0002,0010,,
+2025-11-19,22:20,02:01,3:41,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,Courses,Documentation,"Starthub University",1,Tasks,timesheet,work,0002,0005,,
+2025-11-19,14:20,15:11,0:51,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"' Finalized the switcher button and copied the mentor page and added the button so we can visualize where it should go. also, reached out to pauline about the headers.",1,,timesheet,work,0002,0010,,
+2025-11-19,18:33,18:54,0:21,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Meeting,"Engineering Sync Up",1,,timesheet,work,0002,0008,,
+2025-11-19,22:08,05:38,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"Investigated issue: verifyEmail mutation failing with
+""Invalid, expired, or already used verification token""
+
+Identified root cause:
+
+SendVerificationEmailHandler generated JWT tokens without storing them in the database.
+
+VerifyEmailCommand expects a DB-backed OperationToken from operation_tokens.
+
+Designed revised flow to support DB-backed token validation.",1,,timesheet,work,0002,0010,,
+2025-11-19,22:08,22:38,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-19,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-19,14:00,17:05,3:05,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Documentation,"Starthub University(Instructors Hub Courses's)",1,Tasks,timesheet,work,0002,0008,,
+2025-11-19,08:00,15:30,7:30,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Migration and Data Backup prep",1,,timesheet,work,0002,0014,,
+2025-11-19,07:15,14:45,7:30,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Migration and Data backup Prep",1,,timesheet,work,0002,0014,,
+2025-11-19,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,"Onboarding flow design",1,,timesheet,work,0002,0003,,
+2025-11-18,23:16,00:19,1:03,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Admin Panel","Code Review","Pulling the latest commit and executing the necessary steps to verify that the admin panel authentication functions correctly and successfully redirects to the dashboard",1,Tasks,timesheet,work,0002,0010,,
+2025-11-18,15:30,15:44,0:14,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"meeting with mike and Avraham",1,,timesheet,work,0002,0010,,
+2025-11-18,14:35,14:59,0:24,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"meeting with design team",1,,timesheet,work,0002,0010,,
+2025-11-18,20:46,23:17,2:31,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Documentation,"Starthub University(Instructors Hub Courses's)",1,Tasks,timesheet,work,0002,0008,,
+2025-11-18,13:00,15:30,2:30,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Design,,1,,timesheet,work,0002,0014,,
+2025-11-18,18:34,20:15,1:41,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Documentation,"Starthub University(Instructors Hub Courses's)",1,Tasks,timesheet,work,0002,0008,,
+2025-11-18,22:08,05:38,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' - Consolidated import statements in set-weekly-availability command handler and weekly-availability resolver for improved readability.
+- Removed unnecessary line breaks and streamlined type imports from the weekly-availability aggregate.
+- Enhanced code organization in get-available-slots query handler by removing trailing whitespace and unnecessary imports.",1,,timesheet,work,0002,0010,,
+2025-11-18,22:08,22:38,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-18,19:15,19:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-18,16:53,17:13,0:20,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Admin Panel","Code Review","Sync with the latest commit and implement the new changes.",1,Tasks,timesheet,work,0002,0010,,
+2025-11-18,16:45,16:53,0:08,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Meeting,"Engineering Team: STATUS Demo Prep",1,,timesheet,work,0002,0008,,
+2025-11-18,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-18,14:09,16:46,2:37,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Documentation,"Starthub University(Instructors Hub Courses's)",1,Tasks,timesheet,work,0002,0008,,
+2025-11-18,07:15,14:45,7:30,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","Migration Prep",1,,timesheet,work,0002,0014,,
+2025-11-18,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,"Onboarding flow design",1,,timesheet,work,0002,0003,,
+2025-11-17,17:59,21:59,4:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,"User Profile & Settings",Design,"Meeting: 1to1 with Mike and Avraham. Implemented changes on landing pages and components.",1,,timesheet,work,0002,0011,,
+2025-11-17,12:00,16:00,4:00,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Design,,1,,timesheet,work,0002,0014,,
+2025-11-17,17:39,23:41,6:02,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Documentation,"Starthub University(Instructors Hub Courses's)",1,Tasks,timesheet,work,0002,0008,,
+2025-11-17,22:08,22:53,0:45,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"S.T.A.T.U.S. Framework Meeting | Dev Team",1,,timesheet,work,0002,0010,,
+2025-11-17,22:08,05:08,7:00,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' Added setWeeklyAvailability mutation input type
+
+Added availableSlots query to UserAvailability resolver
+
+Updated BookingType.description to be nullable in schema
+
+Synced schema.gql with all backend updates
+
+Final integration testing across Phase 1 and Phase 2 modules
+
+Cleanup, refactoring, and verification of resolver behavior",1,,timesheet,work,0002,0010,,
+2025-11-17,22:08,22:23,0:15,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"Dharam: Monthly Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-17,19:15,19:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-17,17:06,17:40,0:34,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Meeting,"Engineering Team: STATUS Demo Prep",1,,timesheet,work,0002,0008,,
+2025-11-17,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-17,08:15,15:30,7:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","AWS Migrations and IaC Tools Preparation",1,,timesheet,work,0002,0014,,
+2025-11-17,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,"Onboarding flow design",1,,timesheet,work,0002,0003,,
+2025-11-16,15:37,16:36,0:59,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"finished sketching header variations",1,,timesheet,work,0002,0010,,
+2025-11-15,11:00,16:00,5:00,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Design,,1,,timesheet,work,0002,0014,,
+2025-11-14,14:17,15:37,1:20,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"working on header variations in Illustrator",1,,timesheet,work,0002,0010,,
+2025-11-14,21:08,22:41,1:33,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Documentation,"Starthub University(Instructors Hub Courses's)",1,Tasks,timesheet,work,0002,0008,,
+2025-11-14,17:50,23:50,6:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,Onboarding,Design,"Meeting: design sync up + met with Eddy and Mike. Created changes on onboarding flow, finished fixing comment.",1,,timesheet,work,0002,0003,,
+2025-11-14,11:48,13:40,1:52,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"working on header variations in Illustrator",1,,timesheet,work,0002,0010,,
+2025-11-14,22:05,22:50,0:45,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"Engineering Team: STATUS Demo Prep",1,,timesheet,work,0002,0010,,
+2025-11-14,22:05,22:35,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"Dharam: Monthly Sync Up + STATUS Demo Prep",1,,timesheet,work,0002,0010,,
+2025-11-14,22:05,04:50,6:45,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"Made description optional in BookingTypeCreateParams
+
+Overrode validateDescription() & validateTitled() in BookingTypeAggregate
+
+Updated updateDescriptionIfProvided() for empty-description support
+
+Updated MongoDB schema to allow nullable description
+
+Updated GraphQL resolvers to pass undefined instead of empty string
+
+Updated CommonTitledObject to make description nullable",1,,timesheet,work,0002,0010,,
+2025-11-14,19:15,19:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-14,17:12,17:32,0:20,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Meeting,"Engineering Team: STATUS Demo Prep",1,,timesheet,work,0002,0008,,
+2025-11-14,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-14,10:00,10:15,0:15,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-11-14,08:46,09:40,0:54,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"meeting and working on sketching new headers in Illustrator",1,,timesheet,work,0002,0010,,
+2025-11-14,14:49,16:10,1:21,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Admin Panel","Code Review","Sync with the latest commit and implement the new changes.",1,Tasks,timesheet,work,0002,0010,,
+2025-11-14,12:33,14:50,2:17,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Documentation,"Starthub University(Instructors Hub Courses's)",1,Tasks,timesheet,work,0002,0008,,
+2025-11-14,08:15,14:15,6:00,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","AWS Migrations Prep and Infrastructure redesign of folder Structure",1,,timesheet,work,0002,0014,,
+2025-11-14,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,"Onboarding flow design",1,,timesheet,work,0002,0003,,
+2025-11-14,02:04,02:51,0:47,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Admin Panel","Code Review","Pulling the latest commit and executing the necessary steps to verify that the admin panel authentication functions correctly and successfully redirects to the dashboard",1,Tasks,timesheet,work,0002,0010,,
+2025-11-13,16:25,17:12,0:47,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,Meeting,1,,timesheet,work,0002,0010,,
+2025-11-13,22:11,01:39,3:28,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,"Live Workshops & Recorded Events",Documentation,"Starthub University(Instructors Hub Courses's)",1,Tasks,timesheet,work,0002,0008,,
+2025-11-13,11:45,13:00,1:15,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"Creating switcher buttons with a drop shadow/Inner shadow",1,,timesheet,work,0002,0010,,
+2025-11-13,12:00,13:30,1:30,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Design,,1,,timesheet,work,0002,0014,,
+2025-11-13,22:05,22:35,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-13,22:05,05:35,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' Added setWeeklyAvailability command + handler
+
+Implemented getAvailableSlots query + handler
+
+Created slot-generation service with conflict-detection logic
+
+Extended UserAvailability resolver with availableSlots query
+
+Added setWeeklyAvailability mutation to WeeklyAvailability resolver
+
+Updated AvailableSlot type with date + timezone fields
+
+Registered new scheduling module handlers
+
+Initial manual testing for Phase 2 availability features",1,,timesheet,work,0002,0010,,
+2025-11-13,19:15,19:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-13,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-13,15:14,18:19,3:05,USD,0,0,0,0,"Olabanji-Ebun Ayooluwa",Ayooluwa,ayooluwaebun2006@gmail.com,,StartHub,Courses,Documentation,"Starthub University",1,Tasks,timesheet,work,0002,0005,,
+2025-11-13,09:00,14:00,5:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,Onboarding,Design,"Met with Mike + met with Jamie. Fixed comments on the Onboarding from Mike and Avraham. Updated calendars on the Settings and profile.",1,,timesheet,work,0002,0003,,
+2025-11-13,08:15,14:15,6:00,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","AWS Migrations Prep and IaC tools Scripting",1,,timesheet,work,0002,0014,,
+2025-11-13,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,"Onboarding flow design",1,,timesheet,work,0002,0003,,
+2025-11-12,20:00,20:52,0:52,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"Creating more variations of the switcher button",1,,timesheet,work,0002,0010,,
+2025-11-12,22:05,22:35,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-12,22:05,05:35,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' - Introduced CancelMeetingInput type for structured cancellation requests, including cancellationRole, meetingId, and reason.
+- Updated cancelMeeting mutation to accept the new input type, improving clarity and validation.
+- Refactored CancelMeetingCommand to utilize cancellationRole for permission checks, allowing both organizers and participants to cancel meetings based on their roles.
+- Modified CreateMeetingInput and UpdateMeetingInput to change endTime, startTime, and organizerId from Boolean to String for better data handling.
+- Added validation logic in MeetingAggregate to ensure start time is before end time and not set in the past.
+- Enhanced GraphQL schema to reflect these changes, improving overall API consistency and usability.",1,,timesheet,work,0002,0010,,
+2025-11-12,19:15,19:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-12,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-12,13:15,20:15,7:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,Onboarding,Design,"Meetings: Design sync up, Met with Mike and Avraham. Created variation for account photo component, implemented it. Created a new component for buttons for the Onboarding. Created new 3 step. Started to work on comments.",1,,timesheet,work,0002,0003,,
+2025-11-12,07:15,13:15,6:00,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","AWS Migration Scripts prep",1,,timesheet,work,0002,0014,,
+2025-11-12,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,"Onboarding flow design",1,,timesheet,work,0002,0003,,
+2025-11-11,18:00,19:14,1:14,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"creating different variations of switcher button",1,,timesheet,work,0002,0010,,
+2025-11-11,13:00,17:30,4:30,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Design,,1,,timesheet,work,0002,0014,,
+2025-11-11,12:00,12:45,0:45,USD,0,0,0,0,dennis,dennis,dfisher3920@gmail.com,,StartHub,"Team Operations",Meeting,,1,,timesheet,work,0002,0014,,
+2025-11-11,19:15,19:30,0:15,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations",Meeting,,1,standup,timesheet,work,0002,0014,,
+2025-11-11,21:38,05:08,7:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Programming,"' - Updated CancelMeetingInput to use CancellationRole enum for clearer role identification during meeting cancellations.
+- Introduced CancellationRole enum to specify who initiated the cancellation (ADMIN, MENTOR, STUDENT).
+- Modified GraphQL schema to reflect these changes, improving API clarity and usability.
+- Added validation logic in MeetingAggregate to prevent scheduling meetings in the past, ensuring better time management.
+- Updated CreateMeetingInput to enforce date string validation for start and end times, enhancing data integrity.
+- Added requesterRole to CancelMeetingCommand for improved role-based access control during meeting cancellations.
+- Implemented validation logic in CancelMeetingCommandHandler to restrict admin cancellation to authorized roles only.
+- Updated GraphQL resolver to pass the user's role when executing the cancelMeeting mutation, ensuring proper permission checks.",1,,timesheet,work,0002,0010,,
+2025-11-11,21:38,22:08,0:30,USD,0,0,0,0,"Dharam Pal Singh",dharam,dsdharam91@gmail.com,,StartHub,"Admin Panel",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0010,,
+2025-11-11,20:15,20:45,0:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,"Team Operations",Meeting,"Stand Up meeting",1,,timesheet,work,0002,0014,,
+2025-11-11,08:55,09:28,0:33,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"changing the sizing of the icons using variables.",1,,timesheet,work,0002,0010,,
+2025-11-11,08:00,16:00,8:00,USD,0,0,0,0,Forrest,Forrest,fcordova0616@gmail.com,,StartHub,"Admin Panel","Test Automation","email and document templates",1,,timesheet,work,0002,0010,,
+2025-11-11,13:15,16:15,3:00,USD,0,0,0,0,Yulia,Yulia,yulia@starthub.academy,,StartHub,"Team Operations",Design,"Met with Dennis. Fixed comments on the main landing page",1,,timesheet,work,0002,0014,,
+2025-11-11,07:00,08:31,1:31,USD,0,0,0,0,jamie,jamie,jlenaeray8916@gmail.com,,StartHub,"Admin Panel",Design,"Created switcher buttons",1,,timesheet,work,0002,0010,,
+2025-11-11,08:15,15:45,7:30,USD,0,0,0,0,"Mori Isaac",Mori,wesongamori@gmail.com,,StartHub,"Team Operations","Dev Ops / Infrastructure","AWS Migration and preparation",1,,timesheet,work,0002,0014,,
+2025-11-10,23:20,23:50,0:30,USD,0,0,0,0,ariful,ariful,arifulbgt4@gmail.com,,StartHub,"Team Operations",Meeting,"StartHub | FTE Engineering Team Sync Up",1,,timesheet,work,0002,0014,,
+2025-11-11,09:00,16:30,7:30,USD,0,0,0,0,"Raheel Shahzad",raheel,raheelshahzad036@gmail.com,,StartHub,Onboarding,Programming,"Onboarding flow design",1,,timesheet,work,0002,0003,,

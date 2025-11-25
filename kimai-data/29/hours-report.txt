@@ -1,0 +1,243 @@
+Hours Compliance Report - Pay Period #29
+Period: Nov 11 - Nov 24
+Generated: 2025-11-25T23:06:33.066Z
+Source: Automated pull
+Entries: 129
+
+| User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
+|----------------------|--------------|----------|------------|-------------|--------|
+| Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Raheel Shahzad       |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Yulia                |        38.00 |    50.00 |     -12.00 |      -24.0% |      ✗ |
+| Jamie                |        23.18 |    40.00 |     -16.82 |      -42.0% |      ✗ |
+| Dennis Fisher        |        18.50 |    40.00 |     -21.50 |      -53.8% |      ✗ |
+| Forrest Cordova      |         8.00 |    80.00 |     -72.00 |      -90.0% |      ✗ |
+| Eddy                 |         0.00 |    45.00 |     -45.00 |     -100.0% |      ✗ |
+| Ariful               |         0.00 |    80.00 |     -80.00 |     -100.0% |      ✗ |
+| Pauline Nguyen       |         0.00 |    80.00 |     -80.00 |     -100.0% |      ✗ |
+
+
+
+=== DETAILED WORK SUMMARY ===
+
+
+Dharam Pal Singh
+----------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Admin Panel - Meeting: StartHub | FTE Engineering Team Sync Up
+  • Admin Panel - Programming: ' Added mentorshipEventId to MeetingSnapshot
+Updated Meeting schema to include the field
+Added linkMentorshipEvent() method to MeetingAggregate
+Added getter method getMentorshipEventId()
+  • Admin Panel - Programming: Add chapterLessonsLoader to DataLoaderService to prevent N+1 queries
+Remove LessonMapper injection from ChapterResolver as DataLoader returns DTOs directly
+Update chapter resolver to use DataLoader for lessons field resolution
+Add @Injectable decorator to LearningDataLoader for proper DI
+Apply consistent code formatting (double quotes, spacing)
+  • Admin Panel - Meeting: Meeting with Avraham
+  • Admin Panel - Programming: ' Modified SendVerificationEmailHandler to:
+
+Create a new OperationTokenAggregate
+
+Persist the token into operation_tokens before sending emails
+
+Added logic to invalidate existing tokens for idempotency
+
+Updated verification email flow to consistently use DB-backed tokens
+
+Confirmed the fix resolves the previous verification failure
+
+Retested entire email verification lifecycle end-to-end
+  • Admin Panel - Programming: Investigated issue: verifyEmail mutation failing with
+"Invalid, expired, or already used verification token"
+
+Identified root cause:
+
+SendVerificationEmailHandler generated JWT tokens without storing them in the database.
+
+VerifyEmailCommand expects a DB-backed OperationToken from operation_tokens.
+
+Designed revised flow to support DB-backed token validation.
+  • Admin Panel - Programming: ' - Consolidated import statements in set-weekly-availability command handler and weekly-availability resolver for improved readability.
+- Removed unnecessary line breaks and streamlined type imports from the weekly-availability aggregate.
+- Enhanced code organization in get-available-slots query handler by removing trailing whitespace and unnecessary imports.
+  • Admin Panel - Meeting: S.T.A.T.U.S. Framework Meeting | Dev Team
+  • Admin Panel - Programming: ' Added setWeeklyAvailability mutation input type
+
+Added availableSlots query to UserAvailability resolver
+
+Updated BookingType.description to be nullable in schema
+
+Synced schema.gql with all backend updates
+
+Final integration testing across Phase 1 and Phase 2 modules
+
+Cleanup, refactoring, and verification of resolver behavior
+  • Admin Panel - Meeting: Dharam: Monthly Sync Up
+  • Admin Panel - Meeting: Engineering Team: STATUS Demo Prep
+  • Admin Panel - Meeting: Dharam: Monthly Sync Up + STATUS Demo Prep
+  • Admin Panel - Programming: Made description optional in BookingTypeCreateParams
+
+Overrode validateDescription() & validateTitled() in BookingTypeAggregate
+
+Updated updateDescriptionIfProvided() for empty-description support
+
+Updated MongoDB schema to allow nullable description
+
+Updated GraphQL resolvers to pass undefined instead of empty string
+
+Updated CommonTitledObject to make description nullable
+  • Admin Panel - Programming: ' Added setWeeklyAvailability command + handler
+
+Implemented getAvailableSlots query + handler
+
+Created slot-generation service with conflict-detection logic
+
+Extended UserAvailability resolver with availableSlots query
+
+Added setWeeklyAvailability mutation to WeeklyAvailability resolver
+
+Updated AvailableSlot type with date + timezone fields
+
+Registered new scheduling module handlers
+
+Initial manual testing for Phase 2 availability features
+  • Admin Panel - Programming: ' - Introduced CancelMeetingInput type for structured cancellation requests, including cancellationRole, meetingId, and reason.
+- Updated cancelMeeting mutation to accept the new input type, improving clarity and validation.
+- Refactored CancelMeetingCommand to utilize cancellationRole for permission checks, allowing both organizers and participants to cancel meetings based on their roles.
+- Modified CreateMeetingInput and UpdateMeetingInput to change endTime, startTime, and organizerId from Boolean to String for better data handling.
+- Added validation logic in MeetingAggregate to ensure start time is before end time and not set in the past.
+- Enhanced GraphQL schema to reflect these changes, improving overall API consistency and usability.
+  • Admin Panel - Programming: ' - Updated CancelMeetingInput to use CancellationRole enum for clearer role identification during meeting cancellations.
+- Introduced CancellationRole enum to specify who initiated the cancellation (ADMIN, MENTOR, STUDENT).
+- Modified GraphQL schema to reflect these changes, improving API clarity and usability.
+- Added validation logic in MeetingAggregate to prevent scheduling meetings in the past, ensuring better time management.
+- Updated CreateMeetingInput to enforce date string validation for start and end times, enhancing data integrity.
+- Added requesterRole to CancelMeetingCommand for improved role-based access control during meeting cancellations.
+- Implemented validation logic in CancelMeetingCommandHandler to restrict admin cancellation to authorized roles only.
+- Updated GraphQL resolver to pass the user's role when executing the cancelMeeting mutation, ensuring proper permission checks.
+
+
+Raheel Shahzad
+--------------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: Stand Up meeting
+  • Onboarding - Programming: one to one Onboarding flow design
+  • Onboarding - Programming: Onboarding flow design
+
+
+Mori Isaac
+----------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting
+  • Team Operations - Dev Ops / Infrastructure: Begin AWS Migration
+  • Team Operations - Dev Ops / Infrastructure: Data Backup and Migration analysis
+  • Team Operations - Dev Ops / Infrastructure: Data Backup
+  • Team Operations - Dev Ops / Infrastructure: Migration and Data Backup prep
+  • Team Operations - Dev Ops / Infrastructure: Migration and Data backup Prep
+  • Team Operations - Dev Ops / Infrastructure: Migration Prep
+  • Team Operations - Dev Ops / Infrastructure: AWS Migrations and IaC Tools Preparation
+  • Team Operations - Dev Ops / Infrastructure: AWS Migrations Prep and Infrastructure redesign of folder Structure
+  • Team Operations - Dev Ops / Infrastructure: AWS Migrations Prep and IaC tools Scripting
+  • Team Operations - Dev Ops / Infrastructure: AWS Migration Scripts prep
+  • Team Operations - Dev Ops / Infrastructure: AWS Migration and preparation
+
+
+Yulia
+-----
+Expected Hours: 50.00
+Actual Hours: 38.00
+Status: ✗ FAIL
+Work Summary:
+  • Onboarding - Design: Meeting: Met with Avraham + Mike + Status.Fixed new comments from Mike and Avraham on the Onboarding
+  • Onboarding - Design: Fixed Eddie's comments
+  • Onboarding - Design: Met with Mike + General meeting with Avraham. Fixed comments for me and Eddy on the Onboarding flow
+  • User Profile & Settings - Design: Meeting: 1to1 with Mike and Avraham. Implemented changes on landing pages and components.
+  • Onboarding - Design: Meeting: design sync up + met with Eddy and Mike. Created changes on onboarding flow, finished fixing comment.
+  • Onboarding - Design: Met with Mike + met with Jamie. Fixed comments on the Onboarding from Mike and Avraham. Updated calendars on the Settings and profile.
+  • Onboarding - Design: Meetings: Design sync up, Met with Mike and Avraham. Created variation for account photo component, implemented it. Created a new component for buttons for the Onboarding. Created new 3 step. Started to work on comments.
+  • Team Operations - Design: Met with Dennis. Fixed comments on the main landing page
+
+
+Jamie
+-----
+Expected Hours: 40.00
+Actual Hours: 23.18
+Status: ✗ FAIL
+Work Summary:
+  • Tools & Templates - Research: Sketched my headings
+  • Tools & Templates - Meeting: worked on sketching headers and joined Avraham's meeting.
+  • Tools & Templates - Research: researching headings, meeting, and sketching headers that I found.
+  • Tools & Templates - Research: did some research on templates for the headers
+  • Tools & Templates - Research: Doing more research on website headings.
+  • Tools & Templates - Research: Doing some more research on website headings.
+  • Admin Panel - Design: Meeting with Pauline and doing research on headings
+  • Admin Panel - Design: ' Finalized the switcher button and copied the mentor page and added the button so we can visualize where it should go. also, reached out to pauline about the headers.
+  • Admin Panel - Design: meeting with mike and Avraham
+  • Admin Panel - Design: meeting with design team
+  • Admin Panel - Design: finished sketching header variations
+  • Admin Panel - Design: working on header variations in Illustrator
+  • Admin Panel - Design: meeting and working on sketching new headers in Illustrator
+  • Admin Panel - Design: Meeting
+  • Admin Panel - Design: Creating switcher buttons with a drop shadow/Inner shadow
+  • Admin Panel - Design: Creating more variations of the switcher button
+  • Admin Panel - Design: creating different variations of switcher button
+  • Admin Panel - Design: changing the sizing of the icons using variables.
+  • Admin Panel - Design: Created switcher buttons
+
+
+Dennis Fisher
+-------------
+Expected Hours: 40.00
+Actual Hours: 18.50
+Status: ✗ FAIL
+Work Summary:
+  • Team Operations - Design
+  • Team Operations - Meeting
+
+
+Forrest Cordova
+---------------
+Expected Hours: 80.00
+Actual Hours: 8.00
+Status: ✗ FAIL
+Work Summary:
+  • Admin Panel - Test Automation: email and document templates
+
+
+Eddy
+----
+Expected Hours: 45.00
+Actual Hours: 0.00
+Status: ✗ FAIL
+Work Summary:
+  • No hours logged
+
+
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 0.00
+Status: ✗ FAIL
+Work Summary:
+  • No hours logged
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 0.00
+Status: ✗ FAIL
+Work Summary:
+  • No hours logged
+
