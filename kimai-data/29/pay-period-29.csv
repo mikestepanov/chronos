@@ -2,17 +2,17 @@ Summary Overview Link,https://docs.google.com/document/d/[PLACEHOLDER_FOR_29_PER
 CSV,https://drive.google.com/drive/folders/[PLACEHOLDER],,,,,7
 ACTUAL EXPENSE REFS
 Name,Time Tracking,Payment Processing,Actual Expense (M),Actual Pay Period (Combined) Hours (C),Actual Paid Hours (M),Actual Equity Hours (M),Comments
-Total,,,1900
+Total,,,3300
+Pauline Nguyen,Kimai,Gusto,1000,83.00,40.00,40.00,
 Dharam Pal,Kimai,Gusto,700,80.00,40.00,40.00,
 Raheel Shahzad,Kimai,Gusto,600,80.00,40.00,40.00,
+Ariful Islam,Kimai,Gusto,400,80.00,40.00,40.00,
 Mori Wesonga,Kimai,Gusto,600,80.00,40.00,40.00,
 Yulia McCoy,Kimai,Gusto,,38.00,0.00,38.00,Short 12.00 hours
+Edward Obi,Kimai,Gusto,,35.00,0.00,35.00,Short 10.00 hours
 Jamie,Kimai,Gusto,,23.18,0.00,0.00,Short 16.82 hours
 Dennis Fisher,Kimai,Gusto,,18.50,0.00,0.00,Short 21.50 hours
 Forrest Cordova,Kimai,Gusto,,8.00,0.00,8.00,Short 72.00 hours
-Edward Obi,Kimai,Gusto,,0.00,0.00,0.00,Short 45.00 hours
-Ariful Islam,Kimai,Gusto,,0.00,0.00,0.00,Short 80.00 hours
-Pauline Nguyen,Kimai,Gusto,,0.00,0.00,0.00,Short 80.00 hours
 EXPECTED EXPENSES
 Name,Expected Pay Period Expense (C),Weekly Expected Expense (C),Total Paid Weekly Hours (M),"Total Expense Rate, with Tax (C)",Pre-Tax Employee Rate (C),Base Rate (M),Upwork fee (multiplier) (M),US FTE bonus (multiplier) (M),"Taxes (multiplier, approximately) (M)"
 Total,200,100
@@ -29,35 +29,35 @@ Jamie,,,20,,,,1,1,1
 HOURS
 Coloring,3 hours max is acceptable difference,3 hour+ difference
 Name,Inconsistency Ratio (C),Pay Period Hours Difference (C),Equity Hours Difference (C),Pay Period Expected Hours (C),Total Expected Weekly Hours (C),Total Expected Weekly Equity Hours (M),Total Expected Paid Weekly Hours (C)
-Grand Total,Average 32.73% Missed,327.31666666666666,,440,220,140,80
-Dev Total,Average 32.73% Missed,327.31666666666666,,400,200,120,80
+Grand Total,Average 13.23% Missed,132.31666666666666,,440,220,140,80
+Dev Total,Average 13.23% Missed,132.31666666666666,,400,200,120,80
+Pauline Nguyen,No Difference,,,80,40,40,20
 Dharam Pal,No Difference,,,80,40,40,20
 Raheel Shahzad,No Difference,,,80,40,40,20
+Ariful Islam,No Difference,,,80,40,40,20
 Mori Wesonga,No Difference,,,80,40,40,20
 Yulia McCoy,-24.0% Missed,-12.00,,50,25,20,
+Edward Obi,-22.2% Missed,-10.00,,45,22.5,22.5,11.25
 Jamie,-42.0% Missed,-16.82,,40,20,20,10
 Dennis Fisher,-53.8% Missed,-21.50,,40,20,20,10
 Forrest Cordova,-90.0% Missed,-72.00,,80,40,40,20
-Edward Obi,-100.0% Missed,-45.00,,45,22.5,22.5,11.25
-Ariful Islam,-100.0% Missed,-80.00,,80,40,40,20
-Pauline Nguyen,-100.0% Missed,-80.00,,80,40,40,20
 Mikhail Stepanov,No Difference,,,40,20,20,
 Anatoly Stepanov,No Difference,,,40,20,20,
 Design Total,Average No Difference,,,40,20,20,
 ACTUAL EXPENSES
 Name,Inconsistency Expense (C),Expected Pay Period Expense (C),Actual Expense (C),Actual Expense Paid (M),Expense Difference (C)
-Grand Total,2100,4000,1900,1900,
-Dev Total,2100,2800,700,700,
+Grand Total,700,4000,3300,3300,
+Dev Total,700,2800,2100,2100,
+Pauline Nguyen,,1000,1000,1000,,
 Dharam Pal,,700,700,700,,
 Raheel Shahzad,,600,600,600,,
+Ariful Islam,,400,400,400,,
 Mori Wesonga,,600,600,600,,
 Yulia McCoy,200,200,,,,
+Edward Obi,100,100,,,,
 Jamie,,,,,,
 Dennis Fisher,,,,,,
 Forrest Cordova,400,400,,,,
-Edward Obi,100,100,,,,
-Ariful Islam,400,400,,,,
-Pauline Nguyen,1000,1000,,,,
 Mikhail Stepanov,,,,,
 Anatoly Stepanov,,,,,
 Design Total,,1200,1200,1200,

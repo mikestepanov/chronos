@@ -1,25 +1,44 @@
 Hours Compliance Report - Pay Period #29
 Period: Nov 11 - Nov 24
-Generated: 2025-11-25T23:06:33.066Z
+Generated: 2025-11-26T23:04:34.272Z
 Source: Automated pull
-Entries: 129
+Entries: 193
 
 | User                 | Hours Worked | Expected | Difference | % Deviation | Status | 
 |----------------------|--------------|----------|------------|-------------|--------|
+| Pauline Nguyen       |        83.00 |    80.00 |      +3.00 |       +3.8% |      ✓ |
 | Dharam Pal Singh     |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Raheel Shahzad       |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
+| Ariful               |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Mori Isaac           |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Yulia                |        38.00 |    50.00 |     -12.00 |      -24.0% |      ✗ |
+| Eddy                 |        35.00 |    45.00 |     -10.00 |      -22.2% |      ✗ |
 | Jamie                |        23.18 |    40.00 |     -16.82 |      -42.0% |      ✗ |
 | Dennis Fisher        |        18.50 |    40.00 |     -21.50 |      -53.8% |      ✗ |
 | Forrest Cordova      |         8.00 |    80.00 |     -72.00 |      -90.0% |      ✗ |
-| Eddy                 |         0.00 |    45.00 |     -45.00 |     -100.0% |      ✗ |
-| Ariful               |         0.00 |    80.00 |     -80.00 |     -100.0% |      ✗ |
-| Pauline Nguyen       |         0.00 |    80.00 |     -80.00 |     -100.0% |      ✗ |
 
 
 
 === DETAILED WORK SUMMARY ===
+
+
+Pauline Nguyen
+--------------
+Expected Hours: 80.00
+Actual Hours: 83.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: S.T.A.T.U.S. Framework
+  • Print Designs - Design: Document Templates
+  • Team Operations - Meeting: Mikhail Meeting
+  • Team Operations - Meeting: Avraham Meeting
+  • Team Operations - Meeting: Design Team Sync
+  • Print Designs - Meeting: Jamie Meeting - Subheading Research
+  • Team Operations - Meeting: Weekly Design Sync
+  • Team Operations - Meeting: Monthly Sync Up with Avraham and Mikhail
+  • Team Operations - Meeting: Meeting with Mikhail and Jamie
+  • Team Operations - Meeting: Meeting with Jamie (Headers)
+  • Team Operations - Meeting: Weekly Design Sync Up
 
 
 Dharam Pal Singh
@@ -133,6 +152,16 @@ Work Summary:
   • Onboarding - Programming: Onboarding flow design
 
 
+Ariful
+------
+Expected Hours: 80.00
+Actual Hours: 80.00
+Status: ✓ PASS
+Work Summary:
+  • Team Operations - Meeting: StartHub | FTE Engineering Team Sync Up
+  • User Profile & Settings - Programming: Mentor abailability implementation
+
+
 Mori Isaac
 ----------
 Expected Hours: 80.00
@@ -167,6 +196,18 @@ Work Summary:
   • Onboarding - Design: Met with Mike + met with Jamie. Fixed comments on the Onboarding from Mike and Avraham. Updated calendars on the Settings and profile.
   • Onboarding - Design: Meetings: Design sync up, Met with Mike and Avraham. Created variation for account photo component, implemented it. Created a new component for buttons for the Onboarding. Created new 3 step. Started to work on comments.
   • Team Operations - Design: Met with Dennis. Fixed comments on the main landing page
+
+
+Eddy
+----
+Expected Hours: 45.00
+Actual Hours: 35.00
+Status: ✗ FAIL
+Work Summary:
+  • Tools & Templates - Design: ' Added new functionalities and made some variations on Onboarding
+  • Onboarding - Design: ' Added new functionalities and made some variations on Onboarding
+  • Onboarding - Design: Resolved some comments and issues on onboarding and made some modifications
+  • Tools & Templates - Design: Designed Actual Email Templates
 
 
 Jamie
@@ -213,31 +254,4 @@ Actual Hours: 8.00
 Status: ✗ FAIL
 Work Summary:
   • Admin Panel - Test Automation: email and document templates
-
-
-Eddy
-----
-Expected Hours: 45.00
-Actual Hours: 0.00
-Status: ✗ FAIL
-Work Summary:
-  • No hours logged
-
-
-Ariful
-------
-Expected Hours: 80.00
-Actual Hours: 0.00
-Status: ✗ FAIL
-Work Summary:
-  • No hours logged
-
-
-Pauline Nguyen
---------------
-Expected Hours: 80.00
-Actual Hours: 0.00
-Status: ✗ FAIL
-Work Summary:
-  • No hours logged
 
