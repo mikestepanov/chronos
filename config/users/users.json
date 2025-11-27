@@ -180,26 +180,6 @@
       }
     },
     {
-      "id": "forrest-cordova",
-      "name": "Forrest Cordova",
-      "email": "forrest@example.com",
-      "active": true,
-      "team": "dev",
-      "expectedHours": 80,
-      "expectedEquityHours": 40,
-      "expectedPaidHours": 40,
-      "services": {
-        "kimai": {
-          "username": "forrest"
-        },
-        "pumble": {
-          "id": "PUMBLE_ID_HERE",
-          "username": "forrest",
-          "mention": "<@PUMBLE_ID_HERE>"
-        }
-      }
-    },
-    {
       "id": "jamie",
       "name": "Jamie",
       "email": "jamie@example.com",
@@ -226,9 +206,10 @@
       "email": "ayooluwaebun2006@gmail.com",
       "active": true,
       "team": "dev",
-      "expectedHours": 80,
-      "expectedEquityHours": 40,
-      "expectedPaidHours": 40,
+      "expectedHours": 40,
+      "expectedEquityHours": 0,
+      "expectedPaidHours": 0,
+      "isIntern": true,
       "services": {
         "kimai": {
           "username": "Ayooluwa"
@@ -246,9 +227,10 @@
       "email": "akshatarora130@gmail.com",
       "active": true,
       "team": "dev",
-      "expectedHours": 80,
-      "expectedEquityHours": 40,
-      "expectedPaidHours": 40,
+      "expectedHours": 40,
+      "expectedEquityHours": 0,
+      "expectedPaidHours": 0,
+      "isIntern": true,
       "services": {
         "kimai": {
           "username": "Akshat"
@@ -266,9 +248,10 @@
       "email": "dj@example.com",
       "active": true,
       "team": "dev",
-      "expectedHours": 80,
-      "expectedEquityHours": 40,
-      "expectedPaidHours": 40,
+      "expectedHours": 40,
+      "expectedEquityHours": 0,
+      "expectedPaidHours": 0,
+      "isIntern": true,
       "services": {
         "kimai": {
           "username": "dj"
@@ -294,7 +277,7 @@
     }
   },
   "metadata": {
-    "updated": "2025-11-26",
+    "updated": "2025-11-27",
     "version": "2.0.0",
     "note": "Removed Kimai API IDs - now using browser automation"
   }

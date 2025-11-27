@@ -1,6 +1,6 @@
 Hours Compliance Report - Pay Period #29
 Period: Nov 11 - Nov 24
-Generated: 2025-11-27T05:25:12.024Z
+Generated: 2025-11-27T05:43:15.797Z
 Source: Automated pull
 Entries: 193
 
@@ -11,14 +11,13 @@ Entries: 193
 | Raheel Shahzad         |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Ariful                 |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
 | Mori Isaac             |        80.00 |    80.00 |      +0.00 |       +0.0% |      ✓ |
-| Olabanji-Ebun Ayooluwa |        59.68 |    80.00 |     -20.32 |      -25.4% |      ✗ |
+| Olabanji-Ebun Ayooluwa |        59.68 |    40.00 |     +19.68 |      +49.2% |      ✗ |
 | Yulia                  |        38.00 |    50.00 |     -12.00 |      -24.0% |      ✗ |
 | Eddy                   |        35.00 |    45.00 |     -10.00 |      -22.2% |      ✗ |
 | Jamie                  |        23.18 |    40.00 |     -16.82 |      -42.0% |      ✗ |
 | Dennis Fisher          |        18.50 |    40.00 |     -21.50 |      -53.8% |      ✗ |
-| Forrest Cordova        |         8.00 |    80.00 |     -72.00 |      -90.0% |      ✗ |
-| Akshat                 |         8.00 |    80.00 |     -72.00 |      -90.0% |      ✗ |
-| DJ                     |         0.00 |    80.00 |     -80.00 |     -100.0% |      ✗ |
+| Akshat                 |         8.00 |    40.00 |     -32.00 |      -80.0% |      ✗ |
+| DJ                     |         0.00 |    40.00 |     -40.00 |     -100.0% |      ✗ |
 
 
 
@@ -187,7 +186,7 @@ Work Summary:
 
 Olabanji-Ebun Ayooluwa
 ----------------------
-Expected Hours: 80.00
+Expected Hours: 40.00
 Actual Hours: 59.68
 Status: ✗ FAIL
 Work Summary:
@@ -266,18 +265,9 @@ Work Summary:
   • Team Operations - Meeting
 
 
-Forrest Cordova
----------------
-Expected Hours: 80.00
-Actual Hours: 8.00
-Status: ✗ FAIL
-Work Summary:
-  • Admin Panel - Test Automation: email and document templates
-
-
 Akshat
 ------
-Expected Hours: 80.00
+Expected Hours: 40.00
 Actual Hours: 8.00
 Status: ✗ FAIL
 Work Summary:
@@ -289,7 +279,7 @@ Fixed pickup where you left section for courses
 
 DJ
 --
-Expected Hours: 80.00
+Expected Hours: 40.00
 Actual Hours: 0.00
 Status: ✗ FAIL
 Work Summary:
