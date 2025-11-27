@@ -278,7 +278,10 @@ ${detailedTable}`;
       'Edward Obi': { baseRate: 20, expectedExpense: 100 },
       'Dennis Fisher': { baseRate: 0, expectedExpense: 0 },
       'Forrest Cordova': { baseRate: 10, expectedExpense: 400 },
-      'Jamie': { baseRate: 0, expectedExpense: 0 }
+      'Jamie': { baseRate: 0, expectedExpense: 0 },
+      'Ayooluwa': { baseRate: 0, expectedExpense: 0 },
+      'Akshat': { baseRate: 0, expectedExpense: 0 },
+      'DJ': { baseRate: 0, expectedExpense: 0 }
     };
 
     const rows = [];
@@ -478,7 +481,10 @@ ${detailedTable}`;
       'Dennis Fisher': 'Dennis Fisher',
       'Forrest': 'Forrest Cordova',
       'Forrest Cordova': 'Forrest Cordova',
-      'Jamie': 'Jamie'
+      'Jamie': 'Jamie',
+      'Olabanji-Ebun Ayooluwa': 'Ayooluwa',
+      'Akshat': 'Akshat',
+      'DJ': 'DJ'
     };
 
     return nameMapping[kimaiName] || kimaiName;
@@ -569,7 +575,10 @@ ${detailedTable}`;
       'Edward Obi': { baseRate: 20, expectedExpense: 100, weeklyHours: 22.5 },
       'Dennis Fisher': { baseRate: 0, expectedExpense: 0, weeklyHours: 40 },
       'Forrest Cordova': { baseRate: 10, expectedExpense: 400, weeklyHours: 40 },
-      'Jamie': { baseRate: 0, expectedExpense: 0, weeklyHours: 20 }
+      'Jamie': { baseRate: 0, expectedExpense: 0, weeklyHours: 20 },
+      'Ayooluwa': { baseRate: 0, expectedExpense: 0, weeklyHours: 20 },
+      'Akshat': { baseRate: 0, expectedExpense: 0, weeklyHours: 20 },
+      'DJ': { baseRate: 0, expectedExpense: 0, weeklyHours: 20 }
     };
 
     // Create workbook and worksheet with exact structure

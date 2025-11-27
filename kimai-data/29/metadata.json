@@ -25,8 +25,86 @@
         "recordCount": 185,
         "bytes": 30987
       }
+    },
+    {
+      "version": 2,
+      "extractedAt": "2025-11-26T15:41:20.631Z",
+      "checksum": "a64d18c54586eeff0b4bb2edb2d90c2657c63605e300d43fcac6a2969b03ccc6",
+      "metadata": {
+        "periodNumber": 29,
+        "startDate": "2025-11-11T05:00:00.000Z",
+        "endDate": "2025-11-25T04:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 193,
+          "filteredRecords": 186,
+          "uniqueUsers": 11,
+          "totalHours": 558.3666666666667,
+          "recordsOutsidePeriod": 7,
+          "periodNumber": 29,
+          "dateRange": {
+            "start": "2025-11-11",
+            "end": "2025-11-25"
+          }
+        },
+        "recordCount": 244,
+        "bytes": 41578
+      }
+    },
+    {
+      "version": 3,
+      "extractedAt": "2025-11-26T19:12:23.138Z",
+      "checksum": "b6f33ed152f6bd34129366de2fa22339c62e3224a70a8799462db98ea389b2ce",
+      "metadata": {
+        "periodNumber": 29,
+        "startDate": "2025-11-11T05:00:00.000Z",
+        "endDate": "2025-11-25T04:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 200,
+          "filteredRecords": 193,
+          "uniqueUsers": 12,
+          "totalHours": 593.3666666666667,
+          "recordsOutsidePeriod": 7,
+          "periodNumber": 29,
+          "dateRange": {
+            "start": "2025-11-11",
+            "end": "2025-11-25"
+          }
+        },
+        "recordCount": 251,
+        "bytes": 42987
+      }
+    },
+    {
+      "version": 4,
+      "extractedAt": "2025-11-26T20:27:02.513Z",
+      "checksum": "3654c90bb0c4941644717f82a70d01db28a0e52a0a4c6ab4b62f033840ce918a",
+      "metadata": {
+        "periodNumber": 29,
+        "startDate": "2025-11-11T05:00:00.000Z",
+        "endDate": "2025-11-25T04:59:59.999Z",
+        "extractedBy": "pull-kimai",
+        "exportMethod": "playwright-automation",
+        "stats": {
+          "totalRecords": 202,
+          "filteredRecords": 193,
+          "uniqueUsers": 12,
+          "totalHours": 593.3666666666667,
+          "recordsOutsidePeriod": 9,
+          "periodNumber": 29,
+          "dateRange": {
+            "start": "2025-11-11",
+            "end": "2025-11-25"
+          }
+        },
+        "recordCount": 253,
+        "bytes": 43353
+      }
     }
   ],
-  "latest": 1,
-  "updatedAt": "2025-11-25T23:06:33.064Z"
+  "latest": 4,
+  "updatedAt": "2025-11-26T20:27:02.513Z"
 }

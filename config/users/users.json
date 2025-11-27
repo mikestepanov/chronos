@@ -219,6 +219,66 @@
           "mention": "<@PUMBLE_ID_HERE>"
         }
       }
+    },
+    {
+      "id": "ayooluwa",
+      "name": "Olabanji-Ebun Ayooluwa",
+      "email": "ayooluwaebun2006@gmail.com",
+      "active": true,
+      "team": "dev",
+      "expectedHours": 80,
+      "expectedEquityHours": 40,
+      "expectedPaidHours": 40,
+      "services": {
+        "kimai": {
+          "username": "Ayooluwa"
+        },
+        "pumble": {
+          "id": "PUMBLE_ID_HERE",
+          "username": "ayooluwa",
+          "mention": "<@PUMBLE_ID_HERE>"
+        }
+      }
+    },
+    {
+      "id": "akshat",
+      "name": "Akshat",
+      "email": "akshatarora130@gmail.com",
+      "active": true,
+      "team": "dev",
+      "expectedHours": 80,
+      "expectedEquityHours": 40,
+      "expectedPaidHours": 40,
+      "services": {
+        "kimai": {
+          "username": "Akshat"
+        },
+        "pumble": {
+          "id": "PUMBLE_ID_HERE",
+          "username": "akshat",
+          "mention": "<@PUMBLE_ID_HERE>"
+        }
+      }
+    },
+    {
+      "id": "dj",
+      "name": "DJ",
+      "email": "dj@example.com",
+      "active": true,
+      "team": "dev",
+      "expectedHours": 80,
+      "expectedEquityHours": 40,
+      "expectedPaidHours": 40,
+      "services": {
+        "kimai": {
+          "username": "dj"
+        },
+        "pumble": {
+          "id": "PUMBLE_ID_HERE",
+          "username": "dj",
+          "mention": "<@PUMBLE_ID_HERE>"
+        }
+      }
     }
   ],
   "teams": {
@@ -234,7 +294,7 @@
     }
   },
   "metadata": {
-    "updated": "2025-07-23",
+    "updated": "2025-11-26",
     "version": "2.0.0",
     "note": "Removed Kimai API IDs - now using browser automation"
   }
