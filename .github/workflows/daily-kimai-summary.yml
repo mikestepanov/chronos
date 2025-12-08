@@ -1,11 +1,12 @@
-name: Pay Period Summary (Tue/Wed)
+name: Pay Period Summary (Tue/Wed) - DISABLED
 
 on:
-  schedule:
-    # Run on Tuesday at 6 PM EST (23:00 UTC) - 24 hours after Monday reminder
-    - cron: '0 23 * * 2'
-    # Run on Wednesday at 6 PM EST (23:00 UTC) - 48 hours after Monday reminder
-    - cron: '0 23 * * 3'
+  # DISABLED: No longer using Kimai
+  # schedule:
+  #   # Run on Tuesday at 6 PM EST (23:00 UTC) - 24 hours after Monday reminder
+  #   - cron: '0 23 * * 2'
+  #   # Run on Wednesday at 6 PM EST (23:00 UTC) - 48 hours after Monday reminder
+  #   - cron: '0 23 * * 3'
 
   workflow_dispatch:
     inputs:

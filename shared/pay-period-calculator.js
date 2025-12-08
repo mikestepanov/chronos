@@ -98,10 +98,10 @@ class PayPeriodCalculator {
 
 A Quick Reminder: The ${periodOrdinal} pay-period is fast approaching!
 
-Please begin to input Kimai data today (${todayFormatted}) end of day. Please note that this paycheck will account for the full 2 weeks. This ${periodOrdinal} payroll period will include the dates from ${startFormatted} – ${endFormatted}. (Meaning that today (${todayFormatted}) is also counted for the ${periodOrdinal} pay-period, TOMORROW (${tomorrowFormatted}) is counted for the ${this.getOrdinal(nextPeriod.number)} pay-period.)`;
+Please begin to input your timesheet data today (${todayFormatted}) end of day. Please note that this paycheck will account for the full 2 weeks. This ${periodOrdinal} payroll period will include the dates from ${startFormatted} – ${endFormatted}. (Meaning that today (${todayFormatted}) is also counted for the ${periodOrdinal} pay-period, TOMORROW (${tomorrowFormatted}) is counted for the ${this.getOrdinal(nextPeriod.number)} pay-period.)`;
 
     if (includeExtraHours) {
-      message += `\n\nFor those of you that have been given extra hours, please ensure to input them into Kimai for this pay-period as well.`;
+      message += `\n\nFor those of you that have been given extra hours, please ensure to input them into your timesheet for this pay-period as well.`;
     }
 
     message += `\n\nPlease expect the payment to go through on the ${paymentDateFormatted}.
