@@ -63,8 +63,20 @@ class PayPeriodCalculator {
     return DateHelper.format(date, formatString);
   }
 
+  formatDateEST(date) {
+    const parts = DateHelper.getDatePartsEST(date);
+    return `${parts.month}/${parts.day}`;
+  }
+
   formatDateLong(date) {
     return DateHelper.format(date, DateHelper.FORMATS.MONTH_DAY_ORDINAL);
+  }
+
+  formatDateLongEST(date) {
+    const parts = DateHelper.getDatePartsEST(date);
+    const ordinal = this.getOrdinal(parts.day);
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    return `${months[parts.month - 1]} ${ordinal}`;
   }
 
   formatDateFull(date) {
@@ -88,11 +100,11 @@ class PayPeriodCalculator {
     const { currentPeriod, nextPeriod } = periodInfo;
 
     const periodOrdinal = this.getOrdinal(currentPeriod.number);
-    const todayFormatted = this.formatDateLong(currentPeriod.endDate);
-    const startFormatted = this.formatDate(currentPeriod.startDate);
-    const endFormatted = this.formatDate(currentPeriod.endDate);
-    const paymentDateFormatted = this.formatDateLong(currentPeriod.paymentDate);
-    const tomorrowFormatted = this.formatDateLong(nextPeriod.startDate);
+    const todayFormatted = this.formatDateLongEST(currentPeriod.endDate);
+    const startFormatted = this.formatDateEST(currentPeriod.startDate);
+    const endFormatted = this.formatDateEST(currentPeriod.endDate);
+    const paymentDateFormatted = this.formatDateLongEST(currentPeriod.paymentDate);
+    const tomorrowFormatted = this.formatDateLongEST(nextPeriod.startDate);
 
     let message = `Good Morning ${teamName},
 
@@ -122,13 +134,13 @@ Thank you.
     return {
       periodNumber: currentPeriod.number,
       periodOrdinal: this.getOrdinal(currentPeriod.number),
-      startDate: this.formatDate(currentPeriod.startDate),
-      endDate: this.formatDate(currentPeriod.endDate),
-      endDateLong: this.formatDateLong(currentPeriod.endDate),
-      paymentDate: this.formatDateLong(currentPeriod.paymentDate),
+      startDate: this.formatDateEST(currentPeriod.startDate),
+      endDate: this.formatDateEST(currentPeriod.endDate),
+      endDateLong: this.formatDateLongEST(currentPeriod.endDate),
+      paymentDate: this.formatDateLongEST(currentPeriod.paymentDate),
       nextPeriodNumber: nextPeriod.number,
       nextPeriodOrdinal: this.getOrdinal(nextPeriod.number),
-      tomorrowDate: this.formatDateLong(nextPeriod.startDate),
+      tomorrowDate: this.formatDateLongEST(nextPeriod.startDate),
       daysRemaining: 0 // Since this is for end-of-period reminder
     };
   }

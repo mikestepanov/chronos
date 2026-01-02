@@ -1,4 +1,5 @@
 const PayPeriodCalculator = require('../shared/pay-period-calculator');
+const DateHelper = require('../shared/date-helper');
 
 describe('PayPeriodCalculator', () => {
   let calculator;
@@ -7,7 +8,7 @@ describe('PayPeriodCalculator', () => {
     // Use fixed dates for testing
     calculator = new PayPeriodCalculator({
       basePeriodNumber: 18,
-      basePeriodEndDate: new Date('2025-06-23T12:00:00'),
+      basePeriodEndDate: new Date('2025-06-23T12:00:00'), // Monday
       periodLengthDays: 14,
       paymentDelayDays: 7
     });
@@ -19,9 +20,9 @@ describe('PayPeriodCalculator', () => {
       const periodInfo = calculator.getCurrentPeriodInfo(testDate);
       
       expect(periodInfo.currentPeriod.number).toBe(18);
-      expect(periodInfo.currentPeriod.startDate.toDateString()).toBe(new Date('2025-06-10T12:00:00').toDateString());
-      expect(periodInfo.currentPeriod.endDate.toDateString()).toBe(new Date('2025-06-23T12:00:00').toDateString());
-      expect(periodInfo.currentPeriod.paymentDate.toDateString()).toBe(new Date('2025-06-30T12:00:00').toDateString());
+      expect(DateHelper.formatISOInEST(periodInfo.currentPeriod.startDate)).toBe('2025-06-10');
+      expect(DateHelper.formatISOInEST(periodInfo.currentPeriod.endDate)).toBe('2025-06-23');
+      expect(DateHelper.formatISOInEST(periodInfo.currentPeriod.paymentDate)).toBe('2025-06-30');
       expect(periodInfo.nextPeriod.number).toBe(19);
     });
 
@@ -30,8 +31,8 @@ describe('PayPeriodCalculator', () => {
       const periodInfo = calculator.getCurrentPeriodInfo(testDate);
       
       expect(periodInfo.currentPeriod.number).toBe(19);
-      expect(periodInfo.currentPeriod.startDate.toDateString()).toBe(new Date('2025-06-24T12:00:00').toDateString());
-      expect(periodInfo.currentPeriod.endDate.toDateString()).toBe(new Date('2025-07-07T12:00:00').toDateString());
+      expect(DateHelper.formatISOInEST(periodInfo.currentPeriod.startDate)).toBe('2025-06-24');
+      expect(DateHelper.formatISOInEST(periodInfo.currentPeriod.endDate)).toBe('2025-07-07');
     });
 
     test('should handle dates far in the future', () => {
@@ -147,7 +148,7 @@ describe('PayPeriodCalculator', () => {
       expect(period).toHaveProperty('start');
       expect(period).toHaveProperty('end');
       expect(period).toHaveProperty('paymentDate');
-      expect(period.start.toDateString()).toBe(new Date('2025-06-10T12:00:00').toDateString());
+      expect(DateHelper.formatISOInEST(period.start)).toBe('2025-06-10');
     });
   });
 
