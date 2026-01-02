@@ -5,9 +5,9 @@ class PayPeriodCalculator {
     // Base reference point for calculations
     this.basePeriodNumber = config.basePeriodNumber || 18;
     // Use EST/EDT timezone (America/New_York) to match Kimai
-    // June 23, 2025 is a Monday (end of period 18)
-    // June 23, 2025 23:59:59.999 EDT = June 24, 2025 03:59:59.999 UTC
-    this.basePeriodEndDate = config.basePeriodEndDate || new Date('2025-06-24T03:59:59.999Z');
+    // June 22, 2025 is a Sunday (end of period 18)
+    // June 22, 2025 23:59:59.999 EDT = June 23, 2025 03:59:59.999 UTC
+    this.basePeriodEndDate = config.basePeriodEndDate || new Date('2025-06-23T03:59:59.999Z');
     this.periodLengthDays = config.periodLengthDays || 14;
     this.paymentDelayDays = config.paymentDelayDays || 7; // Payment the following Monday
 
@@ -22,12 +22,8 @@ class PayPeriodCalculator {
     const baseDay = DateHelper.getStartOfDayEST(this.basePeriodEndDate);
     const daysSinceBase = Math.floor((refDay - baseDay) / (1000 * 60 * 60 * 24));
 
-    // If reference date is before or on base period end date, we're in the base period
-    let periodsPassed = 0;
-    if (daysSinceBase > 0) {
-      // We've moved past the base period, calculate how many full periods
-      periodsPassed = Math.floor((daysSinceBase - 1) / this.periodLengthDays) + 1;
-    }
+    // Calculate how many full periods have passed (can be negative)
+    const periodsPassed = Math.floor((daysSinceBase - 1) / this.periodLengthDays) + 1;
 
     // Calculate current period number
     const currentPeriodNumber = this.basePeriodNumber + periodsPassed;
