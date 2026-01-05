@@ -4,7 +4,7 @@ on:
   schedule:
     # Run every Sunday at 12 PM CST (5 PM UTC during DST, 6 PM UTC during standard time)
     # Matching Koyeb configuration
-    - cron: '0 17 * * 0'
+    # - cron: '0 17 * * 0'
     
   workflow_dispatch:
     inputs:
