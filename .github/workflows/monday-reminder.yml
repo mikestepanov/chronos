@@ -1,10 +1,10 @@
-name: Monday Pay Period Reminder
+name: Pay Period Reminder
 
 on:
   schedule:
-    # Run every Monday at 12 PM CST (5 PM UTC during DST, 6 PM UTC during standard time)
+    # Run every Sunday at 12 PM CST (5 PM UTC during DST, 6 PM UTC during standard time)
     # Matching Koyeb configuration
-    - cron: '0 17 * * 1'
+    - cron: '0 17 * * 0'
     
   workflow_dispatch:
     inputs:
@@ -42,12 +42,12 @@ jobs:
       run: |
         npm install
     
-    - name: Send Monday Reminders
+    - name: Send Pay Period Reminders
       env:
         PUMBLE_API_KEY: ${{ secrets.PUMBLE_API_KEY }}
 
       run: |
-        echo "📅 Monday reminder check at $(date)"
+        echo "📅 Pay period reminder check at $(date)"
 
         # Check if today is the last day of a pay period (using EST timezone)
         node -e "
