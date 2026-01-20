@@ -1,0 +1,28 @@
+name: Monday Feedback Reminder
+
+on:
+  schedule:
+    # Run every Monday at 9 AM CST (15:00 UTC)
+    - cron: '0 15 * * 1'
+  workflow_dispatch:
+
+jobs:
+  send-feedback-reminder:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22'
+    
+    - name: Install dependencies
+      run: npm install
+    
+    - name: Send Feedback Reminder
+      env:
+        PUMBLE_API_KEY: ${{ secrets.PUMBLE_API_KEY }}
+      run: |
+        node scripts/send-message.js -c general -m "Please don't forget to give feedback and review Starthub Academy. In terms of the submissions for the bugs - please drop them off here: https://starthubacademy.notion.site/2ec421787f6881bbb087d7cbf830a8f7"

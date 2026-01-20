@@ -74,7 +74,7 @@ class PumbleClient extends MessagingInterface {
 
   async getUsers() {
     try {
-      const response = await axios.get(`${this.baseUrl}/users`, {
+      const response = await axios.get(`${this.baseUrl}/listUsers`, {
         headers: { 'Api-Key': this.apiKey }
       });
       return response.data;

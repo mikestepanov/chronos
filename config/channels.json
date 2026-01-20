@@ -1,5 +1,10 @@
 {
   "pumble": {
+    "general": {
+      "id": "647c855bb628c800690ac903",
+      "name": "general",
+      "description": "General discussion channel"
+    },
     "dev": {
       "id": "66934de10aeebd36fe26f468",
       "name": "dev",

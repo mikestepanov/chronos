@@ -160,18 +160,21 @@ class MessageSender {
    */
   async resolveRecipient({ channel, user, groupDM }) {
     if (channel) {
-      // Channel can be name or ID
-      if (channel.match(/^[A-Z0-9]{20,}$/)) {
+      // Check if it's a known channel name
+      let channelConfig = this.channels[channel];
+      
+      // If not found, check if it's a raw ID
+      if (!channelConfig && channel.match(/^[a-z0-9]{24}$/i)) {
         return { type: 'channel', id: channel };
       }
-      
-      // Look up channel by name (try both original and with underscores)
-      let channelConfig = this.channels[channel];
+
+      // If still not found, try alternative naming
       if (!channelConfig) {
         // Try replacing hyphens with underscores
         const altName = channel.replace(/-/g, '_');
         channelConfig = this.channels[altName];
       }
+      
       if (!channelConfig) {
         throw new Error(`Channel '${channel}' not found in config`);
       }
@@ -190,9 +193,8 @@ class MessageSender {
         throw new Error(`User '${user}' not found`);
       }
 
-      // Get or create DM channel
-      const dmChannel = await this.pumbleClient.getDMChannel(userConfig.services.pumble.id);
-      return { type: 'dm', id: dmChannel, user: userConfig };
+      // Return DM recipient info directly since we use sendDirectMessage
+      return { type: 'dm', id: userConfig.services.pumble.id, user: userConfig };
     }
 
     if (groupDM) {
@@ -236,7 +238,12 @@ class MessageSender {
     }
 
     try {
-      const result = await this.pumbleClient.sendMessage(recipient.id, content, false);
+      let result;
+      if (recipient.type === 'dm') {
+        result = await this.pumbleClient.sendDirectMessage(recipient.id, content);
+      } else {
+        result = await this.pumbleClient.sendMessage(recipient.id, content, false);
+      }
       
       if (this.verbose) {
         console.log('✅ Message sent successfully');
